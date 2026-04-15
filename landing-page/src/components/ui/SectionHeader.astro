@@ -1,0 +1,57 @@
+---
+interface Props {
+  eyebrow?: string;
+  title: string;
+  description?: string;
+  as?: 'h1' | 'h2' | 'h3';
+  size?: 'xl' | 'lg';
+  layout?: 'default' | 'split' | 'centered';
+  class?: string;
+}
+
+const {
+  eyebrow,
+  title,
+  description,
+  as: Heading = 'h2',
+  size = 'xl',
+  layout = 'default',
+  class: className,
+} = Astro.props as Props;
+---
+
+{
+  layout === 'split' ? (
+    <div class:list={['grid lg:grid-cols-2 gap-8 items-end', className]}>
+      <div class="reveal">
+        {eyebrow && <p class="eyebrow mb-4">{eyebrow}</p>}
+        <Heading class={`heading-${size}`}>{title}</Heading>
+      </div>
+      {description && (
+        <div class="reveal lg:text-right">
+          <p class="text-[0.9375rem] text-gray-500 leading-relaxed max-w-xl lg:ml-auto">
+            {description}
+          </p>
+        </div>
+      )}
+    </div>
+  ) : layout === 'centered' ? (
+    <div class:list={['flex flex-col items-center text-center reveal', className]}>
+      {eyebrow && <p class="eyebrow mb-4">{eyebrow}</p>}
+      <Heading class={`heading-${size} mb-6`}>{title}</Heading>
+      {description && (
+        <p class="max-w-2xl text-[1.0625rem] text-gray-500 leading-relaxed font-light">
+          {description}
+        </p>
+      )}
+    </div>
+  ) : (
+    <div class:list={['reveal', className]}>
+      {eyebrow && <p class="eyebrow mb-4">{eyebrow}</p>}
+      <Heading class={`heading-${size}`}>{title}</Heading>
+      {description && (
+        <p class="mt-4 text-[0.9375rem] text-gray-500 leading-relaxed">{description}</p>
+      )}
+    </div>
+  )
+}

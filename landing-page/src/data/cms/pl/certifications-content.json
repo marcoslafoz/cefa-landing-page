@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-04-15T08:08:49.930Z",
+  "updatedAt": "2026-04-15T08:40:52.032Z",
+  "globalType": "certifications-content",
+  "eyebrow": "Certyfikowana jakość",
+  "title": "Nasze certyfikaty",
+  "subtitle": "Zobowiązujemy się do spełniania najbardziej wymagających standardów jakości w branży. Nasze certyfikaty potwierdzają naszą zdolność do produkcji precyzyjnych komponentów spełniających wymagania wiodących OEM na świecie.",
+  "qualityCommitment": {
+    "title": "Zaangażowanie w całkowitą jakość",
+    "body": "W CEFA jakość to nie tylko wymóg – to część naszej kultury korporacyjnej. Każdy produkowany przez nas komponent przechodzi rygorystyczne procesy kontroli i weryfikacji, aby zapewnić spełnienie najbardziej wymagających standardów."
+  },
+  "stats": {
+    "auditLabel": "Coroczne audyty",
+    "auditValue": "100%",
+    "defectLabel": "Wskaźnik defektów",
+    "defectValue": "< 10 PPM",
+    "traceabilityLabel": "Identyfikowalność",
+    "traceabilityValue": "Pełna"
+  },
+  "meta": {
+    "title": "Certyfikaty – CEFA",
+    "description": "Jakość certyfikowana IATF 16949, ISO 9001 i ISO 14001. CEFA spełnia najwyższe standardy branży w produkcji komponentów z tworzyw sztucznych dla motoryzacji."
+  },
+  "id": "69df479113d2923b1ce4154c"
+}

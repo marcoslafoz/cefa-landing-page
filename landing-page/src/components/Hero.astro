@@ -1,0 +1,220 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import Button from '@/components/ui/Button.astro';
+import { getLandingContent } from '@/lib/cms';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+const cmsData = await getLandingContent(locale);
+
+const heroTitleLine1 = cmsData?.hero?.titleLine1 || t('hero.title.line1');
+const heroTitleLine2 = cmsData?.hero?.titleLine2 || t('hero.title.line2');
+const heroSubtitle = cmsData?.hero?.subtitle || t('hero.subtitle');
+const primaryCta = cmsData?.hero?.ctaText || t('hero.cta.primary');
+---
+
+<section
+  class="relative w-full min-h-svh bg-cefa-navy-dark overflow-hidden flex items-center"
+  aria-label="Hero"
+>
+  <!-- Fondo de Video -->
+  <div class="absolute inset-0 z-0 bg-cefa-navy-dark overflow-hidden pointer-events-none">
+    <!-- Vista previa de imagen (Poster) - Se muestra antes de que cargue el video -->
+    <img
+      id="hero-poster"
+      src="/images/mission/frame.webp"
+      alt=""
+      class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
+      aria-hidden="true"
+      fetchpriority="high"
+      loading="eager"
+      width="1920"
+      height="1080"
+      decoding="async"
+    />
+    <div id="hero-video-wrapper" class="relative w-full h-full">
+      <!-- El iframe de Vimeo se inyecta dinámicamente lo antes posible -->
+    </div>
+
+    <!-- Superposiciones oscuras modernas para legibilidad del texto y profundidad premium -->
+    <div
+      class="absolute inset-0 bg-linear-to-r from-cefa-navy-dark via-cefa-navy-dark/80 to-transparent z-10 w-full md:w-[85%]"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-linear-to-t from-cefa-navy-dark via-cefa-navy-dark/20 to-transparent z-10 opacity-90 mt-auto h-1/2"
+    >
+    </div>
+
+    <!-- Orbes decorativos de brillo — ocultos en dispositivos móviles (desenfoque intensivo para GPU) -->
+    <div
+      class="hidden lg:block absolute top-1/4 left-1/4 w-96 h-96 bg-cefa-red/20 rounded-full mix-blend-screen filter blur-[100px] animate-[pulse_6s_ease-in-out_infinite] z-10 pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+    <div
+      class="hidden lg:block absolute bottom-1/4 right-1/4 w-125 h-125 bg-blue-500/10 rounded-full mix-blend-screen filter blur-[120px] animate-[pulse_8s_ease-in-out_infinite] [animation-delay:2s] z-10 pointer-events-none"
+      aria-hidden="true"
+    >
+    </div>
+  </div>
+
+  <!-- Contenido Principal -->
+  <div class="relative z-20 w-full site-container py-24 md:py-32 lg:pb-32">
+    <div class="w-full flex flex-col lg:flex-row lg:items-center justify-between gap-10 lg:gap-16">
+      <!-- Contenido Izquierda -->
+      <div class="max-w-4xl flex-1 order-2 lg:order-1">
+        <!-- Ceja (Eyebrow) -->
+        <p
+          class="eyebrow text-white/70 tracking-[0.25em] font-medium uppercase text-[10px] sm:text-sm mb-4"
+        >
+          {t('hero.eyebrow')}
+        </p>
+
+        <h1
+          class="text-[clamp(2rem,5.5vw,5rem)] text-white font-light leading-[1.1] tracking-[-0.02em] mb-6 flex flex-col items-start gap-1 sm:gap-2"
+        >
+          <span>{heroTitleLine1}</span>
+          <span
+            class="text-cefa-red text-[clamp(1.2rem,3vw,2.5rem)] font-extralight mt-1 sm:mt-2 tracking-normal"
+            >{heroTitleLine2}</span
+          >
+        </h1>
+
+        <!-- Subtítulo -->
+        <p
+          class="text-[clamp(1rem,1.5vw,1.1rem)] text-white/75 font-light leading-relaxed mb-8 max-w-2xl"
+        >
+          {heroSubtitle}
+        </p>
+
+        <!-- Llamadas a la acción (CTAs) -->
+        <div class="flex flex-row flex-wrap gap-3 sm:gap-5">
+          <Button href="#products" variant="primary">
+            {primaryCta}
+          </Button>
+
+          <Button href="#mission" variant="secondary">
+            {t('hero.cta.secondary')}
+          </Button>
+        </div>
+      </div>
+
+      <!-- Logotipo Grande Derecha -->
+      <div
+        class="order-1 lg:order-2 mb-4 lg:mb-0 flex flex-col items-center lg:items-end gap-6 shrink-0"
+      >
+        <img
+          src="/images/logos/cefa-mono-white.svg"
+          alt="CEFA"
+          class="h-20 sm:h-36 md:h-44 lg:h-52 xl:h-60 w-auto object-contain opacity-80"
+          fetchpriority="high"
+          loading="eager"
+          decoding="async"
+          width="240"
+          height="240"
+        />
+        <a
+          href="https://www.motherson.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex flex-col items-center lg:items-end gap-3 opacity-80 hover:opacity-100 transition-opacity"
+        >
+          <img
+            src="/images/logos/motherson.svg"
+            alt="Motherson Group"
+            class="h-10 sm:h-11 lg:h-12 w-auto brightness-0 invert"
+          />
+          <span
+            class="text-[0.6rem] sm:text-[0.65rem] uppercase tracking-[0.4em] text-white font-bold whitespace-nowrap leading-none"
+          >
+            {t('footer.motherson')}
+          </span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Área de indicador de desplazamiento (scroll) moderno -->
+  <div
+    class="absolute bottom-4 md:bottom-12 left-0 right-0 z-20 flex flex-col md:flex-row justify-end items-center md:items-end gap-3 md:gap-0 site-container pointer-events-none"
+  >
+    <!-- Indicador de desplazamiento (scroll) -->
+    <a
+      href="#mission"
+      class="flex flex-col items-center gap-2 md:gap-4 opacity-0 animate-[fadeUp_1s_ease_1.2s_forwards] pointer-events-auto group cursor-pointer"
+      aria-label={t('hero.scroll')}
+    >
+      <span
+        class="text-[0.6rem] md:text-[0.65rem] text-white/40 font-bold uppercase tracking-[0.2em] [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] group-hover:text-white/70 transition-colors"
+      >
+        {t('hero.scroll')}
+      </span>
+      <div
+        class="w-4.5 h-7.5 md:w-6.5 md:h-11 border-2 border-white/20 rounded-full flex justify-center p-1 group-hover:border-white/40 transition-colors"
+      >
+        <div
+          class="w-1 h-1 md:w-1.5 md:h-1.5 bg-cefa-red rounded-full animate-[scrollWheel_2s_ease-in-out_infinite]"
+        >
+        </div>
+      </div>
+    </a>
+  </div>
+</section>
+
+<script>
+  let heroController: AbortController | null = null;
+
+  function loadHeroVideo() {
+    const wrapper = document.getElementById('hero-video-wrapper');
+    if (!wrapper || wrapper.dataset.loaded === 'true' || wrapper.querySelector('iframe')) return;
+
+    heroController?.abort();
+    heroController = new AbortController();
+    const { signal } = heroController;
+
+    const iframe = document.createElement('iframe');
+    iframe.src =
+      'https://player.vimeo.com/video/1181594121?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&api=1';
+    iframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media';
+    iframe.setAttribute('frameborder', '0');
+    iframe.title = 'cefa-hero-video';
+    iframe.className =
+      'absolute top-1/2 left-1/2 w-screen h-[56.25vw] min-h-screen min-w-[177.77vh] -translate-x-1/2 -translate-y-1/2';
+
+    const handleVideoEvent = (event: MessageEvent) => {
+      if (event.origin !== 'https://player.vimeo.com') return;
+
+      try {
+        const data = JSON.parse(event.data);
+        if (data.event === 'play' || data.event === 'playing') {
+          const poster = document.getElementById('hero-poster');
+          if (poster) {
+            poster.style.opacity = '0';
+            setTimeout(() => poster.remove(), 1000);
+          }
+          heroController?.abort();
+        }
+      } catch {
+        // No es un mensaje JSON o no es para nosotros
+      }
+    };
+
+    window.addEventListener('message', handleVideoEvent, { signal });
+    wrapper.appendChild(iframe);
+    wrapper.dataset.loaded = 'true';
+  }
+
+  // Cargar el video de inmediato, ya que es el elemento principal
+  document.addEventListener('astro:page-load', loadHeroVideo);
+  // Llamar directamente por si el evento page-load ya se disparó
+  loadHeroVideo();
+  document.addEventListener('astro:before-swap', () => {
+    heroController?.abort();
+  });
+</script>

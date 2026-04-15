@@ -1,0 +1,59 @@
+{
+  "createdAt": "2026-04-15T08:08:49.829Z",
+  "updatedAt": "2026-04-15T08:40:51.959Z",
+  "globalType": "company",
+  "mission": {
+    "eyebrow": "Misja",
+    "title": "Skoncentrowani na kliencie, napędzani doskonałością",
+    "body1": "CEFA to hiszpańska firma przemysłowa o zasięgu globalnym, która specjalizuje się w badaniach, rozwoju i produkcji komponentów oraz modułów z tworzyw sztucznych dla sektora motoryzacyjnego, stosując najnowocześniejsze technologie.",
+    "body2": "Kierując się dążeniem do doskonałości i satysfakcją naszych akcjonariuszy, pracowników oraz społeczeństwa, zapewniamy stałą wartość poprzez pracę zespołową i konkurencyjność.",
+    "cta": "Nasza historia",
+    "badgeLabel": "Od"
+  },
+  "pillars": [
+    {
+      "title": "Certyfikowana jakość",
+      "text": "Procesy z certyfikatem ISO 9001 i IATF 16949 zapewniające najwyższe standardy.",
+      "id": "69df4f1318507c0001d933a5"
+    },
+    {
+      "title": "Ciągła innowacja",
+      "text": "Stałe inwestycje w badania i rozwój oraz zaawansowane procesy produkcyjne.",
+      "id": "69df4f1318507c0001d933a6"
+    },
+    {
+      "title": "Globalna obecność",
+      "text": "Obsługa wiodących producentów OEM w skali międzynarodowej.",
+      "id": "69df4f1318507c0001d933a7"
+    }
+  ],
+  "vision": {
+    "eyebrow": "Wizja",
+    "title": "Nasza wizja",
+    "body": "Być przemysłowym punktem odniesienia",
+    "cta": "Więcej",
+    "values": [
+      {
+        "title": "Preferowany partner klienta",
+        "text": "Zdywersyfikowany portfel, wysoki udział w rynku i solidna sprzedaż.",
+        "id": "69df4f1318507c0001d933a8"
+      },
+      {
+        "title": "Benchmark technologiczny",
+        "text": "Innowacyjność i szybkie wdrażanie zaawansowanych technologii dla odpowiedzialnego tworzenia wartości.",
+        "id": "69df4f1318507c0001d933a9"
+      },
+      {
+        "title": "Zrównoważony ekonomicznie",
+        "text": "Maksymalny zwrot (EBITDA) przy zoptymalizowanych inwestycjach.",
+        "id": "69df4f1318507c0001d933aa"
+      },
+      {
+        "title": "Miejsce do rozwoju",
+        "text": "Wysoka satysfakcja oraz wzrost ludzki i zawodowy utalentowanych zespołów.",
+        "id": "69df4f1318507c0001d933ab"
+      }
+    ]
+  },
+  "id": "69df479113d2923b1ce41514"
+}

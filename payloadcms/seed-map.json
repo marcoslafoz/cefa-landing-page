@@ -1,0 +1,393 @@
+{
+  "navigation": {
+    "header": {
+      "company": "nav.company",
+      "products": "nav.products",
+      "clients": "nav.clients",
+      "contact": "nav.contact",
+      "contactCta": "nav.contact.cta"
+    },
+    "footerColumns": {
+      "company": "footer.col.company",
+      "products": "footer.col.products",
+      "contact": "footer.col.contact"
+    },
+    "links": {
+      "mission": "footer.link.mission",
+      "vision": "footer.link.vision",
+      "innovation": "footer.link.innovation",
+      "history": "footer.link.history",
+      "awards": "nav.company.awards",
+      "certifications": "nav.company.certifications",
+      "rd": "nav.company.rd",
+      "presence": "nav.presence",
+      "careers": "nav.careers",
+      "clients": "nav.clients",
+      "contact": "nav.contact",
+      "dashboard": "nav.products.dashboard",
+      "door": "nav.products.door",
+      "functional": "nav.products.functional",
+      "exterior": "nav.products.exterior"
+    }
+  },
+  "hero": {
+    "eyebrow": "hero.eyebrow",
+    "titleLine1": "hero.title.line1",
+    "titleLine2": "hero.title.line2",
+    "subtitle": "hero.subtitle",
+    "ctas": {
+      "primary": "hero.cta.primary",
+      "secondary": "hero.cta.secondary"
+    },
+    "scrollText": "hero.scroll",
+    "stats": [
+      {
+        "value": "stats.years.value",
+        "label": "stats.years.label"
+      },
+      {
+        "value": "stats.plants.value",
+        "label": "stats.plants.label"
+      },
+      {
+        "value": "stats.employees.value",
+        "label": "stats.employees.label"
+      },
+      {
+        "value": "stats.cert.value",
+        "label": "stats.cert.label"
+      }
+    ]
+  },
+  "company": {
+    "mission": {
+      "eyebrow": "mission.eyebrow",
+      "title": "mission.title",
+      "body1": "mission.body1",
+      "body2": "mission.body2",
+      "cta": "mission.cta",
+      "badgeLabel": "mission.badge.label"
+    },
+    "pillars": [
+      {
+        "title": "pillar.quality.title",
+        "text": "pillar.quality.text"
+      },
+      {
+        "title": "pillar.innovation.title",
+        "text": "pillar.innovation.text"
+      },
+      {
+        "title": "pillar.global.title",
+        "text": "pillar.global.text"
+      }
+    ],
+    "vision": {
+      "eyebrow": "vision.eyebrow",
+      "title": "vision.title",
+      "body": "vision.body",
+      "cta": "vision.cta",
+      "values": [
+        {
+          "title": "vision.value1.title",
+          "text": "vision.value1.text"
+        },
+        {
+          "title": "vision.value2.title",
+          "text": "vision.value2.text"
+        },
+        {
+          "title": "vision.value3.title",
+          "text": "vision.value3.text"
+        },
+        {
+          "title": "vision.value4.title",
+          "text": "vision.value4.text"
+        }
+      ]
+    }
+  },
+  "innovation": {
+    "eyebrow": "innovation.eyebrow",
+    "title": "innovation.title",
+    "subtitle": "innovation.subtitle",
+    "features": [
+      {
+        "title": "innovation.feat1.title",
+        "text": "innovation.feat1.text"
+      },
+      {
+        "title": "innovation.feat2.title",
+        "text": "innovation.feat2.text"
+      }
+    ],
+    "stats": [
+      {
+        "label": "innovation.stat1.label"
+      },
+      {
+        "label": "innovation.stat2.label"
+      }
+    ],
+    "loadingText": "innovation.loading",
+    "rotateText": "innovation.rotate"
+  },
+  "contact-info": {
+    "map": {
+      "eyebrow": "map.eyebrow",
+      "title": "map.title",
+      "subtitle": "map.subtitle",
+      "tooltipLabel": "map.tooltip.label",
+      "tooltipContact": "map.tooltip.contact"
+    },
+    "locations": [
+      {
+        "name": "contact.location1.name",
+        "address": "contact.location1.address",
+        "phone": "contact.location1.phone",
+        "email": "contact.location1.email"
+      },
+      {
+        "name": "contact.location2.name",
+        "address": "contact.location2.address",
+        "phone": "contact.location2.phone",
+        "email": "contact.location2.email"
+      },
+      {
+        "name": "contact.location3.name",
+        "address": "contact.location3.address",
+        "phone": "contact.location3.phone",
+        "email": "contact.location3.email"
+      }
+    ],
+    "formLabels": {
+      "eyebrow": "contact.eyebrow",
+      "title": "contact.title",
+      "subtitle": "contact.subtitle",
+      "addressLabel": "contact.details.address",
+      "infoLabel": "contact.details.info",
+      "mapsLabel": "contact.details.maps"
+    }
+  },
+  "awards": {
+    "title": "awards.title",
+    "subtitle": "awards.subtitle",
+    "list": [
+      {
+        "award": "awards.list.1"
+      },
+      {
+        "award": "awards.list.2"
+      },
+      {
+        "award": "awards.list.3"
+      },
+      {
+        "award": "awards.list.4"
+      },
+      {
+        "award": "awards.list.5"
+      },
+      {
+        "award": "awards.list.6"
+      },
+      {
+        "award": "awards.list.7"
+      },
+      {
+        "award": "awards.list.8"
+      },
+      {
+        "award": "awards.list.9"
+      },
+      {
+        "award": "awards.list.10"
+      },
+      {
+        "award": "awards.list.11"
+      },
+      {
+        "award": "awards.list.12"
+      },
+      {
+        "award": "awards.list.13"
+      },
+      {
+        "award": "awards.list.14"
+      },
+      {
+        "award": "awards.list.15"
+      },
+      {
+        "award": "awards.list.16"
+      },
+      {
+        "award": "awards.list.17"
+      },
+      {
+        "award": "awards.list.18"
+      }
+    ],
+    "meta": {
+      "title": "awards.meta.title",
+      "description": "awards.meta.description"
+    }
+  },
+  "certifications-content": {
+    "eyebrow": "certifications.eyebrow",
+    "title": "certifications.title",
+    "subtitle": "certifications.subtitle",
+    "qualityCommitment": {
+      "title": "certifications.quality.title",
+      "body": "certifications.quality.body"
+    },
+    "stats": {
+      "auditLabel": "certifications.audit.label",
+      "auditValue": "certifications.audit.value",
+      "defectLabel": "certifications.defect.label",
+      "defectValue": "certifications.defect.value",
+      "traceabilityLabel": "certifications.traceability.label",
+      "traceabilityValue": "certifications.traceability.value"
+    },
+    "meta": {
+      "title": "certifications.meta.title",
+      "description": "certifications.meta.description"
+    }
+  },
+  "rd-content": {
+    "eyebrow": "rd.eyebrow",
+    "title": "rd.title",
+    "subtitle": "rd.subtitle",
+    "stats": [
+      {
+        "value": "rd.stat1.value",
+        "label": "rd.stat1.label"
+      },
+      {
+        "value": "rd.stat2.value",
+        "label": "rd.stat2.label"
+      },
+      {
+        "value": "rd.stat3.value",
+        "label": "rd.stat3.label"
+      }
+    ],
+    "funders": {
+      "label": "rd.stat.funders.label",
+      "programLabel": "rd.stat.program.label",
+      "items": [
+        {
+          "name": "rd.funder.aragon",
+          "description": "rd.funder.aragon.desc"
+        },
+        {
+          "name": "rd.funder.eu",
+          "description": "rd.funder.eu.desc"
+        }
+      ]
+    },
+    "contact": {
+      "title": "rd.contact.title",
+      "body": "rd.contact.body",
+      "cta": "rd.contact.cta"
+    },
+    "meta": {
+      "title": "rd.meta.title",
+      "description": "rd.meta.description"
+    }
+  },
+  "history-content": {
+    "eyebrow": "history.eyebrow",
+    "title": "history.title",
+    "pageTitle": "history.page.title",
+    "pageSubtitle": "history.page.subtitle",
+    "timeline": [
+      {
+        "year": "1946",
+        "text": "history.y1946"
+      },
+      {
+        "year": "1960",
+        "text": "history.y1960"
+      },
+      {
+        "year": "1970",
+        "text": "history.y1970"
+      },
+      {
+        "year": "1983",
+        "text": "history.y1983"
+      },
+      {
+        "year": "1992",
+        "text": "history.y1992"
+      },
+      {
+        "year": "1994",
+        "text": "history.y1994"
+      },
+      {
+        "year": "1997",
+        "text": "history.y1997"
+      },
+      {
+        "year": "2011",
+        "text": "history.y2011"
+      },
+      {
+        "year": "2012",
+        "text": "history.y2012"
+      }
+    ],
+    "todayText": "history.today",
+    "todayLabel": "history.today.label",
+    "meta": {
+      "title": "history.meta.title",
+      "description": "history.meta.description"
+    }
+  },
+  "careers": {
+    "title": "careers.title",
+    "subtitle": "careers.subtitle",
+    "email": "careers.email",
+    "emailLabel": "careers.email.label",
+    "phoneLabel": "careers.phone.label",
+    "phoneHours": "careers.phone.hours",
+    "cvHint": "careers.cv.hint",
+    "linkedinCta": "careers.linkedin.cta",
+    "linkedinShort": "careers.linkedin.short"
+  },
+  "faq": {
+    "eyebrow": "faq.eyebrow",
+    "title": "faq.title",
+    "questions": [
+      {
+        "question": "faq.q1",
+        "answer": "faq.a1"
+      },
+      {
+        "question": "faq.q2",
+        "answer": "faq.a2"
+      },
+      {
+        "question": "faq.q3",
+        "answer": "faq.a3"
+      },
+      {
+        "question": "faq.q4",
+        "answer": "faq.a4"
+      }
+    ]
+  },
+  "seo": {
+    "default": {
+      "title": "meta.title",
+      "description": "meta.description"
+    },
+    "notFound": {
+      "title": "404.title",
+      "subtitle": "404.subtitle",
+      "cta": "404.cta"
+    }
+  }
+}

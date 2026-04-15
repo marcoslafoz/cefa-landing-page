@@ -1,0 +1,168 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import Card from './ui/Card.astro';
+import IconBox from './ui/IconBox.astro';
+import Section from './ui/Section.astro';
+import Button from './ui/Button.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const malpicaPhone = t('contact.location1.phone');
+const recruitmentEmail = t('careers.email');
+---
+
+<Section id="careers" background="white" padding="md" class="pt-8! lg:pt-12!">
+  <div class="max-w-5xl mx-auto">
+    <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
+      <div class="max-w-xl reveal">
+        <p class="eyebrow mb-4">{t('nav.careers')}</p>
+        <h2 class="heading-lg text-cefa-navy mb-5">
+          {t('careers.title')}
+        </h2>
+        <p class="text-gray-500 text-lg leading-relaxed">
+          {t('careers.subtitle')}
+        </p>
+      </div>
+
+      <Button
+        href="https://www.linkedin.com/company/cefa-celulosa-fabril-sa/jobs/"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="outline"
+        showIcon={false}
+        class="reveal"
+      >
+        {t('careers.linkedin.cta')}
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          aria-hidden="true"
+          class="ml-2"
+        >
+          <path
+            d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"
+            stroke-linecap="round"
+            stroke-linejoin="round"></path>
+        </svg>
+      </Button>
+    </div>
+
+    <div
+      class="grid md:grid-cols-2 gap-0 md:gap-px bg-gray-200 border border-gray-200 overflow-hidden reveal"
+    >
+      <!-- Tarjeta de Teléfono -->
+      <Card padding="p-8 lg:p-10" interactive={false}>
+        <div
+          class="absolute -right-8 -bottom-8 opacity-[0.02] group-hover:opacity-[0.05] group-hover:scale-110 transition-all duration-700 pointer-events-none"
+          aria-hidden="true"
+        >
+          <svg
+            width="180"
+            height="180"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="0.5"
+          >
+            <path
+              d="M3 5.5A2.5 2.5 0 015.5 3H7c.552 0 1 .448 1 1v4a1 1 0 01-1 1H6c-.552 0-1 .448-1 1v2a6 6 0 006 6h2c.552 0 1-.448 1-1v-1a1 1 0 011-1h4c.552 0 1 .448 1 1v1.5a2.5 2.5 0 01-2.5 2.5C8.716 21 3 15.284 3 8.5V5.5z"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <IconBox class="mb-6">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M3 5.5A2.5 2.5 0 015.5 3H7c.552 0 1 .448 1 1v4a1 1 0 01-1 1H6c-.552 0-1 .448-1 1v2a6 6 0 006 6h2c.552 0 1-.448 1-1v-1a1 1 0 011-1h4c.552 0 1 .448 1 1v1.5a2.5 2.5 0 01-2.5 2.5C8.716 21 3 15.284 3 8.5V5.5z"
+              stroke-linecap="round"
+              stroke-linejoin="round"></path>
+          </svg>
+        </IconBox>
+        <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 mb-3">
+          {t('careers.phone.label')}
+        </h3>
+        <a
+          href={`tel:${malpicaPhone.replace(/\s/g, '')}`}
+          class="text-xl lg:text-2xl font-bold text-cefa-navy hover:text-cefa-red transition-colors duration-300"
+        >
+          {malpicaPhone}
+        </a>
+        <p class="mt-4 text-sm text-gray-400 font-medium">{t('careers.phone.hours')}</p>
+      </Card>
+
+      <!-- Tarjeta de Email -->
+      <Card padding="p-8 lg:p-10" interactive={false}>
+        <div
+          class="absolute -right-8 -bottom-8 opacity-[0.02] group-hover:opacity-[0.05] group-hover:scale-110 transition-all duration-700 pointer-events-none"
+          aria-hidden="true"
+        >
+          <svg
+            width="180"
+            height="180"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="0.5"
+          >
+            <rect
+              x="3"
+              y="5"
+              width="18"
+              height="14"
+              rx="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"></rect>
+            <path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </div>
+        <IconBox class="mb-6">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect
+              x="3"
+              y="5"
+              width="18"
+              height="14"
+              rx="1"
+              stroke-linecap="round"
+              stroke-linejoin="round"></rect>
+            <path d="M3 7l9 6 9-6" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+        </IconBox>
+        <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 mb-3">
+          {t('careers.email.label')}
+        </h3>
+        <a
+          href={`mailto:${recruitmentEmail}`}
+          class="text-xl lg:text-2xl font-bold text-cefa-navy hover:text-cefa-red transition-colors duration-300 break-all lg:break-normal"
+        >
+          {recruitmentEmail}
+        </a>
+        <p class="mt-4 text-sm text-gray-400 font-medium">{t('careers.cv.hint')}</p>
+      </Card>
+    </div>
+  </div>
+</Section>

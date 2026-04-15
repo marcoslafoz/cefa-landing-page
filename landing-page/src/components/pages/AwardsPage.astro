@@ -1,0 +1,100 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import Section from '@/components/ui/Section.astro';
+import PageHeader from '@/components/ui/PageHeader.astro';
+import { getAwards } from '@/lib/cms';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const awardsData = await getAwards(locale);
+
+const eyebrow = t('nav.company');
+const title = awardsData?.title || t('awards.title');
+const subtitle = awardsData?.subtitle || t('awards.subtitle');
+
+const fallbackAwards = [
+  t('awards.list.1'),
+  t('awards.list.2'),
+  t('awards.list.3'),
+  t('awards.list.4'),
+  t('awards.list.5'),
+  t('awards.list.6'),
+  t('awards.list.7'),
+  t('awards.list.8'),
+  t('awards.list.9'),
+  t('awards.list.10'),
+  t('awards.list.11'),
+  t('awards.list.12'),
+  t('awards.list.13'),
+  t('awards.list.14'),
+  t('awards.list.15'),
+  t('awards.list.16'),
+  t('awards.list.17'),
+  t('awards.list.18'),
+].filter(Boolean);
+
+const rawAwardsList = awardsData?.list?.map((v: any) => v.award);
+const awards = rawAwardsList && rawAwardsList.length > 0 ? rawAwardsList : fallbackAwards;
+
+// Split awards into two columns
+const midPoint = Math.ceil(awards.length / 2);
+const leftColumn = awards.slice(0, midPoint);
+const rightColumn = awards.slice(midPoint);
+---
+
+<main id="main-content">
+  <PageHeader eyebrow={eyebrow} title={title} description={subtitle} />
+
+  <Section background="white" padding="none" class="pb-16 lg:pb-24">
+    <div class="grid md:grid-cols-2 gap-x-12 lg:gap-x-20">
+      <div class="space-y-0">
+        {
+          leftColumn.map((award: string) => (
+            <div class="group flex items-center gap-4 py-3 border-b border-cefa-navy/5 transition-colors cursor-default reveal">
+              <div class="shrink-0 w-6 h-6 flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-3.5 h-3.5 text-cefa-navy/30 transition-colors group-hover:text-cefa-red"
+                >
+                  <path d="M12 1.5l3.09 6.26L22 8.75l-5 4.87 1.18 6.88L12 17.25l-6.18 3.25L7 13.62l-5-4.87 6.91-0.99z" />
+                </svg>
+              </div>
+              <span class="text-cefa-navy/70 font-medium text-[0.95rem] transition-colors group-hover:text-cefa-red">
+                {award}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+      <div class="space-y-0">
+        {
+          rightColumn.map((award: string) => (
+            <div class="group flex items-center gap-4 py-3 border-b border-cefa-navy/5 transition-colors cursor-default reveal">
+              <div class="shrink-0 w-6 h-6 flex items-center justify-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  class="w-3.5 h-3.5 text-cefa-navy/30 transition-colors group-hover:text-cefa-red"
+                >
+                  <path d="M12 1.5l3.09 6.26L22 8.75l-5 4.87 1.18 6.88L12 17.25l-6.18 3.25L7 13.62l-5-4.87 6.91-0.99z" />
+                </svg>
+              </div>
+              <span class="text-cefa-navy/70 font-medium text-[0.95rem] transition-colors group-hover:text-cefa-red">
+                {award}
+              </span>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </Section>
+</main>

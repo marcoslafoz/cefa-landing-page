@@ -1,0 +1,523 @@
+---
+/**
+ * SEOMeta — todas las etiquetas <head> relacionadas con SEO y metadatos.
+ *
+ * Incluye:
+ *  - meta básicos (robots, author, keywords, geo, theme-color)
+ *  - preloads de recursos críticos (LCP image, fuente)
+ *  - preconnect / dns-prefetch
+ *  - <title> y meta description
+ *  - canonical + hreflang (con x-default correcto por página)
+ *  - Open Graph (og:type, og:image, og:video en homepage)
+ *  - Twitter / X cards con label/data
+ *  - Favicons + webmanifest
+ *  - JSON-LD @graph (Organization, WebSite, WebPage, LocalBusiness×3,
+ *                    Service, BreadcrumbList, VideoObject)
+ */
+import type { Locale } from '@/i18n/translations';
+import { locales, getLocalePath } from '@/i18n/translations';
+
+interface Props {
+  title: string;
+  description: string;
+  locale: Locale;
+  canonicalUrl?: string;
+  ogImage?: string;
+  keywords?: string;
+}
+
+const {
+  title,
+  description,
+  locale,
+  canonicalUrl = Astro.url.href,
+  ogImage = '/images/mission/zagan.webp',
+  keywords,
+} = Astro.props;
+
+const defaultKeywords: Record<string, string> = {
+  es: 'inyección de plásticos automoción, fabricante salpicaderos plástico, paneles de puerta coche, componentes plásticos OEM, piezas plástico automóvil, revestimientos exteriores coche, proveedor Tier 1 automoción, IATF 16949, ISO 9001, fabricante plástico Zaragoza España',
+  en: 'plastic injection moulding automotive, instrument panel manufacturer, dashboard plastic components, door panels OEM supplier, exterior automotive trims, functional plastic automotive, Tier 1 automotive supplier, IATF 16949, ISO 9001, plastic manufacturer Zaragoza Spain',
+  de: 'Kunststoffspritzguss Automobilindustrie, Instrumententafel Hersteller, Türverkleidungen Automobilzulieferer, Kunststoffkomponenten OEM, Tier 1 Automobilzulieferer, IATF 16949, ISO 9001, Kunststoffhersteller Spanien',
+  pl: 'wtrysk tworzyw sztucznych motoryzacja, producent desek rozdzielczych, panele drzwiowe OEM, komponenty z tworzyw sztucznych samochód, dostawca Tier 1 motoryzacja, IATF 16949, ISO 9001, producent tworzyw sztucznych Żagań Polska',
+};
+const pageKeywords = keywords ?? defaultKeywords[locale] ?? defaultKeywords['en'];
+
+const siteBase = (Astro.site?.href ?? 'https://cefa.es').replace(/\/$/, '');
+
+// og:image siempre absoluta (requerido por crawlers)
+const ogImageAbsolute = ogImage.startsWith('http')
+  ? ogImage
+  : new URL(ogImage, Astro.site ?? Astro.url).href;
+
+// Ruta sin prefijo de locale → permite hreflang correctos en subpáginas
+const rawPath = (() => {
+  const path = Astro.url.pathname;
+  const match = path.match(/^\/(es|de|pl)(\/.*)?$/);
+  if (match) return match[2] || '/';
+  return path;
+})();
+
+const isHome = rawPath === '/' || rawPath === '';
+
+const hrefLangs = locales.map((l) => ({
+  lang: l,
+  href: new URL(getLocalePath(l, rawPath), Astro.site ?? Astro.url).href,
+}));
+
+// x-default apunta a la versión EN de la página actual (no al homepage)
+const xDefaultHref = new URL(getLocalePath('en', rawPath), Astro.site ?? Astro.url).href;
+
+const localeCode =
+  locale === 'en' ? 'en-GB' : locale === 'es' ? 'es-ES' : locale === 'de' ? 'de-DE' : 'pl-PL';
+
+const ogLocale =
+  locale === 'es' ? 'es_ES' : locale === 'en' ? 'en_GB' : locale === 'de' ? 'de_DE' : 'pl_PL';
+
+// Todas las entidades interconectadas via @id para el Knowledge Graph de Google.
+const schemaGraph: Record<string, unknown>[] = [
+  {
+    '@type': ['Organization', 'ManufacturingBusiness'],
+    '@id': `${siteBase}/#organization`,
+    name: 'CEFA',
+    legalName: 'Celulosa Fabril, SA',
+    url: siteBase,
+    logo: {
+      '@type': 'ImageObject',
+      url: `${siteBase}/images/logos/cefa-color.svg`,
+      width: 200,
+      height: 72,
+    },
+    image: `${siteBase}/images/mission/zagan.webp`,
+    description:
+      "Tier 1 automotive supplier specialising in plastic injection moulding. Manufacturer of instrument panels, door panels, exterior trims and functional plastic components for the world's leading OEMs. IATF 16949, ISO 9001 and ISO 14001 certified. Over 80 years of experience.",
+    slogan:
+      'Flexibilidad, agilidad y tecnología para el desarrollo de los mejores productos automotrices',
+    foundingDate: '1946',
+    foundingLocation: {
+      '@type': 'Place',
+      name: 'Zaragoza, España',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Zaragoza',
+        addressCountry: 'ES',
+      },
+    },
+    numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 800, unitText: 'employees' },
+    knowsAbout: [
+      'Plastic injection moulding for automotive',
+      'Instrument panel manufacturing',
+      'Dashboard plastic components',
+      'Door panels and interior automotive trims',
+      'Exterior automotive plastic trims',
+      'Functional automotive plastic components',
+      'IATF 16949 quality management',
+      'ISO 9001 certification',
+      'ISO 14001 environmental management',
+      'Automotive OEM supply chain',
+      'Tier 1 automotive supplier',
+      'High-precision plastic moulding',
+      'Automotive interior plastics',
+      'Inyección de plásticos para automoción',
+      'Fabricante de salpicaderos plástico',
+    ],
+    areaServed: [
+      { '@type': 'Country', name: 'Spain' },
+      { '@type': 'Country', name: 'Germany' },
+      { '@type': 'Country', name: 'Poland' },
+      { '@type': 'Country', name: 'France' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'Italy' },
+      { '@type': 'Country', name: 'Czech Republic' },
+      { '@type': 'Country', name: 'Slovakia' },
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Automotive Plastic Components',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: 'Instrument Panel and Central Console',
+            alternateName: 'Salpicadero y consola central',
+            description:
+              'High-precision plastic injection instrument panels and central consoles for automotive OEMs.',
+            category: 'Automotive Interior Plastics',
+            manufacturer: { '@id': `${siteBase}/#organization` },
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: 'Door Panels and Interior Trims',
+            alternateName: 'Paneles de puerta y revestimientos interiores',
+            description: 'Automotive door panels with decorative films, fabrics and mouldings.',
+            category: 'Automotive Interior Plastics',
+            manufacturer: { '@id': `${siteBase}/#organization` },
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: 'Functional Plastic Applications',
+            alternateName: 'Aplicaciones funcionales en plástico',
+            description:
+              'Engine compartment, passenger compartment and cargo space plastic components.',
+            category: 'Automotive Functional Plastics',
+            manufacturer: { '@id': `${siteBase}/#organization` },
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Product',
+            name: 'Exterior Automotive Trims',
+            alternateName: 'Revestimientos exteriores para automóvil',
+            description:
+              'Mouldings, spoilers, grilles and decorative exterior automotive plastic elements.',
+            category: 'Automotive Exterior Plastics',
+            manufacturer: { '@id': `${siteBase}/#organization` },
+          },
+        },
+      ],
+    },
+    address: [
+      {
+        '@type': 'PostalAddress',
+        name: 'CEFA Malpica',
+        streetAddress: 'Polígono Malpica, Calle D, 44-45',
+        postalCode: '50016',
+        addressLocality: 'Zaragoza',
+        addressRegion: 'Aragón',
+        addressCountry: 'ES',
+      },
+      {
+        '@type': 'PostalAddress',
+        name: 'CEFA Figueruelas',
+        streetAddress: 'Crta. de Logroño, Km. 265',
+        postalCode: '50639',
+        addressLocality: 'Figueruelas, Zaragoza',
+        addressRegion: 'Aragón',
+        addressCountry: 'ES',
+      },
+      {
+        '@type': 'PostalAddress',
+        name: 'CEFA Poland',
+        streetAddress: 'ul. Matki Bożej z Pilar 1',
+        postalCode: '68-100',
+        addressLocality: 'Żagań',
+        addressCountry: 'PL',
+      },
+    ],
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: '+34-976-465-000',
+        email: 'info@cefa.es',
+        contactType: 'customer service',
+        areaServed: ['ES', 'DE', 'PL', 'FR', 'GB', 'IT'],
+        availableLanguage: ['Spanish', 'English', 'German', 'Polish'],
+      },
+      {
+        '@type': 'ContactPoint',
+        email: 'rrhh@cefa.es',
+        contactType: 'Human Resources',
+        areaServed: ['ES', 'PL'],
+      },
+    ],
+    sameAs: [
+      'https://www.linkedin.com/company/cefa-celulosa-fabril-sa',
+      'https://www.motherson.com/',
+    ],
+    parentOrganization: {
+      '@type': 'Organization',
+      name: 'Motherson Group',
+      url: 'https://www.motherson.com/',
+    },
+  },
+
+  {
+    '@type': 'WebSite',
+    '@id': `${siteBase}/#website`,
+    name: 'CEFA – Celulosa Fabril, SA',
+    url: siteBase,
+    publisher: { '@id': `${siteBase}/#organization` },
+    inLanguage: ['en-GB', 'es-ES', 'de-DE', 'pl-PL'],
+  },
+
+  {
+    '@type': 'WebPage',
+    '@id': `${Astro.url.href}#webpage`,
+    url: Astro.url.href,
+    name: title,
+    description: description,
+    isPartOf: { '@id': `${siteBase}/#website` },
+    about: { '@id': `${siteBase}/#organization` },
+    inLanguage: localeCode,
+    thumbnailUrl: ogImageAbsolute,
+  },
+
+  {
+    '@type': ['LocalBusiness', 'ManufacturingBusiness'],
+    '@id': `${siteBase}/#plant-malpica`,
+    name: 'CEFA – Planta Malpica',
+    parentOrganization: { '@id': `${siteBase}/#organization` },
+    image: `${siteBase}/images/mission/zagan.webp`,
+    url: siteBase,
+    telephone: '+34976465000',
+    email: 'info@cefa.es',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Polígono Malpica, Calle D, 44-45',
+      postalCode: '50016',
+      addressLocality: 'Zaragoza',
+      addressRegion: 'Aragón',
+      addressCountry: 'ES',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 41.6649, longitude: -0.9521 },
+    openingHoursSpecification: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '08:00',
+      closes: '17:00',
+    },
+  },
+  {
+    '@type': ['LocalBusiness', 'ManufacturingBusiness'],
+    '@id': `${siteBase}/#plant-figueruelas`,
+    name: 'CEFA – Módulos del Ebro, Figueruelas',
+    parentOrganization: { '@id': `${siteBase}/#organization` },
+    url: siteBase,
+    telephone: '+34976465465',
+    email: 'info@modulosra.es',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Crta. de Logroño, Km. 265',
+      postalCode: '50639',
+      addressLocality: 'Figueruelas',
+      addressRegion: 'Aragón',
+      addressCountry: 'ES',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 41.7447, longitude: -1.0847 },
+  },
+  {
+    '@type': ['LocalBusiness', 'ManufacturingBusiness'],
+    '@id': `${siteBase}/#plant-zagan`,
+    name: 'CEFA Poland – Żagań',
+    parentOrganization: { '@id': `${siteBase}/#organization` },
+    image: `${siteBase}/images/mission/zagan.webp`,
+    url: siteBase,
+    telephone: '+48669988840',
+    email: 'rekrutacja@zagan.es',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'ul. Matki Bożej z Pilar 1',
+      postalCode: '68-100',
+      addressLocality: 'Żagań',
+      addressCountry: 'PL',
+    },
+    geo: { '@type': 'GeoCoordinates', latitude: 51.6167, longitude: 15.3167 },
+  },
+
+  {
+    '@type': 'Service',
+    '@id': `${siteBase}/#service-injection`,
+    serviceType: 'Plastic Injection Moulding for Automotive',
+    name:
+      locale === 'es'
+        ? 'Inyección de plásticos para automoción'
+        : locale === 'de'
+          ? 'Kunststoffspritzguss für die Automobilindustrie'
+          : locale === 'pl'
+            ? 'Wtrysk tworzyw sztucznych dla motoryzacji'
+            : 'Automotive Plastic Injection Moulding',
+    description:
+      locale === 'es'
+        ? 'Fabricación de componentes plásticos por inyección de alta precisión para los principales OEM del sector automotriz: salpicaderos, paneles de puerta, revestimientos exteriores y aplicaciones funcionales.'
+        : locale === 'de'
+          ? 'Herstellung von hochpräzisen Kunststoffspritzgusskomponenten für führende Automobilindustrie-OEM: Instrumententafeln, Türverkleidungen, Außenverkleidungen und Funktionsbauteile.'
+          : locale === 'pl'
+            ? 'Produkcja precyzyjnych komponentów wtryskowych z tworzyw sztucznych dla czołowych OEM branży motoryzacyjnej: deski rozdzielcze, panele drzwiowe, okładziny zewnętrzne i aplikacje funkcjonalne.'
+            : 'High-precision plastic injection moulding of components for leading automotive OEMs: instrument panels (dashboards), door panels, exterior trims and functional applications.',
+    provider: { '@id': `${siteBase}/#organization` },
+    areaServed: ['ES', 'DE', 'PL', 'FR', 'GB', 'IT', 'CZ', 'SK'],
+  },
+
+  ...(!isHome
+    ? [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name:
+                locale === 'es'
+                  ? 'Inicio'
+                  : locale === 'pl'
+                    ? 'Strona główna'
+                    : locale === 'de'
+                      ? 'Startseite'
+                      : 'Home',
+              item: new URL(getLocalePath(locale, '/'), Astro.site ?? Astro.url).href,
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name: title.split('|')[0].trim(),
+              item: Astro.url.href,
+            },
+          ],
+        },
+      ]
+    : []),
+
+  ...(isHome
+    ? [
+        {
+          '@type': 'VideoObject',
+          name:
+            locale === 'es'
+              ? 'CEFA – Fabricante de Salpicaderos y Componentes Plásticos para Automoción'
+              : locale === 'de'
+                ? 'CEFA – Hersteller von Instrumententafeln und Kunststoffkomponenten für die Automobilindustrie'
+                : locale === 'pl'
+                  ? 'CEFA – Producent Desek Rozdzielczych i Komponentów z Tworzyw Sztucznych dla Motoryzacji'
+                  : 'CEFA – Manufacturer of Dashboards and Plastic Components for the Automotive Industry',
+          description: description,
+          thumbnailUrl: ogImageAbsolute,
+          embedUrl: 'https://player.vimeo.com/video/1181594121',
+          uploadDate: '2024-10-01T00:00:00+00:00',
+          duration: 'PT2M',
+          publisher: { '@id': `${siteBase}/#organization` },
+        },
+      ]
+    : []),
+];
+
+const fullSchema = { '@context': 'https://schema.org', '@graph': schemaGraph };
+---
+
+<!-- ── Meta básicos ──────────────────────────────────────────────────────── -->
+<meta
+  name="robots"
+  content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+/>
+<meta name="theme-color" content="#0a1f3c" />
+<meta name="author" content="CEFA - Celulosa Fabril, SA" />
+<meta name="format-detection" content="telephone=no" />
+<meta name="keywords" content={pageKeywords} />
+
+<!-- ── Geo (SEO local para sede de Zaragoza) ────────────────────────────── -->
+<meta name="geo.region" content="ES-AR" />
+<meta name="geo.placename" content="Zaragoza, España" />
+<meta name="geo.position" content="41.6491;-0.8931" />
+<meta name="ICBM" content="41.6491, -0.8931" />
+
+<!-- ── Preloads ─────────────────────────────────────────────────────────── -->
+<!-- LCP hero: solo homepage, imagen descubierta antes de parsear el CSS -->
+{isHome && <link rel="preload" as="image" href="/images/mission/frame.webp" fetchpriority="high" />}
+<!-- Fuente crítica: evita layout shift -->
+<link
+  rel="preload"
+  href="/fonts/open-sans/open-sans-variable.woff2"
+  as="font"
+  type="font/woff2"
+  crossorigin="anonymous"
+/>
+
+<!-- ── Preconnect ───────────────────────────────────────────────────────── -->
+<link rel="preconnect" href="https://player.vimeo.com" />
+<link rel="preconnect" href="https://i.vimeocdn.com" />
+<link rel="preconnect" href="https://f.vimeocdn.com" />
+<link rel="dns-prefetch" href="https://player.vimeo.com" />
+<link rel="dns-prefetch" href="https://f.vimeocdn.com" />
+
+<!-- ── Title y descripción ──────────────────────────────────────────────── -->
+<title>{title}</title>
+<meta name="description" content={description} />
+
+<!-- ── Canonical y hreflang ─────────────────────────────────────────────── -->
+<link rel="canonical" href={canonicalUrl} />
+{hrefLangs.map(({ lang, href }) => <link rel="alternate" hreflang={lang} href={href} />)}
+<link rel="alternate" hreflang="x-default" href={xDefaultHref} />
+
+<!-- ── Open Graph ───────────────────────────────────────────────────────── -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImageAbsolute} />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta
+  property="og:image:alt"
+  content="CEFA manufacturing plant – plastic injection moulding for automotive OEMs"
+/>
+<meta property="og:site_name" content="CEFA" />
+<meta property="og:locale" content={ogLocale} />
+{
+  locales
+    .filter((l) => l !== locale)
+    .map((l) => (
+      <meta
+        property="og:locale:alternate"
+        content={l === 'es' ? 'es_ES' : l === 'en' ? 'en_GB' : l === 'de' ? 'de_DE' : 'pl_PL'}
+      />
+    ))
+}
+<!-- og:video (homepage): preview de vídeo en LinkedIn / Facebook / Slack -->
+{
+  isHome && (
+    <>
+      <meta property="og:video" content="https://player.vimeo.com/video/1181594121" />
+      <meta property="og:video:secure_url" content="https://player.vimeo.com/video/1181594121" />
+      <meta property="og:video:type" content="text/html" />
+      <meta property="og:video:width" content="1280" />
+      <meta property="og:video:height" content="720" />
+    </>
+  )
+}
+
+<!-- ── Twitter / X ──────────────────────────────────────────────────────── -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImageAbsolute} />
+<meta
+  name="twitter:label1"
+  content={locale === 'es'
+    ? 'Fundada en'
+    : locale === 'de'
+      ? 'Gegründet'
+      : locale === 'pl'
+        ? 'Założona w'
+        : 'Founded'}
+/>
+<meta name="twitter:data1" content="1946" />
+<meta
+  name="twitter:label2"
+  content={locale === 'es'
+    ? 'Empleados'
+    : locale === 'de'
+      ? 'Mitarbeiter'
+      : locale === 'pl'
+        ? 'Pracownicy'
+        : 'Employees'}
+/>
+<meta name="twitter:data2" content="+800" />
+
+<!-- ── Favicons ─────────────────────────────────────────────────────────── -->
+<link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+<link rel="shortcut icon" href="/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="CEFA" />
+<link rel="manifest" href="/favicon/site.webmanifest" />
+
+<!-- ── JSON-LD @graph ───────────────────────────────────────────────────── -->
+<!-- Organization · WebSite · WebPage · LocalBusiness×3 · Service · BreadcrumbList · VideoObject -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(fullSchema)} />

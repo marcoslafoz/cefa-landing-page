@@ -1,0 +1,771 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import ArrowIcon from '@/components/ui/ArrowIcon.astro';
+import ContactInfoItem from '@/components/ui/ContactInfoItem.astro';
+import Section from '@/components/ui/Section.astro';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const locations = [
+  {
+    id: 'malpica',
+    name: t('contact.location1.name'),
+    address: t('contact.location1.address'),
+    phone: t('contact.location1.phone'),
+    email: t('contact.location1.email'),
+  },
+  {
+    id: 'figueruelas',
+    name: t('contact.location2.name'),
+    address: t('contact.location2.address'),
+    phone: t('contact.location2.phone'),
+    email: t('contact.location2.email'),
+  },
+  {
+    id: 'poland',
+    name: t('contact.location3.name'),
+    address: t('contact.location3.address'),
+    phone: t('contact.location3.phone'),
+    email: t('contact.location3.email'),
+  },
+];
+
+const icons = {
+  address: `<path d="M12 13.5a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M12 22c-1 0-8-6.686-8-12a8 8 0 1116 0c0 5.314-7 12-8 12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  phone: `<path d="M3 5.5A2.5 2.5 0 015.5 3H7c.552 0 1 .448 1 1v4a1 1 0 01-1 1H6c-.552 0-1 .448-1 1v2a6 6 0 006 6h2c.552 0 1-.448 1-1v-1a1 1 0 011-1h4c.552 0 1 .448 1 1v1.5a2.5 2.5 0 01-2.5 2.5C8.716 21 3 15.284 3 8.5V5.5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+  email: `<rect x="3" y="5" width="18" height="14" rx="1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
+};
+
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x00000000000000000000AA';
+---
+
+<Section id="contact" background="white" padding="md" class="pb-8! lg:pb-12!">
+  <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
+    <!-- Columna de información izquierda (2/5) -->
+    <div class="lg:col-span-2 reveal">
+      <SectionHeader eyebrow={t('contact.eyebrow')} title={t('contact.title')} class="mb-5" />
+      <p class="text-[0.9375rem] text-gray-500 leading-relaxed mb-10">
+        {t('contact.subtitle')}
+      </p>
+
+      <!-- Pestañas del selector de ubicación -->
+      <div
+        id="location-switcher-container"
+        class="flex flex-wrap gap-2 mb-8 p-1.5 rounded-lg w-fit"
+        role="tablist"
+        aria-label={t('contact.eyebrow')}
+      >
+        {
+          locations.map((loc, idx) => (
+            <button
+              class={`location-tab px-4 py-2 text-xs font-bold uppercase tracking-wider rounded-md transition-all duration-300 bg-transparent ${idx === 0 ? 'text-cefa-red' : 'text-slate-400 hover:text-cefa-navy'}`}
+              data-target={loc.id}
+              role="tab"
+              aria-selected={idx === 0 ? 'true' : 'false'}
+              aria-controls={`info-${loc.id}`}
+              id={`tab-${loc.id}`}
+            >
+              {loc.name}
+            </button>
+          ))
+        }
+      </div>
+
+      <div class="location-content-wrapper relative min-h-70">
+        {
+          locations.map((loc, idx) => (
+            <div
+              id={`info-${loc.id}`}
+              class={`location-info-panel flex flex-col gap-8 transition-all duration-500 absolute inset-0 ${idx === 0 ? 'z-10 opacity-100 translate-x-0' : 'opacity-0 translate-x-4 pointer-events-none'}`}
+              role="tabpanel"
+              aria-labelledby={`tab-${loc.id}`}
+              aria-hidden={idx !== 0 ? 'true' : 'false'}
+              {...(idx !== 0 ? { inert: true } : {})}
+            >
+              <ContactInfoItem label={t('contact.details.address')} iconPath={icons.address}>
+                <address class="not-italic">
+                  <p class="text-cefa-navy font-semibold text-sm leading-snug max-w-70">
+                    {loc.address}
+                  </p>
+                </address>
+                <a
+                  href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(loc.address)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1.5 text-cefa-red text-[0.75rem] font-bold uppercase tracking-tight mt-2.5 hover:gap-2 transition-all font-sans"
+                >
+                  {t('contact.details.maps')}
+                  <ArrowIcon class="w-3 h-3" />
+                </a>
+              </ContactInfoItem>
+
+              <ContactInfoItem label={t('contact.details.info')} iconPath={icons.phone}>
+                <p class="flex flex-col gap-1">
+                  <a
+                    href={`tel:${loc.phone.replace(/\s/g, '')}`}
+                    class="text-cefa-navy font-semibold text-sm hover:text-cefa-red transition-colors"
+                  >
+                    {loc.phone}
+                  </a>
+                  <a
+                    href={`mailto:${loc.email}`}
+                    class="text-cefa-navy font-semibold text-sm hover:text-cefa-red transition-colors"
+                  >
+                    {loc.email}
+                  </a>
+                </p>
+              </ContactInfoItem>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Columna del formulario derecha (3/5) -->
+    <div class="lg:col-span-3 reveal">
+      <div class="bg-white border border-gray-100 p-6 lg:p-8 relative overflow-hidden">
+        <!-- Elementos decorativos de fondo sutiles -->
+        <div
+          class="absolute -top-12 -right-12 w-40 h-40 bg-cefa-red/5 rounded-full blur-3xl pointer-events-none"
+        >
+        </div>
+        <div
+          class="absolute -bottom-12 -left-12 w-40 h-40 bg-cefa-navy/5 rounded-full blur-3xl pointer-events-none"
+        >
+        </div>
+
+        <form
+          class="flex flex-col gap-4 relative z-10"
+          novalidate
+          id="contact-form"
+          data-turnstile-site-key={turnstileSiteKey}
+          data-t-processing={t('contact.form.processing')}
+          data-t-verifying={t('contact.form.verifying')}
+          data-t-success-title={t('contact.form.success.title')}
+          data-t-success-message={t('contact.form.success.message')}
+          data-t-success-send-another={t('contact.form.success.send_another')}
+          data-t-error={t('contact.form.error')}
+          data-t-error-captcha={t('contact.form.error.captcha')}
+          data-t-error-ratelimit={t('contact.form.error.ratelimit')}
+          data-t-err-required={t('contact.form.validation.required')}
+          data-t-err-email={t('contact.form.validation.email')}
+          data-t-err-too-short={t('contact.form.validation.too_short')}
+          data-t-err-too-long={t('contact.form.validation.too_long')}
+          data-t-err-subject={t('contact.form.validation.subject')}
+        >
+          <!-- ── Campo trampa (Honeypot): oculto para usuarios reales, los bots lo rellenan → solicitud rechazada ── -->
+          <div
+            aria-hidden="true"
+            style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden;"
+          >
+            <label for="cf-website">Website</label>
+            <input
+              type="text"
+              id="cf-website"
+              name="website"
+              tabindex="-1"
+              autocomplete="off"
+              value=""
+            />
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div class="flex flex-col gap-1.5">
+              <label for="name" class="text-xs font-medium text-gray-500 ml-1">
+                {t('contact.form.name')}
+                <span class="text-cefa-red" aria-hidden="true">*</span>
+              </label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder={t('contact.form.name.placeholder')}
+                required
+                maxlength="120"
+                autocomplete="name"
+                class="form-field"
+              />
+              <span
+                class="field-error hidden text-xs text-cefa-red ml-1"
+                aria-live="polite"
+                data-for="name"></span>
+            </div>
+            <div class="flex flex-col gap-1.5">
+              <label for="company" class="text-xs font-medium text-gray-500 ml-1">
+                {t('contact.form.company')}
+              </label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder={t('contact.form.company.placeholder')}
+                maxlength="120"
+                autocomplete="organization"
+                class="form-field"
+              />
+              <span
+                class="field-error hidden text-xs text-cefa-red ml-1"
+                aria-live="polite"
+                data-for="company"></span>
+            </div>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="email" class="text-xs font-medium text-gray-500 ml-1">
+              {t('contact.form.email')}
+              <span class="text-cefa-red" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder={t('contact.form.email.placeholder')}
+              required
+              maxlength="254"
+              autocomplete="email"
+              class="form-field"
+            />
+            <span
+              class="field-error hidden text-xs text-cefa-red ml-1"
+              aria-live="polite"
+              data-for="email"></span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="subject" class="text-xs font-medium text-gray-500 ml-1">
+              {t('contact.form.subject')}
+              <span class="text-cefa-red" aria-hidden="true">*</span>
+            </label>
+            <div class="relative">
+              <select
+                id="subject"
+                name="subject"
+                required
+                class="form-field appearance-none cursor-pointer"
+              >
+                <option value="" disabled selected>{t('contact.form.subject.placeholder')}</option>
+                <option value="products">{t('contact.form.subject.products')}</option>
+                <option value="partner">{t('contact.form.subject.partner')}</option>
+                <option value="quality">{t('contact.form.subject.quality')}</option>
+                <option value="other">{t('contact.form.subject.other')}</option>
+              </select>
+              <svg
+                class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
+                viewBox="0 0 12 12"
+                fill="none"
+              >
+                <path
+                  d="M2 4L6 8L10 4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"></path>
+              </svg>
+            </div>
+            <span
+              class="field-error hidden text-xs text-cefa-red ml-1"
+              aria-live="polite"
+              data-for="subject"></span>
+          </div>
+
+          <div class="flex flex-col gap-1.5">
+            <label for="message" class="text-xs font-medium text-gray-500 ml-1">
+              {t('contact.form.message')}
+              <span class="text-cefa-red" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows="3"
+              placeholder={t('contact.form.message.placeholder')}
+              required
+              maxlength="5000"
+              class="form-field resize-y"></textarea>
+            <span
+              class="field-error hidden text-xs text-cefa-red ml-1"
+              aria-live="polite"
+              data-for="message"></span>
+          </div>
+
+          <!-- Banner de error de envío global -->
+          <div
+            id="form-error-banner"
+            class="hidden items-center gap-2 px-4 py-3 bg-red-50 border border-red-100 rounded text-red-700 text-sm"
+            role="alert"
+            aria-live="assertive"
+          >
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 9v2m0 4h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"
+              ></path>
+            </svg>
+            <span id="form-error-text"></span>
+          </div>
+
+          <!-- Contenedor de Cloudflare Turnstile — se renderiza de forma diferida en el primer intento de envío -->
+          <div
+            id="cf-turnstile-wrapper"
+            class="hidden transition-all duration-300"
+            aria-label="Security verification"
+          >
+            <div id="cf-turnstile-widget"></div>
+          </div>
+
+          <button
+            type="submit"
+            id="contact-submit-btn"
+            class="w-full flex items-center justify-center gap-2 bg-cefa-navy hover:bg-cefa-navy/90 text-white font-medium rounded-none py-3 text-sm transition-all duration-300 hover:-translate-y-0.5 mt-1 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
+          >
+            {t('contact.form.submit')}
+            <ArrowIcon />
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<script>
+  declare global {
+    interface Window {
+      turnstile?: {
+        render(container: string | HTMLElement, options: TurnstileOptions): string;
+        reset(widgetId: string): void;
+        remove(widgetId: string): void;
+        getResponse(widgetId: string): string | undefined;
+      };
+      onTurnstileLoad?: () => void;
+    }
+  }
+
+  interface TurnstileOptions {
+    sitekey: string;
+    theme?: 'light' | 'dark' | 'auto';
+    size?: 'normal' | 'compact';
+    callback?: (token: string) => void;
+    'error-callback'?: () => void;
+    'expired-callback'?: () => void;
+  }
+
+  const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
+
+  // Promesa única en caché — todos los llamadores concurrentes comparten el mismo intento de carga.
+  // Se establece a null en caso de error para que el próximo envío active un nuevo reintento.
+  let turnstilePromise: Promise<void> | null = null;
+
+  function loadTurnstileScript(): Promise<void> {
+    if (turnstilePromise) return turnstilePromise;
+
+    turnstilePromise = new Promise<void>((resolve, reject) => {
+      if (window.turnstile) {
+        resolve();
+        return;
+      }
+
+      window.onTurnstileLoad = resolve;
+
+      const s = document.createElement('script');
+      s.src =
+        'https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onTurnstileLoad&render=explicit';
+      s.async = true;
+      s.defer = true;
+      s.onerror = () => {
+        turnstilePromise = null; // permitir reintento en el próximo envío
+        reject(new Error('Turnstile script failed to load'));
+      };
+      document.head.appendChild(s);
+    });
+
+    return turnstilePromise;
+  }
+
+  function initContactForm() {
+    const formEl = document.querySelector<HTMLFormElement>('#contact-form');
+    if (!formEl) return;
+    // Alias explícito no nulo — TypeScript no propaga el estrechamiento de tipos (narrowing) a las clausuras,
+    // por lo que creamos una constante tipada a la que las clausuras puedan referenciar con seguridad.
+    const form: HTMLFormElement = formEl;
+
+    const submitBtn = form.querySelector<HTMLButtonElement>('#contact-submit-btn')!;
+    const originalBtnHTML = submitBtn.innerHTML;
+    const turnstileWrapper = document.getElementById('cf-turnstile-wrapper')!;
+    const turnstileContainer = document.getElementById('cf-turnstile-widget')!;
+    const errorBanner = document.getElementById('form-error-banner')!;
+    const errorText = document.getElementById('form-error-text')!;
+
+    const siteKey = form.dataset.turnstileSiteKey ?? '1x00000000000000000000AA';
+
+    const i18n = {
+      processing: form.dataset.tProcessing ?? 'Sending...',
+      verifying: form.dataset.tVerifying ?? 'Verifying...',
+      error: form.dataset.tError ?? 'An error occurred. Please try again.',
+      errorCaptcha: form.dataset.tErrorCaptcha ?? 'Security check failed. Please try again.',
+      errorRatelimit: form.dataset.tErrorRatelimit ?? 'Too many requests. Please wait a moment.',
+      errRequired: form.dataset.tErrRequired ?? 'This field is required.',
+      errEmail: form.dataset.tErrEmail ?? 'Please enter a valid email address.',
+      errTooShort: form.dataset.tErrTooShort ?? 'Message is too short (minimum 10 characters).',
+      errTooLong: form.dataset.tErrTooLong ?? 'This field is too long.',
+      errSubject: form.dataset.tErrSubject ?? 'Please select a subject.',
+    };
+
+    let widgetId: string | null = null;
+
+    function setButtonState(state: 'idle' | 'verifying' | 'sending') {
+      const spinnerSVG = `<svg class="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24">
+        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
+        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+      </svg>`;
+
+      if (state === 'idle') {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
+      } else if (state === 'verifying') {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span class="flex items-center gap-2">${spinnerSVG} ${i18n.verifying}</span>`;
+      } else {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<span class="flex items-center gap-2">${spinnerSVG} ${i18n.processing}</span>`;
+      }
+    }
+
+    function showGlobalError(msg: string) {
+      errorText.textContent = msg;
+      errorBanner.classList.remove('hidden');
+      errorBanner.classList.add('flex');
+      errorBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function hideGlobalError() {
+      errorBanner.classList.add('hidden');
+      errorBanner.classList.remove('flex');
+    }
+
+    function setFieldError(fieldName: string, msg: string | null) {
+      const field = form.querySelector<HTMLElement>(`[name="${fieldName}"]`);
+      const errorEl = form.querySelector<HTMLElement>(`.field-error[data-for="${fieldName}"]`);
+      if (!field || !errorEl) return;
+
+      if (msg) {
+        field.classList.add('border-cefa-red', 'ring-2', 'ring-cefa-red/10');
+        field.setAttribute('aria-invalid', 'true');
+        errorEl.textContent = msg;
+        errorEl.classList.remove('hidden');
+      } else {
+        field.classList.remove('border-cefa-red', 'ring-2', 'ring-cefa-red/10');
+        field.removeAttribute('aria-invalid');
+        errorEl.textContent = '';
+        errorEl.classList.add('hidden');
+      }
+    }
+
+    function clearAllErrors() {
+      hideGlobalError();
+      form.querySelectorAll<HTMLElement>('.form-field').forEach((el) => {
+        el.classList.remove('border-cefa-red', 'ring-2', 'ring-cefa-red/10');
+        el.removeAttribute('aria-invalid');
+      });
+      form.querySelectorAll<HTMLElement>('.field-error').forEach((el) => {
+        el.textContent = '';
+        el.classList.add('hidden');
+      });
+    }
+
+    function validate(): boolean {
+      clearAllErrors();
+      let firstError: HTMLElement | null = null;
+      let valid = true;
+
+      const name = (form.querySelector<HTMLInputElement>('#name')?.value ?? '').trim();
+      const email = (form.querySelector<HTMLInputElement>('#email')?.value ?? '').trim();
+      const subject = form.querySelector<HTMLSelectElement>('#subject')?.value ?? '';
+      const message = (form.querySelector<HTMLTextAreaElement>('#message')?.value ?? '').trim();
+
+      if (!name) {
+        setFieldError('name', i18n.errRequired);
+        firstError ??= form.querySelector<HTMLElement>('[name="name"]');
+        valid = false;
+      }
+
+      if (!email) {
+        setFieldError('email', i18n.errRequired);
+        firstError ??= form.querySelector<HTMLElement>('[name="email"]');
+        valid = false;
+      } else if (!EMAIL_RE.test(email)) {
+        setFieldError('email', i18n.errEmail);
+        firstError ??= form.querySelector<HTMLElement>('[name="email"]');
+        valid = false;
+      }
+
+      if (!subject) {
+        setFieldError('subject', i18n.errSubject);
+        firstError ??= form.querySelector<HTMLElement>('[name="subject"]');
+        valid = false;
+      }
+
+      if (!message) {
+        setFieldError('message', i18n.errRequired);
+        firstError ??= form.querySelector<HTMLElement>('[name="message"]');
+        valid = false;
+      } else if (message.length < 10) {
+        setFieldError('message', i18n.errTooShort);
+        firstError ??= form.querySelector<HTMLElement>('[name="message"]');
+        valid = false;
+      }
+
+      if (firstError) {
+        firstError.focus({ preventScroll: false });
+        firstError.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+
+      return valid;
+    }
+
+    function runTurnstile(): Promise<string> {
+      return new Promise((resolve, reject) => {
+        turnstileWrapper.classList.remove('hidden');
+
+        if (widgetId !== null && window.turnstile) {
+          try {
+            window.turnstile.remove(widgetId);
+          } catch {
+            /* ignorar */
+          }
+          widgetId = null;
+        }
+        turnstileContainer.innerHTML = '';
+
+        if (!window.turnstile) {
+          reject(new Error('Turnstile not available after load'));
+          return;
+        }
+
+        widgetId = window.turnstile.render(turnstileContainer, {
+          sitekey: siteKey,
+          theme: 'light',
+          size: 'normal',
+          callback: (token) => {
+            turnstileWrapper.classList.add('hidden');
+            resolve(token);
+          },
+          'error-callback': () => {
+            turnstileWrapper.classList.add('hidden');
+            reject(new Error('captcha_error'));
+          },
+          'expired-callback': () => {
+            turnstileWrapper.classList.add('hidden');
+            reject(new Error('captcha_expired'));
+          },
+        });
+      });
+    }
+
+    async function submit() {
+      setButtonState('verifying');
+
+      let cfToken: string;
+      try {
+        await loadTurnstileScript();
+        cfToken = await runTurnstile();
+      } catch {
+        setButtonState('idle');
+        showGlobalError(i18n.errorCaptcha);
+        return;
+      }
+
+      setButtonState('sending');
+
+      const name = form.querySelector<HTMLInputElement>('#name')!.value;
+      const company = form.querySelector<HTMLInputElement>('#company')!.value;
+      const email = form.querySelector<HTMLInputElement>('#email')!.value;
+      const subject = form.querySelector<HTMLSelectElement>('#subject')!.value;
+      const message = form.querySelector<HTMLTextAreaElement>('#message')!.value;
+      const website = form.querySelector<HTMLInputElement>('[name="website"]')?.value ?? '';
+
+      let res: Response;
+      try {
+        res = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, company, email, subject, message, website, cfToken }),
+        });
+      } catch {
+        setButtonState('idle');
+        showGlobalError(i18n.error);
+        return;
+      }
+
+      if (res.ok) {
+        form.innerHTML = `
+          <div class="py-12 flex flex-col items-center text-center animate-[fadeUp_0.8s_ease_forwards]">
+            <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-cefa-navy mb-3">${form.dataset.tSuccessTitle}</h3>
+            <p class="text-gray-500 text-sm max-w-xs leading-relaxed">
+              ${form.dataset.tSuccessMessage}
+            </p>
+            <button id="form-reset-btn" type="button"
+              class="mt-8 text-cefa-red text-xs font-bold uppercase tracking-widest hover:underline">
+              ${form.dataset.tSuccessSendAnother}
+            </button>
+          </div>
+        `;
+        return;
+      }
+
+      setButtonState('idle');
+
+      let errorMsg = i18n.error;
+      try {
+        const json = (await res.json()) as { code?: string; errors?: Record<string, string> };
+
+        if (json.code === 'RATE_LIMITED') {
+          errorMsg = i18n.errorRatelimit;
+        } else if (json.code === 'CAPTCHA_FAILED' || json.code === 'CAPTCHA_MISSING') {
+          errorMsg = i18n.errorCaptcha;
+        } else if (json.code === 'VALIDATION_ERROR' && json.errors) {
+          const fieldMsgMap: Record<string, string> = {
+            required: i18n.errRequired,
+            invalid: i18n.errEmail,
+            too_short: i18n.errTooShort,
+            too_long: i18n.errTooLong,
+          };
+          Object.entries(json.errors).forEach(([field, code]) => {
+            const msg = fieldMsgMap[code] ?? i18n.error;
+            if (field === 'subject') {
+              setFieldError('subject', i18n.errSubject);
+            } else {
+              setFieldError(field, msg);
+            }
+          });
+          return; // los errores de campo se muestran en línea — no se necesita banner global
+        }
+      } catch {
+        /* ignorar errores de procesamiento */
+      }
+
+      showGlobalError(errorMsg);
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (validate()) submit();
+    });
+
+    form.querySelectorAll<HTMLElement>('.form-field').forEach((field) => {
+      field.addEventListener('input', () => {
+        const name = (field as HTMLInputElement).name;
+        if (name) setFieldError(name, null);
+        hideGlobalError();
+      });
+    });
+
+    form.addEventListener('click', (e) => {
+      if ((e.target as HTMLElement).id === 'form-reset-btn') {
+        window.location.reload();
+      }
+    });
+  }
+
+  let contactController: AbortController | null = null;
+
+  function initLocationSwitcher() {
+    const switcher = document.getElementById('location-switcher-container');
+    if (!switcher || switcher.dataset.initialized === 'true') return;
+
+    const tabs = document.querySelectorAll('.location-tab');
+    const panels = document.querySelectorAll('.location-info-panel');
+    const { signal } = contactController!;
+
+    function switchTab(targetId: string) {
+      tabs.forEach((t) => {
+        const el = t as HTMLElement;
+        const isActive = el.dataset.target === targetId;
+        if (isActive) {
+          el.classList.add('text-cefa-red');
+          el.classList.remove('text-slate-400', 'hover:text-cefa-navy');
+          el.setAttribute('aria-selected', 'true');
+        } else {
+          el.classList.remove('text-cefa-red');
+          el.classList.add('text-slate-400', 'hover:text-cefa-navy');
+          el.setAttribute('aria-selected', 'false');
+        }
+      });
+
+      panels.forEach((panel) => {
+        const el = panel as HTMLElement;
+        if (el.id === `info-${targetId}`) {
+          el.classList.add('z-10', 'opacity-100', 'translate-x-0');
+          el.classList.remove('opacity-0', 'translate-x-4', 'pointer-events-none');
+          el.setAttribute('aria-hidden', 'false');
+          el.removeAttribute('inert');
+        } else {
+          el.classList.remove('z-10', 'opacity-100', 'translate-x-0');
+          el.classList.add('opacity-0', 'translate-x-4', 'pointer-events-none');
+          el.setAttribute('aria-hidden', 'true');
+          el.setAttribute('inert', '');
+        }
+      });
+    }
+
+    tabs.forEach((tab) => {
+      tab.addEventListener(
+        'click',
+        () => {
+          const target = (tab as HTMLElement).dataset.target;
+          if (target) switchTab(target);
+        },
+        { signal }
+      );
+    });
+
+    (window as unknown as Record<string, unknown>).switchContactTab = switchTab;
+
+    document.addEventListener(
+      'click',
+      (e) => {
+        const target = e.target as HTMLElement;
+        const link = target.closest('.contact-link');
+        if (link) {
+          const locationId = link.getAttribute('data-location');
+          if (locationId) switchTab(locationId);
+        }
+      },
+      { signal }
+    );
+
+    const pendingTab = sessionStorage.getItem('pendingContactTab');
+    if (pendingTab) {
+      sessionStorage.removeItem('pendingContactTab');
+      switchTab(pendingTab);
+    }
+
+    switcher.dataset.initialized = 'true';
+  }
+
+  function setup() {
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactController?.abort();
+      contactController = new AbortController();
+      initContactForm();
+      initLocationSwitcher();
+    }
+  }
+
+  document.addEventListener('astro:page-load', setup);
+  document.addEventListener('astro:before-swap', () => {
+    contactController?.abort();
+  });
+</script>

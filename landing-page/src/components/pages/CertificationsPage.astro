@@ -1,0 +1,122 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import DocListCard from '@/components/ui/DocListCard.astro';
+import Section from '@/components/ui/Section.astro';
+import PageHeader from '@/components/ui/PageHeader.astro';
+import { getCertificationsContent, getCertificates, getMediaUrl } from '@/lib/cms';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const certContent = await getCertificationsContent(locale);
+const qualityCerts = await getCertificates(locale, 'Calidad');
+const envCerts = await getCertificates(locale, 'Medio Ambiente');
+
+const eyebrow = certContent?.eyebrow || t('certifications.eyebrow');
+const title = certContent?.title || t('certifications.title');
+const subtitle = certContent?.subtitle || t('certifications.subtitle');
+const groupQualityTitle = t('certifications.group.quality.title');
+const groupQualityEyebrow = t('certifications.group.quality');
+const groupEnvTitle = t('certifications.group.env.title');
+const groupEnvEyebrow = t('certifications.group.env');
+
+const siteBase = Astro.site?.toString().replace(/\/$/, '') || 'https://cefa.es';
+
+const certsSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name: title,
+  description: subtitle,
+  numberOfItems: qualityCerts.length + envCerts.length,
+  itemListElement: [
+    ...qualityCerts.map((cert: any, i: number) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'EducationalOccupationalCredential',
+        name: `${cert.name} – ${cert.issuer}`,
+        credentialCategory: 'Automotive Quality Management Certification',
+        recognizedBy: { '@type': 'Organization', name: cert.issuer },
+        dateCreated: cert.issueDate ? new Date(cert.issueDate).getFullYear().toString() : '',
+        url: `${siteBase}${getMediaUrl(cert.image)}`,
+        holder: { '@id': `${siteBase}/#organization` },
+      },
+    })),
+    ...envCerts.map((cert: any, i: number) => ({
+      '@type': 'ListItem',
+      position: qualityCerts.length + i + 1,
+      item: {
+        '@type': 'EducationalOccupationalCredential',
+        name: `${cert.name} – ${cert.issuer}`,
+        credentialCategory: 'Environmental Management Certification',
+        recognizedBy: { '@type': 'Organization', name: cert.issuer },
+        dateCreated: cert.issueDate ? new Date(cert.issueDate).getFullYear().toString() : '',
+        url: `${siteBase}${getMediaUrl(cert.image)}`,
+        holder: { '@id': `${siteBase}/#organization` },
+      },
+    })),
+  ],
+};
+---
+
+<!-- Esquema ItemList de Certificaciones -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(certsSchema)} />
+
+<main id="main-content">
+  <PageHeader eyebrow={eyebrow} title={title} description={subtitle} />
+
+  <!-- Certificaciones de calidad -->
+  <Section background="white" padding="sm">
+    <div class="mb-10 reveal">
+      <p class="eyebrow mb-2">{groupQualityEyebrow}</p>
+      <h2 class="heading-lg max-w-2xl">{groupQualityTitle}</h2>
+    </div>
+
+    <div class="border-t border-cefa-navy/10">
+      {
+        qualityCerts.map((cert: any) => {
+          const mediaFile = getMediaUrl(cert.file);
+          const mediaImage = getMediaUrl(cert.image);
+          const href = mediaFile || mediaImage;
+          return (
+            <DocListCard
+              title={`${cert.name} – ${cert.issuer}`}
+              href={href}
+              type={href.split('.').pop() || 'image'}
+            />
+          );
+        })
+      }
+    </div>
+  </Section>
+
+  <!-- Certificaciones ambientales -->
+  <Section background="white" padding="sm" class="border-t border-cefa-navy/4">
+    <div class="mb-10 reveal">
+      <p class="eyebrow mb-2">{groupEnvEyebrow}</p>
+      <h2 class="heading-lg max-w-2xl">{groupEnvTitle}</h2>
+    </div>
+
+    <div class="border-t border-cefa-navy/10">
+      {
+        envCerts.map((cert: any) => {
+          const mediaFile = getMediaUrl(cert.file);
+          const mediaImage = getMediaUrl(cert.image);
+          const href = mediaFile || mediaImage;
+          return (
+            <DocListCard
+              title={`${cert.name} – ${cert.issuer}`}
+              href={href}
+              type={href.split('.').pop() || 'image'}
+            />
+          );
+        })
+      }
+    </div>
+  </Section>
+</main>

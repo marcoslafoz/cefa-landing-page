@@ -1,0 +1,94 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import Section from '@/components/ui/Section.astro';
+import SectionHeader from '@/components/ui/SectionHeader.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const items = [
+  { q: t('faq.q1'), a: t('faq.a1') },
+  { q: t('faq.q2'), a: t('faq.a2') },
+  { q: t('faq.q3'), a: t('faq.a3') },
+  { q: t('faq.q4'), a: t('faq.a4') },
+];
+
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: items.map(({ q, a }) => ({
+    '@type': 'Question',
+    name: q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: a,
+    },
+  })),
+};
+---
+
+<Section id="faq" background="white" padding="lg">
+  <SectionHeader
+    layout="centered"
+    eyebrow={t('faq.eyebrow')}
+    title={t('faq.title')}
+    class="mb-14"
+  />
+
+  <div
+    class="max-w-3xl mx-auto divide-y divide-cefa-navy/8"
+    itemscope
+    itemtype="https://schema.org/FAQPage"
+  >
+    {
+      items.map(({ q, a }, i) => (
+        <details
+          class="group py-6 cursor-pointer list-none [&::-webkit-details-marker]:hidden reveal"
+          style={`animation-delay:${i * 80}ms`}
+          itemscope
+          itemprop="mainEntity"
+          itemtype="https://schema.org/Question"
+        >
+          <summary class="flex items-center justify-between gap-6 text-left select-none">
+            <span
+              class="text-base font-normal text-cefa-navy leading-snug hover:text-cefa-red group-open:text-cefa-red transition-colors duration-200"
+              itemprop="name"
+            >
+              {q}
+            </span>
+            {/* Chevron (Flecha) */}
+            <svg
+              class="shrink-0 w-4 h-4 text-cefa-navy/50 group-hover:text-cefa-red group-open:text-cefa-red transition-all duration-200 group-open:rotate-180"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9" />
+            </svg>
+          </summary>
+
+          <div itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p
+              class="mt-4 text-sm text-cefa-navy/50 leading-relaxed font-light pr-10"
+              itemprop="text"
+            >
+              {a}
+            </p>
+          </div>
+        </details>
+      ))
+    }
+  </div>
+</Section>
+
+<!-- JSON-LD de FAQPage — elegibilidad para fragmentos enriquecidos en los resultados de búsqueda de Google -->
+<script is:inline type="application/ld+json" set:html={JSON.stringify(faqSchema)} />

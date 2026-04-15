@@ -1,0 +1,194 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import Button from '@/components/ui/Button.astro';
+import sliderImages from '@/data/mission-gallery.json';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const values = [
+  { title: t('vision.value1.title'), text: t('vision.value1.text') },
+  { title: t('vision.value2.title'), text: t('vision.value2.text') },
+  { title: t('vision.value3.title'), text: t('vision.value3.text') },
+  { title: t('vision.value4.title'), text: t('vision.value4.text') },
+];
+---
+
+<!-- Sección dividida estilo Motherson: imagen a la izquierda, texto oscuro a la derecha -->
+<section id="vision" class="bg-cefa-navy-dark overflow-hidden">
+  <div class="grid lg:grid-cols-[40%_60%] min-h-140">
+    <!-- Izquierda: slider de imagen a sangre completa -->
+    <div class="relative overflow-hidden min-h-100" id="vision-slider">
+      {
+        sliderImages.map((img, index) => (
+          <img
+            src={img.src}
+            alt={img.alt}
+            class={`absolute inset-0 w-full h-full object-cover will-change-[opacity] transition-opacity duration-1000 ${index === 0 ? 'opacity-100' : 'opacity-0'}`}
+            loading={index === 0 ? 'eager' : 'lazy'}
+            width="720"
+            height="560"
+            data-index={index}
+          />
+        ))
+      }
+
+      <!-- Orbes decorativos y viñeta para integración -->
+      <div
+        class="absolute inset-0 bg-linear-to-t from-cefa-navy-dark/40 via-transparent to-cefa-navy-dark/20 z-10 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute -top-32 -left-32 w-md h-112 bg-cefa-red/25 rounded-full blur-[120px] z-10 pointer-events-none"
+      >
+      </div>
+      <div
+        class="absolute -bottom-40 -right-20 w-125 h-125 bg-blue-600/20 rounded-full blur-[140px] z-10 pointer-events-none"
+      >
+      </div>
+
+      <!-- Progreso flotante (inferior izquierda) -->
+      <div class="absolute bottom-10 left-10 z-20">
+        <div class="w-40 h-0.5 bg-white/10 rounded-full overflow-hidden">
+          <div
+            id="slider-progress-bar"
+            class="h-full bg-cefa-red w-0 transition-[width] duration-100 ease-linear"
+          >
+          </div>
+        </div>
+      </div>
+
+      <!-- Sutil barra roja en el borde derecho -->
+      <div class="absolute right-0 top-0 bottom-0 w-1 bg-cefa-red z-10"></div>
+    </div>
+
+    <!-- Derecha: texto sobre fondo oscuro -->
+    <div class="flex flex-col justify-center py-12 px-8 lg:px-16 xl:px-20 reveal">
+      <p class="eyebrow mb-5">{t('vision.eyebrow')}</p>
+
+      <h2 class="heading-lg text-white mb-6">
+        {t('vision.title')}
+      </h2>
+
+      <p class="text-[0.9375rem] text-white/60 leading-relaxed mb-10">
+        {t('vision.body')}
+      </p>
+
+      <!-- Valores -->
+      <div class="flex flex-col gap-6 mb-10">
+        {
+          values.map((value) => (
+            <div class="flex gap-4 items-start">
+              <div class="shrink-0 mt-1.5">
+                <div class="w-2 h-2 rounded-full bg-cefa-red" />
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-sm mb-0.5">{value.title}</h3>
+                <p class="text-white/50 text-sm leading-snug">{value.text}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-3">
+        <Button href="#contact" variant="primary">{t('vision.cta')}</Button>
+        <Button href="#products" variant="secondary" showIcon={false}
+          >{t('products.eyebrow')}</Button
+        >
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  let visionController: AbortController | null = null;
+  let visionObserver: IntersectionObserver | null = null;
+
+  function initVisionSlider() {
+    const slider = document.getElementById('vision-slider');
+    if (!slider || slider.dataset.initialized === 'true') return;
+
+    visionController?.abort();
+    visionController = new AbortController();
+    const { signal } = visionController;
+
+    const images = slider.querySelectorAll('img[data-index]');
+    const progressBar = document.getElementById('slider-progress-bar');
+
+    let currentIndex = 0;
+    const duration = 4000;
+    let startTime = Date.now();
+    let animationFrameId: number | null = null;
+    let isVisible = false;
+
+    function updateSlider(index: number) {
+      images.forEach((img, i) => {
+        img.classList.toggle('opacity-0', i !== index);
+        img.classList.toggle('opacity-100', i === index);
+      });
+      startTime = Date.now();
+    }
+
+    function mainLoop() {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min((elapsed / duration) * 100, 100);
+
+      if (progressBar) progressBar.style.width = `${progress}%`;
+
+      if (elapsed >= duration) {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider(currentIndex);
+      }
+      animationFrameId = requestAnimationFrame(mainLoop);
+    }
+
+    function startLoop() {
+      if (animationFrameId === null) animationFrameId = requestAnimationFrame(mainLoop);
+    }
+
+    function stopLoop() {
+      if (animationFrameId !== null) {
+        cancelAnimationFrame(animationFrameId);
+        animationFrameId = null;
+      }
+    }
+
+    slider.style.cursor = 'pointer';
+    slider.addEventListener(
+      'click',
+      () => {
+        currentIndex = (currentIndex + 1) % images.length;
+        updateSlider(currentIndex);
+      },
+      { signal }
+    );
+
+    visionObserver?.disconnect();
+    visionObserver = new IntersectionObserver(
+      (entries) => {
+        isVisible = entries[0].isIntersecting;
+        if (isVisible) {
+          startLoop();
+        } else {
+          stopLoop();
+        }
+      },
+      { threshold: 0 }
+    );
+    visionObserver.observe(slider);
+
+    slider.dataset.initialized = 'true';
+  }
+
+  document.addEventListener('astro:page-load', initVisionSlider);
+  document.addEventListener('astro:before-swap', () => {
+    visionController?.abort();
+    visionObserver?.disconnect();
+  });
+</script>

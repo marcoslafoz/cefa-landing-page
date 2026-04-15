@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-04-15T08:08:49.930Z",
+  "updatedAt": "2026-04-15T08:40:52.032Z",
+  "globalType": "certifications-content",
+  "eyebrow": "Calidad certificada",
+  "title": "Nuestras certificaciones",
+  "subtitle": "Nos comprometemos con los más exigentes estándares de calidad de la industria. Nuestras certificaciones avalan nuestra capacidad para fabricar componentes de precisión que cumplen con los requisitos de los principales OEM mundiales.",
+  "qualityCommitment": {
+    "title": "Compromiso con la calidad total",
+    "body": "En CEFA, la calidad no es solo un requisito, es parte de nuestra cultura empresarial. Cada componente que fabricamos pasa por rigurosos procesos de control y verificación para asegurar que cumple con los estándares más exigentes."
+  },
+  "stats": {
+    "auditLabel": "Auditorías anuales",
+    "auditValue": "100%",
+    "defectLabel": "Tasa de defectos",
+    "defectValue": "< 10 PPM",
+    "traceabilityLabel": "Trazabilidad",
+    "traceabilityValue": "Total"
+  },
+  "meta": {
+    "title": "Certificaciones IATF 16949 · ISO 9001 | CEFA – Fabricante Automoción",
+    "description": "CEFA certificada IATF 16949, ISO 9001 e ISO 14001. Máxima calidad en inyección de plásticos para automoción: < 10 PPM de defectos, trazabilidad total. Zaragoza."
+  },
+  "id": "69df479113d2923b1ce4154c"
+}

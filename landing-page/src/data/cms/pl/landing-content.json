@@ -1,0 +1,24 @@
+{
+  "createdAt": "2026-04-14T11:45:35.730Z",
+  "updatedAt": "2026-04-14T14:06:48.014Z",
+  "globalType": "landing-content",
+  "hero": {
+    "titleLine1": "Ingeniería plástica",
+    "titleLine2": "de alta precisión",
+    "subtitle": "80 años desarrollando componentes plásticos de alta performance para los OEM más exigentes del mundo.",
+    "ctaText": "Nuestros productos"
+  },
+  "mission": {
+    "title": "Orientados al cliente, impulsados por la excelencia",
+    "description": "CEFA es una empresa española de carácter industrial que investiga, desarrolla y produce, mayoritariamente para el sector del automóvil..."
+  },
+  "vision": {
+    "title": "Ser el referente industrial",
+    "description": "Ser el socio preferido del cliente con una cartera diversificada, elevada cuota de mercado y ventas robustas."
+  },
+  "footer": {
+    "companyInfo": "Fabricando el futuro de la movilidad. Calidad, precisión e innovación.",
+    "copyright": "Todos los derechos reservados."
+  },
+  "id": "69de28df312b7685759e3e24"
+}

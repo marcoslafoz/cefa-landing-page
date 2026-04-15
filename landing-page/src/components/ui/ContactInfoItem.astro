@@ -1,0 +1,27 @@
+---
+/**
+ * Fila de información de contacto reutilizable: icono + etiqueta + slot de contenido.
+ * Se utiliza en Contact.astro para la dirección, teléfono/email, etc.
+ */
+interface Props {
+  label: string;
+  iconPath: string;
+}
+
+const { label, iconPath } = Astro.props;
+---
+
+<div class="flex gap-4 items-start">
+  <div
+    class="shrink-0 w-6 h-6 flex items-center justify-center text-cefa-red mt-1"
+    aria-hidden="true"
+  >
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" set:html={iconPath} />
+  </div>
+  <div>
+    <p class="text-[0.7rem] font-bold text-gray-400 uppercase tracking-widest mb-1.5">
+      {label}
+    </p>
+    <slot />
+  </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-04-15T08:08:50.041Z",
+  "updatedAt": "2026-04-15T08:40:52.077Z",
+  "globalType": "seo",
+  "default": {
+    "title": "CEFA – Plastic Injection Moulding for Automotive OEMs | Spain",
+    "description": "Tier 1 automotive plastic manufacturer since 1946. Dashboards, door panels and exterior trims for OEMs. IATF 16949 & ISO 9001 certified. Zaragoza, Spain."
+  },
+  "notFound": {
+    "title": "Page not found",
+    "subtitle": "The page you are looking for doesn't exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "id": "69df479213d2923b1ce41592"
+}

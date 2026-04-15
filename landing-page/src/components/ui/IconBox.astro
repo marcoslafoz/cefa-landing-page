@@ -1,0 +1,25 @@
+---
+/**
+ * Contenedor de icono rojo — el cuadro rojo cuadrado con un icono blanco centrado
+ * utilizado en las tarjetas de Careers y en cualquier lugar donde se necesite un acento de icono prominente.
+ */
+interface Props {
+  size?: 'sm' | 'md';
+  class?: string;
+}
+
+const { size = 'md', class: className } = Astro.props;
+
+const sizeClasses = size === 'sm' ? 'w-10 h-10' : 'w-12 h-12';
+---
+
+<div
+  class:list={[
+    'shrink-0 bg-cefa-red flex items-center justify-center text-white',
+    sizeClasses,
+    className,
+  ]}
+  aria-hidden="true"
+>
+  <slot />
+</div>

@@ -1,0 +1,105 @@
+{
+  "docs": [
+    {
+      "createdAt": "2026-04-15T08:40:52.286Z",
+      "updatedAt": "2026-04-15T08:40:52.286Z",
+      "type": "Medio Ambiente",
+      "name": "ISO 14001",
+      "issuer": "International",
+      "issueDate": "2015",
+      "image": {
+        "createdAt": "2026-04-15T08:40:52.242Z",
+        "updatedAt": "2026-04-15T08:40:52.242Z",
+        "alt": "certificado-medioambiente.jpg",
+        "url": "/cms-media/certificado-medioambiente.jpg",
+        "filename": "certificado-medioambiente.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 173428,
+        "width": 384,
+        "height": 544,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69df4f14e66b363c7e80aebb",
+        "thumbnailURL": null
+      },
+      "id": "69df4f14e66b363c7e80aef9"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.284Z",
+      "updatedAt": "2026-04-15T08:40:52.284Z",
+      "type": "Calidad",
+      "name": "TISAX",
+      "issuer": "ENX Association",
+      "issueDate": "2024",
+      "file": {
+        "createdAt": "2026-04-15T08:40:52.239Z",
+        "updatedAt": "2026-04-15T08:40:52.239Z",
+        "alt": "tisax-placeholder.pdf",
+        "url": "/cms-media/tisax-placeholder.pdf",
+        "filename": "tisax-placeholder.pdf",
+        "mimeType": "application/pdf",
+        "filesize": 0,
+        "id": "69df4f14e66b363c7e80aeb8",
+        "thumbnailURL": null
+      },
+      "id": "69df4f14e66b363c7e80aef6"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.282Z",
+      "updatedAt": "2026-04-15T08:40:52.282Z",
+      "type": "Calidad",
+      "name": "IATF 16949",
+      "issuer": "International",
+      "issueDate": "2016",
+      "image": {
+        "createdAt": "2026-04-15T08:40:52.237Z",
+        "updatedAt": "2026-04-15T08:40:52.237Z",
+        "alt": "certificado-calidad-01.jpg",
+        "url": "/cms-media/certificado-calidad-01.jpg",
+        "filename": "certificado-calidad-01.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 18507,
+        "width": 234,
+        "height": 331,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69df4f14e66b363c7e80aeb5",
+        "thumbnailURL": null
+      },
+      "id": "69df4f14e66b363c7e80aef3"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.280Z",
+      "updatedAt": "2026-04-15T08:40:52.280Z",
+      "type": "Calidad",
+      "name": "ISO 9001",
+      "issuer": "International",
+      "issueDate": "1995",
+      "image": {
+        "createdAt": "2026-04-15T08:40:52.235Z",
+        "updatedAt": "2026-04-15T08:40:52.235Z",
+        "alt": "certificado-calidad-02.jpg",
+        "url": "/cms-media/certificado-calidad-02.jpg",
+        "filename": "certificado-calidad-02.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 11755,
+        "width": 234,
+        "height": 331,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69df4f14e66b363c7e80aeb2",
+        "thumbnailURL": null
+      },
+      "id": "69df4f14e66b363c7e80aef0"
+    }
+  ],
+  "totalDocs": 4,
+  "limit": 100,
+  "totalPages": 1,
+  "page": 1,
+  "pagingCounter": 1,
+  "hasPrevPage": false,
+  "hasNextPage": false,
+  "prevPage": null,
+  "nextPage": null
+}

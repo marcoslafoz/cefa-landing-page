@@ -1,0 +1,59 @@
+{
+  "createdAt": "2026-04-15T08:08:49.829Z",
+  "updatedAt": "2026-04-15T08:40:51.959Z",
+  "globalType": "company",
+  "mission": {
+    "eyebrow": "Misión",
+    "title": "Orientados al cliente, impulsados por la excelencia",
+    "body1": "CEFA es una empresa española de carácter industrial que investiga, desarrolla y produce, mayoritariamente para el sector del automóvil con presencia global, componentes plásticos y módulos asociados, aplicando tecnologías de vanguardia y diferenciándose por su innovación y flexibilidad.",
+    "body2": "Orientados a la excelencia y satisfacción de nuestros accionistas, empleados y la sociedad, aportamos valor continuo mediante el trabajo en equipo y la competitividad.",
+    "cta": "Nuestra historia",
+    "badgeLabel": "Desde"
+  },
+  "pillars": [
+    {
+      "title": "Calidad certificada",
+      "text": "Procesos certificados ISO 9001 e IATF 16949 para los más altos estándares.",
+      "id": "69df4f1318507c0001d933a5"
+    },
+    {
+      "title": "Innovación continua",
+      "text": "Inversión constante en I+D y procesos de fabricación avanzados.",
+      "id": "69df4f1318507c0001d933a6"
+    },
+    {
+      "title": "Presencia global",
+      "text": "Atendiendo a los principales OEM a escala internacional.",
+      "id": "69df4f1318507c0001d933a7"
+    }
+  ],
+  "vision": {
+    "eyebrow": "Visión",
+    "title": "Nuestra visión",
+    "body": "Ser el referente industrial",
+    "cta": "Saber más",
+    "values": [
+      {
+        "title": "Socio preferido del cliente",
+        "text": "Cartera diversificada, elevada cuota de mercado y ventas robustas.",
+        "id": "69df4f1318507c0001d933a8"
+      },
+      {
+        "title": "Benchmark tecnológico",
+        "text": "Innovación y adopción rápida de tecnologías avanzadas para crear valor responsable.",
+        "id": "69df4f1318507c0001d933a9"
+      },
+      {
+        "title": "Económicamente sostenibles",
+        "text": "Generación del máximo retorno (EBITDA) para una inversión optimizada.",
+        "id": "69df4f1318507c0001d933aa"
+      },
+      {
+        "title": "Lugar para desarrollarse",
+        "text": "Elevada satisfacción y crecimiento humano y profesional de equipos con gran talento.",
+        "id": "69df4f1318507c0001d933ab"
+      }
+    ]
+  },
+  "id": "69df479113d2923b1ce41514"
+}

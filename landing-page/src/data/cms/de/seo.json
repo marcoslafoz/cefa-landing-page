@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-04-15T08:08:50.041Z",
+  "updatedAt": "2026-04-15T08:40:52.077Z",
+  "globalType": "seo",
+  "default": {
+    "title": "CEFA – Kunststoffspritzguss für die Automobilindustrie | OEM-Zulieferer",
+    "description": "Tier-1-Kunststoffhersteller für Automobil-OEM seit 1946. Instrumententafeln, Türverkleidungen und Außenverkleidungen. IATF 16949 zertifiziert. Spanien."
+  },
+  "notFound": {
+    "title": "Seite nicht gefunden",
+    "subtitle": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "cta": "Zurück zur Startseite"
+  },
+  "id": "69df479213d2923b1ce41592"
+}

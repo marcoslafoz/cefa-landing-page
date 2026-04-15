@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-04-15T08:08:49.947Z",
+  "updatedAt": "2026-04-15T08:40:52.044Z",
+  "globalType": "rd-content",
+  "eyebrow": "Innowacje i rozwój",
+  "title": "Projekty B+R",
+  "subtitle": "Innowacja jest motorem naszego wzrostu. Stale inwestujemy w badania i rozwój, aby oferować zaawansowane rozwiązania techniczne wyprzedzające potrzeby przemysłu motoryzacyjnego.",
+  "stats": [
+    {
+      "value": "+15%",
+      "label": "Roczna inwestycja w B+R",
+      "id": "69df4f1418507c0001d933c5"
+    },
+    {
+      "value": "16+",
+      "label": "Finansowane projekty",
+      "id": "69df4f1418507c0001d933c6"
+    },
+    {
+      "value": "3",
+      "label": "Centra rozwoju",
+      "id": "69df4f1418507c0001d933c7"
+    }
+  ],
+  "funders": {
+    "label": "Instytucje finansujące",
+    "programLabel": "Program europejski",
+    "items": [
+      {
+        "name": "Rząd Aragonii",
+        "description": "Projekty współfinansowane przez Rząd Aragonii w ramach programów wsparcia transformacji i rozwoju przemysłowego, z funduszami EFRR.",
+        "id": "69df4f1418507c0001d933c8"
+      },
+      {
+        "name": "Unia Europejska",
+        "description": "Projekty współfinansowane przez Unię Europejską w ramach programów efektywności energetycznej i innowacji przemysłowych.",
+        "id": "69df4f1418507c0001d933c9"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Zainteresowany współpracą?",
+    "body": "Jeśli jesteś producentem samochodów, dostawcą materiałów lub instytucją akademicką i chcesz zbadać wspólne projekty B+R, skontaktuj się z nami.",
+    "cta": "Skontaktuj się"
+  },
+  "meta": {
+    "title": "Projekty B+R – CEFA",
+    "description": "Innowacje i rozwój technologiczny w CEFA. Odkryj nasze projekty badawczo-rozwojowe w zakresie materiałów, procesów i komponentów dla przemysłu motoryzacyjnego."
+  },
+  "id": "69df479113d2923b1ce4155a"
+}

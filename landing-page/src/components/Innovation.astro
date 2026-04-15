@@ -1,0 +1,437 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import Section from '@/components/ui/Section.astro';
+import StatItem from '@/components/ui/StatItem.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const features = [
+  { title: t('innovation.feat1.title'), text: t('innovation.feat1.text') },
+  { title: t('innovation.feat2.title'), text: t('innovation.feat2.text') },
+];
+---
+
+<Section id="innovation" background="white" class="pb-16 lg:pb-20">
+  <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10 pointer-events-none">
+    <div class="lg:col-span-6 reveal pointer-events-auto">
+      <p class="eyebrow mb-4">{t('innovation.eyebrow')}</p>
+      <h2 class="heading-xl mb-8 leading-tight">
+        {t('innovation.title')}
+      </h2>
+      <p class="text-gray-500 text-lg leading-relaxed mb-10 max-w-xl">
+        {t('innovation.subtitle')}
+      </p>
+
+      <div class="grid sm:grid-cols-2 gap-8 mb-12">
+        {
+          features.map((feat) => (
+            <div class="space-y-4">
+              <div class="flex items-center gap-3">
+                <div class="w-2 h-2 rounded-full bg-cefa-red" aria-hidden="true" />
+                <h3 class="font-bold text-cefa-navy uppercase tracking-widest text-xs">
+                  {feat.title}
+                </h3>
+              </div>
+              <p class="text-sm text-gray-400">{feat.text}</p>
+            </div>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-wrap gap-12 pt-6 border-t border-cefa-navy/6">
+        <StatItem value="100%" label={t('innovation.stat1.label')} class="items-start! p-0!" />
+        <div class="flex flex-col items-start justify-center py-6 lg:py-8 px-4 reveal p-0!">
+          <span
+            class="text-3xl lg:text-4xl font-light text-cefa-navy tracking-tight leading-none mb-2"
+          >
+            I+D<span class="text-cefa-red">i</span>
+          </span>
+          <span
+            class="text-[0.55rem] lg:text-[0.6rem] uppercase tracking-[0.3em] text-gray-400 font-bold leading-tight"
+          >
+            {t('innovation.stat2.label')}
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contenedor del Canvas 3D - Posicionado absolutamente respecto a la Sección -->
+  <div class="relative lg:absolute lg:inset-0 z-0 h-100 lg:h-auto w-full mt-4 lg:mt-0">
+    <div
+      id="product-canvas-container"
+      class="w-full h-full select-none [&_canvas]:outline-none [&_canvas]:[-webkit-tap-highlight-color:transparent] [&_canvas]:cursor-grab [&_canvas]:touch-none"
+    >
+    </div>
+
+    <!-- Capa de carga (Overlay) -->
+    <div
+      id="canvas-loader"
+      class="absolute inset-0 lg:left-1/2 flex items-center justify-center bg-white z-20 transition-opacity duration-1000"
+    >
+      <div class="flex flex-col items-center">
+        <div class="relative w-16 h-16 mb-6">
+          <div class="absolute inset-0 border-2 border-cefa-navy/5 rounded-full"></div>
+          <div class="absolute inset-0 border-2 border-t-cefa-red rounded-full animate-spin"></div>
+        </div>
+        <p class="text-[10px] font-bold text-cefa-navy/70 tracking-[0.3em] uppercase">
+          {t('innovation.loading')}
+        </p>
+      </div>
+    </div>
+
+    <!-- Sugerencia de interacción de UI -->
+    <div
+      class="absolute bottom-12 left-1/2 -translate-x-1/2 lg:left-auto lg:right-12 lg:translate-x-0 z-10 flex flex-col items-center lg:items-end gap-3 text-cefa-navy/30 pointer-events-none reveal"
+    >
+      <div class="flex items-center gap-3">
+        <span class="text-[9px] uppercase tracking-[0.3em] font-bold">{t('innovation.rotate')}</span
+        >
+        <div class="w-12 h-px bg-cefa-navy/10"></div>
+      </div>
+      <div class="w-5 h-8 border border-cefa-navy/20 rounded-full flex justify-center pt-2">
+        <div class="w-0.5 h-1.5 bg-cefa-red rounded-full animate-bounce"></div>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<script>
+  import type * as THREE_TYPES from 'three';
+
+  // Three.js se carga dinámicamente solo cuando la sección de Innovación entra en el viewport.
+  // Esto mantiene ~600 KB fuera del bundle inicial y evita crear un contexto WebGL
+  // hasta que el usuario realmente se desplaza hasta allí.
+
+  const FRAME_INTERVAL = 1000 / 30; // objetivo 30 fps
+
+  let threeCleanup: (() => void) | null = null;
+  let isInitializing = false;
+
+  async function initThreeJS() {
+    const container = document.getElementById('product-canvas-container');
+    if (!container || isInitializing || container.querySelector('canvas')) return;
+
+    isInitializing = true;
+
+    try {
+      const [THREE, { GLTFLoader }] = await Promise.all([
+        import('three'),
+        import('three/addons/loaders/GLTFLoader.js'),
+      ]);
+
+      const isMobile = window.innerWidth < 1024;
+      const targetRotation = new THREE.Vector2(0, 0);
+      const currentRotation = new THREE.Vector2(0, 0);
+      let scrollProgress = 0;
+      let isModelLoaded = false;
+      let isVisible = false;
+      let rafId: number | null = null;
+      let lastFrameTime = 0;
+      let resizeTimer: ReturnType<typeof setTimeout> | null = null;
+      let model: THREE_TYPES.Group | null = null;
+      let currentIsMobile = isMobile;
+
+      let isDragging = false;
+      let lastDragX = 0;
+      let lastDragY = 0;
+      let userRotY = 0;
+      let userRotX = 0;
+      let isOverContainer = false;
+
+      const scene = new THREE.Scene();
+      const fov = isMobile ? 55 : 40;
+      const camera = new THREE.PerspectiveCamera(
+        fov,
+        container.clientWidth / container.clientHeight,
+        0.1,
+        1000
+      );
+      camera.position.z = isMobile ? 7 : 5.5;
+      camera.position.y = 0.2;
+
+      const renderer = new THREE.WebGLRenderer({
+        antialias: !isMobile,
+        alpha: true,
+        powerPreference: 'high-performance',
+        stencil: false,
+        depth: true,
+      });
+      renderer.setSize(container.clientWidth, container.clientHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 1.1;
+
+      // Comprobación de seguridad: asegura que no añadimos múltiples si cargó mientras esperábamos
+      if (container.querySelector('canvas')) {
+        renderer.dispose();
+        return;
+      }
+      container.appendChild(renderer.domElement);
+
+      scene.add(new THREE.AmbientLight(0xffffff, 0.7));
+      const mainLight = new THREE.DirectionalLight(0xffffff, 2);
+      mainLight.position.set(10, 10, 10);
+      scene.add(mainLight);
+      const rimLight = new THREE.DirectionalLight(0xffffff, 1.2);
+      rimLight.position.set(-10, 5, -5);
+      scene.add(rimLight);
+      const spotLight = new THREE.SpotLight(0xffffff, 1.5);
+      spotLight.position.set(0, 10, 0);
+      scene.add(spotLight);
+
+      const loader = new GLTFLoader();
+      loader.load(
+        '/3dmodel/scene.gltf',
+        (gltf) => {
+          const gltfModel = gltf.scene;
+          const box = new THREE.Box3().setFromObject(gltfModel);
+          const size = box.getSize(new THREE.Vector3());
+          const maxDim = Math.max(size.x, size.y, size.z);
+          const scale = (currentIsMobile ? 5.5 : 3.5) / maxDim;
+          gltfModel.scale.set(scale, scale, scale);
+          const center = box.getCenter(new THREE.Vector3());
+          gltfModel.position.x = -center.x * scale;
+          gltfModel.position.y = -center.y * scale;
+          gltfModel.position.z = -center.z * scale;
+
+          const wrapper = new THREE.Group();
+          wrapper.add(gltfModel);
+          wrapper.position.x = currentIsMobile ? 0 : 2.2;
+          wrapper.position.y = currentIsMobile ? 1.0 : 0;
+          scene.add(wrapper);
+          model = wrapper;
+
+          const loaderUI = document.getElementById('canvas-loader');
+          if (loaderUI) {
+            loaderUI.style.opacity = '0';
+            setTimeout(() => loaderUI.remove(), 1000);
+          }
+
+          isModelLoaded = true;
+          if (isVisible) startLoop();
+        },
+        undefined,
+        (err) => console.error('Error loading 3D model:', err)
+      );
+
+      function animate(timestamp: number) {
+        rafId = requestAnimationFrame(animate);
+        const elapsed = timestamp - lastFrameTime;
+        if (elapsed < FRAME_INTERVAL) return;
+        lastFrameTime = timestamp - (elapsed % FRAME_INTERVAL);
+
+        if (model && isModelLoaded) {
+          const scrollRotation = Math.PI + scrollProgress * Math.PI * 0.8;
+          const lerpFactor = isDragging ? 0.18 : 0.07;
+
+          targetRotation.y = scrollRotation + userRotY;
+          targetRotation.x = userRotX;
+
+          currentRotation.y += (targetRotation.y - currentRotation.y) * lerpFactor;
+          currentRotation.x += (targetRotation.x - currentRotation.x) * lerpFactor;
+
+          model.rotation.y = currentRotation.y;
+          model.rotation.x = currentRotation.x;
+          model.position.y += Math.sin(Date.now() * 0.0015) * 0.0008;
+        }
+        renderer.render(scene, camera);
+      }
+
+      function startLoop() {
+        if (rafId !== null) return;
+        lastFrameTime = performance.now();
+        rafId = requestAnimationFrame(animate);
+      }
+
+      function stopLoop() {
+        if (rafId !== null) {
+          cancelAnimationFrame(rafId);
+          rafId = null;
+        }
+      }
+
+      function dispose() {
+        stopLoop();
+        if (resizeTimer) clearTimeout(resizeTimer);
+        scene.traverse((obj) => {
+          const mesh = obj as THREE_TYPES.Mesh;
+          if (mesh.isMesh) {
+            mesh.geometry?.dispose();
+            if (Array.isArray(mesh.material)) {
+              mesh.material.forEach((m) => m.dispose());
+            } else {
+              (mesh.material as THREE_TYPES.Material)?.dispose();
+            }
+          }
+        });
+        scene.clear();
+        renderer.dispose();
+        renderer.forceContextLoss();
+        if (container) container.innerHTML = '';
+        threeCleanup = null;
+      }
+
+      threeCleanup = dispose;
+
+      const section = document.getElementById('innovation');
+      if (section) {
+        new IntersectionObserver(
+          (entries) => {
+            isVisible = entries[0].isIntersecting;
+            if (isVisible && isModelLoaded) startLoop();
+            else stopLoop();
+          },
+          { threshold: 0.05 }
+        ).observe(section);
+      }
+
+      const handleResize = () => {
+        if (resizeTimer) clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+          if (!container) return;
+          currentIsMobile = window.innerWidth < 1024;
+          camera.aspect = container.clientWidth / container.clientHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(container.clientWidth, container.clientHeight);
+          if (model) {
+            model.position.x = currentIsMobile ? 0 : 2.2;
+            model.position.y = currentIsMobile ? 1.0 : 0;
+            camera.position.z = currentIsMobile ? 7 : 5.5;
+          }
+        }, 150);
+      };
+
+      window.addEventListener('resize', handleResize, { passive: true });
+
+      const canvas = renderer.domElement;
+
+      function isOverModel(clientX: number): boolean {
+        if (currentIsMobile) return true;
+        const rect = canvas.getBoundingClientRect();
+        return (clientX - rect.left) / rect.width >= 0.42;
+      }
+
+      canvas.addEventListener('mousedown', (e) => {
+        if (!isOverModel(e.clientX)) return;
+        e.preventDefault();
+        isDragging = true;
+        lastDragX = e.clientX;
+        lastDragY = e.clientY;
+        canvas.style.cursor = 'grabbing';
+        document.body.style.userSelect = 'none';
+      });
+
+      const handleMouseMove = (e: MouseEvent) => {
+        if (isDragging) {
+          const dx = e.clientX - lastDragX;
+          const dy = e.clientY - lastDragY;
+          userRotY += dx * 0.007;
+          userRotX += dy * 0.005;
+          userRotX = Math.max(-0.6, Math.min(0.6, userRotX));
+          lastDragX = e.clientX;
+          lastDragY = e.clientY;
+        } else if (isOverContainer) {
+          canvas.style.cursor = isOverModel(e.clientX) ? 'grab' : 'default';
+        }
+      };
+
+      window.addEventListener('mousemove', handleMouseMove, { passive: true });
+
+      const handleMouseUp = () => {
+        if (!isDragging) return;
+        isDragging = false;
+        canvas.style.cursor = isOverModel(lastDragX) ? 'grab' : 'default';
+        document.body.style.userSelect = '';
+      };
+
+      window.addEventListener('mouseup', handleMouseUp, { passive: true });
+
+      canvas.addEventListener('mouseenter', () => {
+        isOverContainer = true;
+      });
+      canvas.addEventListener('mouseleave', () => {
+        if (!isDragging) {
+          isOverContainer = false;
+          canvas.style.cursor = 'default';
+        }
+      });
+
+      canvas.addEventListener(
+        'touchstart',
+        (e) => {
+          isDragging = true;
+          lastDragX = e.touches[0].clientX;
+          lastDragY = e.touches[0].clientY;
+        },
+        { passive: true }
+      );
+
+      canvas.addEventListener(
+        'touchmove',
+        (e) => {
+          if (!isDragging) return;
+          const dx = e.touches[0].clientX - lastDragX;
+          const dy = e.touches[0].clientY - lastDragY;
+          userRotY += dx * 0.007;
+          userRotX += dy * 0.005;
+          userRotX = Math.max(-0.6, Math.min(0.6, userRotX));
+          lastDragX = e.touches[0].clientX;
+          lastDragY = e.touches[0].clientY;
+        },
+        { passive: true }
+      );
+
+      canvas.addEventListener(
+        'touchend',
+        () => {
+          isDragging = false;
+        },
+        { passive: true }
+      );
+
+      const handleScroll = () => {
+        const sec = document.getElementById('innovation');
+        if (!sec) return;
+        const rect = sec.getBoundingClientRect();
+        const pct = (window.innerHeight - rect.top) / (window.innerHeight + rect.height);
+        scrollProgress = Math.max(0, Math.min(1, pct));
+      };
+
+      window.addEventListener('scroll', handleScroll, { passive: true });
+    } catch (err) {
+      console.error('Three.js initialization failed:', err);
+    } finally {
+      isInitializing = false;
+    }
+  }
+
+  function observeInnovationSection() {
+    const section = document.getElementById('innovation');
+    if (!section || section.dataset.observed === 'true') return;
+
+    section.dataset.observed = 'true';
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          io.disconnect();
+          initThreeJS();
+        }
+      },
+      { threshold: 0, rootMargin: '400px' }
+    );
+    io.observe(section);
+  }
+
+  document.addEventListener('astro:page-load', observeInnovationSection);
+
+  document.addEventListener('astro:before-swap', () => {
+    threeCleanup?.();
+  });
+</script>

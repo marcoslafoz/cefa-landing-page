@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-04-15T08:08:49.947Z",
+  "updatedAt": "2026-04-15T08:40:52.044Z",
+  "globalType": "rd-content",
+  "eyebrow": "Innovation & Entwicklung",
+  "title": "F&E-Projekte",
+  "subtitle": "Innovation ist der Motor unseres Wachstums. Wir investieren kontinuierlich in Forschung und Entwicklung, um fortschrittliche technische Lösungen anzubieten, die den Bedürfnissen der Automobilindustrie vorgreifen.",
+  "stats": [
+    {
+      "value": "+15%",
+      "label": "Jährliche F&E-Investition",
+      "id": "69df4f1418507c0001d933c5"
+    },
+    {
+      "value": "16+",
+      "label": "Geförderte Projekte",
+      "id": "69df4f1418507c0001d933c6"
+    },
+    {
+      "value": "3",
+      "label": "Entwicklungszentren",
+      "id": "69df4f1418507c0001d933c7"
+    }
+  ],
+  "funders": {
+    "label": "Förderstellen",
+    "programLabel": "Europäisches Programm",
+    "items": [
+      {
+        "name": "Regierung von Aragón",
+        "description": "Projekte, kofinanziert von der Regierung von Aragón im Rahmen von Programmen zur industriellen Transformation und Entwicklung mit EFRE-Mitteln.",
+        "id": "69df4f1418507c0001d933c8"
+      },
+      {
+        "name": "Europäische Union",
+        "description": "Projekte, kofinanziert von der Europäischen Union im Rahmen von Programmen zur Energieeffizienz und industriellen Innovation.",
+        "id": "69df4f1418507c0001d933c9"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Interesse an einer Zusammenarbeit?",
+    "body": "Wenn Sie ein Automobilhersteller, Materiallieferant oder eine akademische Einrichtung sind und gemeinsame F&E-Projekte erkunden möchten, nehmen Sie Kontakt mit uns auf.",
+    "cta": "Kontakt aufnehmen"
+  },
+  "meta": {
+    "title": "F&E-Projekte – CEFA",
+    "description": "F&E bei CEFA in Materialien, Spritzgussprozessen und Digitalisierung für Automobil-OEM. +15 % Jahresinvestition in Innovation für Kunststoffkomponenten."
+  },
+  "id": "69df479113d2923b1ce4155a"
+}

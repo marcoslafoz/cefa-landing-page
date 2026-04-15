@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-04-15T08:08:49.947Z",
+  "updatedAt": "2026-04-15T08:40:52.044Z",
+  "globalType": "rd-content",
+  "eyebrow": "Innovación y desarrollo",
+  "title": "Proyectos I+D",
+  "subtitle": "La innovación es el motor de nuestro crecimiento. Invertimos constantemente en investigación y desarrollo para ofrecer soluciones técnicas avanzadas que anticipen las necesidades de la industria del automóvil.",
+  "stats": [
+    {
+      "value": "+15%",
+      "label": "Inversión anual en I+D",
+      "id": "69df4f1418507c0001d933c5"
+    },
+    {
+      "value": "16+",
+      "label": "Proyectos financiados",
+      "id": "69df4f1418507c0001d933c6"
+    },
+    {
+      "value": "3",
+      "label": "Centros de desarrollo",
+      "id": "69df4f1418507c0001d933c7"
+    }
+  ],
+  "funders": {
+    "label": "Organismos financiadores",
+    "programLabel": "Programa europeo",
+    "items": [
+      {
+        "name": "Gobierno de Aragón",
+        "description": "Proyectos cofinanciados por el Gobierno de Aragón en el marco de los programas de ayudas a la transformación y desarrollo industrial, con fondos FEDER.",
+        "id": "69df4f1418507c0001d933c8"
+      },
+      {
+        "name": "Unión Europea",
+        "description": "Proyectos cofinanciados por la Unión Europea en el marco de programas de eficiencia energética e innovación industrial.",
+        "id": "69df4f1418507c0001d933c9"
+      }
+    ]
+  },
+  "contact": {
+    "title": "¿Interesado en colaborar?",
+    "body": "Si eres fabricante de automoción, proveedor de materiales o institución académica y quieres explorar proyectos de I+D conjuntos, contacta con nosotros.",
+    "cta": "Contactar"
+  },
+  "meta": {
+    "title": "Proyectos I+D en Inyección de Plásticos y Automoción | CEFA",
+    "description": "Proyectos I+D en materiales, inyección y digitalización para OEM. CEFA invierte +15% anual en innovación para componentes plásticos de próxima generación."
+  },
+  "id": "69df479113d2923b1ce4155a"
+}

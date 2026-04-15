@@ -1,0 +1,108 @@
+###############################################################################
+# CEFA – Docker Compose principal
+# Orquesta 4 servicios (sin orquestador separado):
+#   payload            → Payload CMS (CMS + Motor de Build de Astro interno)
+#   mongo              → MongoDB (Base de datos del CMS)
+#   landing-page       → Nginx (Sirve la static web generada por Payload)
+#   libretranslate     → Servicio local de traducción automática
+###############################################################################
+
+services:
+
+  # ── 1. MongoDB ──────────────────────────────────────────────────────────────
+  mongo:
+    image: mongo:7
+    container_name: cefa-mongo
+    restart: unless-stopped
+    command: ["--storageEngine=wiredTiger"]
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - cefa-net
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ── 2. Payload CMS (Actúa también de motor de build) ─────────────────────────
+  payload:
+    build:
+      context: ./payloadcms
+      dockerfile: Dockerfile
+    container_name: cefa-payload
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: mongodb://mongo:27017/payloadcms
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      PAYLOAD_PUBLIC_URL: ${PAYLOAD_PUBLIC_URL:-http://localhost}
+      INTERNAL_CMS_URL: http://payload:3000
+      LIBRETRANSLATE_URL: http://libretranslate:5000/translate
+      WEBROOT_DIR: /webroot
+      # El script sync-cms.js y Astro usarán esta variable para la generación SSG
+      PUBLIC_TURNSTILE_SITE_KEY: ${PUBLIC_TURNSTILE_SITE_KEY:-1x00000000000000000000AA}
+      TURNSTILE_SECRET_KEY: ${TURNSTILE_SECRET_KEY}
+      PAYLOAD_SEED: "true"
+      LANDING_PAGE_PATH: /workspace/landing-page
+      ASTRO_BASE_DIR: /workspace/landing-page
+    volumes:
+      - payload_media:/app/media
+      # Payload necesita acceso al código fuente de la landing page para ejecutar "npm run build" internamente
+      - ./landing-page:/workspace/landing-page
+      # Volumen temporal compartido final al que se vuelca la web generada
+      - webroot:/webroot
+    networks:
+      - cefa-net
+
+
+  # ── 3. Servidor Web Nginx (landing-page) ───────────────────────────────
+  landing-page:
+    build:
+      context: ./landing-page
+      dockerfile: Dockerfile.nginx
+    container_name: cefa-nginx
+    restart: unless-stopped
+    ports:
+      - "${NGINX_HTTP_PORT:-80}:80"
+      - "${NGINX_HTTPS_PORT:-443}:443"
+    depends_on:
+      payload:
+        condition: service_started
+    volumes:
+      # Lee la web atómicamente generada en modo read-only
+      - webroot:/webroot:ro
+    networks:
+      - cefa-net
+
+  # ── 4. LibreTranslate ───────────────────────────────────────────────────────
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    container_name: cefa-libretranslate
+    restart: unless-stopped
+    environment:
+      LT_LOAD_ONLY: es,en,de,pl
+      LT_UPDATE_MODELS: "true"
+    volumes:
+      - ./libretranslate/lt-data:/home/libretranslate/.local/share/argos-translate
+    networks:
+      - cefa-net
+
+# ── Volumes ────────────────────────────────────────────────────────────────────
+volumes:
+  mongo_data:
+    name: cefa_mongo_data
+  payload_media:
+    name: cefa_payload_media
+  webroot:
+    name: cefa_webroot
+
+# ── Networks ───────────────────────────────────────────────────────────────────
+networks:
+  cefa-net:
+    name: cefa-net
+    driver: bridge

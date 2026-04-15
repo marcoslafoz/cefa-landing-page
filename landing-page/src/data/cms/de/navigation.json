@@ -1,0 +1,35 @@
+{
+  "createdAt": "2026-04-15T08:08:49.744Z",
+  "updatedAt": "2026-04-15T08:40:51.925Z",
+  "globalType": "navigation",
+  "header": {
+    "company": "Unternehmen",
+    "products": "Produkte",
+    "clients": "Kunden",
+    "contact": "Kontakt",
+    "contactCta": "Kontakt aufnehmen"
+  },
+  "footerColumns": {
+    "company": "Unternehmen",
+    "products": "Produkte",
+    "contact": "Kontakt"
+  },
+  "links": {
+    "mission": "Mission",
+    "vision": "Vision",
+    "innovation": "Innovation",
+    "history": "Geschichte",
+    "awards": "Anerkennungen",
+    "certifications": "Zertifizierungen",
+    "rd": "F&E-Projekte",
+    "presence": "Standorte",
+    "careers": "Karriere",
+    "clients": "Kunden",
+    "contact": "Kontakt",
+    "dashboard": "Instrumententafeln",
+    "door": "Türverkleidungen",
+    "functional": "Funktionale Anwendungen",
+    "exterior": "Außenverkleidungen"
+  },
+  "id": "69df479113d2923b1ce414ea"
+}

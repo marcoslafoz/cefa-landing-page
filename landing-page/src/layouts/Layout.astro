@@ -1,0 +1,215 @@
+---
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+import CookieConsent from '@/components/ui/CookieConsent.astro';
+import SEOMeta from '@/components/SEOMeta.astro';
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+
+interface Props {
+  title: string;
+  description: string;
+  locale: Locale;
+  canonicalUrl?: string;
+  ogImage?: string;
+  keywords?: string;
+}
+
+const { title, description, locale, canonicalUrl, ogImage, keywords } = Astro.props;
+
+const t = useTranslations(locale);
+---
+
+<!doctype html>
+<html lang={locale} dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="preconnect" href="https://basemaps.cartocdn.com" crossorigin />
+    <link rel="dns-prefetch" href="https://a.basemaps.cartocdn.com" />
+    <link rel="dns-prefetch" href="https://b.basemaps.cartocdn.com" />
+    <link rel="dns-prefetch" href="https://c.basemaps.cartocdn.com" />
+
+    <SEOMeta
+      title={title}
+      description={description}
+      locale={locale}
+      canonicalUrl={canonicalUrl}
+      ogImage={ogImage}
+      keywords={keywords}
+    />
+
+    <!-- Enrutamiento del lado del cliente para navegación instantánea -->
+    <ClientRouter />
+
+    <!-- Auto-detección de idioma: redirige al idioma del navegador del usuario en la primera visita.
+         La clave de localStorage 'cefa-locale' se establece cuando el usuario elige explícitamente un idioma
+         desde el selector de navegación o navega a una URL con prefijo de idioma. -->
+    <script is:inline>
+      (function () {
+        var STORAGE_KEY = 'cefa-locale';
+        var path = window.location.pathname;
+        var locales = ['es', 'de', 'pl'];
+
+        // Detectar si la URL actual ya tiene un prefijo de idioma
+        var currentPrefix = '';
+        for (var i = 0; i < locales.length; i++) {
+          if (path === '/' + locales[i] || path.startsWith('/' + locales[i] + '/')) {
+            currentPrefix = locales[i];
+            break;
+          }
+        }
+
+        // Si la URL tiene un prefijo de idioma explícito, respetarlo y actualizar la preferencia guardada.
+        if (currentPrefix) {
+          localStorage.setItem(STORAGE_KEY, currentPrefix);
+          return;
+        }
+
+        // La URL actual no tiene prefijo (por defecto Inglés). Comprobar preferencia guardada.
+        var stored = localStorage.getItem(STORAGE_KEY);
+
+        // Si tenemos una preferencia guardada que no es Inglés, redirigir.
+        if (stored && stored !== 'en' && locales.indexOf(stored) !== -1) {
+          window.location.replace('/' + stored + path);
+          return;
+        }
+
+        // Primera visita sin preferencia guardada: auto-detectar desde el idioma del navegador
+        if (!stored) {
+          var langs =
+            navigator.languages && navigator.languages.length
+              ? Array.from(navigator.languages)
+              : [navigator.language || 'en'];
+
+          var detected = 'en';
+          for (var j = 0; j < langs.length; j++) {
+            var code = langs[j].toLowerCase().split('-')[0];
+            if (locales.indexOf(code) !== -1) {
+              detected = code;
+              break;
+            }
+          }
+
+          localStorage.setItem(STORAGE_KEY, detected);
+          if (detected !== 'en') {
+            window.location.replace('/' + detected + path);
+          }
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <!-- Saltar al contenido principal (accesibilidad + SEO) -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 focus:px-4 focus:py-2 focus:bg-cefa-red focus:text-white focus:text-sm focus:font-bold focus:rounded focus:outline-none"
+    >
+      {t('a11y.skip')}
+    </a>
+    <slot />
+    <div
+      id="scroll-progress"
+      class="fixed top-0 left-0 h-0.5 bg-cefa-red z-100 w-0 transition-all duration-75 ease-out pointer-events-none shadow-[0_0_8px_var(--color-cefa-red-glow)]"
+    >
+    </div>
+    <CookieConsent locale={locale} />
+    <script>
+      let layoutController: AbortController | null = null;
+
+      function setupScrollProgress() {
+        const bar = document.getElementById('scroll-progress');
+        if (!bar) return;
+
+        const update = () => {
+          const winScroll = window.scrollY;
+          const height =
+            document.documentElement.scrollHeight - document.documentElement.clientHeight;
+          const scrolled = height > 0 ? (winScroll / height) * 100 : 0;
+          bar.style.width = scrolled + '%';
+          bar.style.opacity = winScroll > 20 ? '1' : '0';
+        };
+
+        window.addEventListener('scroll', update, {
+          passive: true,
+          signal: layoutController?.signal,
+        });
+        update();
+      }
+
+      function setupRevealObserver() {
+        const elements = document.querySelectorAll('.reveal:not(.visible)');
+        if (elements.length === 0) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+              }
+            });
+          },
+          { threshold: 0.1, rootMargin: '0px 0px -48px 0px' }
+        );
+        elements.forEach((el) => observer.observe(el));
+      }
+
+      function setupCounterObserver() {
+        const counters = document.querySelectorAll('.counter:not(.counted)');
+        if (counters.length === 0) return;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const target = entry.target as HTMLElement;
+                const end = parseInt(target.getAttribute('data-target') || '0', 10);
+                const prefix = target.getAttribute('data-prefix') || '';
+                const suffix = target.getAttribute('data-suffix') || '';
+                const duration = 2000;
+                const startTime = performance.now();
+
+                target.classList.add('counted');
+
+                const update = (currentTime: number) => {
+                  const elapsed = currentTime - startTime;
+                  const progress = Math.min(elapsed / duration, 1);
+                  const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
+                  const current = Math.floor(easeProgress * end);
+
+                  target.textContent = `${prefix}${current}${suffix}`;
+
+                  if (progress < 1) {
+                    requestAnimationFrame(update);
+                  } else {
+                    target.textContent = `${prefix}${end}${suffix}`;
+                  }
+                };
+
+                requestAnimationFrame(update);
+                observer.unobserve(target);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        counters.forEach((counter) => observer.observe(counter));
+      }
+
+      function initLayout() {
+        layoutController?.abort();
+        layoutController = new AbortController();
+
+        setupScrollProgress();
+        setupRevealObserver();
+        setupCounterObserver();
+      }
+
+      document.addEventListener('astro:page-load', initLayout);
+      if (document.readyState !== 'loading') initLayout();
+    </script>
+  </body>
+</html>

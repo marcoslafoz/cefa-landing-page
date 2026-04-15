@@ -1,0 +1,37 @@
+{
+  "createdAt": "2026-04-15T08:08:49.802Z",
+  "updatedAt": "2026-04-15T08:40:51.943Z",
+  "globalType": "hero",
+  "eyebrow": "Fabricante de referencia en automoción",
+  "titleLine1": "Ingeniería plástica",
+  "titleLine2": "de alta precisión",
+  "subtitle": "80 años desarrollando componentes plásticos de alta performance para los OEM más exigentes del mundo.",
+  "ctas": {
+    "primary": "Nuestros productos",
+    "secondary": "Conoce CEFA"
+  },
+  "scrollText": "Descubrir",
+  "stats": [
+    {
+      "value": "80",
+      "label": "Años de trayectoria",
+      "id": "69df4f1318507c0001d933a1"
+    },
+    {
+      "value": "3",
+      "label": "Plantas industriales",
+      "id": "69df4f1318507c0001d933a2"
+    },
+    {
+      "value": "+800",
+      "label": "Profesionales",
+      "id": "69df4f1318507c0001d933a3"
+    },
+    {
+      "value": "IATF",
+      "label": "Calidad certificada",
+      "id": "69df4f1318507c0001d933a4"
+    }
+  ],
+  "id": "69df479113d2923b1ce41506"
+}

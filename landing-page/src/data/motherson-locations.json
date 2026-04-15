@@ -1,0 +1,3159 @@
+[
+  {
+    "id": "aero-treatments-private-limite",
+    "name": "Aero Treatments Private Limite",
+    "city": "Tumakuru",
+    "country": "India",
+    "coordinates": [77.0522255268602, 13.50422423837]
+  },
+  {
+    "id": "aes-india-engineering-ltd-aes-",
+    "name": "AES India Engineering Ltd. (AES)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [80.2013827, 13.0187531]
+  },
+  {
+    "id": "aes-india-engineering-ltd-aes-",
+    "name": "AES India Engineering Ltd. (AES)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3170727330872, 28.5945661803081]
+  },
+  {
+    "id": "anest-iwata-motherson-private-limited-aim-",
+    "name": "Anest Iwata Motherson Private Limited (AIM)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3854172158008, 28.6189314465942]
+  },
+  {
+    "id": "anest-iwata-motherson-private-limited-aim-",
+    "name": "Anest Iwata Motherson Private Limited (AIM)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.5119122508031, 28.5158160709179]
+  },
+  {
+    "id": "baldi",
+    "name": "Baldi",
+    "city": "Várzea Paulista",
+    "country": "Brazil",
+    "coordinates": [-46.828033199346, -23.206688851417]
+  },
+  {
+    "id": "celulosa-fabril-cefa-",
+    "name": "Celulosa Fabril (CEFA)",
+    "city": "Zaragoza",
+    "country": "Spain",
+    "coordinates": [-0.80186, 41.6628]
+  },
+  {
+    "id": "chairman-s-office-china",
+    "name": "Chairman’s Office China",
+    "city": "Shanghai",
+    "country": "China",
+    "coordinates": [121.36037, 31.22045]
+  },
+  {
+    "id": "chairman-s-office-europe-and-north-africa",
+    "name": "Chairman’s Office Europe and North Africa",
+    "city": "Bruchkoebel",
+    "country": "Germany",
+    "coordinates": [8.91085, 50.17562]
+  },
+  {
+    "id": "chairman-s-office-north-and-south-america",
+    "name": "Chairman’s Office North and South America",
+    "city": "Houston",
+    "country": "USA",
+    "coordinates": [-95.56101, 29.71129]
+  },
+  {
+    "id": "chairman-s-office-south-asia-middle-east-mauritius-and-south-africa",
+    "name": "Chairman’s Office South Asia  Middle East  Mauritius and South Africa",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3464508086389, 28.5367930959423]
+  },
+  {
+    "id": "chairman-s-office-southeast-asia-japan-south-korea-australia-and-new-zealand",
+    "name": "Chairman’s Office Southeast Asia  Japan  South Korea  Australia and New Zealand",
+    "city": "Mulgrave",
+    "country": "Australia",
+    "coordinates": [145.1533, -37.91185]
+  },
+  {
+    "id": "cim-tools-private-limited",
+    "name": "CIM Tools Private Limited",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.7279926967117, 13.173885776941]
+  },
+  {
+    "id": "cim-tools-private-limited",
+    "name": "CIM Tools Private Limited",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.7351536840536, 13.177020360902]
+  },
+  {
+    "id": "cim-tools-private-limited",
+    "name": "CIM Tools Private Limited",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.5113165032311, 13.017005530797]
+  },
+  {
+    "id": "cim-tools-private-limited",
+    "name": "CIM Tools Private Limited",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.7289555394375, 13.174191065013]
+  },
+  {
+    "id": "ctm-india-ltd-ctmil-",
+    "name": "CTM India Ltd. (CTMIL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9373749921473, 12.856969383814]
+  },
+  {
+    "id": "ctm-india-ltd-ctmil-",
+    "name": "CTM India Ltd. (CTMIL)",
+    "city": "Sanand",
+    "country": "India",
+    "coordinates": [72.2699396662739, 22.9815695865619]
+  },
+  {
+    "id": "eissmann-automotive-slovensko-s-r-o-",
+    "name": "Eissmann Automotive Slovensko s.r.o.",
+    "city": "Holic",
+    "country": "Slovakia",
+    "coordinates": [17.155229, 48.822691]
+  },
+  {
+    "id": "frigel-intelligent-cooling-systems-india-pvt-ltd-fics-",
+    "name": "Frigel Intelligent Cooling Systems India Pvt ltd (FICS)",
+    "city": "Greater Noida",
+    "country": "India",
+    "coordinates": [77.4654403185765, 28.607519517851]
+  },
+  {
+    "id": "fritzmeier-motherson-cabin-engineering-private-ltd-fmcel-",
+    "name": "Fritzmeier Motherson Cabin Engineering Private Ltd. (FMCEL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8042408381724, 12.885568201972]
+  },
+  {
+    "id": "fritzmeier-motherson-cabin-engineering-private-ltd-fmcel-",
+    "name": "Fritzmeier Motherson Cabin Engineering Private Ltd. (FMCEL)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8140372371703, 18.7793950337876]
+  },
+  {
+    "id": "highly-marelli-motherson-thermal-solutions-pvt-ltd-",
+    "name": "Highly Marelli Motherson Thermal Solutions Pvt. Ltd.",
+    "city": "Bawal",
+    "country": "India",
+    "coordinates": [76.6031894189555, 28.0963177223832]
+  },
+  {
+    "id": "highly-marelli-motherson-thermal-solutions-pvt-ltd-",
+    "name": "Highly Marelli Motherson Thermal Solutions Pvt. Ltd.",
+    "city": "Bawal",
+    "country": "India",
+    "coordinates": [76.6031894189555, 28.0963177223832]
+  },
+  {
+    "id": "highly-marelli-motherson-thermal-solutions-pvt-ltd-",
+    "name": "Highly Marelli Motherson Thermal Solutions Pvt. Ltd.",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.938653863312, 12.857723324944]
+  },
+  {
+    "id": "highly-marelli-motherson-thermal-solutions-pvt-ltd-",
+    "name": "Highly Marelli Motherson Thermal Solutions Pvt. Ltd.",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [76.9098818079378, 28.3702681589007]
+  },
+  {
+    "id": "irillic-private-limited",
+    "name": "Irillic Private Limited",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.5987660199561, 12.899114869321]
+  },
+  {
+    "id": "kyungshin-industrial-motherson-private-ltd-kiml-",
+    "name": "Kyungshin Industrial Motherson Private Ltd. (KIML)",
+    "city": "Beerepalli",
+    "country": "India",
+    "coordinates": [77.5591499446025, 13.87315101185]
+  },
+  {
+    "id": "kyungshin-industrial-motherson-private-ltd-kiml-",
+    "name": "Kyungshin Industrial Motherson Private Ltd. (KIML)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9413343553611, 12.857479003769]
+  },
+  {
+    "id": "kyungshin-industrial-motherson-private-ltd-kiml-",
+    "name": "Kyungshin Industrial Motherson Private Ltd. (KIML)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9413343553611, 12.857479003769]
+  },
+  {
+    "id": "kyungshin-industrial-motherson-private-ltd-kiml-",
+    "name": "Kyungshin Industrial Motherson Private Ltd. (KIML)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9489979266566, 12.859423645205]
+  },
+  {
+    "id": "kyungshin-industrial-motherson-private-ltd-kiml-",
+    "name": "Kyungshin Industrial Motherson Private Ltd. (KIML)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [80.0879790132797, 13.049968933264]
+  },
+  {
+    "id": "kyungshin-industrial-motherson-private-ltd-kiml-",
+    "name": "Kyungshin Industrial Motherson Private Ltd. (KIML)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.7922632177193, 18.797528036044]
+  },
+  {
+    "id": "marelli-motherson-automotive-lighting-india-pvt-ltd-mmli-",
+    "name": "Marelli Motherson Automotive Lighting India Pvt. Ltd. (MMLI)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.7909023430574, 18.707129413447]
+  },
+  {
+    "id": "marelli-motherson-automotive-lighting-india-pvt-ltd-mmli-",
+    "name": "Marelli Motherson Automotive Lighting India Pvt. Ltd. (MMLI)",
+    "city": "Bawal",
+    "country": "India",
+    "coordinates": [76.6144395933216, 28.1063138271873]
+  },
+  {
+    "id": "marelli-motherson-automotive-lighting-india-pvt-ltd-mmli-",
+    "name": "Marelli Motherson Automotive Lighting India Pvt. Ltd. (MMLI)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8108015560478, 18.7418445815015]
+  },
+  {
+    "id": "marelli-motherson-automotive-lighting-india-pvt-ltd-mmli-",
+    "name": "Marelli Motherson Automotive Lighting India Pvt. Ltd. (MMLI)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8108015560478, 18.7418445815015]
+  },
+  {
+    "id": "marelli-motherson-automotive-lighting-india-pvt-ltd-mmli-",
+    "name": "Marelli Motherson Automotive Lighting India Pvt. Ltd. (MMLI)",
+    "city": "Sanand",
+    "country": "India",
+    "coordinates": [72.2743651825993, 22.975459345187]
+  },
+  {
+    "id": "marelli-motherson-automotive-lighting-india-pvt-ltd-mmli-",
+    "name": "Marelli Motherson Automotive Lighting India Pvt. Ltd. (MMLI)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8449729814357, 18.7782583376145]
+  },
+  {
+    "id": "matsui-technologies-india-ltd-mtil-",
+    "name": "Matsui Technologies India Ltd. (MTIL)",
+    "city": "Greater Noida",
+    "country": "India",
+    "coordinates": [77.4592953435602, 28.6059091529044]
+  },
+  {
+    "id": "modulos-ribera-alta-mra-",
+    "name": "Modulos Ribera Alta (MRA)",
+    "city": "Zaragoza",
+    "country": "Spain",
+    "coordinates": [-1.155549, 41.762153]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Brive -La -Gaillarde",
+    "country": "France",
+    "coordinates": [1.4843139157622, 45.1393016857131]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "La Marsa",
+    "country": "Tunisia",
+    "coordinates": [10.310732227637, 36.8959205393354]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Chevry Cossigny",
+    "country": "France",
+    "coordinates": [2.6530206783768, 48.7284886115996]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Oloron - Sainte - Marie",
+    "country": "France",
+    "coordinates": [-0.60101921008906, 43.1681938307902]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Serres Castet",
+    "country": "France",
+    "coordinates": [-0.38239772103766, 43.3645774190469]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Liévin",
+    "country": "France",
+    "coordinates": [2.7552058510866, 50.4320243243795]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Tangier",
+    "country": "Morocco",
+    "coordinates": [-5.794685, 35.758721]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Serres Castet",
+    "country": "France",
+    "coordinates": [-0.38934644328104, 43.3653692278372]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Nouaceur",
+    "country": "Morocco",
+    "coordinates": [-7.5528491985255, 33.3802955941646]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Serres Castet",
+    "country": "France",
+    "coordinates": [-0.38934644328104, 43.3653692278372]
+  },
+  {
+    "id": "motherson-aerospace-sas-mas-",
+    "name": "Motherson Aerospace SAS (MAS)",
+    "city": "Chavignon",
+    "country": "France",
+    "coordinates": [3.5259367077851, 49.4790047586625]
+  },
+  {
+    "id": "motherson-air-travel-agencies-limited",
+    "name": "Motherson Air Travel Agencies Limited",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3464508086389, 28.5367930959423]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Hamamatsu",
+    "country": "Japan",
+    "coordinates": [137.691666910614, 34.7605080427508]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Rayong",
+    "country": "Thailand",
+    "coordinates": [101.135142238711, 13.005695206117]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Rayong",
+    "country": "Thailand",
+    "coordinates": [101.135088594534, 13.005705659734]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Ohio",
+    "country": "USA",
+    "coordinates": [-83.807654514675, 40.775047977808]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Karawang",
+    "country": "Indonesia",
+    "coordinates": [107.331894581017, -6.40743149545]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Ha Noi",
+    "country": "Vietnam",
+    "coordinates": [105.775602752395, 21.1134832526249]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Guandong",
+    "country": "China",
+    "coordinates": [112.973430952458, 23.1028319316274]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system",
+    "name": "Motherson Atsumitec Automotive System",
+    "city": "Hamamatsu",
+    "country": "Japan",
+    "coordinates": [137.5174343, 34.7543391]
+  },
+  {
+    "id": "motherson-atsumitec-automotive-system-company-ltd-maas-",
+    "name": "Motherson Atsumitec Automotive System Company Ltd. (MAAS)",
+    "city": "Aguascalientes",
+    "country": "Mexico",
+    "coordinates": [-102.28502950525, 21.9628065349611]
+  },
+  {
+    "id": "motherson-auto-solutions-ltd-masl-",
+    "name": "Motherson Auto Solutions Ltd. (MASL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.825619593246, 12.875135920923]
+  },
+  {
+    "id": "motherson-automotive-elastomers-technology-mae-",
+    "name": "Motherson Automotive Elastomers Technology (MAE)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4515949513804, 28.4587805576173]
+  },
+  {
+    "id": "motherson-automotive-elastomers-technology-mae-",
+    "name": "Motherson Automotive Elastomers Technology (MAE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8917224809281, 12.871114918845]
+  },
+  {
+    "id": "motherson-automotive-elastomers-technology-mae-",
+    "name": "Motherson Automotive Elastomers Technology (MAE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8917224809281, 12.871114918845]
+  },
+  {
+    "id": "motherson-automotive-elastomers-technology-mae-",
+    "name": "Motherson Automotive Elastomers Technology (MAE)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3709983232891, 28.6077322901299]
+  },
+  {
+    "id": "motherson-automotive-lighting-tool-room-malt-",
+    "name": "Motherson Automotive Lighting Tool Room (MALT)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.451375010246, 28.4583325193097]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Bucheon - si",
+    "country": "South Korea",
+    "coordinates": [126.791521424499, 37.4974868734725]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.4223646090924, 12.809999344266]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [80.0721020418671, 12.860466481604]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [80.0308614011896, 12.778973265258]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9316166998565, 12.937961961209]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9316166998565, 12.937961961209]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9316166998565, 12.937961961209]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [76.9089976483523, 28.3717356671899]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Nashik",
+    "country": "India",
+    "coordinates": [73.7420859383309, 19.9530388840622]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Puducherry",
+    "country": "India",
+    "coordinates": [79.6627802214311, 11.921474224609]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8108015560478, 18.7418445815015]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [74.2704508168539, 18.7736744788088]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8155098516778, 18.7712315217872]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Sanand",
+    "country": "India",
+    "coordinates": [72.253261311435, 22.9851577593124]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Tapukara",
+    "country": "India",
+    "coordinates": [76.7990678656064, 28.1151454104808]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Sanand",
+    "country": "India",
+    "coordinates": [72.253261311435, 22.9851577593124]
+  },
+  {
+    "id": "motherson-automotive-technologies-and-engineering-mate-",
+    "name": "Motherson Automotive Technologies and Engineering (MATE)",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [76.9089976483523, 28.3717356671899]
+  },
+  {
+    "id": "motherson-bergstrom-hvac-solutions-pvt-ltd-mbsl-",
+    "name": "Motherson Bergstrom HVAC Solutions Pvt. Ltd. (MBSL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3151156482001, 28.578499389305]
+  },
+  {
+    "id": "motherson-deltacarb-advanced-metal-solutions",
+    "name": "Motherson DeltaCarb Advanced Metal Solutions",
+    "city": "Lugano",
+    "country": "Switzerland",
+    "coordinates": [8.92415, 45.97439]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Kronach",
+    "country": "Germany",
+    "coordinates": [11.337451255362, 50.2325655566004]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Föritztal OT Judenbach",
+    "country": "Germany",
+    "coordinates": [11.219515649271, 50.393682477515]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Tschirn",
+    "country": "Germany",
+    "coordinates": [11.450210013039, 50.3905720763302]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Kronach - Neuses",
+    "country": "Germany",
+    "coordinates": [11.303572755361, 50.2141776116606]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Janowice Wielkie",
+    "country": "Poland",
+    "coordinates": [15.878274976168, 50.9011858095308]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Picassent",
+    "country": "Spain",
+    "coordinates": [-0.44897042228646, 39.3596124809751]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Liaoyang",
+    "country": "China",
+    "coordinates": [123.2374, 41.2681]
+  },
+  {
+    "id": "motherson-drsc",
+    "name": "Motherson DRSC",
+    "city": "Shanghai",
+    "country": "China",
+    "coordinates": [121.269615360492, 31.0248859444875]
+  },
+  {
+    "id": "motherson-drsc-modules-usa-inc-",
+    "name": "Motherson DRSC Modules USA Inc.",
+    "city": "Russell Springs",
+    "country": "USA",
+    "coordinates": [-85.07254, 37.0289199999999]
+  },
+  {
+    "id": "motherson-elastomers-pty-ltd-mepl-",
+    "name": "Motherson Elastomers Pty Ltd. (MEPL)",
+    "city": "Bendigo",
+    "country": "Australia",
+    "coordinates": [144.304335, -36.741221]
+  },
+  {
+    "id": "motherson-electrical-wire-lanka-pvt-ltd-mwl-",
+    "name": "Motherson Electrical Wire Lanka Pvt. Ltd. (MWL)",
+    "city": "Padukka",
+    "country": "Sri Lanka",
+    "coordinates": [80.0732, 6.8556]
+  },
+  {
+    "id": "motherson-electronic-components-pvt-ltd-mecpl-",
+    "name": "Motherson Electronic Components Pvt Ltd  (MECPL)",
+    "city": "Kanchipuram",
+    "country": "India",
+    "coordinates": [79.8176077532286, 12.876064448449]
+  },
+  {
+    "id": "motherson-electronic-components-pvt-ltd-mecpl-",
+    "name": "Motherson Electronic Components Pvt Ltd (MECPL)",
+    "city": "Kanchipuram",
+    "country": "India",
+    "coordinates": [79.8176077532286, 12.876064448449]
+  },
+  {
+    "id": "motherson-electroplating-us-llc",
+    "name": "Motherson Electroplating US LLC",
+    "city": "Northport",
+    "country": "USA",
+    "coordinates": [-87.642, 33.225]
+  },
+  {
+    "id": "motherson-global-manufacturing-service",
+    "name": "Motherson Global Manufacturing Service",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3464508086389, 28.5367930959423]
+  },
+  {
+    "id": "motherson-health-medical-system-limited",
+    "name": "Motherson Health & Medical System Limited",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8175970236381, 12.876153350391]
+  },
+  {
+    "id": "motherson-innovations-mi-",
+    "name": "Motherson Innovations (MI)",
+    "city": "Stuttgart",
+    "country": "Germany",
+    "coordinates": [9.24878, 48.766613]
+  },
+  {
+    "id": "motherson-innovations-mi-",
+    "name": "Motherson Innovations (MI)",
+    "city": "Port Solent",
+    "country": "United Kingdom",
+    "coordinates": [-1.101644, 50.846173]
+  },
+  {
+    "id": "motherson-innovations-company-limited",
+    "name": "Motherson Innovations Company Limited",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3464508086389, 28.5367930959423]
+  },
+  {
+    "id": "motherson-innovations-lights-gmbh-and-co-kg",
+    "name": "Motherson Innovations Lights GmbH and Co KG",
+    "city": "Traunreut",
+    "country": "Germany",
+    "coordinates": [12.586438, 47.968919]
+  },
+  {
+    "id": "motherson-innovative-engineering-solutions-mines-",
+    "name": "Motherson Innovative Engineering Solutions (MINES)",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.4465989841966, 12.873293021867]
+  },
+  {
+    "id": "motherson-invenzen-xlab-pvt-ltd-mi-xlab-",
+    "name": "Motherson Invenzen XLab Pvt. Ltd. (MI XLAB)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3921718238096, 28.5217470148068]
+  },
+  {
+    "id": "motherson-lumen",
+    "name": "Motherson Lumen",
+    "city": "Durban",
+    "country": "South Africa",
+    "coordinates": [30.8167078, -29.8197626]
+  },
+  {
+    "id": "motherson-lumen",
+    "name": "Motherson Lumen",
+    "city": "Melbourne",
+    "country": "Australia",
+    "coordinates": [145.2616231, -38.0075037]
+  },
+  {
+    "id": "motherson-lumen",
+    "name": "Motherson Lumen",
+    "city": "Auckland",
+    "country": "New Zealand",
+    "coordinates": [174.376464099999, -36.8588062]
+  },
+  {
+    "id": "motherson-lumen",
+    "name": "Motherson Lumen",
+    "city": "Melbourne",
+    "country": "Australia",
+    "coordinates": [145.2616231, -38.0075037]
+  },
+  {
+    "id": "motherson-lumen",
+    "name": "Motherson Lumen",
+    "city": "Warsaw",
+    "country": "Poland",
+    "coordinates": [20.9227846, 52.1878387]
+  },
+  {
+    "id": "motherson-lumen",
+    "name": "Motherson Lumen",
+    "city": "Rayong",
+    "country": "Thailand",
+    "coordinates": [101.101731429363, 12.968854729423]
+  },
+  {
+    "id": "motherson-molds-and-diecasting-ltd-mmdl-",
+    "name": "Motherson Molds and Diecasting Ltd. (MMDL)",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [76.9089976483523, 28.3717356671899]
+  },
+  {
+    "id": "motherson-polymer-solutions-mps-",
+    "name": "Motherson Polymer Solutions (MPS)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9380868265257, 12.855683945068]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Shanghai",
+    "country": "China",
+    "coordinates": [121.752, 30.887]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Chattanooga",
+    "country": "USA",
+    "coordinates": [-85.134, 35.0709999999999]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Sterling Heights",
+    "country": "USA",
+    "coordinates": [-83.047, 42.606]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Newark",
+    "country": "USA",
+    "coordinates": [-122.0003, 37.508]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Puebla",
+    "country": "Mexico",
+    "coordinates": [-98.247, 19.116]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Saltillo",
+    "country": "Mexico",
+    "coordinates": [-101.06285661883, 25.2387191956755]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Pacheco",
+    "country": "Argentina",
+    "coordinates": [-58.689, -34.448]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Taubaté",
+    "country": "Brazil",
+    "coordinates": [-45.636, -23.056]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "SAS Sao Jose dos Pinhais (Curitiba)",
+    "country": "Brazil",
+    "coordinates": [-49.173, -25.669]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Mlada Boleslav",
+    "country": "Czech Republic",
+    "coordinates": [14.952843183545, 50.417908150828]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Bratislava",
+    "country": "Slovakia",
+    "coordinates": [16.9777191646182, 48.2270562642504]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Gölcük II",
+    "country": "Türkiye",
+    "coordinates": [29.8630048861476, 40.7095574943506]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Gölcük I",
+    "country": "Türkiye",
+    "coordinates": [29.8865844451582, 40.7158614238985]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Yeniköy (Kocaeli)",
+    "country": "Türkiye",
+    "coordinates": [29.8619999999998, 40.71]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Rennes",
+    "country": "France",
+    "coordinates": [-1.7101979261695, 48.0561434037587]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Palmela",
+    "country": "Portugal",
+    "coordinates": [-8.996, 38.584]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Vitoria",
+    "country": "Spain",
+    "coordinates": [-2.673, 42.856]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Arazuri Pamplona",
+    "country": "Spain",
+    "coordinates": [-1.71, 42.8119999999998]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Leipzig",
+    "country": "Germany",
+    "coordinates": [12.432, 51.414]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Barsignhausen",
+    "country": "Germany",
+    "coordinates": [9.4781701971556, 52.3779431421221]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Vogelsdorf (Berlin)",
+    "country": "Germany",
+    "coordinates": [13.759, 52.493]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Meerane",
+    "country": "Germany",
+    "coordinates": [12.428, 50.828]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Wolfsburg",
+    "country": "Germany",
+    "coordinates": [10.737, 52.372]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Martorell",
+    "country": "Spain",
+    "coordinates": [1.909055, 41.492892]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Foshan",
+    "country": "China",
+    "coordinates": [113.1159558, 23.0239788]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Troy",
+    "country": "USA",
+    "coordinates": [-83.1482267, 42.5601089]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Garín",
+    "country": "Argentina",
+    "coordinates": [-58.7300297, -34.4363574]
+  },
+  {
+    "id": "motherson-sas",
+    "name": "Motherson SAS",
+    "city": "Bratislava",
+    "country": "Slovakia",
+    "coordinates": [16.9740138809701, 48.2249465952972]
+  },
+  {
+    "id": "motherson-sumi-electric-wires-msew-wire-plant-green-field-project-",
+    "name": "Motherson Sumi Electric Wires - MSEW Wire Plant (Green Field Project)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8328403937984, 12.877116667578]
+  },
+  {
+    "id": "motherson-sumi-electric-wires-msew-pvc-plant-",
+    "name": "Motherson Sumi Electric Wires (MSEW PVC Plant)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.961736049239, 12.858606478224]
+  },
+  {
+    "id": "motherson-sumi-electric-wires-msew-",
+    "name": "Motherson Sumi Electric Wires (MSEW)",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.4465989841966, 12.873293021867]
+  },
+  {
+    "id": "motherson-sumi-electric-wires-msew-",
+    "name": "Motherson Sumi Electric Wires (MSEW)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3669030851453, 28.6055813150236]
+  },
+  {
+    "id": "motherson-sumi-electric-wires-msew-",
+    "name": "Motherson Sumi Electric Wires (MSEW)",
+    "city": "Indore",
+    "country": "India",
+    "coordinates": [75.6300091960818, 22.6214928031765]
+  },
+  {
+    "id": "motherson-sumi-electric-wires-msew-",
+    "name": "Motherson Sumi Electric Wires (MSEW)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3669030851453, 28.6055813150236]
+  },
+  {
+    "id": "motherson-sumi-electric-wires-msew-",
+    "name": "Motherson Sumi Electric Wires (MSEW)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3669030851453, 28.6055813150236]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Gujarat",
+    "country": "India",
+    "coordinates": [71.9579253352952, 23.2620789540028]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.316600642325, 28.5910507305109]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4059215717779, 28.5208321517608]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Nashik",
+    "country": "India",
+    "coordinates": [73.7456040589841, 19.9978705917691]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.4465989841966, 12.873293021867]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.4249696013848, 12.808189972688]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8363409387317, 12.810988226121]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8363409387317, 12.810988226121]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Faridabad",
+    "country": "India",
+    "coordinates": [77.3087599330824, 28.4794970946489]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [77.0629083251319, 28.4899993574465]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Haldwani",
+    "country": "India",
+    "coordinates": [79.517459461945, 29.1376436404374]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Sonipat",
+    "country": "India",
+    "coordinates": [76.8941362891942, 28.8403124388898]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.7116069904226, 18.6139850263222]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.7116069904226, 18.6139850263222]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.709473423949, 18.6137740704134]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pithampur",
+    "country": "India",
+    "coordinates": [75.6609247598443, 22.6463336073556]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Lucknow",
+    "country": "India",
+    "coordinates": [80.8889824558977, 26.7374572449517]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.7116069904226, 18.6139850263222]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.314257711642, 28.5885386742381]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.314257711642, 28.5885386742381]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3141504232882, 28.5885480950001]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4073203214383, 28.5294481490807]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.316600642325, 28.5910507305109]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pathredi",
+    "country": "India",
+    "coordinates": [76.8803671790929, 28.1337828003788]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pathredi",
+    "country": "India",
+    "coordinates": [76.8803671790929, 28.1337828003788]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Sanand",
+    "country": "India",
+    "coordinates": [72.2681151944374, 22.9819877374548]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8363409387317, 12.810988226121]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Pithampur",
+    "country": "India",
+    "coordinates": [75.6299413731685, 22.6213823199347]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4059215717779, 28.5208321517608]
+  },
+  {
+    "id": "motherson-sumi-wiring-india-limited-mswil-",
+    "name": "Motherson Sumi Wiring India Limited (MSWIL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8369202958419, 12.811469466681]
+  },
+  {
+    "id": "motherson-techno-precision-mexico-mtpmex-",
+    "name": "Motherson Techno Precision Mexico (MTPMEX)",
+    "city": "San Luis Potosi",
+    "country": "Mexico",
+    "coordinates": [-100.863834, 21.977579]
+  },
+  {
+    "id": "motherson-techno-tools-ltd-mttl-",
+    "name": "Motherson Techno Tools Ltd. (MTTL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4057059680232, 28.5295380052948]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.6640423148792, 12.845137713339]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Barcelona",
+    "country": "Spain",
+    "coordinates": [2.07375, 41.31906]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Boetzingen",
+    "country": "Germany",
+    "coordinates": [7.72166, 48.0644599999999]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [80.2467709944712, 12.911795444788]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.365489016175, 28.6125226760398]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3641254232892, 28.6130390613884]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Nagoya",
+    "country": "Japan",
+    "coordinates": [136.895184, 35.173894]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Singapore",
+    "country": "Singapore",
+    "coordinates": [103.85853, 1.29579]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Illinois",
+    "country": "USA",
+    "coordinates": [-88.03267, 42.04946]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "coordinates": [55.17052, 25.10357]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Reading",
+    "country": "United Kingdom",
+    "coordinates": [-0.9787, 51.45625]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3464508086389, 28.5367930959423]
+  },
+  {
+    "id": "motherson-technology-services-limited-mtsl-",
+    "name": "Motherson Technology Services Limited (MTSL)",
+    "city": "Hyderabad",
+    "country": "India",
+    "coordinates": [78.3753202, 17.4409944]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Jinhua",
+    "country": "China",
+    "coordinates": [119.62021, 29.03493]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Karawang",
+    "country": "Indonesia",
+    "coordinates": [107.304962968214, -6.3823130519174]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Alwar",
+    "country": "India",
+    "coordinates": [76.8083452724628, 28.1222198673919]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Srimahaphot",
+    "country": "Thailand",
+    "coordinates": [101.568759216989, 13.907056132635]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Wuhan",
+    "country": "China",
+    "coordinates": [114.075354391503, 30.4460194964394]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Zhongshan",
+    "country": "China",
+    "coordinates": [113.442071222187, 22.5679426291104]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Limeira",
+    "country": "Brazil",
+    "coordinates": [-47.364190755312, -22.602973224857]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Apaseo el Grande",
+    "country": "Mexico",
+    "coordinates": [-100.72822137042, 20.5468314828249]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Carrollton",
+    "country": "USA",
+    "coordinates": [-85.105258246714, 33.601475863003]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Columbus",
+    "country": "USA",
+    "coordinates": [-83.138675864605, 39.9955515056785]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Marion",
+    "country": "USA",
+    "coordinates": [-83.141698812195, 40.611045211683]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Columbus",
+    "country": "USA",
+    "coordinates": [-83.129724997403, 39.9235897510359]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Kameyama",
+    "country": "Japan",
+    "coordinates": [136.403937359717, 34.8670891982624]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Suzuka",
+    "country": "Japan",
+    "coordinates": [136.522120617203, 34.8710055293846]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Sakura",
+    "country": "Japan",
+    "coordinates": [139.939195995819, 36.7195694717955]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Sayama",
+    "country": "Japan",
+    "coordinates": [139.387693740699, 35.8717900923396]
+  },
+  {
+    "id": "motherson-yachiyo-automotive-systems-co-ltd-my-",
+    "name": "Motherson Yachiyo Automotive Systems Co. Ltd. (MY)",
+    "city": "Sayama",
+    "country": "Japan",
+    "coordinates": [139.393114246863, 35.874350491342]
+  },
+  {
+    "id": "mssl-global-rsa-module-engineering-ltd-mssl-global-rsa-",
+    "name": "MSSL Global RSA Module Engineering Ltd. (MSSL Global RSA)",
+    "city": "Isipingo",
+    "country": "South Africa",
+    "coordinates": [30.931479, -29.979335]
+  },
+  {
+    "id": "mssl-global-rsa-module-engineering-ltd-mssl-global-rsa-",
+    "name": "MSSL Global RSA Module Engineering Ltd. (MSSL Global RSA)",
+    "city": "Rosslyn",
+    "country": "South Africa",
+    "coordinates": [28.076337, -25.620185]
+  },
+  {
+    "id": "mssl-mauritius",
+    "name": "MSSL Mauritius",
+    "city": "Mauritius",
+    "country": "Mauritius",
+    "coordinates": [57.493047, -20.247793]
+  },
+  {
+    "id": "mssl-tooling-ltd-fze-mtl-",
+    "name": "MSSL Tooling Ltd. FZE (MTL)",
+    "city": "Sharjah",
+    "country": "United Arab Emirates",
+    "coordinates": [55.4835, 25.3328]
+  },
+  {
+    "id": "mssl-tooling-ltd-fze-mtl-",
+    "name": "MSSL Tooling Ltd. FZE (MTL)",
+    "city": "Sharjah",
+    "country": "United Arab Emirates",
+    "coordinates": [55.4835, 25.3328]
+  },
+  {
+    "id": "mssl-wiring-system-inc-mwsi-",
+    "name": "MSSL Wiring System INC. (MWSI)",
+    "city": "Warren",
+    "country": "USA",
+    "coordinates": [-80.720178, 41.236345]
+  },
+  {
+    "id": "mssl-wiring-system-inc-mwsi-",
+    "name": "MSSL Wiring System INC. (MWSI)",
+    "city": "Chihuahua",
+    "country": "Mexico",
+    "coordinates": [-106.12135, 28.6564]
+  },
+  {
+    "id": "mssl-wiring-system-inc-mwsi-",
+    "name": "MSSL Wiring System INC. (MWSI)",
+    "city": "Monclova",
+    "country": "Mexico",
+    "coordinates": [-101.396756, 26.898756]
+  },
+  {
+    "id": "mssl-wiring-system-inc-mwsi-",
+    "name": "MSSL Wiring System INC. (MWSI)",
+    "city": "Saltillo",
+    "country": "Mexico",
+    "coordinates": [-101.00027, 25.44441]
+  },
+  {
+    "id": "mssl-wiring-system-inc-mwsi-",
+    "name": "MSSL Wiring System INC. (MWSI)",
+    "city": "Portland",
+    "country": "USA",
+    "coordinates": [-84.99209, 40.44504]
+  },
+  {
+    "id": "nissin-advanced-coating-indo-co-private-limited-nacil-",
+    "name": "Nissin Advanced Coating Indo Co. Private Limited (NACIL)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8355624861678, 18.6499958537367]
+  },
+  {
+    "id": "nissin-advanced-coating-indo-co-private-limited-nacil-",
+    "name": "Nissin Advanced Coating Indo Co. Private Limited (NACIL)",
+    "city": "Kadi",
+    "country": "India",
+    "coordinates": [72.264975961726, 23.3078881314958]
+  },
+  {
+    "id": "nissin-advanced-coating-indo-co-private-limited-nacil-",
+    "name": "Nissin Advanced Coating Indo Co. Private Limited (NACIL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3810346963015, 28.6153842694853]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Kenitra",
+    "country": "Morocco",
+    "coordinates": [-6.4267161, 34.3116878]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Starachowice",
+    "country": "Poland",
+    "coordinates": [21.0730030904739, 51.0654348876432]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Starachowice",
+    "country": "Poland",
+    "coordinates": [21.0830799694969, 51.0220617584023]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Siping",
+    "country": "China",
+    "coordinates": [124.467232038308, 43.1543480937383]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Pozarevac",
+    "country": "Serbia",
+    "coordinates": [21.1756899999999, 44.6119699999999]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Klaipėda",
+    "country": "Lithuania",
+    "coordinates": [21.1916599999998, 55.6949499999998]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Luxembourg",
+    "country": "Luxembourg",
+    "coordinates": [6.1123651387866, 49.5796915314167]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Curitiba",
+    "country": "Brazil",
+    "coordinates": [-49.240103, -25.399597]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Suzhou",
+    "country": "China",
+    "coordinates": [120.67518, 31.304847]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Kempele",
+    "country": "Finland",
+    "coordinates": [25.445707, 64.938989]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Farmington Hills",
+    "country": "USA",
+    "coordinates": [-83.490217, 42.494398]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Campo Alegre",
+    "country": "Brazil",
+    "coordinates": [-49.393919, -26.18841]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Hefei",
+    "country": "China",
+    "coordinates": [117.2501, 31.748095]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Qingzhou",
+    "country": "China",
+    "coordinates": [118.468865746042, 36.6888894151555]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Shiyan",
+    "country": "China",
+    "coordinates": [110.799689313424, 32.6317888304248]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Suining",
+    "country": "China",
+    "coordinates": [105.495796, 30.339393]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Weifang",
+    "country": "China",
+    "coordinates": [119.152890135144, 36.6967838536835]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Danyang",
+    "country": "China",
+    "coordinates": [119.496194869974, 32.0011727779421]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Danyang",
+    "country": "China",
+    "coordinates": [120.804195504369, 31.3314757672856]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Barchfeld Immelborn",
+    "country": "Germany",
+    "coordinates": [10.29747, 50.810814]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Panevezys",
+    "country": "Lithuania",
+    "coordinates": [24.331872, 55.743058]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.97682766828, 29.3427802653863]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.97682766828, 29.3427802653863]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.97682766828, 29.3427802653863]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.97682766828, 29.3427802653863]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.97682766828, 29.3427802653863]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Ciudad Juarez",
+    "country": "Mexico",
+    "coordinates": [-106.416938, 31.7153905]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Piedras Negras",
+    "country": "Mexico",
+    "coordinates": [-100.55116, 28.68147]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Torreon",
+    "country": "Mexico",
+    "coordinates": [-103.363814, 25.528902]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Torreon",
+    "country": "Mexico",
+    "coordinates": [-103.363814, 25.528902]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Bialogard",
+    "country": "Poland",
+    "coordinates": [15.94743, 54.020206]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Czaplinek",
+    "country": "Poland",
+    "coordinates": [16.233351, 53.553496]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Drawsko Pomorskie",
+    "country": "Poland",
+    "coordinates": [15.78811, 53.52195]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Starachowice",
+    "country": "Poland",
+    "coordinates": [21.071233, 51.070203]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Tczew",
+    "country": "Poland",
+    "coordinates": [18.7585596751226, 54.0895354799545]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Tczew",
+    "country": "Poland",
+    "coordinates": [18.76242, 54.091396]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Kostomuksha",
+    "country": "Russia",
+    "coordinates": [30.632772, 64.601216]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Smederevo",
+    "country": "Serbia",
+    "coordinates": [20.958202, 44.685905]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Hornell",
+    "country": "USA",
+    "coordinates": [-77.65594, 42.35774]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Traverse City",
+    "country": "USA",
+    "coordinates": [-85.610147, 44.738902]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Chongqing",
+    "country": "China",
+    "coordinates": [106.47013, 29.7552]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Fuyang",
+    "country": "China",
+    "coordinates": [115.817165459694, 32.8920680631964]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Ras Al Khaimah",
+    "country": "United Arab Emirates",
+    "coordinates": [55.98644, 25.7259]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Huehuetoca",
+    "country": "Mexico",
+    "coordinates": [-99.21364, 19.856]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Campo Alegre",
+    "country": "Brazil",
+    "coordinates": [-49.274338311797, -26.19387920461]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Oulu",
+    "country": "Finland",
+    "coordinates": [25.4754673975701, 65.0096081294266]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.98855504486, 29.3466432170537]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.98855504486, 29.3466432170537]
+  },
+  {
+    "id": "pkc-group",
+    "name": "PKC Group",
+    "city": "Acuna",
+    "country": "Mexico",
+    "coordinates": [-100.98855504486, 29.3466432170537]
+  },
+  {
+    "id": "prysm-india-",
+    "name": "PRYSM (India)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.391, 28.5355]
+  },
+  {
+    "id": "re-time-pty-limited",
+    "name": "Re - Time Pty Limited",
+    "city": "Lonsdale",
+    "country": "Australia",
+    "coordinates": [138.505019911945, -35.107370493247]
+  },
+  {
+    "id": "robis-division-of-mate-",
+    "name": "ROBIS (Division of MATE)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9060323710774, 12.909076554393]
+  },
+  {
+    "id": "rollon-hydraulics-private-limited",
+    "name": "Rollon Hydraulics Private Limited",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.5128539228333, 13.023901727233]
+  },
+  {
+    "id": "rollon-hydraulics-private-limited",
+    "name": "Rollon Hydraulics Private Limited",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.5128539228333, 13.023901727233]
+  },
+  {
+    "id": "saddles-international",
+    "name": "Saddles International",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.6030352504571, 12.915759848206]
+  },
+  {
+    "id": "saddles-international",
+    "name": "Saddles International",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.6306048479693, 12.784272056368]
+  },
+  {
+    "id": "saddles-international",
+    "name": "Saddles International",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [77.0124035539542, 28.4857725590068]
+  },
+  {
+    "id": "saddles-international",
+    "name": "Saddles International",
+    "city": "Anantapur",
+    "country": "India",
+    "coordinates": [77.7942882417442, 14.128294193767]
+  },
+  {
+    "id": "saddles-international",
+    "name": "Saddles International",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.4142645731102, 12.820668576131]
+  },
+  {
+    "id": "saddles-international",
+    "name": "Saddles International",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.83115281989, 18.777272811141]
+  },
+  {
+    "id": "samil",
+    "name": "SAMIL",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4068742683999, 28.5297312851901]
+  },
+  {
+    "id": "samil",
+    "name": "SAMIL",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4068742683999, 28.5297312851901]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Greater Noida",
+    "country": "India",
+    "coordinates": [77.6024060116357, 28.4388004031]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Pontedera",
+    "country": "Italy",
+    "coordinates": [10.594031, 43.645327]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Hamamatsu",
+    "country": "Japan",
+    "coordinates": [137.734364631245, 34.7043753158772]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Yokohama",
+    "country": "Japan",
+    "coordinates": [139.612836, 35.509263]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Tallinn",
+    "country": "Estonia",
+    "coordinates": [24.746085, 59.432531]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Kandla",
+    "country": "India",
+    "coordinates": [70.1351272883107, 23.026511517944]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4068742683999, 28.5297312851901]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4068742683999, 28.5297312851901]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Enniscorthy",
+    "country": "Ireland",
+    "coordinates": [-6.554954, 52.52991]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "San Luis Potosi",
+    "country": "Mexico",
+    "coordinates": [-100.858748, 21.986861]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Pluakdaeng",
+    "country": "Thailand",
+    "coordinates": [101.1623, 13.0048]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Sharjah",
+    "country": "United Arab Emirates",
+    "coordinates": [55.498138, 25.330015]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Sharjah",
+    "country": "United Arab Emirates",
+    "coordinates": [55.498138, 25.330015]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Gateshead",
+    "country": "United Kingdom",
+    "coordinates": [-1.589047, 54.9649]
+  },
+  {
+    "id": "samil-whd-",
+    "name": "SAMIL (WHD)",
+    "city": "Sanand",
+    "country": "India",
+    "coordinates": [72.2672783440353, 22.9813356702155]
+  },
+  {
+    "id": "samvardhana-motherson-adsys-tech-limited",
+    "name": "Samvardhana Motherson Adsys Tech Limited",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3682784394214, 28.6053240887253]
+  },
+  {
+    "id": "samvardhana-motherson-auto-component-smac-",
+    "name": "Samvardhana Motherson Auto Component (SMAC)",
+    "city": "Bawal",
+    "country": "India",
+    "coordinates": [76.6144395933216, 28.1063138271873]
+  },
+  {
+    "id": "samvardhana-motherson-auto-systems-smas-",
+    "name": "Samvardhana Motherson Auto Systems (SMAS)",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [77.319573228313, 28.3621484558611]
+  },
+  {
+    "id": "samvardhana-motherson-automotive-systems-groupb-v-smrpbv-",
+    "name": "Samvardhana Motherson Automotive Systems GroupB.V (SMRPBV)",
+    "city": "Amsterdam",
+    "country": "Netherlands",
+    "coordinates": [4.8480381, 52.3476178]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Manesar",
+    "country": "India",
+    "coordinates": [76.9090936956862, 28.3717926514583]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Neustadt",
+    "country": "Germany",
+    "coordinates": [7.7182947324345, 48.0644931567169]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Shanghai",
+    "country": "China",
+    "coordinates": [121.372613633025, 31.2140935328779]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3464508086389, 28.5367930959423]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Pithmapur",
+    "country": "India",
+    "coordinates": [75.6390356474007, 22.6244324265247]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Lucknow",
+    "country": "India",
+    "coordinates": [80.8886821108453, 26.7368823422668]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Haldwani",
+    "country": "India",
+    "coordinates": [79.5128468151876, 29.2186748542157]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Becharaji",
+    "country": "India",
+    "coordinates": [72.0086583943265, 23.4779276750717]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Bawal",
+    "country": "India",
+    "coordinates": [76.6144395933216, 28.1063138271873]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8185594964075, 18.7751892823053]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Sanand",
+    "country": "India",
+    "coordinates": [72.2525742755517, 22.9855089668144]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Tapukara",
+    "country": "India",
+    "coordinates": [76.8265189272318, 28.1072668020638]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [80.0336979414902, 12.799688749508]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Puebla",
+    "country": "Mexico",
+    "coordinates": [-98.267239692543, 19.1183536113367]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Rayong",
+    "country": "Thailand",
+    "coordinates": [101.25904532576, 12.942292509373]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "coordinates": [55.372271259711, 25.2613737508737]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Polinya",
+    "country": "Spain",
+    "coordinates": [2.1622735283912, 41.5453100209426]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Sterling Heights",
+    "country": "USA",
+    "coordinates": [-83.145384669711, 42.5602549726454]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "El-Paso",
+    "country": "USA",
+    "coordinates": [-106.40403914946, 31.8144041617173]
+  },
+  {
+    "id": "samvardhana-motherson-global-carriers-limited-smgcl-",
+    "name": "Samvardhana Motherson Global Carriers Limited (SMGCL)",
+    "city": "Gyor",
+    "country": "Hungary",
+    "coordinates": [17.7008553404598, 47.6806614510987]
+  },
+  {
+    "id": "samvardhana-motherson-global-fze",
+    "name": "Samvardhana Motherson Global FZE",
+    "city": "Dubai",
+    "country": "United Arab Emirates",
+    "coordinates": [55.3695445729301, 25.2622702125317]
+  },
+  {
+    "id": "samvardhana-motherson-hamakyorex-engineered-logistics-limited-samrx-",
+    "name": "Samvardhana Motherson Hamakyorex Engineered Logistics Limited (SAMRX)",
+    "city": "Becharaji",
+    "country": "India",
+    "coordinates": [71.9805484365919, 23.4863167993846]
+  },
+  {
+    "id": "samvardhana-motherson-hamakyorex-engineered-logistics-limited-samrx-",
+    "name": "Samvardhana Motherson Hamakyorex Engineered Logistics Limited (SAMRX)",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [76.8945979979079, 28.4163902355838]
+  },
+  {
+    "id": "samvardhana-motherson-health-solution-limited-smhs-",
+    "name": "Samvardhana Motherson Health Solution Limited (SMHS)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3152005539712, 28.5894296309176]
+  },
+  {
+    "id": "samvardhana-motherson-innovative-autosystems-limited-smia-",
+    "name": "Samvardhana Motherson Innovative Autosystems Limited (SMIA)",
+    "city": "Michelau",
+    "country": "Germany",
+    "coordinates": [11.109039, 50.170164]
+  },
+  {
+    "id": "samvardhana-motherson-innovative-autosystems-limited-smia-",
+    "name": "Samvardhana Motherson Innovative Autosystems Limited (SMIA)",
+    "city": "Amozoc de Mota",
+    "country": "Mexico",
+    "coordinates": [-98.10834, 19.06456]
+  },
+  {
+    "id": "samvardhana-motherson-innovative-solutions-smisl-",
+    "name": "Samvardhana Motherson Innovative Solutions (SMISL)",
+    "city": "Aurangabad",
+    "country": "India",
+    "coordinates": [75.398595256109, 19.8724772596462]
+  },
+  {
+    "id": "samvardhana-motherson-innovative-solutions-smisl-",
+    "name": "Samvardhana Motherson Innovative Solutions (SMISL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4068742683999, 28.5297312851901]
+  },
+  {
+    "id": "samvardhana-motherson-innovative-solutions-smisl-",
+    "name": "Samvardhana Motherson Innovative Solutions (SMISL)",
+    "city": "Puducherry",
+    "country": "India",
+    "coordinates": [79.6564953289191, 11.930256712852]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Györ",
+    "country": "Hungary",
+    "coordinates": [17.6890513, 47.6861006]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Castellbisbal",
+    "country": "Spain",
+    "coordinates": [1.9689546, 41.4795452]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Cuprija",
+    "country": "Serbia",
+    "coordinates": [21.37978, 43.93234]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Leipzig",
+    "country": "Germany",
+    "coordinates": [12.429624, 51.396519]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "München",
+    "country": "Germany",
+    "coordinates": [11.56677, 48.19494]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Foshan",
+    "country": "China",
+    "coordinates": [113.006491, 23.124608]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Atibaia",
+    "country": "Brazil",
+    "coordinates": [-46.66738, -23.04663]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Curitiba",
+    "country": "Brazil",
+    "coordinates": [-49.16973, -25.664208]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "São Bernardo do Campo",
+    "country": "Brazil",
+    "coordinates": [-46.543638, -23.738704]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Changchun",
+    "country": "China",
+    "coordinates": [125.3751, 43.8465]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Shenyang",
+    "country": "China",
+    "coordinates": [123.469341, 41.808999]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Tianjin",
+    "country": "China",
+    "coordinates": [117.361418, 39.36187]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Dolní Ředice",
+    "country": "Czech Republic",
+    "coordinates": [15.919164, 50.073768]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Bötzingen",
+    "country": "Germany",
+    "coordinates": [7.718114, 48.064512]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Emden",
+    "country": "Germany",
+    "coordinates": [7.15262, 53.35825]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Bötzingen",
+    "country": "Germany",
+    "coordinates": [7.718114, 48.064512]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Gifhorn",
+    "country": "Germany",
+    "coordinates": [10.551434, 52.458581]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Göettingen",
+    "country": "Germany",
+    "coordinates": [9.89177, 51.54333]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Ingolstadt",
+    "country": "Germany",
+    "coordinates": [11.402664, 48.782861]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Meerane",
+    "country": "Germany",
+    "coordinates": [12.460394, 50.826836]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Neustadt",
+    "country": "Germany",
+    "coordinates": [11.71039, 48.760405]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Neustadt",
+    "country": "Germany",
+    "coordinates": [11.705174788299, 48.7641181362354]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Offenau",
+    "country": "Germany",
+    "coordinates": [9.17021, 49.23774]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Oldenburg",
+    "country": "Germany",
+    "coordinates": [8.23332, 53.13788]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Schierling",
+    "country": "Germany",
+    "coordinates": [12.130986, 48.818365]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Kecskemét",
+    "country": "Hungary",
+    "coordinates": [19.697142, 46.86273]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "San Juan Cuautlancingo",
+    "country": "Mexico",
+    "coordinates": [-98.2724421, 19.1176277]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Zitlaltepec",
+    "country": "Mexico",
+    "coordinates": [-97.912968, 19.181813]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Palmela",
+    "country": "Portugal",
+    "coordinates": [-9.00191, 38.58672]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Palencia",
+    "country": "Spain",
+    "coordinates": [-4.514839, 42.002059]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Polinya",
+    "country": "Spain",
+    "coordinates": [2.161879, 41.545397]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Polinya",
+    "country": "Spain",
+    "coordinates": [2.161879, 41.545397]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Teruel",
+    "country": "Spain",
+    "coordinates": [-1.31439, 40.861074]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Tuscaloosa",
+    "country": "USA",
+    "coordinates": [-87.33142, 33.18203]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Hannover",
+    "country": "Germany",
+    "coordinates": [9.74663, 52.4294]
+  },
+  {
+    "id": "samvardhana-motherson-peguform-smp-",
+    "name": "Samvardhana Motherson Peguform (SMP)",
+    "city": "Zhaoqing",
+    "country": "China",
+    "coordinates": [112.565908896203, 23.1602790339754]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Jersey",
+    "country": "Jersey",
+    "coordinates": [-2.112773, 49.185582]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Nicosia",
+    "country": "Cyprus",
+    "coordinates": [33.358172, 35.167871]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Wedemark",
+    "country": "Germany",
+    "coordinates": [9.769842, 52.563175]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Stuttgart",
+    "country": "Germany",
+    "coordinates": [9.24878, 48.766613]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Buchon",
+    "country": "South Korea",
+    "coordinates": [126.79148, 37.49751]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Adelaide",
+    "country": "Australia",
+    "coordinates": [138.505019911945, -35.107370493247]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Jaguariuna",
+    "country": "Brazil",
+    "coordinates": [-46.996141, -22.671839]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Chongqing",
+    "country": "China",
+    "coordinates": [106.31405, 29.32349]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Langfang",
+    "country": "China",
+    "coordinates": [116.706565, 39.521545]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Ningbo",
+    "country": "China",
+    "coordinates": [121.66806, 29.478128]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Yancheng",
+    "country": "China",
+    "coordinates": [118, 33.94285]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Dammarie - Les - Lys",
+    "country": "France",
+    "coordinates": [2.63014, 48.5198]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Mosonmagyaróvár",
+    "country": "Hungary",
+    "coordinates": [17.245816, 47.877967]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Mosonszolnok",
+    "country": "Hungary",
+    "coordinates": [17.18031, 47.84715]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Túrkeve",
+    "country": "Hungary",
+    "coordinates": [20.73664, 47.11612]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Bengaluru",
+    "country": "India",
+    "coordinates": [77.4465989841966, 12.873293021867]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8350292688541, 12.808461739291]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Kadi",
+    "country": "India",
+    "coordinates": [72.3307999942562, 23.2975868383158]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Nashik",
+    "country": "India",
+    "coordinates": [73.7471584116698, 19.9536786392584]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4078651944499, 28.5187920970731]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [74.0420257662292, 18.7338304682817]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "San Luis Potosi",
+    "country": "Mexico",
+    "coordinates": [-100.87774, 22.051695]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Bupyeong",
+    "country": "South Korea",
+    "coordinates": [126.702079, 37.523095]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Ochang",
+    "country": "South Korea",
+    "coordinates": [127.4073, 36.70108]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Zaragoza",
+    "country": "Spain",
+    "coordinates": [-1.26849, 41.597403]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Rayong",
+    "country": "Thailand",
+    "coordinates": [101.177985, 13.060911]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Portchester",
+    "country": "United Kingdom",
+    "coordinates": [-1.11789, 50.84459]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Marysville",
+    "country": "USA",
+    "coordinates": [-82.48256, 42.8983599999999]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Port Huron",
+    "country": "USA",
+    "coordinates": [-82.4249142, 42.9708634]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Istanbul",
+    "country": "Türkiye",
+    "coordinates": [29.3838, 40.88605]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Bursa",
+    "country": "Türkiye",
+    "coordinates": [28.77935, 40.17356]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Tianjing",
+    "country": "China",
+    "coordinates": [117.219760513309, 39.1286312720406]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Nanchang",
+    "country": "China",
+    "coordinates": [115.891475960275, 28.542467331063]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Warren",
+    "country": "USA",
+    "coordinates": [-83.00982, 42.4711370516641]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Fujioka",
+    "country": "Japan",
+    "coordinates": [139.062999999999, 36.2449999999999]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Ebina",
+    "country": "Japan",
+    "coordinates": [139.395, 35.45]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Foshan",
+    "country": "China",
+    "coordinates": [112.904, 23.067]
+  },
+  {
+    "id": "samvardhana-motherson-reflectec-smr-",
+    "name": "Samvardhana Motherson Reflectec (SMR)",
+    "city": "Jiangsu",
+    "country": "China",
+    "coordinates": [120.359493631627, 31.5428922753]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Anantapur",
+    "country": "India",
+    "coordinates": [77.6669285717227, 13.976147435882]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Hérouville",
+    "country": "France",
+    "coordinates": [-0.30796, 49.21532]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Le Plessis",
+    "country": "France",
+    "coordinates": [2.23806201227, 48.7739800076099]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Asan - si",
+    "country": "South Korea",
+    "coordinates": [126.98678, 36.9084]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Harnes",
+    "country": "France",
+    "coordinates": [2.9117, 50.45444]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Yokohama",
+    "country": "Japan",
+    "coordinates": [139.624403, 35.457223]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Tortuguitas",
+    "country": "Argentina",
+    "coordinates": [-58.703111, -34.447861]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Gravatai",
+    "country": "Brazil",
+    "coordinates": [-53.56722, -30.36445]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Guarulhos",
+    "country": "Brazil",
+    "coordinates": [-46.45268, -23.47096]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Zagreb",
+    "country": "Croatia",
+    "coordinates": [15.880984, 45.80202]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Gondecourt",
+    "country": "France",
+    "coordinates": [2.989581, 50.539341]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Rougegoutte",
+    "country": "France",
+    "coordinates": [6.847532, 47.730202]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.8337525371156, 12.807478296955]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Tangier",
+    "country": "Morocco",
+    "coordinates": [-5.461493, 35.567963]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Santa Rosa",
+    "country": "Philippines",
+    "coordinates": [121.067392, 14.259649]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Kaluga",
+    "country": "Russia",
+    "coordinates": [36.340417, 54.573861]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Nitra",
+    "country": "Slovakia",
+    "coordinates": [18.06299, 48.34117]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Busan",
+    "country": "South Korea",
+    "coordinates": [128.877258, 35.092566]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Busan - si",
+    "country": "South Korea",
+    "coordinates": [128.815830031779, 35.1515525374474]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Yesan - gun",
+    "country": "South Korea",
+    "coordinates": [126.810648, 36.748747]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Igualada",
+    "country": "Spain",
+    "coordinates": [1.63017, 41.59109]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Medina De Rioseco",
+    "country": "Spain",
+    "coordinates": [-5.054367, 41.892319]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Salceda De Caselas",
+    "country": "Spain",
+    "coordinates": [-8.622594, 42.089942]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Rayong",
+    "country": "Thailand",
+    "coordinates": [101.17511, 13.006811]
+  },
+  {
+    "id": "samvardhana-motherson-reydel-companies-smrc-",
+    "name": "Samvardhana Motherson Reydel Companies (SMRC)",
+    "city": "Pune",
+    "country": "India",
+    "coordinates": [73.8177720679651, 18.741491999567]
+  },
+  {
+    "id": "samvardhana-motherson-stamping-and-assemblies",
+    "name": "Samvardhana Motherson Stamping and Assemblies",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9632295205215, 12.843556421444]
+  },
+  {
+    "id": "samvardhana-motherson-stamping-and-assemblies",
+    "name": "Samvardhana Motherson Stamping and Assemblies",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9632295205215, 12.843556421444]
+  },
+  {
+    "id": "samvardhana-motherson-stamping-and-assemblies",
+    "name": "Samvardhana Motherson Stamping and Assemblies",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9632295205215, 12.843556421444]
+  },
+  {
+    "id": "samvardhana-motherson-stamping-and-assemblies",
+    "name": "Samvardhana Motherson Stamping and Assemblies",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [79.9632295205215, 12.843556421444]
+  },
+  {
+    "id": "smgcl-co-ltd",
+    "name": "SMGCL Co Ltd",
+    "city": "Hamamatsu",
+    "country": "Japan",
+    "coordinates": [137.734326297031, 34.7045421013913]
+  },
+  {
+    "id": "smiiel",
+    "name": "SMIIEL",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3667859271732, 28.6085180955676]
+  },
+  {
+    "id": "smiiel",
+    "name": "SMIIEL",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.3667859271732, 28.6085180955676]
+  },
+  {
+    "id": "smp-automotive-systems-alabama-inc-",
+    "name": "SMP Automotive Systems Alabama Inc.",
+    "city": "Vance",
+    "country": "USA",
+    "coordinates": [-87.265555952963, 33.2099459211855]
+  },
+  {
+    "id": "smp-automotive-systems-alabama-inc-",
+    "name": "SMP Automotive Systems Alabama Inc.",
+    "city": "Tuscaloosa",
+    "country": "USA",
+    "coordinates": [-87.331346224129, 33.1822103293168]
+  },
+  {
+    "id": "smr-automotive-systems-india-limited-medical-",
+    "name": "SMR Automotive Systems India Limited (Medical)",
+    "city": "Gurugram",
+    "country": "India",
+    "coordinates": [77.1027333895931, 28.4799828620236]
+  },
+  {
+    "id": "smrc",
+    "name": "SMRC",
+    "city": "Shanghai",
+    "country": "China",
+    "coordinates": [121.360201716274, 31.2231872330319]
+  },
+  {
+    "id": "spheros-motherson-thermal-system-ltd-smtl-",
+    "name": "Spheros Motherson Thermal System Ltd (SMTL)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4619710484288, 28.5996744559273]
+  },
+  {
+    "id": "vacuform-2000-pty-ltd-vacuform-",
+    "name": "Vacuform 2000 Pty Ltd. (Vacuform)",
+    "city": "Pretoria",
+    "country": "South Africa",
+    "coordinates": [28.098456, -25.630526]
+  },
+  {
+    "id": "youngshin-motherson-auto-tech-ltd-ymat-",
+    "name": "Youngshin Motherson Auto Tech ltd. (YMAT)",
+    "city": "Chennai",
+    "country": "India",
+    "coordinates": [80.0762823093367, 12.860734721679]
+  },
+  {
+    "id": "youngshin-motherson-auto-tech-ltd-ymat-",
+    "name": "Youngshin Motherson Auto Tech ltd. (YMAT)",
+    "city": "Noida",
+    "country": "India",
+    "coordinates": [77.4068742683999, 28.5297312851901]
+  }
+]

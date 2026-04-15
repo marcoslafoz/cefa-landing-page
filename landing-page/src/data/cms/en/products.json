@@ -1,0 +1,45 @@
+{
+  "docs": [
+    {
+      "createdAt": "2026-04-15T08:40:52.148Z",
+      "updatedAt": "2026-04-15T08:40:52.155Z",
+      "title": "Exterior Trims",
+      "description": "Combining function and appearance. Mouldings, spoilers, grilles and decorative elements with the highest quality finishes.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae73"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.141Z",
+      "updatedAt": "2026-04-15T08:40:52.147Z",
+      "title": "Functional Applications",
+      "description": "Components in the engine compartment, passenger compartment or cargo space, fundamental to guarantee everything required of the vehicle.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae68"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.132Z",
+      "updatedAt": "2026-04-15T08:40:52.139Z",
+      "title": "Door Panels and Interior Trims",
+      "description": "Comfort and protection, films, fabrics and decorative mouldings, with flexible processes that allow production in all imaginable combinations.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae5d"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.122Z",
+      "updatedAt": "2026-04-15T08:40:52.131Z",
+      "title": "Instrument Panel and Central Console",
+      "description": "Technical solutions and materials aligned with each OEM's expectations, guaranteeing the best performance in safety, aesthetics and functionality.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae52"
+    }
+  ],
+  "totalDocs": 4,
+  "limit": 100,
+  "totalPages": 1,
+  "page": 1,
+  "pagingCounter": 1,
+  "hasPrevPage": false,
+  "hasNextPage": false,
+  "prevPage": null,
+  "nextPage": null
+}

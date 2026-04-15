@@ -1,0 +1,35 @@
+{
+  "createdAt": "2026-04-15T08:08:49.744Z",
+  "updatedAt": "2026-04-15T08:40:51.925Z",
+  "globalType": "navigation",
+  "header": {
+    "company": "Company",
+    "products": "Products",
+    "clients": "Clients",
+    "contact": "Contact",
+    "contactCta": "Contact us"
+  },
+  "footerColumns": {
+    "company": "Company",
+    "products": "Products",
+    "contact": "Contact"
+  },
+  "links": {
+    "mission": "Mission",
+    "vision": "Vision",
+    "innovation": "Innovation",
+    "history": "History",
+    "awards": "Recognitions",
+    "certifications": "Certifications",
+    "rd": "R&D Projects",
+    "presence": "Locations",
+    "careers": "Careers",
+    "clients": "Clients",
+    "contact": "Contact",
+    "dashboard": "Instrument panels",
+    "door": "Door panels",
+    "functional": "Functional applications",
+    "exterior": "Exterior trims"
+  },
+  "id": "69df479113d2923b1ce414ea"
+}

@@ -1,0 +1,34 @@
+{
+  "qualityCerts": [
+    {
+      "name": "ISO 9001",
+      "year": "1995",
+      "org": "International",
+      "image": "/images/certifications/certificado-calidad-02.jpg",
+      "type": "image"
+    },
+    {
+      "name": "IATF 16949",
+      "year": "2016",
+      "org": "International",
+      "image": "/images/certifications/certificado-calidad-01.jpg",
+      "type": "image"
+    },
+    {
+      "name": "TISAX",
+      "year": "2024",
+      "org": "ENX Association",
+      "image": "/docs/tisax-placeholder.pdf",
+      "type": "pdf"
+    }
+  ],
+  "envCerts": [
+    {
+      "name": "ISO 14001",
+      "year": "2015",
+      "org": "International",
+      "image": "/images/certifications/certificado-medioambiente.jpg",
+      "type": "image"
+    }
+  ]
+}

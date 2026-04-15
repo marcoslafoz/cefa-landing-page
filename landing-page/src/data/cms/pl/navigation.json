@@ -1,0 +1,35 @@
+{
+  "createdAt": "2026-04-15T08:08:49.744Z",
+  "updatedAt": "2026-04-15T08:40:51.925Z",
+  "globalType": "navigation",
+  "header": {
+    "company": "Firma",
+    "products": "Produkty",
+    "clients": "Klienci",
+    "contact": "Kontakt",
+    "contactCta": "Kontakt"
+  },
+  "footerColumns": {
+    "company": "Firma",
+    "products": "Produkty",
+    "contact": "Kontakt"
+  },
+  "links": {
+    "mission": "Misja",
+    "vision": "Wizja",
+    "innovation": "Innowacje",
+    "history": "Historia",
+    "awards": "Wyróżnienia",
+    "certifications": "Certyfikaty",
+    "rd": "Projekty B+R",
+    "presence": "Lokalizacje",
+    "careers": "Kariera",
+    "clients": "Klienci",
+    "contact": "Kontakt",
+    "dashboard": "Panele wskaźników",
+    "door": "Panele drzwiowe",
+    "functional": "Zastosowania funkcjonalne",
+    "exterior": "Elementy zewnętrzne"
+  },
+  "id": "69df479113d2923b1ce414ea"
+}

@@ -1,0 +1,209 @@
+@import 'tailwindcss';
+
+@theme {
+  /* Colores de Marca */
+  --color-cefa-navy: #0a1f3c;
+  --color-cefa-navy-dark: #060f1f;
+  --color-cefa-red: #c8102e;
+  --color-cefa-red-dark: #a00d25;
+  --color-cefa-red-bright: #e61e38;
+  --color-cefa-gray: #6b7280;
+  --color-cefa-light: #ffffff;
+
+  /* Colores de superposición y sombras */
+  --color-cefa-header-bg: rgb(from var(--color-cefa-navy-dark) r g b / 0.97);
+  --color-cefa-red-glow: rgb(from var(--color-cefa-red) r g b / 0.5);
+  --color-shadow-subtle: rgba(0, 0, 0, 0.1);
+  --color-shadow-dark: rgba(0, 0, 0, 0.5);
+
+  /* Colores de marcadores del mapa */
+  --color-map-motherson: #9ca3af;
+  --color-map-motherson-hover: #4b5563;
+
+  /* Tipografía */
+  --font-family-sans: 'Open Sans', system-ui, -apple-system, sans-serif;
+
+  /* Transiciones */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans/open-sans-variable.woff2') format('woff2');
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Open Sans';
+  src: url('/fonts/open-sans/open-sans-italic-variable.woff2') format('woff2');
+  font-weight: 300 800;
+  font-stretch: 75% 100%;
+  font-style: italic;
+  font-display: swap;
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-100% / 4));
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUpFade {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes scrollWheel {
+  0% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(16px);
+    opacity: 0;
+  }
+
+  51% {
+    transform: translateY(-8px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    font-family: var(--font-family-sans);
+    color: var(--color-cefa-navy);
+    overflow-x: hidden;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+@layer components {
+  /* Etiqueta de cabecera (Eyebrow) */
+  .eyebrow {
+    @apply inline-flex items-center gap-2.5 text-[0.7rem] font-bold uppercase tracking-[0.15em] text-cefa-red;
+  }
+
+  .eyebrow::before {
+    @apply content-[''] inline-block w-6 h-0.5 bg-cefa-red rounded-sm shrink-0;
+  }
+
+  /* Títulos de sección */
+  .heading-xl {
+    font-size: clamp(2rem, 4.5vw, 3.5rem);
+    @apply font-extralight leading-tight tracking-tight text-cefa-navy;
+  }
+
+  .heading-lg {
+    font-size: clamp(1.6rem, 3vw, 2.25rem);
+    @apply font-light leading-tight tracking-tight text-cefa-navy;
+  }
+
+  /* Texto de cuerpo */
+  .body-lead {
+    @apply text-base text-cefa-navy/60 leading-relaxed font-light;
+  }
+
+  .body-sm {
+    @apply text-sm text-cefa-navy/50 leading-relaxed font-light;
+  }
+
+  /* Enlace de texto rojo (estilo Motherson con flecha) */
+  .link-red {
+    @apply inline-flex items-center gap-2 text-cefa-red text-sm font-bold tracking-wide transition-all duration-250 hover:gap-3.5;
+  }
+
+  .link-red svg {
+    @apply transition-transform duration-250;
+  }
+
+  .link-red:hover svg {
+    @apply translate-x-[3px];
+  }
+
+  /* Icono de flecha usado en línea */
+  .arrow-icon {
+    @apply inline-flex shrink-0;
+  }
+
+  /* Animación de revelado */
+  .reveal {
+    @apply opacity-0 translate-y-7 transition-all duration-650;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .reveal.visible {
+    @apply opacity-100 translate-y-0;
+  }
+
+  /* Contenedor */
+  .site-container {
+    @apply max-w-[1320px] mx-auto px-6 md:px-10;
+  }
+
+  /* Campos del formulario de contacto */
+  .form-field {
+    @apply w-full px-4 py-2.5 bg-gray-50/50 border border-gray-100 rounded-none text-sm text-gray-900 placeholder-gray-400 outline-none transition-all duration-300 hover:bg-gray-50 focus:bg-white focus:border-cefa-red/30 focus:ring-4 focus:ring-cefa-red/5 font-[inherit];
+  }
+}

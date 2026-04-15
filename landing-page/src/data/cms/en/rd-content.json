@@ -1,0 +1,51 @@
+{
+  "createdAt": "2026-04-15T08:08:49.947Z",
+  "updatedAt": "2026-04-15T08:40:52.044Z",
+  "globalType": "rd-content",
+  "eyebrow": "Innovation & development",
+  "title": "R&D Projects",
+  "subtitle": "Innovation is the engine of our growth. We invest continuously in research and development to offer advanced technical solutions that anticipate the needs of the automotive industry.",
+  "stats": [
+    {
+      "value": "+15%",
+      "label": "Annual R&D investment",
+      "id": "69df4f1418507c0001d933c5"
+    },
+    {
+      "value": "16+",
+      "label": "Funded projects",
+      "id": "69df4f1418507c0001d933c6"
+    },
+    {
+      "value": "3",
+      "label": "Development centres",
+      "id": "69df4f1418507c0001d933c7"
+    }
+  ],
+  "funders": {
+    "label": "Funding bodies",
+    "programLabel": "European programme",
+    "items": [
+      {
+        "name": "Government of Aragon",
+        "description": "Projects co-financed by the Government of Aragon under industrial transformation and development aid programmes, with ERDF funds.",
+        "id": "69df4f1418507c0001d933c8"
+      },
+      {
+        "name": "European Union",
+        "description": "Projects co-financed by the European Union under energy efficiency and industrial innovation programmes.",
+        "id": "69df4f1418507c0001d933c9"
+      }
+    ]
+  },
+  "contact": {
+    "title": "Interested in collaborating?",
+    "body": "If you are an automotive manufacturer, materials supplier or academic institution and want to explore joint R&D projects, get in touch with us.",
+    "cta": "Contact us"
+  },
+  "meta": {
+    "title": "R&D Projects in Plastic Injection & Automotive Manufacturing | CEFA",
+    "description": "R&D in materials, injection processes and digitalisation for automotive OEMs. CEFA invests +15% annually in innovation for next-generation plastic components."
+  },
+  "id": "69df479113d2923b1ce4155a"
+}

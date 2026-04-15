@@ -1,0 +1,33 @@
+{
+  "createdAt": "2026-04-15T08:08:49.852Z",
+  "updatedAt": "2026-04-15T08:40:51.969Z",
+  "globalType": "innovation",
+  "eyebrow": "Innovación",
+  "title": "Ingeniería de vanguardia",
+  "subtitle": "Capacidad técnica superior para desarrollar componentes con precisiones micrométricas, definiendo el futuro del automóvil.",
+  "features": [
+    {
+      "title": "Precisión Técnica",
+      "text": "Tolerancias mínimas y acabados superficiales de alta calidad.",
+      "id": "69df4f1318507c0001d933ac"
+    },
+    {
+      "title": "Simulación Avanzada",
+      "text": "Análisis reológicos y estructurales en cada fase del diseño.",
+      "id": "69df4f1318507c0001d933ad"
+    }
+  ],
+  "stats": [
+    {
+      "label": "Trazabilidad Total",
+      "id": "69df4f1318507c0001d933ae"
+    },
+    {
+      "label": "Ecosistema Innovador",
+      "id": "69df4f1318507c0001d933af"
+    }
+  ],
+  "loadingText": "Inicializando Motor 3D",
+  "rotateText": "Desliza para rotar",
+  "id": "69df479113d2923b1ce41522"
+}

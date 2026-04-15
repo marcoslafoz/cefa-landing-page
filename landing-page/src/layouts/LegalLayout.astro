@@ -1,0 +1,119 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import Footer from '@/components/Footer.astro';
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+
+interface Props {
+  title: string;
+  description: string;
+  locale: Locale;
+}
+
+const { title, description, locale } = Astro.props;
+useTranslations(locale);
+---
+
+<Layout title={`${title} | CEFA`} description={description} locale={locale}>
+  <Header locale={locale} showLogoAlways={true} />
+  <main id="main-content" class="pt-32 pb-24 min-h-screen bg-white">
+    <div class="site-container max-w-4xl">
+      <header class="mb-16">
+        <h1 class="text-4xl md:text-5xl font-light text-cefa-navy mb-8 tracking-tight">{title}</h1>
+        <div class="w-16 h-1 bg-cefa-red mb-12"></div>
+      </header>
+
+      <div class="legal-content text-cefa-navy/80">
+        <slot />
+      </div>
+    </div>
+  </main>
+  <Footer locale={locale} />
+</Layout>
+
+<style is:global>
+  /* Estilos base para contenido legal usando variables CSS para evitar problemas con @apply */
+  .legal-content h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 300;
+    color: var(--color-cefa-navy);
+    margin-top: 4rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.01em;
+    border-bottom: 1px solid color-mix(in srgb, var(--color-cefa-navy), transparent 95%);
+    padding-bottom: 1rem;
+  }
+
+  .legal-content h3 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    font-weight: 400;
+    color: var(--color-cefa-navy);
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.01em;
+  }
+
+  .legal-content p {
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+    font-size: 1.05rem;
+    font-weight: 300;
+  }
+
+  .legal-content ul {
+    list-style-type: none;
+    margin-bottom: 2rem;
+    padding-left: 0;
+  }
+
+  .legal-content li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .legal-content li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 0.375rem;
+    height: 0.375rem;
+    background-color: var(--color-cefa-red);
+    border-radius: 9999px;
+  }
+
+  .legal-content a {
+    color: var(--color-cefa-red);
+    font-weight: 600;
+    text-decoration-thickness: 1px;
+    text-underline-offset: 4px;
+    transition: all 0.2s;
+  }
+
+  .legal-content a:hover {
+    text-decoration: underline;
+  }
+
+  .legal-content strong {
+    color: var(--color-cefa-navy);
+    font-weight: 700;
+  }
+
+  .legal-content h2:first-of-type {
+    margin-top: 0;
+  }
+
+  @media (min-width: 768px) {
+    .legal-content h2 {
+      font-size: 1.875rem;
+      line-height: 2.25rem;
+    }
+  }
+</style>

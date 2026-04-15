@@ -1,0 +1,16 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Header from '@/components/Header.astro';
+import RdProjectsPage from '@/components/RdProjectsPage.astro';
+import Footer from '@/components/Footer.astro';
+import { useTranslations } from '@/i18n/translations';
+
+const locale = 'en' as const;
+const t = useTranslations(locale);
+---
+
+<Layout title={t('rd.meta.title')} description={t('rd.meta.description')} locale={locale}>
+  <Header locale={locale} showLogoAlways={true} />
+  <RdProjectsPage locale={locale} />
+  <Footer locale={locale} />
+</Layout>

@@ -1,0 +1,59 @@
+{
+  "createdAt": "2026-04-15T08:08:49.829Z",
+  "updatedAt": "2026-04-15T08:40:51.959Z",
+  "globalType": "company",
+  "mission": {
+    "eyebrow": "Mission",
+    "title": "Kundenorientiert, angetrieben durch Exzellenz",
+    "body1": "CEFA ist ein spanisches Industrieunternehmen, das hochwertige Kunststoffkomponenten und Module für den Automobilsektor mit globaler Präsenz erforscht, entwickelt und fertigt. Wir setzen auf modernste Technologien sowie Innovationskraft und Flexibilität.",
+    "body2": "Angetrieben von Exzellenz und der Zufriedenheit unserer Aktionäre, Mitarbeiter und der Gesellschaft schaffen wir durch Teamarbeit und Wettbewerbsfähigkeit kontinuierlich Mehrwert.",
+    "cta": "Unsere Geschichte",
+    "badgeLabel": "Seit"
+  },
+  "pillars": [
+    {
+      "title": "Zertifizierte Qualität",
+      "text": "ISO 9001 und IATF 16949 zertifizierte Prozesse für höchste Standards.",
+      "id": "69df4f1318507c0001d933a5"
+    },
+    {
+      "title": "Kontinuierliche Innovation",
+      "text": "Konstante Investitionen in F&E und fortschrittliche Fertigungsprozesse.",
+      "id": "69df4f1318507c0001d933a6"
+    },
+    {
+      "title": "Globale Präsenz",
+      "text": "Betreuung führender OEM auf internationaler Ebene.",
+      "id": "69df4f1318507c0001d933a7"
+    }
+  ],
+  "vision": {
+    "eyebrow": "Vision",
+    "title": "Unsere Vision",
+    "body": "Das industrielle Referenzunternehmen sein",
+    "cta": "Mehr erfahren",
+    "values": [
+      {
+        "title": "Bevorzugter Partner des Kunden",
+        "text": "Diversifiziertes Portfolio, hoher Marktanteil und robuste Umsätze.",
+        "id": "69df4f1318507c0001d933a8"
+      },
+      {
+        "title": "Technologischer Benchmark",
+        "text": "Innovation und schnelle Einführung fortschrittlicher Technologien für verantwortungsvolle Wertschöpfung.",
+        "id": "69df4f1318507c0001d933a9"
+      },
+      {
+        "title": "Wirtschaftlich nachhaltig",
+        "text": "Maximaler Ertrag (EBITDA) bei optimierten Investitionen.",
+        "id": "69df4f1318507c0001d933aa"
+      },
+      {
+        "title": "Ort der persönlichen Entwicklung",
+        "text": "Hohe Zufriedenheit sowie menschliches und berufliches Wachstum talentierter Teams.",
+        "id": "69df4f1318507c0001d933ab"
+      }
+    ]
+  },
+  "id": "69df479113d2923b1ce41514"
+}

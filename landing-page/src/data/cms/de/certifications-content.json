@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-04-15T08:08:49.930Z",
+  "updatedAt": "2026-04-15T08:40:52.032Z",
+  "globalType": "certifications-content",
+  "eyebrow": "Zertifizierte Qualität",
+  "title": "Unsere Zertifizierungen",
+  "subtitle": "Wir verpflichten uns den anspruchsvollsten Qualitätsstandards der Branche. Unsere Zertifizierungen belegen unsere Fähigkeit, Präzisionskomponenten herzustellen, die die Anforderungen der führenden OEMs weltweit erfüllen.",
+  "qualityCommitment": {
+    "title": "Engagement für Gesamtqualität",
+    "body": "Bei CEFA ist Qualität nicht nur eine Anforderung – sie ist Teil unserer Unternehmenskultur. Jedes von uns hergestellte Bauteil durchläuft strenge Kontroll- und Überprüfungsprozesse, um sicherzustellen, dass es den anspruchsvollsten Standards entspricht."
+  },
+  "stats": {
+    "auditLabel": "Jährliche Audits",
+    "auditValue": "100%",
+    "defectLabel": "Fehlerrate",
+    "defectValue": "< 10 PPM",
+    "traceabilityLabel": "Rückverfolgbarkeit",
+    "traceabilityValue": "Vollständig"
+  },
+  "meta": {
+    "title": "Zertifizierungen – CEFA",
+    "description": "IATF 16949, ISO 9001 & ISO 14001 zertifiziert. CEFA erfüllt höchste Qualitätsstandards im Kunststoffspritzguss für die Automobilindustrie: < 10 PPM Fehlerrate."
+  },
+  "id": "69df479113d2923b1ce4154c"
+}

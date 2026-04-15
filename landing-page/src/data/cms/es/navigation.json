@@ -1,0 +1,35 @@
+{
+  "createdAt": "2026-04-15T08:08:49.744Z",
+  "updatedAt": "2026-04-15T08:40:51.925Z",
+  "globalType": "navigation",
+  "header": {
+    "company": "Empresa",
+    "products": "Productos",
+    "clients": "Clientes",
+    "contact": "Contacto",
+    "contactCta": "Contáctanos"
+  },
+  "footerColumns": {
+    "company": "Empresa",
+    "products": "Productos",
+    "contact": "Contacto"
+  },
+  "links": {
+    "mission": "Misión",
+    "vision": "Visión",
+    "innovation": "Innovación",
+    "history": "Historia",
+    "awards": "Reconocimientos",
+    "certifications": "Certificaciones",
+    "rd": "Proyectos I+D",
+    "presence": "Sedes",
+    "careers": "Trabaja con nosotros",
+    "clients": "Clientes",
+    "contact": "Contacto",
+    "dashboard": "Panel de instrumentos",
+    "door": "Paneles de puerta",
+    "functional": "Aplicaciones funcionales",
+    "exterior": "Revestimientos exteriores"
+  },
+  "id": "69df479113d2923b1ce414ea"
+}

@@ -1,0 +1,61 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations } from '@/i18n/translations';
+import Section from '@/components/ui/Section.astro';
+import StatItem from '@/components/ui/StatItem.astro';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const stats = [
+  { value: t('stats.years.value'), label: t('stats.years.label') },
+  { value: t('stats.plants.value'), label: t('stats.plants.label') },
+  { value: t('stats.employees.value'), label: t('stats.employees.label') },
+  { value: t('stats.cert.value'), label: t('stats.cert.label') },
+];
+---
+
+<Section id="mission" background="white" class="pb-16 lg:pb-24">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <!-- Columna izquierda: Título principal -->
+    <div class="reveal">
+      <h2
+        class="text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-cefa-navy tracking-[-0.02em]"
+      >
+        {t('mission.title')}
+      </h2>
+    </div>
+
+    <!-- Columna derecha: Texto y CTA -->
+    <div class="reveal flex flex-col gap-10 lg:gap-12">
+      <div class="flex flex-col gap-6 text-[0.9375rem] text-cefa-gray leading-relaxed max-w-2xl">
+        <p>{t('mission.body1')}</p>
+        <p>{t('mission.body2')}</p>
+      </div>
+    </div>
+  </div>
+</Section>
+
+<!-- sección de estadísticas integrada (separada para el estilo de borde superior e inferior) -->
+<Section background="white" padding="none" class="pb-8 lg:pb-12">
+  <div class="grid grid-cols-2 lg:grid-cols-4 border-y border-cefa-navy/5">
+    {
+      stats.map((s, i) => (
+        <StatItem
+          value={s.value}
+          label={s.label}
+          delay={i * 100}
+          class:list={[
+            i < stats.length - 1 && 'lg:border-r lg:border-cefa-navy/5',
+            i % 2 === 0 && 'border-r border-cefa-navy/5',
+            i >= 2 && 'border-t border-cefa-navy/5 lg:border-t-0',
+          ]}
+        />
+      ))
+    }
+  </div>
+</Section>

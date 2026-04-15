@@ -1,0 +1,131 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations, getLocalePath } from '@/i18n/translations';
+import Button from '@/components/ui/Button.astro';
+import DocListCard from '@/components/ui/DocListCard.astro';
+import Section from '@/components/ui/Section.astro';
+import PageHeader from '@/components/ui/PageHeader.astro';
+import { getProjects, getRDContent, getMediaUrl } from '@/lib/cms';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const rdContent = await getRDContent(locale);
+const aragonProjects = await getProjects(locale, 'aragon');
+const euProjects = await getProjects(locale, 'eu');
+
+// Fallbacks
+const eyebrow = rdContent?.eyebrow || t('rd.eyebrow');
+const title = rdContent?.title || t('rd.title');
+const subtitle = rdContent?.subtitle || t('rd.subtitle');
+
+const funderEuName = rdContent?.funders?.items?.[1]?.name || t('rd.funder.eu');
+const funderEuDesc = rdContent?.funders?.items?.[1]?.description || t('rd.funder.eu.desc');
+const funderAragonName = rdContent?.funders?.items?.[0]?.name || t('rd.funder.aragon');
+const funderAragonDesc = rdContent?.funders?.items?.[0]?.description || t('rd.funder.aragon.desc');
+
+const contactTitle = rdContent?.contact?.title || t('rd.contact.title');
+const contactBody = rdContent?.contact?.body || t('rd.contact.body');
+const contactCta = rdContent?.contact?.cta || t('rd.contact.cta');
+---
+
+<main id="main-content">
+  <PageHeader eyebrow={eyebrow} title={title} description={subtitle} />
+
+  <!-- Proyectos de la UE -->
+  <Section background="white" padding="sm">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-12 reveal">
+      <img
+        src="/images/projects/union-europea.png"
+        alt={funderEuName}
+        width="200"
+        height="64"
+        class="h-16 w-auto object-contain shrink-0"
+      />
+      <div class="w-px h-12 bg-cefa-navy/10 hidden sm:block shrink-0"></div>
+      <div>
+        <p class="eyebrow mb-2">
+          {funderEuName}
+        </p>
+        <p class="body-sm max-w-xl">
+          {funderEuDesc}
+        </p>
+      </div>
+    </div>
+
+    <div class="border-t border-cefa-navy/10">
+      {
+        euProjects.map((project: any) => {
+          const mediaFile = getMediaUrl(project.file);
+          const mediaImage = getMediaUrl(project.image);
+          const href = mediaFile || mediaImage;
+          return (
+            <DocListCard
+              title={project.title}
+              href={href}
+              type={href.split('.').pop() || 'image'}
+            />
+          );
+        })
+      }
+    </div>
+  </Section>
+
+  <!-- Proyectos del Gobierno de Aragón -->
+  <Section background="white" padding="sm" class="border-t border-cefa-navy/4">
+    <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-12 reveal">
+      <img
+        src="/images/projects/gobierno-aragon.png"
+        alt={funderAragonName}
+        width="200"
+        height="64"
+        class="h-16 w-auto object-contain shrink-0"
+      />
+      <div class="w-px h-12 bg-cefa-navy/10 hidden sm:block shrink-0"></div>
+      <div>
+        <p class="eyebrow mb-2">
+          {funderAragonName}
+        </p>
+        <p class="body-sm max-w-xl">
+          {funderAragonDesc}
+        </p>
+      </div>
+    </div>
+
+    <div class="border-t border-cefa-navy/10">
+      {
+        aragonProjects.map((project: any) => {
+          const mediaFile = getMediaUrl(project.file);
+          const mediaImage = getMediaUrl(project.image);
+          const href = mediaFile || mediaImage;
+          return (
+            <DocListCard
+              title={project.title}
+              href={href}
+              type={href.split('.').pop() || 'image'}
+            />
+          );
+        })
+      }
+    </div>
+  </Section>
+
+  <!-- CTA -->
+  <Section background="white" padding="lg" class="border-t border-cefa-navy/4">
+    <div class="max-w-2xl mx-auto text-center reveal">
+      <h2 class="heading-lg mb-6">
+        {contactTitle}
+      </h2>
+      <p class="body-lead max-w-2xl mx-auto mb-10">
+        {contactBody}
+      </p>
+      <Button href={`${getLocalePath(locale)}#contact`} variant="primary">
+        {contactCta}
+      </Button>
+    </div>
+  </Section>
+</main>

@@ -1,0 +1,44 @@
+{
+  "createdAt": "2026-04-15T08:08:49.867Z",
+  "updatedAt": "2026-04-15T08:40:51.980Z",
+  "globalType": "contact-info",
+  "map": {
+    "eyebrow": "Industrial presence",
+    "title": "Our locations",
+    "subtitle": "Strategic production capacity in the heart of Europe to serve leading automotive manufacturers.",
+    "tooltipLabel": "Operational Units",
+    "tooltipContact": "Contact details"
+  },
+  "locations": [
+    {
+      "name": "CEFA Malpica",
+      "address": "Malpica Industrial Estate, Calle D, 44-45, 50016 Zaragoza, Spain",
+      "phone": "+34 976 465 000",
+      "email": "info@cefa.es",
+      "id": "69df4f1318507c0001d933b0"
+    },
+    {
+      "name": "CEFA Figueruelas",
+      "address": "Logroño Road, Km. 265, 50639 Figueruelas (Zaragoza), Spain",
+      "phone": "+34 976 465 465",
+      "email": "info@modulosra.es",
+      "id": "69df4f1318507c0001d933b1"
+    },
+    {
+      "name": "CEFA Poland",
+      "address": "ul. Matki Bożej z Pilar 1, 68-100 Żagań, Poland",
+      "phone": "+48 669 988 840",
+      "email": "rekrutacja@zagan.es",
+      "id": "69df4f1318507c0001d933b2"
+    }
+  ],
+  "formLabels": {
+    "eyebrow": "Contact",
+    "title": "Ready to work together?",
+    "subtitle": "We're here to answer your questions and explore how CEFA can be your strategic partner.",
+    "addressLabel": "Address",
+    "infoLabel": "Contact Information",
+    "mapsLabel": "View on Google Maps"
+  },
+  "id": "69df479113d2923b1ce41530"
+}

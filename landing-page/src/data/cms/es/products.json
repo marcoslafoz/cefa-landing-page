@@ -1,0 +1,45 @@
+{
+  "docs": [
+    {
+      "createdAt": "2026-04-15T08:40:52.148Z",
+      "updatedAt": "2026-04-15T08:40:52.155Z",
+      "title": "Revestimientos Exteriores",
+      "description": "Combinando función y apariencia. Molduras, spoilers, rejillas y elementos decorativos con acabados de máxima calidad.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae73"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.141Z",
+      "updatedAt": "2026-04-15T08:40:52.147Z",
+      "title": "Aplicaciones Funcionales",
+      "description": "Componentes en el compartimento motor, habitáculo de pasajeros o compartimento de carga, fundamentales para garantizar todo lo que se exige del vehículo.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae68"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.132Z",
+      "updatedAt": "2026-04-15T08:40:52.139Z",
+      "title": "Paneles de Puerta y Revestimientos Interiores",
+      "description": "Confort y protección, folios, tejidos y molduras decorativas, con procesos flexibles que permitan su producción en todas las combinaciones imaginables.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae5d"
+    },
+    {
+      "createdAt": "2026-04-15T08:40:52.122Z",
+      "updatedAt": "2026-04-15T08:40:52.131Z",
+      "title": "Panel de Instrumentos y Consola Central",
+      "description": "Soluciones técnicas y materiales alineados con las expectativas de cada OEM, para garantizar al usuario las mejores prestaciones en seguridad, aspecto y funcionalidad.",
+      "features": null,
+      "id": "69df4f14e66b363c7e80ae52"
+    }
+  ],
+  "totalDocs": 4,
+  "limit": 100,
+  "totalPages": 1,
+  "page": 1,
+  "pagingCounter": 1,
+  "hasPrevPage": false,
+  "hasNextPage": false,
+  "prevPage": null,
+  "nextPage": null
+}

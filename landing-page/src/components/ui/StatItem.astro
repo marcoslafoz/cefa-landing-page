@@ -1,0 +1,35 @@
+---
+interface Props {
+  value: string;
+  label: string;
+  class?: string;
+  delay?: number;
+}
+
+const { value, label, class: className, delay = 0 } = Astro.props;
+
+const isNumeric = /^[+]?\d+$/.test(value);
+const targetValue = isNumeric ? parseInt(value.replace('+', ''), 10) : null;
+const prefix = value.startsWith('+') ? '+' : '';
+---
+
+<div
+  class:list={['flex flex-col items-center justify-center py-6 lg:py-8 px-4 reveal', className]}
+  style={delay ? `transition-delay: ${delay}ms` : undefined}
+>
+  <span
+    class:list={[
+      'text-3xl lg:text-4xl font-light text-cefa-navy tracking-tight leading-none mb-2',
+      { counter: isNumeric && value !== '3' },
+    ]}
+    data-target={targetValue}
+    data-prefix={prefix}
+  >
+    {value}
+  </span>
+  <span
+    class="text-[0.55rem] lg:text-[0.6rem] uppercase tracking-[0.3em] text-gray-400 font-bold text-center leading-tight"
+  >
+    {label}
+  </span>
+</div>

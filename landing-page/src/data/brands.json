@@ -1,0 +1,58 @@
+[
+  {
+    "name": "Audi",
+    "file": "audi.svg"
+  },
+  {
+    "name": "Volkswagen",
+    "file": "volkswagen.svg"
+  },
+  {
+    "name": "SEAT",
+    "file": "seat.svg"
+  },
+  {
+    "name": "Cupra",
+    "file": "cupra.svg"
+  },
+  {
+    "name": "Ford",
+    "file": "ford.svg"
+  },
+  {
+    "name": "Opel",
+    "file": "opel.svg"
+  },
+  {
+    "name": "Mercedes",
+    "file": "mercedes.svg"
+  },
+  {
+    "name": "Nissan",
+    "file": "nissan.svg"
+  },
+  {
+    "name": "Renault",
+    "file": "renault.svg"
+  },
+  {
+    "name": "Citroën",
+    "file": "citroen.svg"
+  },
+  {
+    "name": "Fiat",
+    "file": "fiat.svg"
+  },
+  {
+    "name": "Lancia",
+    "file": "lancia.svg"
+  },
+  {
+    "name": "Man",
+    "file": "man.svg"
+  },
+  {
+    "name": "Skoda",
+    "file": "skoda.svg"
+  }
+]

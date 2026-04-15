@@ -1,0 +1,244 @@
+---
+import type { Locale } from '@/i18n/translations';
+import { useTranslations, getLocalePath } from '@/i18n/translations';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+const t = useTranslations(locale);
+
+const year = new Date().getFullYear();
+
+const columns = [
+  {
+    title: t('footer.col.company'),
+    links: [
+      { label: t('footer.link.mission'), href: getLocalePath(locale, '/#mission') },
+      { label: t('footer.link.vision'), href: getLocalePath(locale, '/#vision') },
+      { label: t('footer.link.history'), href: getLocalePath(locale, '/history') },
+      { label: t('footer.link.innovation'), href: getLocalePath(locale, '/#innovation') },
+      { label: t('nav.company.awards'), href: getLocalePath(locale, '/awards') },
+      { label: t('nav.company.certifications'), href: getLocalePath(locale, '/certifications') },
+      { label: t('nav.company.rd'), href: getLocalePath(locale, '/projects') },
+      { label: t('footer.link.clients'), href: getLocalePath(locale, '/#clients') },
+    ],
+  },
+  {
+    title: t('footer.col.products'),
+    links: [
+      { label: t('footer.link.dashboard'), href: getLocalePath(locale, '/#product-dashboard') },
+      { label: t('footer.link.door'), href: getLocalePath(locale, '/#product-door-panels') },
+      { label: t('footer.link.functional'), href: getLocalePath(locale, '/#product-functional') },
+      { label: t('footer.link.exterior'), href: getLocalePath(locale, '/#product-exterior') },
+    ],
+  },
+];
+---
+
+<footer class="bg-cefa-navy-dark text-white pt-24 pb-12 overflow-hidden relative">
+  <!-- Elemento decorativo de fondo -->
+  <div
+    class="absolute top-0 right-0 w-125 h-125 bg-cefa-red/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2 pointer-events-none"
+  >
+  </div>
+
+  <div class="site-container relative z-10">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 mb-24">
+      <!-- Sección de Marca y Eslogan -->
+      <div class="lg:col-span-5 flex flex-col justify-between">
+        <div class="space-y-8">
+          <a href={getLocalePath(locale)} aria-label="CEFA" class="inline-block group">
+            <img
+              src="/images/logos/cefa-mono-white.svg"
+              alt="CEFA"
+              class="h-11 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+            />
+          </a>
+
+          <p class="text-white/50 text-base leading-relaxed max-w-sm">
+            {t('footer.tagline')}
+          </p>
+
+          <a
+            href="https://www.linkedin.com/company/cefa-celulosa-fabril-sa"
+            target="_blank"
+            rel="me noopener noreferrer"
+            class="inline-flex items-center gap-4 transition-all duration-300 group w-fit"
+          >
+            <svg
+              viewBox="0 0 16 16"
+              class="w-6 h-6 fill-current text-white/50 group-hover:text-white transition-colors duration-300 shrink-0"
+            >
+              <path
+                d="M0 5h3.578v11H0zM13.324 5.129c-.038-.012-.074-.025-.114-.036a2.32 2.32 0 0 0-.145-.028A3.207 3.207 0 0 0 12.423 5c-2.086 0-3.409 1.517-3.845 2.103V5H5v11h3.578v-6s2.704-3.766 3.845-1v7H16V8.577a3.568 3.568 0 0 0-2.676-3.448z"
+              ></path>
+              <circle cx="1.75" cy="1.75" r="1.75"></circle>
+            </svg>
+            <span class="flex flex-col">
+              <span
+                class="text-[0.7rem] font-bold uppercase tracking-[0.15em] text-white/55 group-hover:text-white/80 transition-colors duration-300"
+                >LinkedIn</span
+              >
+              <span
+                class="text-sm text-white/50 group-hover:text-white transition-colors duration-300"
+                >{t('footer.linkedin')}</span
+              >
+            </span>
+          </a>
+
+          <a
+            href="https://www.motherson.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="flex flex-col gap-3 pt-8 border-t border-white/5 opacity-70 hover:opacity-100 transition-all duration-500 w-fit"
+          >
+            <img
+              src="/images/logos/motherson.svg"
+              alt="Motherson Group"
+              width="140"
+              height="32"
+              class="h-7 w-auto brightness-0 invert"
+            />
+            <span class="text-[9px] uppercase tracking-[0.4em] text-white font-bold opacity-80">
+              {t('footer.motherson')}
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Secciones de enlaces -->
+      <div class="lg:col-span-7">
+        <div class="grid grid-cols-2 sm:grid-cols-3 gap-12">
+          {
+            columns.map((col) => (
+              <div class="space-y-8">
+                <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-white/90">
+                  {col.title}
+                </p>
+                <ul class="flex flex-col gap-5">
+                  {col.links.map((link) => (
+                    <li>
+                      <a
+                        href={link.href}
+                        class="text-[0.95rem] text-white/65 hover:text-white transition-all duration-300 flex items-center gap-2 group"
+                      >
+                        <span class="w-0 h-px bg-cefa-red transition-all duration-300 group-hover:w-3" />
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+
+          <!-- Contacto y Redes Sociales -->
+          <div class="space-y-8">
+            <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-white/90">
+              {t('nav.contact')}
+            </p>
+            <ul class="flex flex-col gap-5">
+              {
+                [
+                  { label: t('nav.contact.cta'), href: getLocalePath(locale, '/#contact') },
+                  {
+                    label: t('nav.careers'),
+                    href: getLocalePath(locale, '/#careers'),
+                  },
+                  { label: t('nav.faq'), href: getLocalePath(locale, '/#faq') },
+                ].map((link) => (
+                  <li>
+                    <a
+                      href={link.href}
+                      class="text-[0.95rem] text-white/65 hover:text-white transition-all duration-300 flex items-center gap-2 group"
+                    >
+                      <span class="w-0 h-px bg-cefa-red transition-all duration-300 group-hover:w-3" />
+                      {link.label}
+                    </a>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fila de plantas -->
+    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-10">
+      <p class="text-[10px] text-white/55 uppercase tracking-widest font-bold shrink-0">
+        {t('stats.plants.label')}
+      </p>
+      <div class="hidden sm:block w-px h-3 bg-white/10 shrink-0"></div>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+        {
+          [
+            { label: t('contact.location1.name'), id: 'malpica' },
+            { label: t('contact.location2.name'), id: 'figueruelas' },
+            { label: t('contact.location3.name'), id: 'poland' },
+          ].map((plant, i, arr) => (
+            <span class="flex items-center gap-5">
+              <a
+                href={getLocalePath(locale, '/#contact')}
+                class="contact-link text-xs text-white/60 hover:text-cefa-red transition-colors duration-200"
+                data-location={plant.id}
+              >
+                {plant.label}
+              </a>
+              {i < arr.length - 1 && (
+                <span class="text-white/15 select-none" aria-hidden="true">
+                  ·
+                </span>
+              )}
+            </span>
+          ))
+        }
+      </div>
+    </div>
+
+    <!-- Línea divisoria -->
+    <div class="w-full h-px bg-linear-to-r from-transparent via-white/5 to-transparent mb-10"></div>
+
+    <!-- Barra de metadatos inferior -->
+    <div class="flex flex-col md:flex-row justify-between items-center gap-8">
+      <div class="order-2 md:order-1">
+        <p class="text-[11px] text-white/50 tracking-wider">
+          &copy; {year} Celulosa Fabril, SA (CEFA). {t('footer.rights')}
+        </p>
+      </div>
+
+      <div class="flex gap-10 order-1 md:order-2">
+        {
+          [
+            { label: t('footer.legal'), href: getLocalePath(locale, '/legal') },
+            { label: t('footer.privacy'), href: getLocalePath(locale, '/privacy') },
+            { label: t('footer.cookies'), href: getLocalePath(locale, '/cookies') },
+          ].map((item) => (
+            <a
+              href={item.href}
+              class="text-[11px] text-white/55 hover:text-white transition-colors duration-300 uppercase tracking-wider"
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll<HTMLElement>('footer .contact-link[data-location]').forEach((link) => {
+    link.addEventListener('click', () => {
+      const loc = link.dataset.location;
+      if (!loc) return;
+      // Si la sección de contacto existe en esta página, el controlador existente toma el mando.
+      // Si no (navegación entre páginas), guardamos la pestaña deseada para que Contact.astro pueda recogerla.
+      if (!document.getElementById('contact')) {
+        sessionStorage.setItem('pendingContactTab', loc);
+      }
+    });
+  });
+</script>

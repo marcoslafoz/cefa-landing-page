@@ -1,0 +1,57 @@
+---
+import ArrowIcon from '@/components/ui/ArrowIcon.astro';
+
+interface Props {
+  href?: string;
+  variant?: 'primary' | 'secondary' | 'outline' | 'ghost';
+  target?: string;
+  rel?: string;
+  class?: string;
+  showIcon?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+}
+
+const {
+  href,
+  variant = 'primary',
+  target,
+  rel,
+  class: className,
+  showIcon,
+  type = 'button',
+} = Astro.props;
+
+const Tag = href ? 'a' : 'button';
+const displayIcon = showIcon ?? (variant === 'primary' || variant === 'ghost');
+
+const baseStyles =
+  'group relative inline-flex items-center justify-center px-6 py-2.5 text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap overflow-hidden';
+
+const variants = {
+  primary:
+    'bg-linear-to-r from-cefa-red to-cefa-red-bright text-white border border-white/20 hover:border-white/40 hover:scale-[1.03]',
+  secondary:
+    'text-white border border-white/10 bg-white/5 backdrop-blur-xl hover:bg-white/10 hover:border-white/30 hover:-translate-y-0.5',
+  outline:
+    'bg-white border border-gray-200 text-cefa-navy hover:bg-cefa-navy-dark hover:text-white hover:border-cefa-navy-dark',
+  ghost: 'text-cefa-red hover:bg-cefa-red/5',
+};
+---
+
+<Tag
+  href={href}
+  target={target}
+  rel={rel}
+  type={!href ? type : undefined}
+  class:list={[baseStyles, variants[variant], className]}
+>
+  {
+    variant === 'primary' && (
+      <span class="absolute inset-0 w-full h-full bg-white/20 -translate-x-full group-hover:animate-[shimmer_1.5s_infinite]" />
+    )
+  }
+  <span class="relative flex items-center gap-2">
+    <slot />
+    {displayIcon && <ArrowIcon class="transition-transform group-hover:translate-x-1" />}
+  </span>
+</Tag>

@@ -1,0 +1,15 @@
+{
+  "createdAt": "2026-04-15T08:08:50.041Z",
+  "updatedAt": "2026-04-15T08:40:52.077Z",
+  "globalType": "seo",
+  "default": {
+    "title": "CEFA – Wtrysk Tworzyw Sztucznych dla Motoryzacji | Dostawca OEM",
+    "description": "Producent Tier 1 tworzyw sztucznych dla motoryzacji od 1946 r. Deski rozdzielcze, panele drzwiowe i okładziny dla OEM. Certyfikat IATF 16949. Żagań."
+  },
+  "notFound": {
+    "title": "Nie znaleziono strony",
+    "subtitle": "Strona nie istnieje lub została przeniesiona.",
+    "cta": "Wróć na stronę główną"
+  },
+  "id": "69df479213d2923b1ce41592"
+}

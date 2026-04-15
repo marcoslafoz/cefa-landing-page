@@ -1,0 +1,25 @@
+{
+  "createdAt": "2026-04-15T08:08:49.930Z",
+  "updatedAt": "2026-04-15T08:40:52.032Z",
+  "globalType": "certifications-content",
+  "eyebrow": "Certified quality",
+  "title": "Our certifications",
+  "subtitle": "We are committed to the most demanding industry quality standards. Our certifications validate our capacity to manufacture precision components that meet the requirements of the world's leading OEMs.",
+  "qualityCommitment": {
+    "title": "Commitment to total quality",
+    "body": "At CEFA, quality is not just a requirement — it is part of our corporate culture. Every component we manufacture goes through rigorous control and verification processes to ensure it meets the most demanding standards."
+  },
+  "stats": {
+    "auditLabel": "Annual audits",
+    "auditValue": "100%",
+    "defectLabel": "Defect rate",
+    "defectValue": "< 10 PPM",
+    "traceabilityLabel": "Traceability",
+    "traceabilityValue": "Total"
+  },
+  "meta": {
+    "title": "IATF 16949 · ISO 9001 Certifications | CEFA – Automotive Manufacturer",
+    "description": "IATF 16949, ISO 9001 & ISO 14001 certified. CEFA meets the highest automotive standards in plastic injection moulding: < 10 PPM defect rate, full traceability."
+  },
+  "id": "69df479113d2923b1ce4154c"
+}
