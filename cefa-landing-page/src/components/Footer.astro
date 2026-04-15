@@ -1,7 +1,7 @@
 ---
 import type { Locale } from '@/i18n/translations';
 import { useTranslations, getLocalePath } from '@/i18n/translations';
-import { getLandingContent } from '@/lib/cms';
+
 
 interface Props {
   locale: Locale;
@@ -9,10 +9,8 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-const cmsData = await getLandingContent(locale);
-
-const tagline = cmsData?.footer?.companyInfo || t('footer.tagline');
-const copyright = cmsData?.footer?.copyright || t('footer.rights');
+const tagline = t('footer.tagline');
+const copyright = t('footer.rights');
 
 const year = new Date().getFullYear();
 

@@ -13,15 +13,16 @@ const COLLECTIONS = [
   { endpoint: 'products?limit=100&depth=2', name: 'products' },
   { endpoint: 'projects?limit=100&depth=2', name: 'projects' },
   { endpoint: 'certificates?limit=100&depth=2', name: 'certificates' },
+  { endpoint: 'media?limit=1000', name: 'media' },
 ];
 
 const GLOBALS = [
-  { endpoint: 'globals/landing-content?depth=2', name: 'landing-content' },
-  { endpoint: 'globals/navigation?depth=2', name: 'navigation' },
+
+  { endpoint: 'globals/header?depth=2', name: 'header' },
   { endpoint: 'globals/hero?depth=2', name: 'hero' },
-  { endpoint: 'globals/company?depth=2', name: 'company' },
+  { endpoint: 'globals/mission?depth=2', name: 'mission' },
   { endpoint: 'globals/innovation?depth=2', name: 'innovation' },
-  { endpoint: 'globals/contact-info?depth=2', name: 'contact-info' },
+  { endpoint: 'globals/contact?depth=2', name: 'contact' },
   { endpoint: 'globals/awards?depth=2', name: 'awards' },
   { endpoint: 'globals/certifications-content?depth=2', name: 'certifications-content' },
   { endpoint: 'globals/rd-content?depth=2', name: 'rd-content' },
@@ -126,6 +127,7 @@ async function syncCMS() {
     }
   }
 
+  /* 
   // LIMPIEZA: Eliminar archivos huerfanos (que ya no existen en el CMS)
   if (fs.existsSync(MEDIA_DIR)) {
     const existingFiles = fs.readdirSync(MEDIA_DIR);
@@ -140,6 +142,8 @@ async function syncCMS() {
       console.log(`\n🧹 Limpieza: Se eliminaron ${deletedCount} archivos que ya no están en uso.`);
     }
   }
+  */
+
 
   console.log(
     '\n✨ Sincronización completada con éxito. Astro puede usar ahora src/data/cms/ y public/cms-media/'

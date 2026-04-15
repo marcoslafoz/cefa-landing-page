@@ -5,6 +5,7 @@ export const Projects: CollectionConfig = {
   slug: 'projects',
   admin: {
     useAsTitle: 'title',
+    defaultColumns: ['title', 'type', 'client'],
   },
   access: {
     read: () => true,

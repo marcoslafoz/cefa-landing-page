@@ -1,36 +1,36 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-15T08:40:52.148Z",
-      "updatedAt": "2026-04-15T08:40:52.155Z",
+      "createdAt": "2026-04-15T11:29:55.036Z",
+      "updatedAt": "2026-04-15T11:29:55.039Z",
       "title": "Außenverkleidungen",
       "description": "Funktion und Erscheinungsbild vereint. Leisten, Spoiler, Kühlergitter und dekorative Elemente mit höchster Qualität.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae73"
+      "id": "69df76b3c3617ab1f1c3b77d"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.141Z",
-      "updatedAt": "2026-04-15T08:40:52.147Z",
+      "createdAt": "2026-04-15T11:29:55.029Z",
+      "updatedAt": "2026-04-15T11:29:55.035Z",
       "title": "Funktionale Anwendungen",
       "description": "Komponenten im Motorraum, Fahrgastraum oder Laderaum, die grundlegend sind, um alles zu gewährleisten, was vom Fahrzeug verlangt wird.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae68"
+      "id": "69df76b3c3617ab1f1c3b772"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.132Z",
-      "updatedAt": "2026-04-15T08:40:52.139Z",
+      "createdAt": "2026-04-15T11:29:55.023Z",
+      "updatedAt": "2026-04-15T11:29:55.028Z",
       "title": "Türverkleidungen und Innenausstattungen",
       "description": "Komfort und Schutz, Folien, Stoffe und dekorative Leisten, mit flexiblen Prozessen, die die Produktion in allen erdenklichen Kombinationen ermöglichen.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae5d"
+      "id": "69df76b3c3617ab1f1c3b767"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.122Z",
-      "updatedAt": "2026-04-15T08:40:52.131Z",
+      "createdAt": "2026-04-15T11:29:55.014Z",
+      "updatedAt": "2026-04-15T11:29:55.023Z",
       "title": "Instrumententafel und Mittelkonsole",
       "description": "Technische Lösungen und Materialien, die auf die Erwartungen jedes OEM abgestimmt sind, um die beste Leistung in Bezug auf Sicherheit, Optik und Funktionalität zu gewährleisten.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae52"
+      "id": "69df76b3c3617ab1f1c3b75c"
     }
   ],
   "totalDocs": 4,

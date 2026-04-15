@@ -63,13 +63,9 @@ export async function getCertificates(locale: string = 'es', type?: 'quality' | 
   return docs;
 }
 
-export async function getLandingContent(locale: string = 'es') {
-  const data = await getCMSData('landing-content', locale);
-  return data || null;
-}
 
-export async function getNavigation(locale: string = 'es') {
-  const data = await getCMSData('navigation', locale);
+export async function getHeader(locale: string = 'es') {
+  const data = await getCMSData('header', locale);
   return data || null;
 }
 
@@ -78,8 +74,8 @@ export async function getHero(locale: string = 'es') {
   return data || null;
 }
 
-export async function getCompany(locale: string = 'es') {
-  const data = await getCMSData('company', locale);
+export async function getMission(locale: string = 'es') {
+  const data = await getCMSData('mission', locale);
   return data || null;
 }
 
@@ -88,8 +84,8 @@ export async function getInnovation(locale: string = 'es') {
   return data || null;
 }
 
-export async function getContactInfo(locale: string = 'es') {
-  const data = await getCMSData('contact-info', locale);
+export async function getContact(locale: string = 'es') {
+  const data = await getCMSData('contact', locale);
   return data || null;
 }
 
@@ -122,6 +118,7 @@ export async function getFAQ(locale: string = 'es') {
   const data = await getCMSData('faq', locale);
   return data || null;
 }
+
 
 export async function getSEO(locale: string = 'es') {
   const data = await getCMSData('seo', locale);

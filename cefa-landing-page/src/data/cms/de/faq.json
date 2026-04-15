@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T08:08:50.022Z",
-  "updatedAt": "2026-04-15T08:40:52.071Z",
+  "createdAt": "2026-04-15T11:22:29.639Z",
+  "updatedAt": "2026-04-15T11:29:54.961Z",
   "globalType": "faq",
   "eyebrow": "Häufig gestellte Fragen",
   "title": "Alles, was Sie über CEFA wissen müssen",
@@ -8,23 +8,23 @@
     {
       "question": "Welche Kunststoffkomponenten für Automobile stellt CEFA her?",
       "answer": "CEFA stellt vier Produktlinien mittels hochpräzisem Kunststoffspritzguss her: Instrumententafeln und Mittelkonsolen, Türverkleidungen und Innenverkleidungen, Funktionsbauteile für Motorraum und Fahrgastzelle sowie Außenverkleidungen wie Zierleisten, Spoiler und Kühlergrill. Alle Komponenten werden mit mikrometrischen Toleranzen für die weltweit führenden OEM gefertigt.",
-      "id": "69df4f1418507c0001d933d3"
+      "id": "69df76b26028af0001fcdba6"
     },
     {
       "question": "Ist CEFA nach IATF 16949 und ISO 9001 zertifiziert?",
       "answer": "Ja. CEFA ist nach IATF 16949 (dem anspruchsvollsten Qualitätsstandard der Automobilindustrie), ISO 9001 und ISO 14001 (Umwelt) zertifiziert. Unsere Prozesse werden jährlich auditiert und wir halten eine Fehlerrate unter 10 PPM mit vollständiger Rückverfolgbarkeit jedes gefertigten Bauteils aufrecht.",
-      "id": "69df4f1418507c0001d933d4"
+      "id": "69df76b26028af0001fcdba7"
     },
     {
       "question": "Wo befinden sich die Fertigungswerke von CEFA?",
       "answer": "CEFA verfügt über drei Industriewerke: Werk Malpica in Saragossa (Spanien), Werk Figueruelas in Saragossa (Spanien) und CEFA Poland in Żagań (Polen). Diese strategische Präsenz im Herzen Europas ermöglicht es uns, die weltweit führenden Automobilhersteller (OEM) schnell und flexibel zu beliefern.",
-      "id": "69df4f1418507c0001d933d5"
+      "id": "69df76b26028af0001fcdba8"
     },
     {
       "question": "Für welche Automobilmarken liefert CEFA Komponenten?",
       "answer": "CEFA beliefert die weltweit führenden OEM, darunter Volkswagen, Audi, SEAT, Skoda, Renault, Ford, Mercedes-Benz, Nissan, Opel, Citroën, Fiat, Lancia, Cupra und MAN. Wir sind Tier-1-Zulieferer der Motherson-Gruppe mit über 80 Jahren Erfahrung in der Automobilindustrie.",
-      "id": "69df4f1418507c0001d933d6"
+      "id": "69df76b26028af0001fcdba9"
     }
   ],
-  "id": "69df479213d2923b1ce41584"
+  "id": "69df74f54fdcb6ca423b9af4"
 }

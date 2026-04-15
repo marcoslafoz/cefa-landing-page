@@ -5,6 +5,7 @@ export const Products: CollectionConfig = {
   slug: 'products',
   admin: {
     useAsTitle: 'title',
+    defaultColumns: ['title', 'description', 'image'],
   },
   access: {
     read: () => true,

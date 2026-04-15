@@ -6,7 +6,7 @@ import ContactInfoItem from '@/components/ui/ContactInfoItem.astro';
 import Section from '@/components/ui/Section.astro';
 import SectionHeader from '@/components/ui/SectionHeader.astro';
 
-import { getContactInfo } from '@/lib/cms';
+import { getContact } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -14,7 +14,7 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-const cmsContact = await getContactInfo(locale);
+const cmsContact = await getContact(locale);
 
 const contactTitle = cmsContact?.title || t('contact.title');
 const contactSubtitle = cmsContact?.subtitle || t('contact.subtitle');

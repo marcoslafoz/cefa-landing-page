@@ -5,6 +5,7 @@ export const Certificates: CollectionConfig = {
   slug: 'certificates',
   admin: {
     useAsTitle: 'name',
+    defaultColumns: ['name', 'type', 'issuer', 'issueDate'],
   },
   access: {
     read: () => true,

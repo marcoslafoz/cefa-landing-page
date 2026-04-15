@@ -1,5 +1,5 @@
 {
-  "navigation": {
+  "header": {
     "header": {
       "company": "nav.company",
       "products": "nav.products",
@@ -59,7 +59,7 @@
       }
     ]
   },
-  "company": {
+  "mission": {
     "mission": {
       "eyebrow": "mission.eyebrow",
       "title": "mission.title",
@@ -132,7 +132,7 @@
     "loadingText": "innovation.loading",
     "rotateText": "innovation.rotate"
   },
-  "contact-info": {
+  "contact": {
     "map": {
       "eyebrow": "map.eyebrow",
       "title": "map.title",

@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T08:08:49.930Z",
-  "updatedAt": "2026-04-15T08:40:52.032Z",
+  "createdAt": "2026-04-15T11:22:29.595Z",
+  "updatedAt": "2026-04-15T11:29:54.922Z",
   "globalType": "certifications-content",
   "eyebrow": "Zertifizierte Qualität",
   "title": "Unsere Zertifizierungen",
@@ -21,5 +21,5 @@
     "title": "Zertifizierungen – CEFA",
     "description": "IATF 16949, ISO 9001 & ISO 14001 zertifiziert. CEFA erfüllt höchste Qualitätsstandards im Kunststoffspritzguss für die Automobilindustrie: < 10 PPM Fehlerrate."
   },
-  "id": "69df479113d2923b1ce4154c"
+  "id": "69df74f54fdcb6ca423b9abc"
 }

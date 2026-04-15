@@ -1,8 +1,8 @@
 import type { GlobalConfig } from 'payload'
 import { autoTranslateGlobalHook } from '../hooks/translate'
 
-export const Navigation: GlobalConfig = {
-  slug: 'navigation',
+export const Header: GlobalConfig = {
+  slug: 'header',
   access: {
     read: () => true,
   },

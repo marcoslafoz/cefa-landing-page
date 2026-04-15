@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T08:08:49.968Z",
-  "updatedAt": "2026-04-15T08:40:52.055Z",
+  "createdAt": "2026-04-15T11:22:29.615Z",
+  "updatedAt": "2026-04-15T11:29:54.947Z",
   "globalType": "history-content",
   "eyebrow": "History",
   "title": "Our history",
@@ -10,47 +10,47 @@
     {
       "year": "1946",
       "text": "CEFA was founded in 1946 by Eduardo Blanchard Castillo, beginning with the manufacture of cellulose capsules for bottle caps, as well as other chemical and pharmaceutical products such as gelatines, saccharins and soaps. Thermoplastic injection moulding began in 1952.",
-      "id": "69df4f1418507c0001d933ca"
+      "id": "69df76b26028af0001fcdb9d"
     },
     {
       "year": "1960",
       "text": "CEFA consolidated its position in the automotive and household appliance sectors and introduced blow-moulding technology. It also developed its own toy and homeware product lines, achieving wide distribution both nationally and internationally.",
-      "id": "69df4f1418507c0001d933cb"
+      "id": "69df76b26028af0001fcdb9e"
     },
     {
       "year": "1970",
       "text": "In the late 1970s, CEFA created a specialist unit in bubble-wrap packaging: Embalajes Air Plastic S.L.",
-      "id": "69df4f1418507c0001d933cc"
+      "id": "69df76b26028af0001fcdb9f"
     },
     {
       "year": "1983",
       "text": "Continuous growth led the company to move to its current premises at the Malpica industrial park in Zaragoza.",
-      "id": "69df4f1418507c0001d933cd"
+      "id": "69df76b26028af0001fcdba0"
     },
     {
       "year": "1992",
       "text": "The need for specialisation in response to market developments became clear. CEFA decided to discontinue the homeware line and spin off the toy division into a new company: Cefa Toys. From that moment, CEFA focused exclusively on the automotive sector.",
-      "id": "69df4f1418507c0001d933ce"
+      "id": "69df76b26028af0001fcdba1"
     },
     {
       "year": "1994",
       "text": "In response to growing market globalisation, CEFA partnered with the Peguform Group, which became a shareholder of the company, strengthening the global reach of its products.",
-      "id": "69df4f1418507c0001d933cf"
+      "id": "69df76b26028af0001fcdba2"
     },
     {
       "year": "1997",
       "text": "CEFA re-entered the household appliance sector by establishing a shop-in-shop with BSH-Balay for the manufacture and direct supply of washing machine drums to its assembly lines.",
-      "id": "69df4f1418507c0001d933d0"
+      "id": "69df76b26028af0001fcdba3"
     },
     {
       "year": "2011",
       "text": "Peguform became part of the Indian Samvardhana Motherson Group.",
-      "id": "69df4f1418507c0001d933d1"
+      "id": "69df76b26028af0001fcdba4"
     },
     {
       "year": "2012",
       "text": "MRA, Módulos Ribera Alta S.L., was established as a specialist in the manufacture of automotive door panels.",
-      "id": "69df4f1418507c0001d933d2"
+      "id": "69df76b26028af0001fcdba5"
     }
   ],
   "todayText": "We continue working towards the future with optimism, holding a leading position in the sector.",
@@ -59,5 +59,5 @@
     "title": "CEFA History | Automotive Plastic Manufacturer Since 1946",
     "description": "Discover the history of CEFA: from its foundation in 1946 to becoming a Tier 1 automotive supplier in the Motherson Group. 80 years of innovation in Zaragoza."
   },
-  "id": "69df479113d2923b1ce41568"
+  "id": "69df74f54fdcb6ca423b9ad8"
 }

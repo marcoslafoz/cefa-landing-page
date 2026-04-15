@@ -1,86 +1,86 @@
 {
-  "createdAt": "2026-04-15T08:08:49.898Z",
-  "updatedAt": "2026-04-15T08:40:52.001Z",
+  "createdAt": "2026-04-15T11:22:29.580Z",
+  "updatedAt": "2026-04-15T11:29:54.913Z",
   "globalType": "awards",
   "title": "Anerkennungen",
   "subtitle": "Für uns ist die größte Auszeichnung die Zufriedenheit unserer Kunden. Doch gut geleistete Arbeit, Ausdauer und das feste Bekenntnis von CEFA zu Qualität wurden mit verschiedenen Preisen gewürdigt:",
   "list": [
     {
       "award": "Q1 (FORD) - 1989",
-      "id": "69df4f1318507c0001d933b3"
+      "id": "69df76b26028af0001fcdb86"
     },
     {
       "award": "EAQF (Class A) (EAQF RENAULT) – 1996",
-      "id": "69df4f1318507c0001d933b4"
+      "id": "69df76b26028af0001fcdb87"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 1997",
-      "id": "69df4f1318507c0001d933b5"
+      "id": "69df76b26028af0001fcdb88"
     },
     {
       "award": "Business Excellence Award in Aragonien (IAF) - 1999",
-      "id": "69df4f1318507c0001d933b6"
+      "id": "69df76b26028af0001fcdb89"
     },
     {
       "award": "Next21 Award (Nissan) - 2000",
-      "id": "69df4f1318507c0001d933b7"
+      "id": "69df76b26028af0001fcdb8a"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2003",
-      "id": "69df4f1318507c0001d933b8"
+      "id": "69df76b26028af0001fcdb8b"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2004",
-      "id": "69df4f1318507c0001d933b9"
+      "id": "69df76b26028af0001fcdb8c"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2005",
-      "id": "69df4f1318507c0001d933ba"
+      "id": "69df76b26028af0001fcdb8d"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2011",
-      "id": "69df4f1318507c0001d933bb"
+      "id": "69df76b26028af0001fcdb8e"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2012",
-      "id": "69df4f1318507c0001d933bc"
+      "id": "69df76b26028af0001fcdb8f"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2014",
-      "id": "69df4f1318507c0001d933bd"
+      "id": "69df76b26028af0001fcdb90"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2015",
-      "id": "69df4f1318507c0001d933be"
+      "id": "69df76b26028af0001fcdb91"
     },
     {
       "award": "Supplier of the Year (GM QSTP AWARD) - 2016",
-      "id": "69df4f1318507c0001d933bf"
+      "id": "69df76b26028af0001fcdb92"
     },
     {
       "award": "Zertifikat für unternehmerische Sozialverantwortung 2018",
-      "id": "69df4f1318507c0001d933c0"
+      "id": "69df76b26028af0001fcdb93"
     },
     {
       "award": "Zertifikat für unternehmerische Sozialverantwortung RSA+ 2019",
-      "id": "69df4f1318507c0001d933c1"
+      "id": "69df76b26028af0001fcdb94"
     },
     {
       "award": "Zertifikat für unternehmerische Sozialverantwortung RSA 2020",
-      "id": "69df4f1318507c0001d933c2"
+      "id": "69df76b26028af0001fcdb95"
     },
     {
       "award": "Zertifikat für unternehmerische Sozialverantwortung RSA+ 2020",
-      "id": "69df4f1318507c0001d933c3"
+      "id": "69df76b26028af0001fcdb96"
     },
     {
       "award": "Supplier of the Year PSA (Programme Management Award) 2020",
-      "id": "69df4f1318507c0001d933c4"
+      "id": "69df76b26028af0001fcdb97"
     }
   ],
   "meta": {
     "title": "Anerkennungen | CEFA – Automotive Excellence",
     "description": "CEFA wurde mit zahlreichen Qualitäts- und Exzellenz-Anerkennungen führender Automobilhersteller wie Ford, Nissan, PSA und GM (Supplier of the Year) ausgezeichnet."
   },
-  "id": "69df479113d2923b1ce4153e"
+  "id": "69df74f54fdcb6ca423b9aae"
 }

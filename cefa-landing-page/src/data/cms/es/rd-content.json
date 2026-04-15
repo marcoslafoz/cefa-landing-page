@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T08:08:49.947Z",
-  "updatedAt": "2026-04-15T08:40:52.044Z",
+  "createdAt": "2026-04-15T11:22:29.603Z",
+  "updatedAt": "2026-04-15T11:29:54.932Z",
   "globalType": "rd-content",
   "eyebrow": "Innovación y desarrollo",
   "title": "Proyectos I+D",
@@ -9,17 +9,17 @@
     {
       "value": "+15%",
       "label": "Inversión anual en I+D",
-      "id": "69df4f1418507c0001d933c5"
+      "id": "69df76b26028af0001fcdb98"
     },
     {
       "value": "16+",
       "label": "Proyectos financiados",
-      "id": "69df4f1418507c0001d933c6"
+      "id": "69df76b26028af0001fcdb99"
     },
     {
       "value": "3",
       "label": "Centros de desarrollo",
-      "id": "69df4f1418507c0001d933c7"
+      "id": "69df76b26028af0001fcdb9a"
     }
   ],
   "funders": {
@@ -29,12 +29,12 @@
       {
         "name": "Gobierno de Aragón",
         "description": "Proyectos cofinanciados por el Gobierno de Aragón en el marco de los programas de ayudas a la transformación y desarrollo industrial, con fondos FEDER.",
-        "id": "69df4f1418507c0001d933c8"
+        "id": "69df76b26028af0001fcdb9b"
       },
       {
         "name": "Unión Europea",
         "description": "Proyectos cofinanciados por la Unión Europea en el marco de programas de eficiencia energética e innovación industrial.",
-        "id": "69df4f1418507c0001d933c9"
+        "id": "69df76b26028af0001fcdb9c"
       }
     ]
   },
@@ -47,5 +47,5 @@
     "title": "Proyectos I+D en Inyección de Plásticos y Automoción | CEFA",
     "description": "Proyectos I+D en materiales, inyección y digitalización para OEM. CEFA invierte +15% anual en innovación para componentes plásticos de próxima generación."
   },
-  "id": "69df479113d2923b1ce4155a"
+  "id": "69df74f54fdcb6ca423b9aca"
 }

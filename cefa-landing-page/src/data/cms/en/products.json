@@ -1,36 +1,36 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-15T08:40:52.148Z",
-      "updatedAt": "2026-04-15T08:40:52.155Z",
+      "createdAt": "2026-04-15T11:29:55.036Z",
+      "updatedAt": "2026-04-15T11:29:55.039Z",
       "title": "Exterior Trims",
       "description": "Combining function and appearance. Mouldings, spoilers, grilles and decorative elements with the highest quality finishes.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae73"
+      "id": "69df76b3c3617ab1f1c3b77d"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.141Z",
-      "updatedAt": "2026-04-15T08:40:52.147Z",
+      "createdAt": "2026-04-15T11:29:55.029Z",
+      "updatedAt": "2026-04-15T11:29:55.035Z",
       "title": "Functional Applications",
       "description": "Components in the engine compartment, passenger compartment or cargo space, fundamental to guarantee everything required of the vehicle.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae68"
+      "id": "69df76b3c3617ab1f1c3b772"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.132Z",
-      "updatedAt": "2026-04-15T08:40:52.139Z",
+      "createdAt": "2026-04-15T11:29:55.023Z",
+      "updatedAt": "2026-04-15T11:29:55.028Z",
       "title": "Door Panels and Interior Trims",
       "description": "Comfort and protection, films, fabrics and decorative mouldings, with flexible processes that allow production in all imaginable combinations.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae5d"
+      "id": "69df76b3c3617ab1f1c3b767"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.122Z",
-      "updatedAt": "2026-04-15T08:40:52.131Z",
+      "createdAt": "2026-04-15T11:29:55.014Z",
+      "updatedAt": "2026-04-15T11:29:55.023Z",
       "title": "Instrument Panel and Central Console",
       "description": "Technical solutions and materials aligned with each OEM's expectations, guaranteeing the best performance in safety, aesthetics and functionality.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae52"
+      "id": "69df76b3c3617ab1f1c3b75c"
     }
   ],
   "totalDocs": 4,

@@ -12,9 +12,18 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+import { getCareers } from '@/lib/cms';
+const cmsData = await getCareers(locale);
 
 const malpicaPhone = t('contact.location1.phone');
-const recruitmentEmail = t('careers.email');
+const recruitmentEmail = cmsData?.email || t('careers.email');
+const title = cmsData?.title || t('careers.title');
+const subtitle = cmsData?.subtitle || t('careers.subtitle');
+const linkedinCta = cmsData?.linkedinCta || t('careers.linkedin.cta');
+const emailLabel = cmsData?.emailLabel || t('careers.email.label');
+const phoneLabel = cmsData?.phoneLabel || t('careers.phone.label');
+const phoneHours = cmsData?.phoneHours || t('careers.phone.hours');
+const cvHint = cmsData?.cvHint || t('careers.cv.hint');
 ---
 
 <Section id="careers" background="white" padding="md" class="pt-8! lg:pt-12!">
@@ -23,10 +32,10 @@ const recruitmentEmail = t('careers.email');
       <div class="max-w-xl reveal">
         <p class="eyebrow mb-4">{t('nav.careers')}</p>
         <h2 class="heading-lg text-cefa-navy mb-5">
-          {t('careers.title')}
+          {title}
         </h2>
         <p class="text-gray-500 text-lg leading-relaxed">
-          {t('careers.subtitle')}
+          {subtitle}
         </p>
       </div>
 
@@ -38,7 +47,7 @@ const recruitmentEmail = t('careers.email');
         showIcon={false}
         class="reveal"
       >
-        {t('careers.linkedin.cta')}
+        {linkedinCta}
         <svg
           width="16"
           height="16"
@@ -96,7 +105,7 @@ const recruitmentEmail = t('careers.email');
           </svg>
         </IconBox>
         <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 mb-3">
-          {t('careers.phone.label')}
+          {phoneLabel}
         </h3>
         <a
           href={`tel:${malpicaPhone.replace(/\s/g, '')}`}
@@ -104,7 +113,7 @@ const recruitmentEmail = t('careers.email');
         >
           {malpicaPhone}
         </a>
-        <p class="mt-4 text-sm text-gray-400 font-medium">{t('careers.phone.hours')}</p>
+        <p class="mt-4 text-sm text-gray-400 font-medium">{phoneHours}</p>
       </Card>
 
       <!-- Tarjeta de Email -->
@@ -153,7 +162,7 @@ const recruitmentEmail = t('careers.email');
           </svg>
         </IconBox>
         <h3 class="text-xs font-bold uppercase tracking-[0.25em] text-gray-400 mb-3">
-          {t('careers.email.label')}
+          {emailLabel}
         </h3>
         <a
           href={`mailto:${recruitmentEmail}`}
@@ -161,7 +170,7 @@ const recruitmentEmail = t('careers.email');
         >
           {recruitmentEmail}
         </a>
-        <p class="mt-4 text-sm text-gray-400 font-medium">{t('careers.cv.hint')}</p>
+        <p class="mt-4 text-sm text-gray-400 font-medium">{cvHint}</p>
       </Card>
     </div>
   </div>

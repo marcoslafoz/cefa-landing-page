@@ -1,36 +1,36 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-15T08:40:52.148Z",
-      "updatedAt": "2026-04-15T08:40:52.155Z",
+      "createdAt": "2026-04-15T11:29:55.036Z",
+      "updatedAt": "2026-04-15T11:29:55.039Z",
       "title": "Revestimientos Exteriores",
       "description": "Combinando función y apariencia. Molduras, spoilers, rejillas y elementos decorativos con acabados de máxima calidad.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae73"
+      "id": "69df76b3c3617ab1f1c3b77d"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.141Z",
-      "updatedAt": "2026-04-15T08:40:52.147Z",
+      "createdAt": "2026-04-15T11:29:55.029Z",
+      "updatedAt": "2026-04-15T11:29:55.035Z",
       "title": "Aplicaciones Funcionales",
       "description": "Componentes en el compartimento motor, habitáculo de pasajeros o compartimento de carga, fundamentales para garantizar todo lo que se exige del vehículo.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae68"
+      "id": "69df76b3c3617ab1f1c3b772"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.132Z",
-      "updatedAt": "2026-04-15T08:40:52.139Z",
+      "createdAt": "2026-04-15T11:29:55.023Z",
+      "updatedAt": "2026-04-15T11:29:55.028Z",
       "title": "Paneles de Puerta y Revestimientos Interiores",
       "description": "Confort y protección, folios, tejidos y molduras decorativas, con procesos flexibles que permitan su producción en todas las combinaciones imaginables.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae5d"
+      "id": "69df76b3c3617ab1f1c3b767"
     },
     {
-      "createdAt": "2026-04-15T08:40:52.122Z",
-      "updatedAt": "2026-04-15T08:40:52.131Z",
+      "createdAt": "2026-04-15T11:29:55.014Z",
+      "updatedAt": "2026-04-15T11:29:55.023Z",
       "title": "Panel de Instrumentos y Consola Central",
       "description": "Soluciones técnicas y materiales alineados con las expectativas de cada OEM, para garantizar al usuario las mejores prestaciones en seguridad, aspecto y funcionalidad.",
       "features": null,
-      "id": "69df4f14e66b363c7e80ae52"
+      "id": "69df76b3c3617ab1f1c3b75c"
     }
   ],
   "totalDocs": 4,

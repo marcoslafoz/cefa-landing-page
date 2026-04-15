@@ -1,8 +1,8 @@
 import type { GlobalConfig } from 'payload'
 import { autoTranslateGlobalHook } from '../hooks/translate'
 
-export const ContactInfo: GlobalConfig = {
-  slug: 'contact-info',
+export const Contact: GlobalConfig = {
+  slug: 'contact',
   access: {
     read: () => true,
   },

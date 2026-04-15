@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T08:08:49.852Z",
-  "updatedAt": "2026-04-15T08:40:51.969Z",
+  "createdAt": "2026-04-15T11:22:29.552Z",
+  "updatedAt": "2026-04-15T11:29:54.889Z",
   "globalType": "innovation",
   "eyebrow": "Innovation",
   "title": "Spitzentechnologie im Ingenieurwesen",
@@ -9,25 +9,25 @@
     {
       "title": "Technische Präzision",
       "text": "Minimale Toleranzen und hochwertige Oberflächenfinishes.",
-      "id": "69df4f1318507c0001d933ac"
+      "id": "69df76b26028af0001fcdb7f"
     },
     {
       "title": "Erweiterte Simulation",
       "text": "Rheologische und strukturelle Analysen in jeder Entwurfsphase.",
-      "id": "69df4f1318507c0001d933ad"
+      "id": "69df76b26028af0001fcdb80"
     }
   ],
   "stats": [
     {
       "label": "Vollständige Rückverfolgbarkeit",
-      "id": "69df4f1318507c0001d933ae"
+      "id": "69df76b26028af0001fcdb81"
     },
     {
       "label": "Innovations-Ökosystem",
-      "id": "69df4f1318507c0001d933af"
+      "id": "69df76b26028af0001fcdb82"
     }
   ],
   "loadingText": "3D-Engine wird initialisiert",
   "rotateText": "Ziehen zum Drehen",
-  "id": "69df479113d2923b1ce41522"
+  "id": "69df74f54fdcb6ca423b9a92"
 }

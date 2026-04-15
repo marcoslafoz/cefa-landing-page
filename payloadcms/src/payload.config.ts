@@ -7,16 +7,14 @@ import sharp from 'sharp'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
-import { Pages } from './collections/Pages'
 import { Products } from './collections/Products'
 import { Projects } from './collections/Projects'
 import { Certificates } from './collections/Certificates'
-import { SiteSettings } from './globals/SiteSettings'
-import { Navigation } from './globals/Navigation'
+import { Header } from './globals/Header'
 import { Hero } from './globals/Hero'
-import { Company } from './globals/Company'
+import { Mission } from './globals/Mission'
 import { Innovation } from './globals/Innovation'
-import { ContactInfo } from './globals/ContactInfo'
+import { Contact } from './globals/Contact'
 import { Awards } from './globals/Awards'
 import { Certifications } from './globals/Certifications'
 import { ResearchDevelopment } from './globals/ResearchDevelopment'
@@ -24,7 +22,7 @@ import { History } from './globals/History'
 import { Careers } from './globals/Careers'
 import { FAQ } from './globals/FAQ'
 import { SEO } from './globals/SEO'
-import { LandingContent } from './globals/LandingContent'
+
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -45,20 +43,19 @@ export default buildConfig({
       try {
         const { seed } = await import('./seed')
         await seed(payload)
-        payload.logger.info('✅ Seed completado.')
+        payload.logger.info('Seed completado.')
       } catch (err) {
-        payload.logger.error({ err }, '❌ Error durante el seed')
+        payload.logger.error({ err }, 'Error durante el seed')
       }
     }
   },
-  collections: [Users, Media, Pages, Products, Projects, Certificates],
+  collections: [Users, Media, Products, Projects, Certificates],
   globals: [
-    SiteSettings,
-    Navigation,
+    Header,
     Hero,
-    Company,
+    Mission,
     Innovation,
-    ContactInfo,
+    Contact,
     Awards,
     Certifications,
     ResearchDevelopment,
@@ -66,7 +63,6 @@ export default buildConfig({
     Careers,
     FAQ,
     SEO,
-    LandingContent,
   ],
   editor: lexicalEditor(),
   localization: {
