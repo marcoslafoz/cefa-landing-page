@@ -33,8 +33,15 @@ export default buildConfig({
     importMap: {
       baseDir: path.resolve(dirname),
     },
+    meta: {
+      titleSuffix: '- CEFA Admin',
+    },
     components: {
       beforeDashboard: ['@/components/PublishButton#PublishButton'],
+      graphics: {
+        Icon: '@/components/Graphics#Icon',
+        Logo: '@/components/Graphics#Logo',
+      },
     },
   },
   onInit: async (payload) => {
