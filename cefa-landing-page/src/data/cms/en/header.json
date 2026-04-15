@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:22:29.487Z",
-  "updatedAt": "2026-04-15T11:29:54.847Z",
+  "createdAt": "2026-04-15T11:51:50.260Z",
+  "updatedAt": "2026-04-15T11:51:50.316Z",
   "globalType": "header",
   "header": {
     "company": "Company",
@@ -31,5 +31,5 @@
     "functional": "Functional applications",
     "exterior": "Exterior trims"
   },
-  "id": "69df74f54fdcb6ca423b9a5f"
+  "id": "69df7bd6cf7ebbb1da3961e2"
 }

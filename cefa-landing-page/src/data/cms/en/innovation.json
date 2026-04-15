@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:22:29.552Z",
-  "updatedAt": "2026-04-15T11:29:54.889Z",
+  "createdAt": "2026-04-15T11:51:50.363Z",
+  "updatedAt": "2026-04-15T11:51:50.371Z",
   "globalType": "innovation",
   "eyebrow": "Innovation",
   "title": "Cutting-edge engineering",
@@ -9,25 +9,25 @@
     {
       "title": "Technical Precision",
       "text": "Minimum tolerances and high-quality surface finishes.",
-      "id": "69df76b26028af0001fcdb7f"
+      "id": "69df7bd6f2a41b00018df79a"
     },
     {
       "title": "Advanced Simulation",
       "text": "Rheological and structural analysis at every stage of design.",
-      "id": "69df76b26028af0001fcdb80"
+      "id": "69df7bd6f2a41b00018df79b"
     }
   ],
   "stats": [
     {
       "label": "Full Traceability",
-      "id": "69df76b26028af0001fcdb81"
+      "id": "69df7bd6f2a41b00018df79c"
     },
     {
       "label": "Innovation Ecosystem",
-      "id": "69df76b26028af0001fcdb82"
+      "id": "69df7bd6f2a41b00018df79d"
     }
   ],
   "loadingText": "Initialising 3D Engine",
   "rotateText": "Drag to rotate",
-  "id": "69df74f54fdcb6ca423b9a92"
+  "id": "69df7bd6cf7ebbb1da39621a"
 }

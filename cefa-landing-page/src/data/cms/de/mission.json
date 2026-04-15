@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:22:29.537Z",
-  "updatedAt": "2026-04-15T11:29:54.878Z",
+  "createdAt": "2026-04-15T11:51:50.342Z",
+  "updatedAt": "2026-04-15T11:51:50.359Z",
   "globalType": "mission",
   "mission": {
     "eyebrow": "Mission",
@@ -14,17 +14,17 @@
     {
       "title": "Zertifizierte Qualität",
       "text": "ISO 9001 und IATF 16949 zertifizierte Prozesse für höchste Standards.",
-      "id": "69df76b26028af0001fcdb78"
+      "id": "69df7bd6f2a41b00018df793"
     },
     {
       "title": "Kontinuierliche Innovation",
       "text": "Konstante Investitionen in F&E und fortschrittliche Fertigungsprozesse.",
-      "id": "69df76b26028af0001fcdb79"
+      "id": "69df7bd6f2a41b00018df794"
     },
     {
       "title": "Globale Präsenz",
       "text": "Betreuung führender OEM auf internationaler Ebene.",
-      "id": "69df76b26028af0001fcdb7a"
+      "id": "69df7bd6f2a41b00018df795"
     }
   ],
   "vision": {
@@ -36,24 +36,24 @@
       {
         "title": "Bevorzugter Partner des Kunden",
         "text": "Diversifiziertes Portfolio, hoher Marktanteil und robuste Umsätze.",
-        "id": "69df76b26028af0001fcdb7b"
+        "id": "69df7bd6f2a41b00018df796"
       },
       {
         "title": "Technologischer Benchmark",
         "text": "Innovation und schnelle Einführung fortschrittlicher Technologien für verantwortungsvolle Wertschöpfung.",
-        "id": "69df76b26028af0001fcdb7c"
+        "id": "69df7bd6f2a41b00018df797"
       },
       {
         "title": "Wirtschaftlich nachhaltig",
         "text": "Maximaler Ertrag (EBITDA) bei optimierten Investitionen.",
-        "id": "69df76b26028af0001fcdb7d"
+        "id": "69df7bd6f2a41b00018df798"
       },
       {
         "title": "Ort der persönlichen Entwicklung",
         "text": "Hohe Zufriedenheit sowie menschliches und berufliches Wachstum talentierter Teams.",
-        "id": "69df76b26028af0001fcdb7e"
+        "id": "69df7bd6f2a41b00018df799"
       }
     ]
   },
-  "id": "69df74f54fdcb6ca423b9a84"
+  "id": "69df7bd6cf7ebbb1da39620c"
 }

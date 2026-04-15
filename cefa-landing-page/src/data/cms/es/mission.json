@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:22:29.537Z",
-  "updatedAt": "2026-04-15T11:29:54.878Z",
+  "createdAt": "2026-04-15T11:51:50.342Z",
+  "updatedAt": "2026-04-15T11:51:50.359Z",
   "globalType": "mission",
   "mission": {
     "eyebrow": "Misión",
@@ -14,17 +14,17 @@
     {
       "title": "Calidad certificada",
       "text": "Procesos certificados ISO 9001 e IATF 16949 para los más altos estándares.",
-      "id": "69df76b26028af0001fcdb78"
+      "id": "69df7bd6f2a41b00018df793"
     },
     {
       "title": "Innovación continua",
       "text": "Inversión constante en I+D y procesos de fabricación avanzados.",
-      "id": "69df76b26028af0001fcdb79"
+      "id": "69df7bd6f2a41b00018df794"
     },
     {
       "title": "Presencia global",
       "text": "Atendiendo a los principales OEM a escala internacional.",
-      "id": "69df76b26028af0001fcdb7a"
+      "id": "69df7bd6f2a41b00018df795"
     }
   ],
   "vision": {
@@ -36,24 +36,24 @@
       {
         "title": "Socio preferido del cliente",
         "text": "Cartera diversificada, elevada cuota de mercado y ventas robustas.",
-        "id": "69df76b26028af0001fcdb7b"
+        "id": "69df7bd6f2a41b00018df796"
       },
       {
         "title": "Benchmark tecnológico",
         "text": "Innovación y adopción rápida de tecnologías avanzadas para crear valor responsable.",
-        "id": "69df76b26028af0001fcdb7c"
+        "id": "69df7bd6f2a41b00018df797"
       },
       {
         "title": "Económicamente sostenibles",
         "text": "Generación del máximo retorno (EBITDA) para una inversión optimizada.",
-        "id": "69df76b26028af0001fcdb7d"
+        "id": "69df7bd6f2a41b00018df798"
       },
       {
         "title": "Lugar para desarrollarse",
         "text": "Elevada satisfacción y crecimiento humano y profesional de equipos con gran talento.",
-        "id": "69df76b26028af0001fcdb7e"
+        "id": "69df7bd6f2a41b00018df799"
       }
     ]
   },
-  "id": "69df74f54fdcb6ca423b9a84"
+  "id": "69df7bd6cf7ebbb1da39620c"
 }

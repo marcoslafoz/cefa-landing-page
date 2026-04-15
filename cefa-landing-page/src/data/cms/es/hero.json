@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:22:29.523Z",
-  "updatedAt": "2026-04-15T11:42:37.778Z",
+  "createdAt": "2026-04-15T11:51:50.324Z",
+  "updatedAt": "2026-04-15T11:51:50.336Z",
   "globalType": "hero",
   "eyebrow": "Fabricante de referencia en automoción",
   "titleLine1": "Ingeniería plástica",
@@ -15,23 +15,23 @@
     {
       "value": "80",
       "label": "Años de trayectoria",
-      "id": "69df76b26028af0001fcdb74"
+      "id": "69df7bd6f2a41b00018df78f"
     },
     {
       "value": "3",
       "label": "Plantas industriales",
-      "id": "69df76b26028af0001fcdb75"
+      "id": "69df7bd6f2a41b00018df790"
     },
     {
       "value": "+800",
       "label": "Profesionales",
-      "id": "69df76b26028af0001fcdb76"
+      "id": "69df7bd6f2a41b00018df791"
     },
     {
       "value": "IATF",
       "label": "Calidad certificada",
-      "id": "69df76b26028af0001fcdb77"
+      "id": "69df7bd6f2a41b00018df792"
     }
   ],
-  "id": "69df74f54fdcb6ca423b9a76"
+  "id": "69df7bd6cf7ebbb1da3961fe"
 }
