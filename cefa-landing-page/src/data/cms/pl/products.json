@@ -1,36 +1,36 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-15T11:51:50.484Z",
-      "updatedAt": "2026-04-15T11:51:50.489Z",
-      "title": "Elementy zewnętrzne",
-      "description": "Połączenie funkcji i wyglądu. Listwy, spojlery, kratki i elementy dekoracyjne z najwyższej jakości wykończeniami.",
-      "features": null,
-      "id": "69df7bd6cf7ebbb1da3962bf"
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.477Z",
-      "updatedAt": "2026-04-15T11:51:50.483Z",
-      "title": "Zastosowania funkcjonalne",
-      "description": "Komponenty w komorze silnika, kabinie pasażerskiej lub przestrzeni ładunkowej, kluczowe dla zagwarantowania wszystkiego, czego wymaga się od pojazdu.",
-      "features": null,
-      "id": "69df7bd6cf7ebbb1da3962b4"
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.471Z",
-      "updatedAt": "2026-04-15T11:51:50.476Z",
-      "title": "Panele drzwiowe i wykończenia wnętrz",
-      "description": "Komfort i ochrona, folie, tkaniny i listwy ozdobne, z elastycznymi procesami pozwalającymi na produkcję we wszystkich możliwych kombinacjach.",
-      "features": null,
-      "id": "69df7bd6cf7ebbb1da3962a9"
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.460Z",
-      "updatedAt": "2026-04-15T11:51:50.469Z",
+      "createdAt": "2026-04-15T12:41:19.905Z",
+      "updatedAt": "2026-04-15T12:41:19.908Z",
       "title": "Panele wskaźników i konsole centralne",
       "description": "Rozwiązania techniczne i materiały zgodne z oczekiwaniami każdego OEM, aby zagwarantować użytkownikowi najlepszą wydajność w zakresie bezpieczeństwa, wyglądu i funkcjonalności.",
       "features": null,
-      "id": "69df7bd6cf7ebbb1da39629e"
+      "id": "69df876f5f9ea2513ece468a"
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.899Z",
+      "updatedAt": "2026-04-15T12:41:19.904Z",
+      "title": "Panele drzwiowe i wykończenia wnętrz",
+      "description": "Komfort i ochrona, folie, tkaniny i listwy ozdobne, z elastycznymi procesami pozwalającymi na produkcję we wszystkich możliwych kombinacjach.",
+      "features": null,
+      "id": "69df876f5f9ea2513ece467f"
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.894Z",
+      "updatedAt": "2026-04-15T12:41:19.898Z",
+      "title": "Zastosowania funkcjonalne",
+      "description": "Komponenty w komorze silnika, kabinie pasażerskiej lub przestrzeni ładunkowej, kluczowe dla zagwarantowania wszystkiego, czego wymaga się od pojazdu.",
+      "features": null,
+      "id": "69df876f5f9ea2513ece4674"
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.885Z",
+      "updatedAt": "2026-04-15T12:41:19.893Z",
+      "title": "Elementy zewnętrzne",
+      "description": "Połączenie funkcji i wyglądu. Listwy, spojlery, kratki i elementy dekoracyjne z najwyższej jakości wykończeniami.",
+      "features": null,
+      "id": "69df876f5f9ea2513ece4669"
     }
   ],
   "totalDocs": 4,

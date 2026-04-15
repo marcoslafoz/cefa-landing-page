@@ -12,7 +12,7 @@ export async function seed(payload: any) {
   console.log('--- Iniciando seeding automatizado ---')
 
   // 1. Cargar traducciones desde la landing
-  const landingPath = process.env.LANDING_PAGE_PATH || path.resolve(__dirname, '../../landing-page')
+  const landingPath = process.env.LANDING_PAGE_PATH || path.resolve(__dirname, '../../cefa-landing-page')
   const i18nPath = path.join(landingPath, 'src/i18n')
   const locales = {
     es: JSON.parse(fs.readFileSync(path.join(i18nPath, 'es.json'), 'utf8')),
@@ -96,34 +96,47 @@ export async function seed(payload: any) {
   await payload.delete({ collection: 'media', where: {} })
 
   console.log('Sembrando Productos...')
-  const productKeys = ['p1', 'p2', 'p3', 'p4']
-  for (const pk of productKeys) {
+  const productsCmsPath = path.join(landingPath, 'src/data/cms/es/products.json')
+  const productsData = JSON.parse(fs.readFileSync(productsCmsPath, 'utf8'))
+
+  for (const prodDoc of productsData.docs) {
     const product = await payload.create({
       collection: 'products',
       locale: 'es',
       data: {
-        title: locales.es[`products.${pk}.title`],
-        description: locales.es[`products.${pk}.desc`],
+        title: prodDoc.title,
+        description: prodDoc.description,
       },
       context: { disableAutoTranslate: true },
     })
+
     for (const locale of ['en', 'de', 'pl']) {
-      await payload.update({
-        collection: 'products',
-        id: product.id,
-        locale: locale as any,
-        data: {
-          title: (locales as any)[locale][`products.${pk}.title`] || locales.es[`products.${pk}.title`],
-          description: (locales as any)[locale][`products.${pk}.desc`] || locales.es[`products.${pk}.desc`],
-        },
-        context: { disableAutoTranslate: true },
-      })
+      try {
+        const localePath = path.join(landingPath, `src/data/cms/${locale}/products.json`)
+        const localeData = JSON.parse(fs.readFileSync(localePath, 'utf8'))
+        const localeDoc = localeData.docs.find((d: any) => d.id === prodDoc.id) || localeData.docs.find((d: any) => d.title === prodDoc.title)
+
+        if (localeDoc) {
+          await payload.update({
+            collection: 'products',
+            id: product.id,
+            locale: locale as any,
+            data: {
+              title: localeDoc.title,
+              description: localeDoc.description,
+            },
+            context: { disableAutoTranslate: true },
+          })
+        }
+      } catch (e) {
+        console.warn(`No se pudo encontrar traducción para producto ${prodDoc.title} en ${locale}`)
+      }
     }
   }
 
-  console.log('Subiendo Media...')
-  const projectsData = JSON.parse(fs.readFileSync(path.join(landingPath, 'src/data/projects.json'), 'utf8'))
-  const certsData = JSON.parse(fs.readFileSync(path.join(landingPath, 'src/data/certifications.json'), 'utf8'))
+  console.log('Cargando datos de Colecciones desde CMS...')
+  const projectsData = JSON.parse(fs.readFileSync(path.join(landingPath, 'src/data/cms/es/projects.json'), 'utf8'))
+  const certsData = JSON.parse(fs.readFileSync(path.join(landingPath, 'src/data/cms/es/certificates.json'), 'utf8'))
 
   const uploadMedia = async (imagePath: string) => {
     if (!imagePath) return null;
@@ -155,12 +168,19 @@ export async function seed(payload: any) {
   }
 
   const mediaMap: Record<string, string> = {};
-  const allMediaPaths = [
-    ...projectsData.aragonProjects.map((p: any) => p.image),
-    ...projectsData.euProjects.map((p: any) => p.image),
-    ...certsData.qualityCerts.map((c: any) => c.image),
-    ...certsData.envCerts.map((c: any) => c.image),
-  ].filter(Boolean);
+  const allMediaPaths: string[] = [];
+
+  // Extraer rutas de media de proyectos (si las hay)
+  projectsData.docs.forEach((p: any) => {
+    if (p.image?.url) allMediaPaths.push(p.image.url);
+    if (p.gallery) p.gallery.forEach((g: any) => { if (g.image?.url) allMediaPaths.push(g.image.url); });
+  });
+
+  // Extraer rutas de media de certificados
+  certsData.docs.forEach((c: any) => {
+    if (c.image?.url) allMediaPaths.push(c.image.url);
+    if (c.file?.url) allMediaPaths.push(c.file.url);
+  });
 
   for (const imgPath of Array.from(new Set(allMediaPaths))) {
     const id = await uploadMedia(imgPath as string);
@@ -168,40 +188,60 @@ export async function seed(payload: any) {
   }
 
   console.log('Sembrando Proyectos...')
-  const allProjects = [
-    ...projectsData.aragonProjects.map((p: any) => ({ ...p, pType: 'aragon' })),
-    ...projectsData.euProjects.map((p: any) => ({ ...p, pType: 'eu' }))
-  ]
-  for (const proj of allProjects) {
-    const mediaId = mediaMap[proj.image];
-    await payload.create({
+  for (const projDoc of projectsData.docs) {
+    const mediaId = projDoc.image?.url ? mediaMap[projDoc.image.url] : null;
+    const project = await payload.create({
       collection: 'projects',
+      locale: 'es',
       data: {
-        type: proj.pType,
-        title: proj.title,
-        client: proj.pType === 'aragon' ? 'I+D Interno (FEDER)' : 'Unión Europea',
-        description: proj.title,
+        type: projDoc.type,
+        title: projDoc.title,
+        client: projDoc.client,
+        description: projDoc.description,
         ...(mediaId && { image: mediaId })
       },
       context: { disableAutoTranslate: true },
     })
+
+    // Localización de proyectos
+    for (const locale of ['en', 'de', 'pl']) {
+      try {
+        const localePath = path.join(landingPath, `src/data/cms/${locale}/projects.json`)
+        const localeData = JSON.parse(fs.readFileSync(localePath, 'utf8'))
+        const localeDoc = localeData.docs.find((d: any) => d.id === projDoc.id) || localeData.docs.find((d: any) => d.title === projDoc.title)
+
+        if (localeDoc) {
+          await payload.update({
+            collection: 'projects',
+            id: project.id,
+            locale: locale as any,
+            data: {
+              title: localeDoc.title,
+              description: localeDoc.description,
+            },
+            context: { disableAutoTranslate: true },
+          })
+        }
+      } catch (e) {
+        // Silencioso
+      }
+    }
   }
 
   console.log('Sembrando Certificados...')
-  const allCerts = [
-    ...certsData.qualityCerts.map((c: any) => ({ ...c, cType: 'Calidad' })),
-    ...certsData.envCerts.map((c: any) => ({ ...c, cType: 'Medio Ambiente' }))
-  ]
-  for (const cert of allCerts) {
-    const mediaId = mediaMap[cert.image];
+  for (const certDoc of certsData.docs) {
+    const imageId = certDoc.image?.url ? mediaMap[certDoc.image.url] : null;
+    const fileId = certDoc.file?.url ? mediaMap[certDoc.file.url] : null;
+
     const dataObj: any = {
-      type: cert.cType,
-      name: cert.name,
-      issuer: cert.org,
-      issueDate: cert.year,
+      type: certDoc.type,
+      name: certDoc.name,
+      issuer: certDoc.issuer,
+      issueDate: certDoc.issueDate,
     };
-    if (mediaId && cert.type === 'image') dataObj.image = mediaId;
-    if (mediaId && cert.type === 'pdf') dataObj.file = mediaId;
+    if (imageId) dataObj.image = imageId;
+    if (fileId) dataObj.file = fileId;
+
     await payload.create({
       collection: 'certificates',
       data: dataObj,

@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:51:50.324Z",
-  "updatedAt": "2026-04-15T11:51:50.336Z",
+  "createdAt": "2026-04-15T12:41:19.725Z",
+  "updatedAt": "2026-04-15T12:41:19.748Z",
   "globalType": "hero",
   "eyebrow": "Reference manufacturer in automotive",
   "titleLine1": "High-precision plastic",
@@ -15,23 +15,23 @@
     {
       "value": "80",
       "label": "Years of experience",
-      "id": "69df7bd6f2a41b00018df78f"
+      "id": "69df876fc90bee00015ab715"
     },
     {
       "value": "3",
       "label": "Industrial Plants",
-      "id": "69df7bd6f2a41b00018df790"
+      "id": "69df876fc90bee00015ab716"
     },
     {
       "value": "+800",
       "label": "Professionals",
-      "id": "69df7bd6f2a41b00018df791"
+      "id": "69df876fc90bee00015ab717"
     },
     {
       "value": "IATF",
       "label": "Certified Quality",
-      "id": "69df7bd6f2a41b00018df792"
+      "id": "69df876fc90bee00015ab718"
     }
   ],
-  "id": "69df7bd6cf7ebbb1da3961fe"
+  "id": "69df876f5f9ea2513ece45c8"
 }

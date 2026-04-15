@@ -34,7 +34,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
     components: {
-      beforeDashboard: ['/components/PublishButton#PublishButton'],
+      beforeDashboard: ['@/components/PublishButton#PublishButton'],
     },
   },
   onInit: async (payload) => {

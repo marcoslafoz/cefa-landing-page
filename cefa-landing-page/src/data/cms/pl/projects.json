@@ -1,173 +1,173 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-15T11:51:50.520Z",
-      "updatedAt": "2026-04-15T11:51:50.520Z",
-      "type": "eu",
-      "title": "Monitorización Energética – Fase II (IDAE MRA)",
-      "client": "Unión Europea",
-      "description": "Monitorización Energética – Fase II (IDAE MRA)",
-      "id": "69df7bd6cf7ebbb1da3962ea",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.519Z",
-      "updatedAt": "2026-04-15T11:51:50.519Z",
-      "type": "eu",
-      "title": "Monitorización Energética – Fase I (IDAE MRA)",
-      "client": "Unión Europea",
-      "description": "Monitorización Energética – Fase I (IDAE MRA)",
-      "id": "69df7bd6cf7ebbb1da3962e8",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.518Z",
-      "updatedAt": "2026-04-15T11:51:50.518Z",
-      "type": "eu",
-      "title": "Monitorización Energética – Fase II en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
-      "client": "Unión Europea",
-      "description": "Monitorización Energética – Fase II en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
-      "id": "69df7bd6cf7ebbb1da3962e6",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.518Z",
-      "updatedAt": "2026-04-15T11:51:50.518Z",
-      "type": "eu",
-      "title": "Monitorización Energética – Fase I en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
-      "client": "Unión Europea",
-      "description": "Monitorización Energética – Fase I en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
-      "id": "69df7bd6cf7ebbb1da3962e4",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.517Z",
-      "updatedAt": "2026-04-15T11:51:50.517Z",
-      "type": "eu",
-      "title": "HORMIGOBOTS",
-      "client": "Unión Europea",
-      "description": "HORMIGOBOTS",
-      "id": "69df7bd6cf7ebbb1da3962e2",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.516Z",
-      "updatedAt": "2026-04-15T11:51:50.516Z",
-      "type": "eu",
-      "title": "Proyecto FEDER REACT-UE – Ayudas para la recuperación económica",
-      "client": "Unión Europea",
-      "description": "Proyecto FEDER REACT-UE – Ayudas para la recuperación económica",
-      "id": "69df7bd6cf7ebbb1da3962e0",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.515Z",
-      "updatedAt": "2026-04-15T11:51:50.515Z",
-      "type": "eu",
-      "title": "Monitorización Energética en instalaciones de CELULOSA FABRIL, S.A. – IDAE CEFA",
-      "client": "Unión Europea",
-      "description": "Monitorización Energética en instalaciones de CELULOSA FABRIL, S.A. – IDAE CEFA",
-      "id": "69df7bd6cf7ebbb1da3962de",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.514Z",
-      "updatedAt": "2026-04-15T11:51:50.514Z",
-      "type": "aragon",
-      "title": "Diseño y desarrollo de nuevos productos con materiales reciclados, y del proceso para la incorporación de materiales reciclados",
-      "client": "I+D Interno (FEDER)",
-      "description": "Diseño y desarrollo de nuevos productos con materiales reciclados, y del proceso para la incorporación de materiales reciclados",
-      "id": "69df7bd6cf7ebbb1da3962dc",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.513Z",
-      "updatedAt": "2026-04-15T11:51:50.513Z",
-      "type": "aragon",
-      "title": "Programa de Ayudas 2023 destinadas a proyectos empresariales para la Transformación y Desarrollo Industrial en Aragón, Línea TDI-FEDER en el marco del PAIP",
-      "client": "I+D Interno (FEDER)",
-      "description": "Programa de Ayudas 2023 destinadas a proyectos empresariales para la Transformación y Desarrollo Industrial en Aragón, Línea TDI-FEDER en el marco del PAIP",
-      "id": "69df7bd6cf7ebbb1da3962da",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.511Z",
-      "updatedAt": "2026-04-15T11:51:50.511Z",
-      "type": "aragon",
-      "title": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2022)",
-      "client": "I+D Interno (FEDER)",
-      "description": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2022)",
-      "id": "69df7bd6cf7ebbb1da3962d8",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.510Z",
-      "updatedAt": "2026-04-15T11:51:50.510Z",
-      "type": "aragon",
-      "title": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2024)",
-      "client": "I+D Interno (FEDER)",
-      "description": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2024)",
-      "id": "69df7bd6cf7ebbb1da3962d6",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.509Z",
-      "updatedAt": "2026-04-15T11:51:50.509Z",
-      "type": "aragon",
-      "title": "Avance Sostenible de CEFA: Desarrollo experimental en logística y diseño para VEC",
-      "client": "I+D Interno (FEDER)",
-      "description": "Avance Sostenible de CEFA: Desarrollo experimental en logística y diseño para VEC",
-      "id": "69df7bd6cf7ebbb1da3962d4",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.506Z",
-      "updatedAt": "2026-04-15T11:51:50.506Z",
-      "type": "aragon",
-      "title": "Mejora de los procesos logísticos de componentes esenciales del vehículo eléctrico, mediante el desarrollo de una herramienta para la gestión de los AGV",
-      "client": "I+D Interno (FEDER)",
-      "description": "Mejora de los procesos logísticos de componentes esenciales del vehículo eléctrico, mediante el desarrollo de una herramienta para la gestión de los AGV",
-      "id": "69df7bd6cf7ebbb1da3962d2",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.502Z",
-      "updatedAt": "2026-04-15T11:51:50.502Z",
-      "type": "aragon",
-      "title": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2024",
-      "client": "I+D Interno (FEDER)",
-      "description": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2024",
-      "id": "69df7bd6cf7ebbb1da3962d0",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.500Z",
-      "updatedAt": "2026-04-15T11:51:50.500Z",
-      "type": "aragon",
-      "title": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2025",
-      "client": "I+D Interno (FEDER)",
-      "description": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2025",
-      "id": "69df7bd6cf7ebbb1da3962ce",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.498Z",
-      "updatedAt": "2026-04-15T11:51:50.498Z",
-      "type": "aragon",
-      "title": "Desarrollo experimental en logística y diseño para VEC",
-      "client": "I+D Interno (FEDER)",
-      "description": "Desarrollo experimental en logística y diseño para VEC",
-      "id": "69df7bd6cf7ebbb1da3962cc",
-      "gallery": []
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.492Z",
-      "updatedAt": "2026-04-15T11:51:50.492Z",
+      "createdAt": "2026-04-15T12:41:19.970Z",
+      "updatedAt": "2026-04-15T12:41:19.970Z",
       "type": "aragon",
       "title": "Prioridad Step - Tecnologías limpias y eficientes (programa FEDER 2021-27)",
       "client": "I+D Interno (FEDER)",
       "description": "Prioridad Step - Tecnologías limpias y eficientes (programa FEDER 2021-27)",
-      "id": "69df7bd6cf7ebbb1da3962ca",
+      "id": "69df876f5f9ea2513ece4718",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.967Z",
+      "updatedAt": "2026-04-15T12:41:19.967Z",
+      "type": "aragon",
+      "title": "Desarrollo experimental en logística y diseño para VEC",
+      "client": "I+D Interno (FEDER)",
+      "description": "Desarrollo experimental en logística y diseño para VEC",
+      "id": "69df876f5f9ea2513ece4710",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.963Z",
+      "updatedAt": "2026-04-15T12:41:19.963Z",
+      "type": "aragon",
+      "title": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2025",
+      "client": "I+D Interno (FEDER)",
+      "description": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2025",
+      "id": "69df876f5f9ea2513ece4708",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.959Z",
+      "updatedAt": "2026-04-15T12:41:19.959Z",
+      "type": "aragon",
+      "title": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2024",
+      "client": "I+D Interno (FEDER)",
+      "description": "Desarrollo Experimental de Materiales Sostenibles y Optimización Logística para VEC 2024",
+      "id": "69df876f5f9ea2513ece4700",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.956Z",
+      "updatedAt": "2026-04-15T12:41:19.956Z",
+      "type": "aragon",
+      "title": "Mejora de los procesos logísticos de componentes esenciales del vehículo eléctrico, mediante el desarrollo de una herramienta para la gestión de los AGV",
+      "client": "I+D Interno (FEDER)",
+      "description": "Mejora de los procesos logísticos de componentes esenciales del vehículo eléctrico, mediante el desarrollo de una herramienta para la gestión de los AGV",
+      "id": "69df876f5f9ea2513ece46f8",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.952Z",
+      "updatedAt": "2026-04-15T12:41:19.952Z",
+      "type": "aragon",
+      "title": "Avance Sostenible de CEFA: Desarrollo experimental en logística y diseño para VEC",
+      "client": "I+D Interno (FEDER)",
+      "description": "Avance Sostenible de CEFA: Desarrollo experimental en logística y diseño para VEC",
+      "id": "69df876f5f9ea2513ece46f0",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.949Z",
+      "updatedAt": "2026-04-15T12:41:19.949Z",
+      "type": "aragon",
+      "title": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2024)",
+      "client": "I+D Interno (FEDER)",
+      "description": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2024)",
+      "id": "69df876f5f9ea2513ece46e8",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.947Z",
+      "updatedAt": "2026-04-15T12:41:19.947Z",
+      "type": "aragon",
+      "title": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2022)",
+      "client": "I+D Interno (FEDER)",
+      "description": "Acciones para la reducción de consumos y mejora de la circularidad de los procesos y productos de CEFA (2022)",
+      "id": "69df876f5f9ea2513ece46e0",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.944Z",
+      "updatedAt": "2026-04-15T12:41:19.944Z",
+      "type": "aragon",
+      "title": "Programa de Ayudas 2023 destinadas a proyectos empresariales para la Transformación y Desarrollo Industrial en Aragón, Línea TDI-FEDER en el marco del PAIP",
+      "client": "I+D Interno (FEDER)",
+      "description": "Programa de Ayudas 2023 destinadas a proyectos empresariales para la Transformación y Desarrollo Industrial en Aragón, Línea TDI-FEDER en el marco del PAIP",
+      "id": "69df876f5f9ea2513ece46d8",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.941Z",
+      "updatedAt": "2026-04-15T12:41:19.941Z",
+      "type": "aragon",
+      "title": "Diseño y desarrollo de nuevos productos con materiales reciclados, y del proceso para la incorporación de materiales reciclados",
+      "client": "I+D Interno (FEDER)",
+      "description": "Diseño y desarrollo de nuevos productos con materiales reciclados, y del proceso para la incorporación de materiales reciclados",
+      "id": "69df876f5f9ea2513ece46d0",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.937Z",
+      "updatedAt": "2026-04-15T12:41:19.937Z",
+      "type": "eu",
+      "title": "Monitorización Energética en instalaciones de CELULOSA FABRIL, S.A. – IDAE CEFA",
+      "client": "Unión Europea",
+      "description": "Monitorización Energética en instalaciones de CELULOSA FABRIL, S.A. – IDAE CEFA",
+      "id": "69df876f5f9ea2513ece46c8",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.934Z",
+      "updatedAt": "2026-04-15T12:41:19.934Z",
+      "type": "eu",
+      "title": "Proyecto FEDER REACT-UE – Ayudas para la recuperación económica",
+      "client": "Unión Europea",
+      "description": "Proyecto FEDER REACT-UE – Ayudas para la recuperación económica",
+      "id": "69df876f5f9ea2513ece46c0",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.931Z",
+      "updatedAt": "2026-04-15T12:41:19.931Z",
+      "type": "eu",
+      "title": "HORMIGOBOTS",
+      "client": "Unión Europea",
+      "description": "HORMIGOBOTS",
+      "id": "69df876f5f9ea2513ece46b8",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.927Z",
+      "updatedAt": "2026-04-15T12:41:19.927Z",
+      "type": "eu",
+      "title": "Monitorización Energética – Fase I en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
+      "client": "Unión Europea",
+      "description": "Monitorización Energética – Fase I en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
+      "id": "69df876f5f9ea2513ece46b0",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.923Z",
+      "updatedAt": "2026-04-15T12:41:19.923Z",
+      "type": "eu",
+      "title": "Monitorización Energética – Fase II en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
+      "client": "Unión Europea",
+      "description": "Monitorización Energética – Fase II en instalaciones de MODULOS RIBERA ALTA, S.L.U.",
+      "id": "69df876f5f9ea2513ece46a8",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.920Z",
+      "updatedAt": "2026-04-15T12:41:19.920Z",
+      "type": "eu",
+      "title": "Monitorización Energética – Fase I (IDAE MRA)",
+      "client": "Unión Europea",
+      "description": "Monitorización Energética – Fase I (IDAE MRA)",
+      "id": "69df876f5f9ea2513ece46a0",
+      "gallery": []
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.915Z",
+      "updatedAt": "2026-04-15T12:41:19.915Z",
+      "type": "eu",
+      "title": "Monitorización Energética – Fase II (IDAE MRA)",
+      "client": "Unión Europea",
+      "description": "Monitorización Energética – Fase II (IDAE MRA)",
+      "id": "69df876f5f9ea2513ece4698",
       "gallery": []
     }
   ],

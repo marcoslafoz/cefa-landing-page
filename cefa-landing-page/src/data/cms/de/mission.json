@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:51:50.342Z",
-  "updatedAt": "2026-04-15T11:51:50.359Z",
+  "createdAt": "2026-04-15T12:41:19.752Z",
+  "updatedAt": "2026-04-15T12:41:19.767Z",
   "globalType": "mission",
   "mission": {
     "eyebrow": "Mission",
@@ -14,17 +14,17 @@
     {
       "title": "Zertifizierte Qualität",
       "text": "ISO 9001 und IATF 16949 zertifizierte Prozesse für höchste Standards.",
-      "id": "69df7bd6f2a41b00018df793"
+      "id": "69df876fc90bee00015ab719"
     },
     {
       "title": "Kontinuierliche Innovation",
       "text": "Konstante Investitionen in F&E und fortschrittliche Fertigungsprozesse.",
-      "id": "69df7bd6f2a41b00018df794"
+      "id": "69df876fc90bee00015ab71a"
     },
     {
       "title": "Globale Präsenz",
       "text": "Betreuung führender OEM auf internationaler Ebene.",
-      "id": "69df7bd6f2a41b00018df795"
+      "id": "69df876fc90bee00015ab71b"
     }
   ],
   "vision": {
@@ -36,24 +36,24 @@
       {
         "title": "Bevorzugter Partner des Kunden",
         "text": "Diversifiziertes Portfolio, hoher Marktanteil und robuste Umsätze.",
-        "id": "69df7bd6f2a41b00018df796"
+        "id": "69df876fc90bee00015ab71c"
       },
       {
         "title": "Technologischer Benchmark",
         "text": "Innovation und schnelle Einführung fortschrittlicher Technologien für verantwortungsvolle Wertschöpfung.",
-        "id": "69df7bd6f2a41b00018df797"
+        "id": "69df876fc90bee00015ab71d"
       },
       {
         "title": "Wirtschaftlich nachhaltig",
         "text": "Maximaler Ertrag (EBITDA) bei optimierten Investitionen.",
-        "id": "69df7bd6f2a41b00018df798"
+        "id": "69df876fc90bee00015ab71e"
       },
       {
         "title": "Ort der persönlichen Entwicklung",
         "text": "Hohe Zufriedenheit sowie menschliches und berufliches Wachstum talentierter Teams.",
-        "id": "69df7bd6f2a41b00018df799"
+        "id": "69df876fc90bee00015ab71f"
       }
     ]
   },
-  "id": "69df7bd6cf7ebbb1da39620c"
+  "id": "69df876f5f9ea2513ece45d7"
 }

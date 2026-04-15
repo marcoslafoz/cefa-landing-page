@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:51:50.260Z",
-  "updatedAt": "2026-04-15T11:51:50.316Z",
+  "createdAt": "2026-04-15T12:41:19.639Z",
+  "updatedAt": "2026-04-15T12:41:19.717Z",
   "globalType": "header",
   "header": {
     "company": "Empresa",
@@ -31,5 +31,5 @@
     "functional": "Aplicaciones funcionales",
     "exterior": "Revestimientos exteriores"
   },
-  "id": "69df7bd6cf7ebbb1da3961e2"
+  "id": "69df876f5f9ea2513ece45ad"
 }

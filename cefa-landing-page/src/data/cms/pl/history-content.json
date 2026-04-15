@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T11:51:50.419Z",
-  "updatedAt": "2026-04-15T11:51:50.430Z",
+  "createdAt": "2026-04-15T12:41:19.841Z",
+  "updatedAt": "2026-04-15T12:41:19.851Z",
   "globalType": "history-content",
   "eyebrow": "Historia",
   "title": "Nasza historia",
@@ -10,47 +10,47 @@
     {
       "year": "1946",
       "text": "CEFA została założona w 1946 roku przez Eduarda Blancharda Castillo. Początki działalności obejmowały produkcję kapsułek celulozowych do korków butelkowych oraz innych produktów chemicznych i farmaceutycznych, takich jak żelatyny, sacharyny i mydła. Wtrysk termoplastów rozpoczęto w 1952 roku.",
-      "id": "69df7bd6f2a41b00018df7b8"
+      "id": "69df876fc90bee00015ab73e"
     },
     {
       "year": "1960",
       "text": "CEFA umocniła swoją pozycję w sektorze motoryzacyjnym i AGD oraz wprowadziła technologię formowania z rozdmuchiwaniem. Opracowała również własne linie zabawek i artykułów gospodarstwa domowego, osiągając szeroką dystrybucję zarówno na rynku krajowym, jak i zagranicznym.",
-      "id": "69df7bd6f2a41b00018df7b9"
+      "id": "69df876fc90bee00015ab73f"
     },
     {
       "year": "1970",
       "text": "Pod koniec lat 70. CEFA utworzyła wyspecjalizowaną jednostkę zajmującą się pakowaniem w folię bąbelkową: Embalajes Air Plastic S.L.",
-      "id": "69df7bd6f2a41b00018df7ba"
+      "id": "69df876fc90bee00015ab740"
     },
     {
       "year": "1983",
       "text": "Ciągły rozwój firmy doprowadził do przeniesienia jej do obecnej siedziby na terenie strefy przemysłowej Malpica w Saragossie.",
-      "id": "69df7bd6f2a41b00018df7bb"
+      "id": "69df876fc90bee00015ab741"
     },
     {
       "year": "1992",
       "text": "Konieczność specjalizacji w obliczu zmian rynkowych stała się oczywista. CEFA podjęła decyzję o likwidacji linii artykułów gospodarstwa domowego i wydzieleniu działu zabawek do nowej spółki: Cefa Toys. Od tego momentu działalność CEFA skupiła się wyłącznie na sektorze motoryzacyjnym.",
-      "id": "69df7bd6f2a41b00018df7bc"
+      "id": "69df876fc90bee00015ab742"
     },
     {
       "year": "1994",
       "text": "W związku z rosnącą globalizacją rynków CEFA nawiązała partnerstwo z grupą Peguform, która weszła do grona akcjonariuszy spółki, wzmacniając globalną obecność jej produktów.",
-      "id": "69df7bd6f2a41b00018df7bd"
+      "id": "69df876fc90bee00015ab743"
     },
     {
       "year": "1997",
       "text": "CEFA powróciła do sektora AGD, tworząc koncepcję shop-in-shop z BSH-Balay w zakresie produkcji i bezpośrednich dostaw bębnów pralek do linii montażowych.",
-      "id": "69df7bd6f2a41b00018df7be"
+      "id": "69df876fc90bee00015ab744"
     },
     {
       "year": "2011",
       "text": "Peguform weszła w skład indyjskiej grupy Samvardhana Motherson Group.",
-      "id": "69df7bd6f2a41b00018df7bf"
+      "id": "69df876fc90bee00015ab745"
     },
     {
       "year": "2012",
       "text": "Utworzono podmiot MRA, Módulos Ribera Alta S.L., specjalizujący się w produkcji paneli drzwiowych do samochodów.",
-      "id": "69df7bd6f2a41b00018df7c0"
+      "id": "69df876fc90bee00015ab746"
     }
   ],
   "todayText": "Kontynuujemy pracę z optymizmem, patrząc w przyszłość i utrzymując wiodącą pozycję w branży.",
@@ -59,5 +59,5 @@
     "title": "Historia CEFA | Producent tworzyw sztucznych dla motoryzacji od 1946",
     "description": "Poznaj historię CEFA: od założenia w 1946 roku do stania się dostawcą Tier 1 w grupie Motherson. 80 lat innowacji w Saragossie."
   },
-  "id": "69df7bd6cf7ebbb1da396260"
+  "id": "69df876f5f9ea2513ece462b"
 }

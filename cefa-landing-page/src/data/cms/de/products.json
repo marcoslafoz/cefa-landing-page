@@ -1,36 +1,36 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-15T11:51:50.484Z",
-      "updatedAt": "2026-04-15T11:51:50.489Z",
-      "title": "Außenverkleidungen",
-      "description": "Funktion und Erscheinungsbild vereint. Leisten, Spoiler, Kühlergitter und dekorative Elemente mit höchster Qualität.",
-      "features": null,
-      "id": "69df7bd6cf7ebbb1da3962bf"
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.477Z",
-      "updatedAt": "2026-04-15T11:51:50.483Z",
-      "title": "Funktionale Anwendungen",
-      "description": "Komponenten im Motorraum, Fahrgastraum oder Laderaum, die grundlegend sind, um alles zu gewährleisten, was vom Fahrzeug verlangt wird.",
-      "features": null,
-      "id": "69df7bd6cf7ebbb1da3962b4"
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.471Z",
-      "updatedAt": "2026-04-15T11:51:50.476Z",
-      "title": "Türverkleidungen und Innenausstattungen",
-      "description": "Komfort und Schutz, Folien, Stoffe und dekorative Leisten, mit flexiblen Prozessen, die die Produktion in allen erdenklichen Kombinationen ermöglichen.",
-      "features": null,
-      "id": "69df7bd6cf7ebbb1da3962a9"
-    },
-    {
-      "createdAt": "2026-04-15T11:51:50.460Z",
-      "updatedAt": "2026-04-15T11:51:50.469Z",
+      "createdAt": "2026-04-15T12:41:19.905Z",
+      "updatedAt": "2026-04-15T12:41:19.908Z",
       "title": "Instrumententafel und Mittelkonsole",
       "description": "Technische Lösungen und Materialien, die auf die Erwartungen jedes OEM abgestimmt sind, um die beste Leistung in Bezug auf Sicherheit, Optik und Funktionalität zu gewährleisten.",
       "features": null,
-      "id": "69df7bd6cf7ebbb1da39629e"
+      "id": "69df876f5f9ea2513ece468a"
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.899Z",
+      "updatedAt": "2026-04-15T12:41:19.904Z",
+      "title": "Türverkleidungen und Innenausstattungen",
+      "description": "Komfort und Schutz, Folien, Stoffe und dekorative Leisten, mit flexiblen Prozessen, die die Produktion in allen erdenklichen Kombinationen ermöglichen.",
+      "features": null,
+      "id": "69df876f5f9ea2513ece467f"
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.894Z",
+      "updatedAt": "2026-04-15T12:41:19.898Z",
+      "title": "Funktionale Anwendungen",
+      "description": "Komponenten im Motorraum, Fahrgastraum oder Laderaum, die grundlegend sind, um alles zu gewährleisten, was vom Fahrzeug verlangt wird.",
+      "features": null,
+      "id": "69df876f5f9ea2513ece4674"
+    },
+    {
+      "createdAt": "2026-04-15T12:41:19.885Z",
+      "updatedAt": "2026-04-15T12:41:19.893Z",
+      "title": "Außenverkleidungen",
+      "description": "Funktion und Erscheinungsbild vereint. Leisten, Spoiler, Kühlergitter und dekorative Elemente mit höchster Qualität.",
+      "features": null,
+      "id": "69df876f5f9ea2513ece4669"
     }
   ],
   "totalDocs": 4,
