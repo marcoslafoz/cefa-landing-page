@@ -173,7 +173,10 @@ export async function seed(payload: any) {
   // Extraer rutas de media de proyectos (si las hay)
   projectsData.docs.forEach((p: any) => {
     if (p.image?.url) allMediaPaths.push(p.image.url);
-    if (p.gallery) p.gallery.forEach((g: any) => { if (g.image?.url) allMediaPaths.push(g.image.url); });
+    if (p.gallery)
+      p.gallery.forEach((g: any) => {
+        if (g.image?.url) allMediaPaths.push(g.image.url);
+      });
   });
 
   // Extraer rutas de media de certificados
@@ -182,33 +185,83 @@ export async function seed(payload: any) {
     if (c.file?.url) allMediaPaths.push(c.file.url);
   });
 
-  for (const imgPath of Array.from(new Set(allMediaPaths))) {
+  // HEURÍSTICA: Listar archivos físicos para asegurar que todo se sube aunque no esté en el JSON
+  const mediaDir = path.join(landingPath, 'public/cms-media');
+  let physicalMediaFiles: string[] = [];
+  if (fs.existsSync(mediaDir)) {
+    physicalMediaFiles = fs
+      .readdirSync(mediaDir)
+      .filter((f) => !f.startsWith('.'))
+      .map((f) => `/cms-media/${f}`);
+  }
+
+  const totalMediaToUpload = Array.from(new Set([...allMediaPaths, ...physicalMediaFiles]));
+
+  console.log(`Subiendo ${totalMediaToUpload.length} archivos de media...`);
+  for (const imgPath of totalMediaToUpload) {
     const id = await uploadMedia(imgPath as string);
     if (id) mediaMap[imgPath as string] = id;
   }
 
-  console.log('Sembrando Proyectos...')
+  // Función para encontrar media por patrón de nombre
+  const findMediaByPattern = (pattern: string) => {
+    const key = Object.keys(mediaMap).find((k) => k.toLowerCase().includes(pattern.toLowerCase()));
+    return key ? mediaMap[key] : null;
+  };
+
+  console.log('Sembrando Proyectos...');
   for (const projDoc of projectsData.docs) {
-    const mediaId = projDoc.image?.url ? mediaMap[projDoc.image.url] : null;
+    // Heurística para encontrar la imagen si no viene en el JSON
+    let mediaId = projDoc.image?.url ? mediaMap[projDoc.image.url] : null;
+    if (!mediaId) {
+      if (projDoc.title.includes('Materiales Sostenibles') && projDoc.title.includes('2024'))
+        mediaId = findMediaByPattern('aragon-materiales-sostenibles-logistica-vec-2024');
+      else if (projDoc.title.includes('Materiales Sostenibles') && projDoc.title.includes('2025'))
+        mediaId = findMediaByPattern('aragon-materiales-sostenibles-logistica-vec-2025');
+      else if (projDoc.title.includes('circularidad') && projDoc.title.includes('2024'))
+        mediaId = findMediaByPattern('aragon-circularidad-reduccion-consumos-2024');
+      else if (projDoc.title.includes('circularidad') && projDoc.title.includes('2022'))
+        mediaId = findMediaByPattern('aragon-circularidad-reduccion-consumos-2022');
+      else if (projDoc.title.includes('HORMIGOBOTS')) mediaId = findMediaByPattern('ue-hormigobots');
+      else if (
+        projDoc.title.includes('Monitorización Energética') &&
+        projDoc.title.includes('MRA') &&
+        projDoc.title.includes('Fase 1')
+      )
+        mediaId = findMediaByPattern('ue-monitorizacion-energetica-mra-fase1');
+      else if (
+        projDoc.title.includes('Monitorización Energética') &&
+        projDoc.title.includes('MRA') &&
+        projDoc.title.includes('Fase 2')
+      )
+        mediaId = findMediaByPattern('ue-monitorizacion-energetica-mra-fase2');
+      else if (projDoc.title.includes('REACT-UE'))
+        mediaId = findMediaByPattern('ue-feder-react-recuperacion-economica');
+      else if (projDoc.title.includes('IDAE CEFA'))
+        mediaId = findMediaByPattern('ue-monitorizacion-energetica-cefa');
+    }
+
     const project = await payload.create({
       collection: 'projects',
       locale: 'es',
       data: {
         type: projDoc.type,
         title: projDoc.title,
-        client: projDoc.client,
+        client: projDoc.client || (projDoc.type === 'aragon' ? 'I+D Interno (FEDER)' : 'Unión Europea'),
         description: projDoc.description,
-        ...(mediaId && { image: mediaId })
+        ...(mediaId && { image: mediaId }),
       },
       context: { disableAutoTranslate: true },
-    })
+    });
 
     // Localización de proyectos
     for (const locale of ['en', 'de', 'pl']) {
       try {
-        const localePath = path.join(landingPath, `src/data/cms/${locale}/projects.json`)
-        const localeData = JSON.parse(fs.readFileSync(localePath, 'utf8'))
-        const localeDoc = localeData.docs.find((d: any) => d.id === projDoc.id) || localeData.docs.find((d: any) => d.title === projDoc.title)
+        const localePath = path.join(landingPath, `src/data/cms/${locale}/projects.json`);
+        const localeData = JSON.parse(fs.readFileSync(localePath, 'utf8'));
+        const localeDoc =
+          localeData.docs.find((d: any) => d.id === projDoc.id) ||
+          localeData.docs.find((d: any) => d.title === projDoc.title);
 
         if (localeDoc) {
           await payload.update({
@@ -220,7 +273,7 @@ export async function seed(payload: any) {
               description: localeDoc.description,
             },
             context: { disableAutoTranslate: true },
-          })
+          });
         }
       } catch (e) {
         // Silencioso
@@ -228,10 +281,18 @@ export async function seed(payload: any) {
     }
   }
 
-  console.log('Sembrando Certificados...')
+  console.log('Sembrando Certificados...');
   for (const certDoc of certsData.docs) {
-    const imageId = certDoc.image?.url ? mediaMap[certDoc.image.url] : null;
-    const fileId = certDoc.file?.url ? mediaMap[certDoc.file.url] : null;
+    let imageId = certDoc.image?.url ? mediaMap[certDoc.image.url] : null;
+    let fileId = certDoc.file?.url ? mediaMap[certDoc.file.url] : null;
+
+    // Heurística para certificados si faltan en el JSON
+    if (!imageId && !fileId) {
+      if (certDoc.name === 'ISO 9001') imageId = findMediaByPattern('certificado-calidad-02');
+      else if (certDoc.name === 'IATF 16949') imageId = findMediaByPattern('certificado-calidad-01');
+      else if (certDoc.name === 'ISO 14001') imageId = findMediaByPattern('certificado-medioambiente');
+      else if (certDoc.name === 'TISAX') fileId = findMediaByPattern('TISAXCEFASP');
+    }
 
     const dataObj: any = {
       type: certDoc.type,
@@ -246,10 +307,10 @@ export async function seed(payload: any) {
       collection: 'certificates',
       data: dataObj,
       context: { disableAutoTranslate: true },
-    })
+    });
   }
 
-  console.log('--- Seed completado con éxito ---')
+  console.log('--- Seed completado con éxito ---');
 }
 
 // Permitir ejecución directa
