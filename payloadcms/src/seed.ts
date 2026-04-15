@@ -249,7 +249,7 @@ export async function seed(payload: any) {
         title: projDoc.title,
         client: projDoc.client || (projDoc.type === 'aragon' ? 'I+D Interno (FEDER)' : 'Unión Europea'),
         description: projDoc.description,
-        ...(mediaId && { image: mediaId }),
+        ...(mediaId && { file: mediaId }),
       },
       context: { disableAutoTranslate: true },
     });
@@ -283,14 +283,13 @@ export async function seed(payload: any) {
 
   console.log('Sembrando Certificados...');
   for (const certDoc of certsData.docs) {
-    let imageId = certDoc.image?.url ? mediaMap[certDoc.image.url] : null;
-    let fileId = certDoc.file?.url ? mediaMap[certDoc.file.url] : null;
+    let fileId = certDoc.file?.url ? mediaMap[certDoc.file.url] : (certDoc.image?.url ? mediaMap[certDoc.image.url] : null);
 
     // Heurística para certificados si faltan en el JSON
-    if (!imageId && !fileId) {
-      if (certDoc.name === 'ISO 9001') imageId = findMediaByPattern('certificado-calidad-02');
-      else if (certDoc.name === 'IATF 16949') imageId = findMediaByPattern('certificado-calidad-01');
-      else if (certDoc.name === 'ISO 14001') imageId = findMediaByPattern('certificado-medioambiente');
+    if (!fileId) {
+      if (certDoc.name === 'ISO 9001') fileId = findMediaByPattern('certificado-calidad-02');
+      else if (certDoc.name === 'IATF 16949') fileId = findMediaByPattern('certificado-calidad-01');
+      else if (certDoc.name === 'ISO 14001') fileId = findMediaByPattern('certificado-medioambiente');
       else if (certDoc.name === 'TISAX') fileId = findMediaByPattern('TISAXCEFASP');
     }
 
@@ -300,7 +299,6 @@ export async function seed(payload: any) {
       issuer: certDoc.issuer,
       issueDate: certDoc.issueDate,
     };
-    if (imageId) dataObj.image = imageId;
     if (fileId) dataObj.file = fileId;
 
     await payload.create({

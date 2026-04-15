@@ -48,28 +48,11 @@ export const Projects: CollectionConfig = {
       localized: true,
     },
     {
-      name: 'image',
-      label: 'Imagen Principal',
-      type: 'upload',
-      relationTo: 'media',
-    },
-    {
       name: 'file',
-      label: 'Documento / PDF (Opcional)',
+      label: 'Documento (Imagen o PDF)',
       type: 'upload',
       relationTo: 'media',
-    },
-    {
-      name: 'gallery',
-      label: 'Galería Múltiple (Opcional)',
-      type: 'array',
-      fields: [
-        {
-          name: 'image',
-          type: 'upload',
-          relationTo: 'media',
-        },
-      ],
+      required: false,
     },
   ],
 }

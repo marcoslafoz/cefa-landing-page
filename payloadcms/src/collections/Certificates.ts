@@ -46,16 +46,11 @@ export const Certificates: CollectionConfig = {
       type: 'text',
     },
     {
-      name: 'image',
-      label: 'Imagen / Logo',
-      type: 'upload',
-      relationTo: 'media',
-    },
-    {
       name: 'file',
-      label: 'Documento PDF (Opcional)',
+      label: 'Documento (Imagen o PDF)',
       type: 'upload',
       relationTo: 'media',
+      required: false,
     },
   ],
 }
