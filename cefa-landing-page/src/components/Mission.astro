@@ -2,6 +2,7 @@
 import type { Locale } from '@/i18n/translations';
 import { useTranslations } from '@/i18n/translations';
 import Section from '@/components/ui/Section.astro';
+import { getLandingContent } from '@/lib/cms';
 import StatItem from '@/components/ui/StatItem.astro';
 
 interface Props {
@@ -10,6 +11,10 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const cmsData = await getLandingContent(locale);
+
+const missionTitle = cmsData?.mission?.title || t('mission.title');
+const missionDescription = cmsData?.mission?.description || t('mission.body1');
 
 const stats = [
   { value: t('stats.years.value'), label: t('stats.years.label') },
@@ -26,15 +31,15 @@ const stats = [
       <h2
         class="text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-cefa-navy tracking-[-0.02em]"
       >
-        {t('mission.title')}
+        {missionTitle}
       </h2>
     </div>
 
     <!-- Columna derecha: Texto y CTA -->
     <div class="reveal flex flex-col gap-10 lg:gap-12">
       <div class="flex flex-col gap-6 text-[0.9375rem] text-cefa-gray leading-relaxed max-w-2xl">
-        <p>{t('mission.body1')}</p>
-        <p>{t('mission.body2')}</p>
+        <p>{missionDescription}</p>
+        {!cmsData?.mission?.description && <p>{t('mission.body2')}</p>}
       </div>
     </div>
   </div>

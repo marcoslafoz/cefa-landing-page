@@ -1,0 +1,19 @@
+FROM node:22-alpine
+
+# Requerencias del sistema para build de node y sync tools
+RUN apk add --no-cache libc6-compat
+
+WORKDIR /app
+
+# Instalar dependencias npm (solo package.json primero para aprovechar caché docker)
+COPY package.json package-lock.json* ./
+RUN npm ci
+
+# Copiamos todo el proyecto (Astro + el script orchestrator)
+COPY . .
+
+# Exponemos el puerto del webhook
+EXPOSE 4000
+
+# Arrancamos orquestador
+CMD ["node", "orchestrator.cjs"]

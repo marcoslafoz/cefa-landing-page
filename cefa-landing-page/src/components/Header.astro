@@ -7,6 +7,7 @@ import {
   localeNames,
   defaultLocale,
 } from '@/i18n/translations';
+import { getNavigation } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -15,6 +16,8 @@ interface Props {
 
 const { locale, showLogoAlways = false } = Astro.props;
 const t = useTranslations(locale);
+const cmsNav = await getNavigation(locale);
+
 const currentPath = Astro.url.pathname;
 const isHome =
   currentPath === '/' || locales.some((l) => currentPath === `/${l}` || currentPath === `/${l}/`);
@@ -26,16 +29,22 @@ const barePagePath = (() => {
   return stripped;
 })();
 
-const navItems = [
+// Transform CMS data to navItems format, or use fallbacks
+const navData = cmsNav?.items || [];
+
+const navItems = navData.length > 0 
+  ? navData.map((item: any) => ({
+      label: item.label,
+      href: item.isRelative ? getLocalePath(locale, item.href) : item.href,
+      children: item.subItems?.map((sub: any) => ({
+        label: sub.label,
+        href: sub.isRelative ? getLocalePath(locale, sub.href) : sub.href
+      }))
+    }))
+  : [
   {
     label: t('nav.company'),
     href: getLocalePath(locale, '/#mission'),
-    isActive:
-      !isHome &&
-      (currentPath.includes('projects') ||
-        currentPath.includes('certifications') ||
-        currentPath.includes('history') ||
-        currentPath.includes('awards')),
     children: [
       { label: t('nav.company.mission'), href: getLocalePath(locale, '/#mission') },
       { label: t('nav.company.vision'), href: getLocalePath(locale, '/#vision') },

@@ -4,7 +4,7 @@ import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const DATA_DIR = path.resolve(__dirname, '../data/cms');
+const DATA_DIR = path.resolve(process.cwd(), 'src/data/cms');
 const CMS_URL = process.env.PAYLOAD_CMS_URL || 'http://localhost:3000';
 
 /**

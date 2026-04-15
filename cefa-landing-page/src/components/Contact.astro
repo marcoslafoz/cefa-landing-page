@@ -6,14 +6,28 @@ import ContactInfoItem from '@/components/ui/ContactInfoItem.astro';
 import Section from '@/components/ui/Section.astro';
 import SectionHeader from '@/components/ui/SectionHeader.astro';
 
+import { getContactInfo } from '@/lib/cms';
+
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const cmsContact = await getContactInfo(locale);
 
-const locations = [
+const contactTitle = cmsContact?.title || t('contact.title');
+const contactSubtitle = cmsContact?.subtitle || t('contact.subtitle');
+
+const locations = cmsContact?.locations?.length > 0
+  ? cmsContact.locations.map((loc: any) => ({
+      id: loc.slug || 'loc',
+      name: loc.name,
+      address: loc.address,
+      phone: loc.phone,
+      email: loc.email,
+    }))
+  : [
   {
     id: 'malpica',
     name: t('contact.location1.name'),
@@ -50,9 +64,9 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
   <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
     <!-- Columna de información izquierda (2/5) -->
     <div class="lg:col-span-2 reveal">
-      <SectionHeader eyebrow={t('contact.eyebrow')} title={t('contact.title')} class="mb-5" />
+      <SectionHeader eyebrow={t('contact.eyebrow')} title={contactTitle} class="mb-5" />
       <p class="text-[0.9375rem] text-gray-500 leading-relaxed mb-10">
-        {t('contact.subtitle')}
+        {contactSubtitle}
       </p>
 
       <!-- Pestañas del selector de ubicación -->

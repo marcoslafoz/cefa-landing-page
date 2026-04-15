@@ -1,0 +1,128 @@
+###############################################################################
+# CEFA – Docker Compose principal
+# Arquitectura (3 componentes base + dependencias):
+#   1. payload            → CMS y Base de Datos / Admin
+#   2. orchestrator       → Webhook Server / Nodo de Build de Astro SSG
+#   3. nginx              → Servidor Web que lee el volumen generado
+#   ---------------------
+#   4. mongo              → Base de datos para Payload CMS
+#   5. libretranslate     → Servicio local de traducción
+###############################################################################
+
+services:
+
+  # ── 1. Nginx (Servidor Web Estático SSG) ──────────────────────────────────
+  nginx:
+    build:
+      context: ./cefa-landing-page
+      dockerfile: Dockerfile.nginx
+    container_name: cefa-nginx
+    restart: unless-stopped
+    ports:
+      - "${NGINX_HTTP_PORT:-80}:80"
+      - "${NGINX_HTTPS_PORT:-443}:443"
+    depends_on:
+      - orchestrator
+    volumes:
+      # Monta el volumen en read-only para asegurar que nginx no corrompe nada
+      - webroot:/webroot:ro
+    networks:
+      - cefa-net
+
+  # ── 2. Orchestrator (Webhook y Constructor) ────────────────────────────────
+  orchestrator:
+    build:
+      context: ./cefa-landing-page
+      dockerfile: Dockerfile.orchestrator
+    container_name: cefa-orchestrator
+    restart: unless-stopped
+    ports:
+      - "4000:4000"
+    depends_on:
+      # Orchestrator necesita que el CMS esté listo para la descarga de JSONs
+      payload:
+        condition: service_started
+    environment:
+      # Usado por sync-cms.js para descargar los datos de la API de Payload localmente en el back channel
+      PAYLOAD_CMS_URL: http://payload:3000
+      WEBROOT_DIR: /webroot
+      PUBLIC_TURNSTILE_SITE_KEY: ${PUBLIC_TURNSTILE_SITE_KEY:-1x00000000000000000000AA}
+    volumes:
+      # Orchestrator puede escribir al volumen final compartido
+      - webroot:/webroot
+    networks:
+      - cefa-net
+
+  # ── 3. Payload CMS ────────────────────────────────────────────────────────
+  payload:
+    build:
+      context: ./payloadcms
+      dockerfile: Dockerfile
+    container_name: cefa-payload
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    depends_on:
+      - mongo
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: mongodb://mongo:27017/payloadcms
+      PAYLOAD_SECRET: ${PAYLOAD_SECRET}
+      PAYLOAD_PUBLIC_URL: ${PAYLOAD_PUBLIC_URL:-http://localhost:3000}
+      INTERNAL_CMS_URL: http://payload:3000
+      LIBRETRANSLATE_URL: http://libretranslate:5000/translate
+      PAYLOAD_SEED: "true"
+      LANDING_PAGE_PATH: /workspace/landing-page
+      ASTRO_BASE_DIR: /workspace/landing-page
+      # URL del Orchestrar a la cual Payload manda la petición POST al publicar
+      PUBLISH_WEBHOOK_URL: http://orchestrator:4000/webhook/publish
+    volumes:
+      - payload_media:/app/media
+      # Volumen necesario temporalmente para el script de seed automático (importa JSONs)
+      - ./cefa-landing-page:/workspace/landing-page
+    networks:
+      - cefa-net
+
+  # ── 4. MongoDB ────────────────────────────────────────────────────────────
+  mongo:
+    image: mongo:7
+    container_name: cefa-mongo
+    restart: unless-stopped
+    command: ["--storageEngine=wiredTiger"]
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - cefa-net
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ── 5. LibreTranslate ─────────────────────────────────────────────────────
+  libretranslate:
+    image: libretranslate/libretranslate:latest
+    container_name: cefa-libretranslate
+    restart: unless-stopped
+    environment:
+      LT_LOAD_ONLY: es,en,de,pl
+      LT_UPDATE_MODELS: "true"
+    volumes:
+      - ./libretranslate/lt-data:/home/libretranslate/.local/share/argos-translate
+    networks:
+      - cefa-net
+
+# ── Volumes ─────────────────────────────────────────────────────────────────
+volumes:
+  mongo_data:
+    name: cefa_mongo_data
+  payload_media:
+    name: cefa_payload_media
+  webroot:
+    name: cefa_webroot
+
+# ── Networks ────────────────────────────────────────────────────────────────
+networks:
+  cefa-net:
+    name: cefa-net
+    driver: bridge

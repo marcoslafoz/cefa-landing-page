@@ -2,7 +2,7 @@
 import type { Locale } from '@/i18n/translations';
 import { useTranslations } from '@/i18n/translations';
 import Button from '@/components/ui/Button.astro';
-import { getLandingContent } from '@/lib/cms';
+import { getHero } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -10,12 +10,15 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-const cmsData = await getLandingContent(locale);
+const heroData = await getHero(locale);
 
-const heroTitleLine1 = cmsData?.hero?.titleLine1 || t('hero.title.line1');
-const heroTitleLine2 = cmsData?.hero?.titleLine2 || t('hero.title.line2');
-const heroSubtitle = cmsData?.hero?.subtitle || t('hero.subtitle');
-const primaryCta = cmsData?.hero?.ctaText || t('hero.cta.primary');
+const heroTitleLine1 = heroData?.titleLine1 || t('hero.title.line1');
+const heroTitleLine2 = heroData?.titleLine2 || t('hero.title.line2');
+const heroSubtitle = heroData?.subtitle || t('hero.subtitle');
+const primaryCta = heroData?.ctas?.primary || t('hero.cta.primary');
+const secondaryCta = heroData?.ctas?.secondary || t('hero.cta.secondary');
+const eyebrow = heroData?.eyebrow || t('hero.eyebrow');
+const scrollText = heroData?.scrollText || t('hero.scroll');
 ---
 
 <section
@@ -73,7 +76,7 @@ const primaryCta = cmsData?.hero?.ctaText || t('hero.cta.primary');
         <p
           class="eyebrow text-white/70 tracking-[0.25em] font-medium uppercase text-[10px] sm:text-sm mb-4"
         >
-          {t('hero.eyebrow')}
+          {eyebrow}
         </p>
 
         <h1
@@ -100,7 +103,7 @@ const primaryCta = cmsData?.hero?.ctaText || t('hero.cta.primary');
           </Button>
 
           <Button href="#mission" variant="secondary">
-            {t('hero.cta.secondary')}
+            {secondaryCta}
           </Button>
         </div>
       </div>
@@ -153,7 +156,7 @@ const primaryCta = cmsData?.hero?.ctaText || t('hero.cta.primary');
       <span
         class="text-[0.6rem] md:text-[0.65rem] text-white/40 font-bold uppercase tracking-[0.2em] [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] group-hover:text-white/70 transition-colors"
       >
-        {t('hero.scroll')}
+        {scrollText}
       </span>
       <div
         class="w-4.5 h-7.5 md:w-6.5 md:h-11 border-2 border-white/20 rounded-full flex justify-center p-1 group-hover:border-white/40 transition-colors"

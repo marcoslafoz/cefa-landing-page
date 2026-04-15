@@ -79,28 +79,21 @@ async function buildTranslationPatch(
           shouldTranslate = true
           reason = 'destino vacío'
         }
-        // 2. El destino es igual al valor actual de ES (está sin traducir o es un fallback)
-        else if (targetVal === esVal) {
-          shouldTranslate = true
-          reason = 'destino igual a origen (sin traducir)'
-        }
-        // 3. El origen ha cambiado y el destino coincidía con el origen anterior (era una traducción automática o copia)
+        // 2. El origen ha cambiado y el destino coincidía con el origen anterior (era una traducción automática o copia)
         else if (prevEsVal !== undefined && esVal !== prevEsVal && targetVal === prevEsVal) {
           shouldTranslate = true
           reason = 'origen cambió y el destino era igual al origen anterior'
         }
-        // 4. EL ORIGEN HA CAMBIADO SIGNIFICATIVAMENTE y queremos forzar actualización si parece ser una traducción automática
-        // Nota: Esta lógica es agresiva, pero si el usuario reporta que "no se traduce", es mejor ser más laxo.
-        else if (prevEsVal !== undefined && esVal !== prevEsVal && targetVal) {
-          // Si el origen cambió, solemos querer re-traducir a menos que el usuario haya guardado algo muy específico.
-          // Por ahora, solo logueamos que NO estamos traduciendo por precaución, o podrías habilitarlo.
-          // shouldTranslate = true; reason = 'actualización forzada por cambio en ES';
+        // 3. EL ORIGEN HA CAMBIADO: Si el usuario edita el texto en español, queremos re-traducir.
+        else if (prevEsVal !== undefined && esVal !== prevEsVal) {
+          shouldTranslate = true
+          reason = 'el texto original (ES) ha cambiado'
         }
 
         if (shouldTranslate) {
           console.log(`[AutoTranslate] Decidido traducir campo "${key}" [${targetLang}] por: ${reason}`)
           const translated = await translate(esVal, 'es', targetLang)
-          if (translated && translated !== esVal) {
+          if (translated && translated !== targetVal) {
             console.log(`[AutoTranslate] Éxito: "${esVal.substring(0, 20)}..." -> "${translated.substring(0, 20)}..."`)
             patch[key] = translated
           }
@@ -174,6 +167,7 @@ export const autoTranslateCollectionHook: CollectionAfterChangeHook = async ({
         collection: collection.slug as any,
         id: doc.id,
         locale: locale as any,
+        fallbackLocale: false,
         depth: 0,
       })
 
@@ -223,6 +217,7 @@ export const autoTranslateGlobalHook: GlobalAfterChangeHook = async ({
       const existingTargetDoc = await req.payload.findGlobal({
         slug: global.slug as any,
         locale: locale as any,
+        fallbackLocale: false,
         depth: 0,
       })
 

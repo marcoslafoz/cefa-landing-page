@@ -16,6 +16,7 @@
  */
 import type { Locale } from '@/i18n/translations';
 import { locales, getLocalePath } from '@/i18n/translations';
+import { getSEO } from '@/lib/cms';
 
 interface Props {
   title: string;
@@ -27,13 +28,20 @@ interface Props {
 }
 
 const {
-  title,
-  description,
+  title: propTitle,
+  description: propDescription,
   locale,
   canonicalUrl = Astro.url.href,
-  ogImage = '/images/mission/zagan.webp',
-  keywords,
+  ogImage: propOgImage,
+  keywords: propKeywords,
 } = Astro.props;
+
+const cmsSEO = await getSEO(locale);
+
+const title = propTitle || cmsSEO?.title || 'CEFA Manufacturing';
+const description = propDescription || cmsSEO?.description || '';
+const keywords = propKeywords || cmsSEO?.keywords || '';
+const ogImage = propOgImage || cmsSEO?.ogImage?.url || '/images/mission/zagan.webp';
 
 const defaultKeywords: Record<string, string> = {
   es: 'inyección de plásticos automoción, fabricante salpicaderos plástico, paneles de puerta coche, componentes plásticos OEM, piezas plástico automóvil, revestimientos exteriores coche, proveedor Tier 1 automoción, IATF 16949, ISO 9001, fabricante plástico Zaragoza España',

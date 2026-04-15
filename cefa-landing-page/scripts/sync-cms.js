@@ -84,7 +84,8 @@ async function processMedia(obj) {
 
 async function fetchAndSave(url, filepath) {
   try {
-    const response = await fetch(url);
+    const timestampUrl = url.includes('?') ? `${url}&_t=${Date.now()}` : `${url}?_t=${Date.now()}`;
+    const response = await fetch(timestampUrl, { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     let data = await response.json();
 

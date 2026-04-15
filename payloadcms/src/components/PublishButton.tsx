@@ -30,15 +30,15 @@ export const PublishButton: React.FC = () => {
         setPhase('queued')
         setMessage(
           data.message ??
-          '✅ ¡Hecho! El servidor está regenerando la web. Los cambios serán visibles en breve (1-2 min).',
+          '¡Hecho! El servidor está regenerando la web. Los cambios serán visibles en breve (1-2 min).',
         )
       } else {
         setPhase('error')
-        setMessage(`❌ Error: ${data.error ?? 'El motor de build no respondió correctamente'}`)
+        setMessage(`Error: ${data.error ?? 'El motor de build no respondió correctamente'}`)
       }
     } catch (err) {
       setPhase('error')
-      setMessage('❌ Error de red: No se pudo contactar con el servicio de publicación')
+      setMessage('Error de red: No se pudo contactar con el servicio de publicación')
     }
   }
 
@@ -76,30 +76,12 @@ export const PublishButton: React.FC = () => {
               buttonStyle="primary"
               size="large"
             >
-              {phase === 'triggering' ? '⌛ Procesando...' : 'Publicar Sitio Web'}
+              {phase === 'triggering' ? 'Procesando...' : 'Publicar Sitio Web'}
             </Button>
-
-            {(phase === 'queued' || phase === 'error') && (
-              <Button onClick={reset} buttonStyle="secondary" size="medium">
-                Limpiar estado
-              </Button>
-            )}
           </div>
         </div>
 
-        <div style={{
-          flex: '0 0 300px',
-          backgroundColor: phase === 'error' ? '#fff1f2' : (phase === 'queued' ? '#f0fdf4' : '#f1f5f9'),
-          padding: '20px',
-          borderRadius: '8px',
-          border: '1px solid',
-          borderColor: phase === 'error' ? '#fecaca' : (phase === 'queued' ? '#bbf7d0' : '#e2e8f0'),
-          minHeight: '120px',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'center'
-        }}>
-        </div>
+
       </div>
 
       {phase === 'queued' && (
