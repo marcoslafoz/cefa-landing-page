@@ -1,6 +1,17 @@
 {
   "docs": [
     {
+      "createdAt": "2026-04-15T11:40:59.987Z",
+      "updatedAt": "2026-04-15T11:40:59.987Z",
+      "alt": "TISAXCEFASP",
+      "url": "/cms-media/TISAXCEFASP.pdf",
+      "filename": "TISAXCEFASP.pdf",
+      "mimeType": "application/pdf",
+      "filesize": 132069,
+      "id": "69df794bc3617ab1f1c3bb02",
+      "thumbnailURL": null
+    },
+    {
       "createdAt": "2026-04-15T11:29:55.166Z",
       "updatedAt": "2026-04-15T11:29:55.166Z",
       "alt": "certificado-medioambiente.jpg",
@@ -13,17 +24,6 @@
       "focalX": 50,
       "focalY": 50,
       "id": "69df76b3c3617ab1f1c3b7c5",
-      "thumbnailURL": null
-    },
-    {
-      "createdAt": "2026-04-15T11:29:55.161Z",
-      "updatedAt": "2026-04-15T11:29:55.161Z",
-      "alt": "tisax-placeholder.pdf",
-      "url": "/cms-media/tisax-placeholder.pdf",
-      "filename": "tisax-placeholder.pdf",
-      "mimeType": "application/pdf",
-      "filesize": 0,
-      "id": "69df76b3c3617ab1f1c3b7c2",
       "thumbnailURL": null
     },
     {
