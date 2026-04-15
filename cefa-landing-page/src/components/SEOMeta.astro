@@ -16,7 +16,7 @@
  */
 import type { Locale } from '@/i18n/translations';
 import { locales, getLocalePath } from '@/i18n/translations';
-import { getSEO } from '@/lib/cms';
+import { getSEO, getHero } from '@/lib/cms';
 
 interface Props {
   title: string;
@@ -37,6 +37,9 @@ const {
 } = Astro.props;
 
 const cmsSEO = await getSEO(locale);
+const heroData = await getHero(locale);
+const employeeCount = heroData?.stats?.[2]?.value || '+800';
+const employeeCountNumeric = parseInt(employeeCount.replace(/[^0-9]/g, '')) || 800;
 
 const title = propTitle || cmsSEO?.title || 'CEFA Manufacturing';
 const description = propDescription || cmsSEO?.description || '';
@@ -111,7 +114,7 @@ const schemaGraph: Record<string, unknown>[] = [
         addressCountry: 'ES',
       },
     },
-    numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 800, unitText: 'employees' },
+    numberOfEmployees: { '@type': 'QuantitativeValue', minValue: employeeCountNumeric, unitText: 'employees' },
     knowsAbout: [
       'Plastic injection moulding for automotive',
       'Instrument panel manufacturing',
@@ -516,7 +519,7 @@ const fullSchema = { '@context': 'https://schema.org', '@graph': schemaGraph };
         ? 'Pracownicy'
         : 'Employees'}
 />
-<meta name="twitter:data2" content="+800" />
+<meta name="twitter:data2" content={employeeCount} />
 
 <!-- ── Favicons ─────────────────────────────────────────────────────────── -->
 <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />

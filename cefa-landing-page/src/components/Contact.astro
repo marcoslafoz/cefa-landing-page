@@ -16,12 +16,16 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const cmsContact = await getContact(locale);
 
-const contactTitle = cmsContact?.title || t('contact.title');
-const contactSubtitle = cmsContact?.subtitle || t('contact.subtitle');
+const contactEyebrow = cmsContact?.map?.eyebrow || t('contact.eyebrow');
+const contactTitle = cmsContact?.map?.title || t('contact.title');
+const contactSubtitle = cmsContact?.map?.subtitle || t('contact.subtitle');
+const contactAddressLabel = cmsContact?.formLabels?.addressLabel || t('contact.details.address');
+const contactInfoLabel = cmsContact?.formLabels?.infoLabel || t('contact.details.info');
+const contactMapsLabel = cmsContact?.formLabels?.mapsLabel || t('contact.details.maps');
 
 const locations = cmsContact?.locations?.length > 0
   ? cmsContact.locations.map((loc: any) => ({
-      id: loc.slug || 'loc',
+      id: loc.name?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') || 'loc',
       name: loc.name,
       address: loc.address,
       phone: loc.phone,
@@ -64,7 +68,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
   <div class="grid lg:grid-cols-5 gap-12 lg:gap-16">
     <!-- Columna de información izquierda (2/5) -->
     <div class="lg:col-span-2 reveal">
-      <SectionHeader eyebrow={t('contact.eyebrow')} title={contactTitle} class="mb-5" />
+      <SectionHeader eyebrow={contactEyebrow} title={contactTitle} class="mb-5" />
       <p class="text-[0.9375rem] text-gray-500 leading-relaxed mb-10">
         {contactSubtitle}
       </p>
@@ -103,7 +107,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
               aria-hidden={idx !== 0 ? 'true' : 'false'}
               {...(idx !== 0 ? { inert: true } : {})}
             >
-              <ContactInfoItem label={t('contact.details.address')} iconPath={icons.address}>
+              <ContactInfoItem label={contactAddressLabel} iconPath={icons.address}>
                 <address class="not-italic">
                   <p class="text-cefa-navy font-semibold text-sm leading-snug max-w-70">
                     {loc.address}
@@ -115,12 +119,12 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
                   rel="noopener noreferrer"
                   class="inline-flex items-center gap-1.5 text-cefa-red text-[0.75rem] font-bold uppercase tracking-tight mt-2.5 hover:gap-2 transition-all font-sans"
                 >
-                  {t('contact.details.maps')}
+                  {contactMapsLabel}
                   <ArrowIcon class="w-3 h-3" />
                 </a>
               </ContactInfoItem>
 
-              <ContactInfoItem label={t('contact.details.info')} iconPath={icons.phone}>
+              <ContactInfoItem label={contactInfoLabel} iconPath={icons.phone}>
                 <p class="flex flex-col gap-1">
                   <a
                     href={`tel:${loc.phone.replace(/\s/g, '')}`}

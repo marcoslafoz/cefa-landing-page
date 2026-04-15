@@ -31,7 +31,7 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
 
     return NextResponse.json(
-      { queued: true, message: '✅ Petición enviada al orquestador. Se está publicando.' },
+      { queued: true, message: 'Petición enviada al orquestador. Se está publicando.' },
       { status: 202 },
     )
   } catch (error) {

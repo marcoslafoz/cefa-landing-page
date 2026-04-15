@@ -13,8 +13,11 @@ const { locale } = Astro.props;
 const t = useTranslations(locale);
 const innovationData = await getInnovation(locale);
 
+const innovationEyebrow = innovationData?.eyebrow || t('innovation.eyebrow');
 const innovationTitle = innovationData?.title || t('innovation.title');
 const innovationSubtitle = innovationData?.subtitle || t('innovation.subtitle');
+const innovationLoading = innovationData?.loadingText || t('innovation.loading');
+const innovationRotate = innovationData?.rotateText || t('innovation.rotate');
 
 const features = [
   { 
@@ -26,12 +29,15 @@ const features = [
     text: innovationData?.features?.[1]?.description || t('innovation.feat2.text') 
   },
 ];
+
+const stat1Label = innovationData?.stats?.[0]?.label || t('innovation.stat1.label');
+const stat2Label = innovationData?.stats?.[1]?.label || t('innovation.stat2.label');
 ---
 
 <Section id="innovation" background="white" class="pb-16 lg:pb-20">
   <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10 pointer-events-none">
     <div class="lg:col-span-6 reveal pointer-events-auto">
-      <p class="eyebrow mb-4">{t('innovation.eyebrow')}</p>
+      <p class="eyebrow mb-4">{innovationEyebrow}</p>
       <h2 class="heading-xl mb-8 leading-tight">
         {innovationTitle}
       </h2>
@@ -56,7 +62,7 @@ const features = [
       </div>
 
       <div class="flex flex-wrap gap-12 pt-6 border-t border-cefa-navy/6">
-        <StatItem value="100%" label={t('innovation.stat1.label')} class="items-start! p-0!" />
+        <StatItem value="100%" label={stat1Label} class="items-start! p-0!" />
         <div class="flex flex-col items-start justify-center py-6 lg:py-8 px-4 reveal p-0!">
           <span
             class="text-3xl lg:text-4xl font-light text-cefa-navy tracking-tight leading-none mb-2"
@@ -66,7 +72,7 @@ const features = [
           <span
             class="text-[0.55rem] lg:text-[0.6rem] uppercase tracking-[0.3em] text-gray-400 font-bold leading-tight"
           >
-            {t('innovation.stat2.label')}
+            {stat2Label}
           </span>
         </div>
       </div>
@@ -92,7 +98,7 @@ const features = [
           <div class="absolute inset-0 border-2 border-t-cefa-red rounded-full animate-spin"></div>
         </div>
         <p class="text-[10px] font-bold text-cefa-navy/70 tracking-[0.3em] uppercase">
-          {t('innovation.loading')}
+          {innovationLoading}
         </p>
       </div>
     </div>
@@ -102,7 +108,7 @@ const features = [
       class="absolute bottom-12 left-1/2 -translate-x-1/2 lg:left-auto lg:right-12 lg:translate-x-0 z-10 flex flex-col items-center lg:items-end gap-3 text-cefa-navy/30 pointer-events-none reveal"
     >
       <div class="flex items-center gap-3">
-        <span class="text-[9px] uppercase tracking-[0.3em] font-bold">{t('innovation.rotate')}</span
+        <span class="text-[9px] uppercase tracking-[0.3em] font-bold">{innovationRotate}</span
         >
         <div class="w-12 h-px bg-cefa-navy/10"></div>
       </div>
