@@ -1,18 +1,18 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-16T06:33:03.676Z",
-      "updatedAt": "2026-04-16T06:33:03.834Z",
+      "createdAt": "2026-04-16T07:05:15.846Z",
+      "updatedAt": "2026-04-16T07:05:16.021Z",
       "name": "Jakość",
       "identifier": "calidad",
-      "id": "69e0829fdecc0cd23fa9bb20"
+      "id": "69e08a2bd6105cb40db4167e"
     },
     {
-      "createdAt": "2026-04-16T06:33:03.835Z",
-      "updatedAt": "2026-04-16T06:33:04.164Z",
+      "createdAt": "2026-04-16T07:05:16.022Z",
+      "updatedAt": "2026-04-16T07:05:16.163Z",
       "name": "Środowisko",
       "identifier": "medio-ambiente",
-      "id": "69e0829fdecc0cd23fa9bb2e"
+      "id": "69e08a2cd6105cb40db4168c"
     }
   ],
   "totalDocs": 2,

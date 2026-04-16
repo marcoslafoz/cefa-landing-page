@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T06:32:59.864Z",
-  "updatedAt": "2026-04-16T06:32:59.872Z",
+  "createdAt": "2026-04-16T07:05:12.610Z",
+  "updatedAt": "2026-04-16T07:05:12.618Z",
   "globalType": "history-content",
   "eyebrow": "Historia",
   "title": "Nuestra historia",
@@ -10,47 +10,47 @@
     {
       "year": "1946",
       "text": "CEFA fue fundada en 1946 por D. Eduardo Blanchard Castillo, iniciando sus primeros pasos en la fabricación de cápsulas de celulosa para tapones de botellas, así como otros productos químicos y farmacéuticos, como gelatinas, sacarinas y jabones, iniciándose en la inyección de termoplásticos en 1952.",
-      "id": "69e0829bf0ca630001abfca0"
+      "id": "69e08a28eb5c28000165e685"
     },
     {
       "year": "1960",
       "text": "CEFA se afianza en el sector de automoción y electrodomésticos e introduce la tecnología de soplado. A su vez desarrolla sus propias líneas de juguete y menaje para el hogar, alcanzando gran difusión tanto en el mercado nacional como internacional.",
-      "id": "69e0829bf0ca630001abfca1"
+      "id": "69e08a28eb5c28000165e686"
     },
     {
       "year": "1970",
       "text": "A finales de los años 70, desde CEFA se crea una unidad especializada en el embalaje de film alveolar: Embalajes Air Plastic S.L.",
-      "id": "69e0829bf0ca630001abfca2"
+      "id": "69e08a28eb5c28000165e687"
     },
     {
       "year": "1983",
       "text": "El continuo desarrollo la lleva a trasladarse a sus actuales instalaciones en el polígono de Malpica en Zaragoza.",
-      "id": "69e0829bf0ca630001abfca3"
+      "id": "69e08a28eb5c28000165e688"
     },
     {
       "year": "1992",
       "text": "Las necesidades de especialización ante la evolución de los mercados es evidente, por lo que se toma la decisión de eliminar la línea de Menaje y separar la división de Juguete en una nueva empresa: Cefa Toys. Desde ese momento, la actividad de CEFA queda localizada exclusivamente en el sector de automoción.",
-      "id": "69e0829bf0ca630001abfca4"
+      "id": "69e08a28eb5c28000165e689"
     },
     {
       "year": "1994",
       "text": "Con motivo de la creciente globalización en los mercados, CEFA se asocia con el grupo Peguform, entrando éste a formar parte del accionariado de la empresa, favoreciendo la presencia a nivel mundial de los productos de la compañía.",
-      "id": "69e0829bf0ca630001abfca5"
+      "id": "69e08a28eb5c28000165e68a"
     },
     {
       "year": "1997",
       "text": "Se vuelve al sector de electrodomésticos estableciendo un \"shop in shop\" con BSH-Balay para la fabricación y suministro directo a sus cadenas de montaje de cubas de lavadora.",
-      "id": "69e0829bf0ca630001abfca6"
+      "id": "69e08a28eb5c28000165e68b"
     },
     {
       "year": "2011",
       "text": "Peguform entra a formar parte del grupo indio Samvardhana Motherson Group.",
-      "id": "69e0829bf0ca630001abfca7"
+      "id": "69e08a28eb5c28000165e68c"
     },
     {
       "year": "2012",
       "text": "Se crea la entidad MRA, Módulos Ribera Alta S.L., especialista en la fabricación de paneles de puerta para automóvil.",
-      "id": "69e0829bf0ca630001abfca8"
+      "id": "69e08a28eb5c28000165e68d"
     }
   ],
   "todayText": "Seguimos trabajando mirando al futuro con optimismo, con una posición líder en el sector.",
@@ -59,5 +59,5 @@
     "title": "Historia de CEFA | Fabricante de Plásticos para Automoción desde 1946",
     "description": "Conoce la historia de CEFA: desde su fundación en 1946 hasta convertirse en proveedor Tier 1 de automoción del grupo Motherson. 80 años de innovación en Zaragoza."
   },
-  "id": "69e0829bdecc0cd23fa9b938"
+  "id": "69e08a28d6105cb40db41496"
 }

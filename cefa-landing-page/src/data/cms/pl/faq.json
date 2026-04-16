@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T06:32:59.880Z",
-  "updatedAt": "2026-04-16T06:32:59.886Z",
+  "createdAt": "2026-04-16T07:05:12.626Z",
+  "updatedAt": "2026-04-16T07:05:12.631Z",
   "globalType": "faq",
   "eyebrow": "Często zadawane pytania",
   "title": "Wszystko, co musisz wiedzieć o CEFA",
@@ -8,23 +8,23 @@
     {
       "question": "Jakie plastikowe komponenty motoryzacyjne produkuje CEFA?",
       "answer": "CEFA produkuje cztery linie produktów metodą wysokoprecyzyjnego wtrysku tworzyw sztucznych: deski rozdzielcze i konsole centralne, panele drzwiowe i okładziny wewnętrzne, aplikacje funkcjonalne w komorze silnika i przedziale pasażerskim oraz okładziny zewnętrzne jak listwy, spoilery i kraty. Wszystkie komponenty produkowane są z tolerancjami mikrometrycznymi dla czołowych producentów OEM na świecie.",
-      "id": "69e0829bf0ca630001abfca9"
+      "id": "69e08a28eb5c28000165e68e"
     },
     {
       "question": "Czy CEFA posiada certyfikat IATF 16949 i ISO 9001?",
       "answer": "Tak. CEFA posiada certyfikat IATF 16949 (najbardziej wymagający standard jakości w branży motoryzacyjnej), ISO 9001 i ISO 14001 (środowisko). Nasze procesy podlegają corocznym audytom i utrzymujemy wskaźnik defektów poniżej 10 PPM z pełną identyfikowalnością każdego wytworzonego komponentu.",
-      "id": "69e0829bf0ca630001abfcaa"
+      "id": "69e08a28eb5c28000165e68f"
     },
     {
       "question": "Gdzie znajdują się zakłady produkcyjne CEFA?",
       "answer": "CEFA posiada trzy zakłady przemysłowe: Zakład Malpica w Saragossie (Hiszpania), Zakład Figueruelas w Saragossie (Hiszpania) i CEFA Poland w Żaganiu (Polska). Ta strategiczna obecność w sercu Europy pozwala nam szybko i elastycznie obsługiwać czołowych producentów samochodów (OEM) na świecie.",
-      "id": "69e0829bf0ca630001abfcab"
+      "id": "69e08a28eb5c28000165e690"
     },
     {
       "question": "Dla jakich marek samochodów dostarcza komponenty CEFA?",
       "answer": "CEFA dostarcza komponenty z tworzyw sztucznych do czołowych producentów OEM na świecie, w tym Volkswagen, Audi, SEAT, Skoda, Renault, Ford, Mercedes-Benz, Nissan, Opel, Citroën, Fiat, Lancia, Cupra i MAN. Jesteśmy dostawcą Tier 1 w Grupie Motherson z ponad 80-letnim doświadczeniem w branży motoryzacyjnej.",
-      "id": "69e0829bf0ca630001abfcac"
+      "id": "69e08a28eb5c28000165e691"
     }
   ],
-  "id": "69e0829bdecc0cd23fa9b954"
+  "id": "69e08a28d6105cb40db414b2"
 }

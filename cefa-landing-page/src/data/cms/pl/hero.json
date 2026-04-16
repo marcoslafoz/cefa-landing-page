@@ -1,11 +1,11 @@
 {
-  "createdAt": "2026-04-16T06:32:59.754Z",
-  "updatedAt": "2026-04-16T06:33:04.180Z",
+  "createdAt": "2026-04-16T07:05:12.496Z",
+  "updatedAt": "2026-04-16T07:06:16.683Z",
   "globalType": "hero",
   "eyebrow": "Referencyjny producent w branży motoryzacyjnej",
   "titleLine1": "Inżynieria tworzyw sztucznych",
   "titleLine2": "wysokiej precyzji",
-  "subtitle": "80 lat doświadczenia w rozwoju wysokowydajnych komponentów z tworzyw sztucznych dla najbardziej wymagających producentów OEM na świecie.",
+  "subtitle": "80 lat rozwoju wysokowydajnych elementów z tworzyw sztucznych dla najbardziej wymagających OEM na świecie.",
   "ctas": {
     "primary": "Nasze produkty",
     "secondary": "Odkryj CEFA"
@@ -15,27 +15,27 @@
     {
       "value": "80",
       "label": "Lat doświadczenia",
-      "id": "69e0829bf0ca630001abfc78"
+      "id": "69e08a28eb5c28000165e65d"
     },
     {
       "value": "3",
       "label": "Zakłady przemysłowe",
-      "id": "69e0829bf0ca630001abfc79"
+      "id": "69e08a28eb5c28000165e65e"
     },
     {
       "value": "+800",
       "label": "Specjaliści",
-      "id": "69e0829bf0ca630001abfc7a"
+      "id": "69e08a28eb5c28000165e65f"
     },
     {
       "value": "IATF",
       "label": "Certyfikowana jakość",
-      "id": "69e0829bf0ca630001abfc7b"
+      "id": "69e08a28eb5c28000165e660"
     }
   ],
   "backgroundImage": {
-    "createdAt": "2026-04-16T06:32:59.951Z",
-    "updatedAt": "2026-04-16T06:32:59.951Z",
+    "createdAt": "2026-04-16T07:05:12.706Z",
+    "updatedAt": "2026-04-16T07:05:12.706Z",
     "alt": "frame.webp",
     "url": "/cms-media/frame.webp",
     "filename": "frame.webp",
@@ -45,9 +45,9 @@
     "height": 1080,
     "focalX": 50,
     "focalY": 50,
-    "id": "69e0829bdecc0cd23fa9b9d0",
+    "id": "69e08a28d6105cb40db4152e",
     "thumbnailURL": null
   },
   "vimeoUrl": "https://vimeo.com/1181594121",
-  "id": "69e0829bdecc0cd23fa9b89e"
+  "id": "69e08a28d6105cb40db413fc"
 }

@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T06:32:59.813Z",
-  "updatedAt": "2026-04-16T06:33:02.278Z",
+  "createdAt": "2026-04-16T07:05:12.557Z",
+  "updatedAt": "2026-04-16T07:05:14.906Z",
   "globalType": "clients",
   "eyebrow": "Nuestros clientes",
   "title": "Fabricamos para los OEM más reconocidos del mundo",
@@ -8,8 +8,8 @@
   "logos": [
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.925Z",
-        "updatedAt": "2026-04-16T06:32:59.925Z",
+        "createdAt": "2026-04-16T07:05:12.681Z",
+        "updatedAt": "2026-04-16T07:05:12.681Z",
         "alt": "audi.svg",
         "url": "/cms-media/audi.svg",
         "filename": "audi.svg",
@@ -19,16 +19,16 @@
         "height": 353,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b99a",
+        "id": "69e08a28d6105cb40db414f8",
         "thumbnailURL": null
       },
       "name": "Audi",
-      "id": "69e0829ef0ca630001abfcaf"
+      "id": "69e08a2aeb5c28000165e694"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.982Z",
-        "updatedAt": "2026-04-16T06:32:59.982Z",
+        "createdAt": "2026-04-16T07:05:12.745Z",
+        "updatedAt": "2026-04-16T07:05:12.745Z",
         "alt": "volkswagen.svg",
         "url": "/cms-media/volkswagen.svg",
         "filename": "volkswagen.svg",
@@ -38,16 +38,16 @@
         "height": 24,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9ba18",
+        "id": "69e08a28d6105cb40db41576",
         "thumbnailURL": null
       },
       "name": "Volkswagen",
-      "id": "69e0829ef0ca630001abfcb0"
+      "id": "69e08a2aeb5c28000165e695"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.962Z",
-        "updatedAt": "2026-04-16T06:32:59.962Z",
+        "createdAt": "2026-04-16T07:05:12.719Z",
+        "updatedAt": "2026-04-16T07:05:12.719Z",
         "alt": "seat.svg",
         "url": "/cms-media/seat.svg",
         "filename": "seat.svg",
@@ -57,16 +57,16 @@
         "height": 773,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9f1",
+        "id": "69e08a28d6105cb40db4154f",
         "thumbnailURL": null
       },
       "name": "SEAT",
-      "id": "69e0829ef0ca630001abfcb1"
+      "id": "69e08a2aeb5c28000165e696"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.942Z",
-        "updatedAt": "2026-04-16T06:32:59.942Z",
+        "createdAt": "2026-04-16T07:05:12.696Z",
+        "updatedAt": "2026-04-16T07:05:12.696Z",
         "alt": "cupra.svg",
         "url": "/cms-media/cupra.svg",
         "filename": "cupra.svg",
@@ -76,16 +76,16 @@
         "height": 275,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9bb",
+        "id": "69e08a28d6105cb40db41519",
         "thumbnailURL": null
       },
       "name": "Cupra",
-      "id": "69e0829ef0ca630001abfcb2"
+      "id": "69e08a2aeb5c28000165e697"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.950Z",
-        "updatedAt": "2026-04-16T06:32:59.950Z",
+        "createdAt": "2026-04-16T07:05:12.705Z",
+        "updatedAt": "2026-04-16T07:05:12.705Z",
         "alt": "ford.svg",
         "url": "/cms-media/ford.svg",
         "filename": "ford.svg",
@@ -95,16 +95,16 @@
         "height": 745,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9cd",
+        "id": "69e08a28d6105cb40db4152b",
         "thumbnailURL": null
       },
       "name": "Ford",
-      "id": "69e0829ef0ca630001abfcb3"
+      "id": "69e08a2aeb5c28000165e698"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.960Z",
-        "updatedAt": "2026-04-16T06:32:59.960Z",
+        "createdAt": "2026-04-16T07:05:12.717Z",
+        "updatedAt": "2026-04-16T07:05:12.717Z",
         "alt": "opel.svg",
         "url": "/cms-media/opel.svg",
         "filename": "opel.svg",
@@ -114,16 +114,16 @@
         "height": 99,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9eb",
+        "id": "69e08a28d6105cb40db41549",
         "thumbnailURL": null
       },
       "name": "Opel",
-      "id": "69e0829ef0ca630001abfcb4"
+      "id": "69e08a2aeb5c28000165e699"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.957Z",
-        "updatedAt": "2026-04-16T06:32:59.957Z",
+        "createdAt": "2026-04-16T07:05:12.713Z",
+        "updatedAt": "2026-04-16T07:05:12.713Z",
         "alt": "mercedes.svg",
         "url": "/cms-media/mercedes.svg",
         "filename": "mercedes.svg",
@@ -133,16 +133,16 @@
         "height": 1352,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9e2",
+        "id": "69e08a28d6105cb40db41540",
         "thumbnailURL": null
       },
       "name": "Mercedes",
-      "id": "69e0829ef0ca630001abfcb5"
+      "id": "69e08a2aeb5c28000165e69a"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.959Z",
-        "updatedAt": "2026-04-16T06:32:59.959Z",
+        "createdAt": "2026-04-16T07:05:12.716Z",
+        "updatedAt": "2026-04-16T07:05:12.716Z",
         "alt": "nissan.svg",
         "url": "/cms-media/nissan.svg",
         "filename": "nissan.svg",
@@ -152,16 +152,16 @@
         "height": 837,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9e8",
+        "id": "69e08a28d6105cb40db41546",
         "thumbnailURL": null
       },
       "name": "Nissan",
-      "id": "69e0829ef0ca630001abfcb6"
+      "id": "69e08a2aeb5c28000165e69b"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.961Z",
-        "updatedAt": "2026-04-16T06:32:59.961Z",
+        "createdAt": "2026-04-16T07:05:12.718Z",
+        "updatedAt": "2026-04-16T07:05:12.718Z",
         "alt": "renault.svg",
         "url": "/cms-media/renault.svg",
         "filename": "renault.svg",
@@ -171,16 +171,16 @@
         "height": 438,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9ee",
+        "id": "69e08a28d6105cb40db4154c",
         "thumbnailURL": null
       },
       "name": "Renault",
-      "id": "69e0829ef0ca630001abfcb7"
+      "id": "69e08a2aeb5c28000165e69c"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.941Z",
-        "updatedAt": "2026-04-16T06:32:59.941Z",
+        "createdAt": "2026-04-16T07:05:12.694Z",
+        "updatedAt": "2026-04-16T07:05:12.694Z",
         "alt": "citroen.svg",
         "url": "/cms-media/citroen.svg",
         "filename": "citroen.svg",
@@ -190,16 +190,16 @@
         "height": 829,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9b8",
+        "id": "69e08a28d6105cb40db41516",
         "thumbnailURL": null
       },
       "name": "Citroën",
-      "id": "69e0829ef0ca630001abfcb8"
+      "id": "69e08a2aeb5c28000165e69d"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.949Z",
-        "updatedAt": "2026-04-16T06:32:59.949Z",
+        "createdAt": "2026-04-16T07:05:12.703Z",
+        "updatedAt": "2026-04-16T07:05:12.703Z",
         "alt": "fiat.svg",
         "url": "/cms-media/fiat.svg",
         "filename": "fiat.svg",
@@ -209,16 +209,16 @@
         "height": 421,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9ca",
+        "id": "69e08a28d6105cb40db41528",
         "thumbnailURL": null
       },
       "name": "Fiat",
-      "id": "69e0829ef0ca630001abfcb9"
+      "id": "69e08a2aeb5c28000165e69e"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.955Z",
-        "updatedAt": "2026-04-16T06:32:59.955Z",
+        "createdAt": "2026-04-16T07:05:12.710Z",
+        "updatedAt": "2026-04-16T07:05:12.710Z",
         "alt": "lancia.svg",
         "url": "/cms-media/lancia.svg",
         "filename": "lancia.svg",
@@ -228,16 +228,16 @@
         "height": 15,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9d9",
+        "id": "69e08a28d6105cb40db41537",
         "thumbnailURL": null
       },
       "name": "Lancia",
-      "id": "69e0829ef0ca630001abfcba"
+      "id": "69e08a2aeb5c28000165e69f"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.957Z",
-        "updatedAt": "2026-04-16T06:32:59.957Z",
+        "createdAt": "2026-04-16T07:05:12.712Z",
+        "updatedAt": "2026-04-16T07:05:12.712Z",
         "alt": "man.svg",
         "url": "/cms-media/man.svg",
         "filename": "man.svg",
@@ -247,16 +247,16 @@
         "height": 1335,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9df",
+        "id": "69e08a28d6105cb40db4153d",
         "thumbnailURL": null
       },
       "name": "Man",
-      "id": "69e0829ef0ca630001abfcbb"
+      "id": "69e08a2aeb5c28000165e6a0"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T06:32:59.964Z",
-        "updatedAt": "2026-04-16T06:32:59.964Z",
+        "createdAt": "2026-04-16T07:05:12.720Z",
+        "updatedAt": "2026-04-16T07:05:12.720Z",
         "alt": "skoda.svg",
         "url": "/cms-media/skoda.svg",
         "filename": "skoda.svg",
@@ -266,12 +266,12 @@
         "height": 144,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e0829bdecc0cd23fa9b9f4",
+        "id": "69e08a28d6105cb40db41552",
         "thumbnailURL": null
       },
       "name": "Skoda",
-      "id": "69e0829ef0ca630001abfcbc"
+      "id": "69e08a2aeb5c28000165e6a1"
     }
   ],
-  "id": "69e0829bdecc0cd23fa9b8f2"
+  "id": "69e08a28d6105cb40db41450"
 }

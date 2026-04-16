@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T06:32:59.819Z",
-  "updatedAt": "2026-04-16T06:32:59.828Z",
+  "createdAt": "2026-04-16T07:05:12.563Z",
+  "updatedAt": "2026-04-16T07:05:12.571Z",
   "globalType": "contact",
   "map": {
     "eyebrow": "Industrielle Präsenz",
@@ -15,21 +15,21 @@
       "address": "Industriegebiet Malpica, Calle D, 44-45, 50016 Zaragoza, Spanien",
       "phone": "+34 976 465 000",
       "email": "info@cefa.es",
-      "id": "69e0829bf0ca630001abfc86"
+      "id": "69e08a28eb5c28000165e66b"
     },
     {
       "name": "CEFA Figueruelas",
       "address": "Crta. de Logroño, Km. 265, 50639 Figueruelas (Zaragoza), Spanien",
       "phone": "+34 976 465 465",
       "email": "info@modulosra.es",
-      "id": "69e0829bf0ca630001abfc87"
+      "id": "69e08a28eb5c28000165e66c"
     },
     {
       "name": "CEFA Poland",
       "address": "ul. Matki Bożej z Pilar 1, 68-100 Żagań, Polen",
       "phone": "+48 669 988 840",
       "email": "rekrutacja@zagan.es",
-      "id": "69e0829bf0ca630001abfc88"
+      "id": "69e08a28eb5c28000165e66d"
     }
   ],
   "formLabels": {
@@ -40,5 +40,5 @@
     "infoLabel": "Kontaktinformationen",
     "mapsLabel": "In Google Maps ansehen"
   },
-  "id": "69e0829bdecc0cd23fa9b900"
+  "id": "69e08a28d6105cb40db4145e"
 }

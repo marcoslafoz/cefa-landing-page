@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T06:32:59.786Z",
-  "updatedAt": "2026-04-16T06:32:59.793Z",
+  "createdAt": "2026-04-16T07:05:12.530Z",
+  "updatedAt": "2026-04-16T07:05:12.537Z",
   "globalType": "innovation",
   "eyebrow": "Innovación",
   "title": "Ingeniería de vanguardia",
@@ -9,12 +9,12 @@
     {
       "title": "Precisión Técnica",
       "text": "Tolerancias mínimas y acabados superficiales de alta calidad.",
-      "id": "69e0829bf0ca630001abfc80"
+      "id": "69e08a28eb5c28000165e665"
     },
     {
       "title": "Simulación Avanzada",
       "text": "Análisis reológicos y estructurales en cada fase del diseño.",
-      "id": "69e0829bf0ca630001abfc81"
+      "id": "69e08a28eb5c28000165e666"
     }
   ],
   "stat1Value": "100%",
@@ -23,5 +23,5 @@
   "stat2Label": "Ecosistema Innovador",
   "loadingText": "Inicializando Motor 3D",
   "rotateText": "Desliza para rotar",
-  "id": "69e0829bdecc0cd23fa9b8c8"
+  "id": "69e08a28d6105cb40db41426"
 }

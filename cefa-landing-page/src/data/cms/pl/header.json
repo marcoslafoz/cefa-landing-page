@@ -1,11 +1,11 @@
 {
-  "createdAt": "2026-04-16T06:32:59.715Z",
-  "updatedAt": "2026-04-16T06:33:04.174Z",
+  "createdAt": "2026-04-16T07:05:12.453Z",
+  "updatedAt": "2026-04-16T07:05:16.171Z",
   "globalType": "header",
   "logos": {
     "cefaColor": {
-      "createdAt": "2026-04-16T06:32:59.928Z",
-      "updatedAt": "2026-04-16T06:32:59.928Z",
+      "createdAt": "2026-04-16T07:05:12.684Z",
+      "updatedAt": "2026-04-16T07:05:12.684Z",
       "alt": "cefa-color.svg",
       "url": "/cms-media/cefa-color.svg",
       "filename": "cefa-color.svg",
@@ -15,12 +15,12 @@
       "height": 859,
       "focalX": 50,
       "focalY": 50,
-      "id": "69e0829bdecc0cd23fa9b9a0",
+      "id": "69e08a28d6105cb40db414fe",
       "thumbnailURL": null
     },
     "cefaWhite": {
-      "createdAt": "2026-04-16T06:32:59.934Z",
-      "updatedAt": "2026-04-16T06:32:59.934Z",
+      "createdAt": "2026-04-16T07:05:12.689Z",
+      "updatedAt": "2026-04-16T07:05:12.689Z",
       "alt": "cefa-mono-white.svg",
       "url": "/cms-media/cefa-mono-white.svg",
       "filename": "cefa-mono-white.svg",
@@ -30,12 +30,12 @@
       "height": 854,
       "focalX": 50,
       "focalY": 50,
-      "id": "69e0829bdecc0cd23fa9b9ac",
+      "id": "69e08a28d6105cb40db4150a",
       "thumbnailURL": null
     },
     "motherson": {
-      "createdAt": "2026-04-16T06:32:59.958Z",
-      "updatedAt": "2026-04-16T06:32:59.958Z",
+      "createdAt": "2026-04-16T07:05:12.715Z",
+      "updatedAt": "2026-04-16T07:05:12.715Z",
       "alt": "motherson.svg",
       "url": "/cms-media/motherson.svg",
       "filename": "motherson.svg",
@@ -45,7 +45,7 @@
       "height": 36,
       "focalX": 50,
       "focalY": 50,
-      "id": "69e0829bdecc0cd23fa9b9e5",
+      "id": "69e08a28d6105cb40db41543",
       "thumbnailURL": null
     }
   },
@@ -78,5 +78,5 @@
     "functional": "Zastosowania funkcjonalne",
     "exterior": "Elementy zewnętrzne"
   },
-  "id": "69e0829bdecc0cd23fa9b883"
+  "id": "69e08a28d6105cb40db413e2"
 }
