@@ -131,10 +131,6 @@ export const autoTranslateCollectionHook: CollectionAfterChangeHook = async ({
   operation,
 }) => {
   if (req?.locale !== 'es') return doc
-  if (process.env.PAYLOAD_SEED === 'true') {
-    console.log(`[AutoTranslate] Skipping collection hook for ${collection.slug} because PAYLOAD_SEED is true`)
-    return doc
-  }
   if (req?.context?.disableAutoTranslate) {
     console.log(`[AutoTranslate] Skipping collection hook for ${collection.slug} because disableAutoTranslate is true`)
     return doc
@@ -185,10 +181,6 @@ export const autoTranslateGlobalHook: GlobalAfterChangeHook = async ({
   global,
 }) => {
   if (req?.locale !== 'es') return doc
-  if (process.env.PAYLOAD_SEED === 'true') {
-    console.log(`[AutoTranslate] Skipping global hook for ${global.slug} because PAYLOAD_SEED is true`)
-    return doc
-  }
   if (req?.context?.disableAutoTranslate) {
     console.log(`[AutoTranslate] Skipping global hook for ${global.slug} because disableAutoTranslate is true`)
     return doc
