@@ -219,17 +219,44 @@ export async function seed(payload: any) {
 
   const euCat = await payload.create({
     collection: 'project-categories',
+    locale: 'es',
     data: { name: 'Unión Europea', identifier: 'eu', logo: euLogo },
     context: { disableAutoTranslate: true }
   });
   catMap['eu'] = euCat.id;
 
+  const projectCatLocales: Record<string, Record<string, string>> = {
+    eu: { en: 'European Union', de: 'Europäische Union', pl: 'Unia Europejska' },
+    aragon: { en: 'Government of Aragon (ERDF)', de: 'Regierung von Aragon (EFRE)', pl: 'Rząd Aragonii (EFRR)' },
+  };
+
+  for (const locale of ['en', 'de', 'pl']) {
+    await payload.update({
+      collection: 'project-categories',
+      id: euCat.id,
+      locale: locale as any,
+      data: { name: projectCatLocales['eu'][locale] },
+      context: { disableAutoTranslate: true },
+    });
+  }
+
   const aragonCat = await payload.create({
     collection: 'project-categories',
+    locale: 'es',
     data: { name: 'Gobierno de Aragón (FEDER)', identifier: 'aragon', logo: aragonLogo },
     context: { disableAutoTranslate: true }
   });
   catMap['aragon'] = aragonCat.id;
+
+  for (const locale of ['en', 'de', 'pl']) {
+    await payload.update({
+      collection: 'project-categories',
+      id: aragonCat.id,
+      locale: locale as any,
+      data: { name: projectCatLocales['aragon'][locale] },
+      context: { disableAutoTranslate: true },
+    });
+  }
 
   // Sort projects so EU projects come first, then Aragón
   const sortedProjects = [...projectsData.docs].sort((a: any, b: any) => {
@@ -279,6 +306,7 @@ export async function seed(payload: any) {
             data: {
               title: localeDoc.title,
               description: localeDoc.description,
+              ...(localeDoc.client && { client: localeDoc.client }),
             },
             context: { disableAutoTranslate: true },
           });
@@ -291,19 +319,46 @@ export async function seed(payload: any) {
   console.log('Seeding Certificate Categories...');
   const certCatMap: Record<string, string> = {};
 
+  const certCatLocales: Record<string, Record<string, string>> = {
+    calidad: { en: 'Quality', de: 'Qualität', pl: 'Jakość' },
+    'medio-ambiente': { en: 'Environment', de: 'Umwelt', pl: 'Środowisko' },
+  };
+
   const calidadCat = await payload.create({
     collection: 'certificate-categories',
+    locale: 'es',
     data: { name: 'Calidad', identifier: 'calidad' },
     context: { disableAutoTranslate: true }
   });
   certCatMap['Calidad'] = calidadCat.id;
 
+  for (const locale of ['en', 'de', 'pl']) {
+    await payload.update({
+      collection: 'certificate-categories',
+      id: calidadCat.id,
+      locale: locale as any,
+      data: { name: certCatLocales['calidad'][locale] },
+      context: { disableAutoTranslate: true },
+    });
+  }
+
   const envCat = await payload.create({
     collection: 'certificate-categories',
+    locale: 'es',
     data: { name: 'Medio Ambiente', identifier: 'medio-ambiente' },
     context: { disableAutoTranslate: true }
   });
   certCatMap['Medio Ambiente'] = envCat.id;
+
+  for (const locale of ['en', 'de', 'pl']) {
+    await payload.update({
+      collection: 'certificate-categories',
+      id: envCat.id,
+      locale: locale as any,
+      data: { name: certCatLocales['medio-ambiente'][locale] },
+      context: { disableAutoTranslate: true },
+    });
+  }
 
   console.log('Seeding Certificates...');
   for (const certDoc of certsData.docs) {
@@ -332,11 +387,23 @@ export async function seed(payload: any) {
     };
     if (fileId) dataObj.file = fileId;
 
-    await payload.create({
+    const cert = await payload.create({
       collection: 'certificates',
+      locale: 'es',
       data: dataObj,
       context: { disableAutoTranslate: true },
     });
+
+    // name and issuer are localized — set same values for all locales
+    for (const locale of ['en', 'de', 'pl']) {
+      await payload.update({
+        collection: 'certificates',
+        id: cert.id,
+        locale: locale as any,
+        data: { name: certDoc.name, issuer: certDoc.issuer },
+        context: { disableAutoTranslate: true },
+      });
+    }
   }
 
   console.log('Linking logos to Header...');
