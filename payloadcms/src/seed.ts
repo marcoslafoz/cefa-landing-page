@@ -170,6 +170,7 @@ export async function seed(payload: any) {
       slug: 'products-section',
       data: { products: productsArray },
       locale: 'es',
+      context: { disableAutoTranslate: true },
     });
   }
 
@@ -185,6 +186,7 @@ export async function seed(payload: any) {
         slug: 'vision',
         data: { gallery: galleryArray },
         locale: 'es',
+        context: { disableAutoTranslate: true },
       });
     }
   }
@@ -204,6 +206,7 @@ export async function seed(payload: any) {
         slug: 'clients',
         data: { logos: logosArray },
         locale: 'es',
+        context: { disableAutoTranslate: true },
       });
     }
   }
@@ -216,13 +219,15 @@ export async function seed(payload: any) {
 
   const euCat = await payload.create({
     collection: 'project-categories',
-    data: { name: 'Unión Europea', identifier: 'eu', logo: euLogo }
+    data: { name: 'Unión Europea', identifier: 'eu', logo: euLogo },
+    context: { disableAutoTranslate: true }
   });
   catMap['eu'] = euCat.id;
 
   const aragonCat = await payload.create({
     collection: 'project-categories',
-    data: { name: 'Gobierno de Aragón (FEDER)', identifier: 'aragon', logo: aragonLogo }
+    data: { name: 'Gobierno de Aragón (FEDER)', identifier: 'aragon', logo: aragonLogo },
+    context: { disableAutoTranslate: true }
   });
   catMap['aragon'] = aragonCat.id;
 
@@ -288,13 +293,15 @@ export async function seed(payload: any) {
 
   const calidadCat = await payload.create({
     collection: 'certificate-categories',
-    data: { name: 'Calidad', identifier: 'calidad' }
+    data: { name: 'Calidad', identifier: 'calidad' },
+    context: { disableAutoTranslate: true }
   });
   certCatMap['Calidad'] = calidadCat.id;
 
   const envCat = await payload.create({
     collection: 'certificate-categories',
-    data: { name: 'Medio Ambiente', identifier: 'medio-ambiente' }
+    data: { name: 'Medio Ambiente', identifier: 'medio-ambiente' },
+    context: { disableAutoTranslate: true }
   });
   certCatMap['Medio Ambiente'] = envCat.id;
 
@@ -340,8 +347,9 @@ export async function seed(payload: any) {
         cefaColor: mediaMap['/cms-media/cefa-color.svg'],
         cefaWhite: mediaMap['/cms-media/cefa-mono-white.svg'],
         motherson: mediaMap['/cms-media/motherson.svg'],
-      }
-    }
+      },
+    },
+    context: { disableAutoTranslate: true }
   });
 
   console.log('Linking background to Hero...');
@@ -350,7 +358,8 @@ export async function seed(payload: any) {
     data: {
       backgroundImage: mediaMap['/cms-media/frame.webp'],
       vimeoUrl: 'https://vimeo.com/1181594121',
-    }
+    },
+    context: { disableAutoTranslate: true }
   });
 
   console.log('--- Seed completed successfully ---');
