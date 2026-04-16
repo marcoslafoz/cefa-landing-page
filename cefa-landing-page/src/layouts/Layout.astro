@@ -4,7 +4,7 @@ import { ClientRouter } from 'astro:transitions';
 import CookieConsent from '@/components/ui/CookieConsent.astro';
 import SEOMeta from '@/components/SEOMeta.astro';
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
+import { getSiteSettings } from '@/lib/cms';
 
 interface Props {
   title: string;
@@ -17,7 +17,7 @@ interface Props {
 
 const { title, description, locale, canonicalUrl, ogImage, keywords } = Astro.props;
 
-const t = useTranslations(locale);
+const siteSettings = await getSiteSettings(locale);
 ---
 
 <!doctype html>
@@ -101,7 +101,7 @@ const t = useTranslations(locale);
       href="#main-content"
       class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 focus:px-4 focus:py-2 focus:bg-cefa-red focus:text-white focus:text-sm focus:font-bold focus:rounded focus:outline-none"
     >
-      {t('a11y.skip')}
+      {siteSettings?.a11y?.skipToMain ?? ''}
     </a>
     <slot />
     <div

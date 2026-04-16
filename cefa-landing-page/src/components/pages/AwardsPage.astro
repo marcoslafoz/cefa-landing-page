@@ -1,46 +1,23 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
+
 import Section from '@/components/ui/Section.astro';
 import PageHeader from '@/components/ui/PageHeader.astro';
-import { getAwards } from '@/lib/cms';
+import { getAwards, getHeader } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
-
 const awardsData = await getAwards(locale);
+const cmsHeader = await getHeader(locale);
 
-const eyebrow = t('nav.company');
-const title = awardsData?.title || t('awards.title');
-const subtitle = awardsData?.subtitle || t('awards.subtitle');
+const eyebrow = cmsHeader?.header?.company ?? '';
+const title = awardsData?.title ?? '';
+const subtitle = awardsData?.subtitle ?? '';
 
-const fallbackAwards = [
-  t('awards.list.1'),
-  t('awards.list.2'),
-  t('awards.list.3'),
-  t('awards.list.4'),
-  t('awards.list.5'),
-  t('awards.list.6'),
-  t('awards.list.7'),
-  t('awards.list.8'),
-  t('awards.list.9'),
-  t('awards.list.10'),
-  t('awards.list.11'),
-  t('awards.list.12'),
-  t('awards.list.13'),
-  t('awards.list.14'),
-  t('awards.list.15'),
-  t('awards.list.16'),
-  t('awards.list.17'),
-  t('awards.list.18'),
-].filter(Boolean);
-
-const rawAwardsList = awardsData?.list?.map((v: any) => v.award);
-const awards = rawAwardsList && rawAwardsList.length > 0 ? rawAwardsList : fallbackAwards;
+const awards: string[] = awardsData?.list?.map((v: any) => v.award) ?? [];
 
 const midPoint = Math.ceil(awards.length / 2);
 const leftColumn = awards.slice(0, midPoint);

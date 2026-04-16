@@ -1,6 +1,5 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import DocListCard from '@/components/ui/DocListCard.astro';
 import Section from '@/components/ui/Section.astro';
 import PageHeader from '@/components/ui/PageHeader.astro';
@@ -16,14 +15,12 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
-
 const certContent = await getCertificationsContent(locale);
 const certificateCategories = await getCertificateCategories(locale);
 
-const eyebrow = certContent?.eyebrow || t('certifications.eyebrow');
-const title = certContent?.title || t('certifications.title');
-const subtitle = certContent?.subtitle || t('certifications.subtitle');
+const eyebrow = certContent?.eyebrow ?? '';
+const title = certContent?.title ?? '';
+const subtitle = certContent?.subtitle ?? '';
 
 const siteBase = Astro.site?.toString().replace(/\/$/, '') || 'https://cefa.es';
 

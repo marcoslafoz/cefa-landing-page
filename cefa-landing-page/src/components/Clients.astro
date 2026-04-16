@@ -1,6 +1,5 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import SectionHeader from '@/components/ui/SectionHeader.astro';
 import Section from '@/components/ui/Section.astro';
 import { getClients, getMediaUrl } from '@/lib/cms';
@@ -12,12 +11,11 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
 const cmsData = await getClients(locale);
 
-const clientsEyebrow = cmsData?.eyebrow || t('clients.eyebrow');
-const clientsTitle = cmsData?.title || t('clients.title');
-const clientsSubtitle = cmsData?.subtitle || t('clients.subtitle');
+const clientsEyebrow = cmsData?.eyebrow ?? '';
+const clientsTitle = cmsData?.title ?? '';
+const clientsSubtitle = cmsData?.subtitle ?? '';
 
 interface Brand {
   name: string;

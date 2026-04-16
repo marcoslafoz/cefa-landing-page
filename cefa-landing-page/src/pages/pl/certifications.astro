@@ -3,15 +3,15 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import CertificationsPage from '@/components/pages/CertificationsPage.astro';
 import Footer from '@/components/Footer.astro';
-import { useTranslations } from '@/i18n/translations';
+import { getCertificationsContent } from '@/lib/cms';
 
 const locale = 'pl' as const;
-const t = useTranslations(locale);
+const certContent = await getCertificationsContent(locale);
 ---
 
 <Layout
-  title={t('certifications.meta.title')}
-  description={t('certifications.meta.description')}
+  title={certContent?.meta?.title ?? ''}
+  description={certContent?.meta?.description ?? ''}
   locale={locale}
 >
   <Header locale={locale} showLogoAlways={true} />

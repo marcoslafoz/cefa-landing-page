@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-04-16T08:18:03.086Z",
+  "updatedAt": "2026-04-16T08:18:03.091Z",
+  "globalType": "site-settings",
+  "error404": {
+    "title": "Nie znaleziono strony",
+    "subtitle": "Strona nie istnieje lub została przeniesiona.",
+    "cta": "Wróć na stronę główną"
+  },
+  "cookieBanner": {
+    "title": "Cenimy Twoją prywatność",
+    "description": "Używamy własnych plików cookie i plików cookie stron trzecich, aby poprawić komfort korzystania z witryny, analizować ruch i udostępniać funkcje mediów społecznościowych. Klikając „Akceptuj wszystko”, wyrażasz zgodę na użycie wszystkich plików cookie. Możesz zarządzać swoimi preferencjami lub odrzucić je w „Ustawieniach”.",
+    "accept": "Akceptuj wszystko",
+    "reject": "Odrzuć",
+    "settings": "Ustawienia",
+    "policy": "Polityka plików cookie"
+  },
+  "a11y": {
+    "skipToMain": "Przejdź do treści głównej"
+  },
+  "id": "69e09b3b3bb0e697b0ea753c"
+}

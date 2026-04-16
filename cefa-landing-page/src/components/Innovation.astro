@@ -1,6 +1,5 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import Section from '@/components/ui/Section.astro';
 import { getInnovation } from '@/lib/cms';
 import StatItem from '@/components/ui/StatItem.astro';
@@ -10,32 +9,29 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
 const innovationData = await getInnovation(locale);
 
-const innovationEyebrow = innovationData?.eyebrow || t('innovation.eyebrow');
-const innovationTitle = innovationData?.title || t('innovation.title');
-const innovationSubtitle = innovationData?.subtitle || t('innovation.subtitle');
-const innovationLoading = innovationData?.loadingText || t('innovation.loading');
-const innovationRotate = innovationData?.rotateText || t('innovation.rotate');
+const innovationEyebrow = innovationData?.eyebrow ?? '';
+const innovationTitle = innovationData?.title ?? '';
+const innovationSubtitle = innovationData?.subtitle ?? '';
+const innovationLoading = innovationData?.loadingText ?? '';
+const innovationRotate = innovationData?.rotateText ?? '';
 
 const features = [
   {
-    title: innovationData?.features?.[0]?.title || t('innovation.feat1.title'),
-    text: innovationData?.features?.[0]?.description || t('innovation.feat1.text'),
+    title: innovationData?.features?.[0]?.title ?? '',
+    text: innovationData?.features?.[0]?.description ?? '',
   },
   {
-    title: innovationData?.features?.[1]?.title || t('innovation.feat2.title'),
-    text: innovationData?.features?.[1]?.description || t('innovation.feat2.text'),
+    title: innovationData?.features?.[1]?.title ?? '',
+    text: innovationData?.features?.[1]?.description ?? '',
   },
 ];
 
 const stat1Value = innovationData?.stat1Value || '100%';
-const stat1Label =
-  innovationData?.stat1Label || innovationData?.stats?.[0]?.label || t('innovation.stat1.label');
+const stat1Label = innovationData?.stat1Label || innovationData?.stats?.[0]?.label || '';
 const stat2Value = innovationData?.stat2Value || 'I+D+i';
-const stat2Label =
-  innovationData?.stat2Label || innovationData?.stats?.[1]?.label || t('innovation.stat2.label');
+const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.label || '';
 ---
 
 <Section id="innovation" background="white" class="pb-16 lg:pb-20">

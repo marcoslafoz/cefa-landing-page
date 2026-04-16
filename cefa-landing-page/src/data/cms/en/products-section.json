@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T07:05:12.539Z",
-  "updatedAt": "2026-04-16T07:05:12.758Z",
+  "createdAt": "2026-04-16T08:18:02.972Z",
+  "updatedAt": "2026-04-16T08:18:03.193Z",
   "globalType": "products-section",
   "sectionHeader": {
     "eyebrow": "What we manufacture",
@@ -14,8 +14,8 @@
       "description": "Technical solutions and materials aligned with each OEM's expectations, guaranteeing the best performance in safety, aesthetics and functionality.",
       "category": "Interior",
       "image": {
-        "createdAt": "2026-04-16T07:05:12.697Z",
-        "updatedAt": "2026-04-16T07:05:12.697Z",
+        "createdAt": "2026-04-16T08:18:03.146Z",
+        "updatedAt": "2026-04-16T08:18:03.146Z",
         "alt": "dashboard.webp",
         "url": "/cms-media/dashboard.webp",
         "filename": "dashboard.webp",
@@ -25,19 +25,19 @@
         "height": 1204,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e08a28d6105cb40db4151c",
+        "id": "69e09b3b3bb0e697b0ea7598",
         "thumbnailURL": null
       },
       "features": [],
-      "id": "69e08a28eb5c28000165e667"
+      "id": "69e09b3a2cd0d400013dc5c4"
     },
     {
       "title": "Door Panels and Interior Trims",
       "description": "Comfort and protection, films, fabrics and decorative mouldings, with flexible processes that allow production in all imaginable combinations.",
       "category": "Interior",
       "image": {
-        "createdAt": "2026-04-16T07:05:12.698Z",
-        "updatedAt": "2026-04-16T07:05:12.698Z",
+        "createdAt": "2026-04-16T08:18:03.147Z",
+        "updatedAt": "2026-04-16T08:18:03.147Z",
         "alt": "door-panels.webp",
         "url": "/cms-media/door-panels.webp",
         "filename": "door-panels.webp",
@@ -47,19 +47,19 @@
         "height": 1880,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e08a28d6105cb40db4151f",
+        "id": "69e09b3b3bb0e697b0ea759b",
         "thumbnailURL": null
       },
       "features": [],
-      "id": "69e08a28eb5c28000165e668"
+      "id": "69e09b3a2cd0d400013dc5c5"
     },
     {
       "title": "Functional Applications",
       "description": "Components in the engine compartment, passenger compartment or cargo space, fundamental to guarantee everything required of the vehicle.",
       "category": "Functional",
       "image": {
-        "createdAt": "2026-04-16T07:05:12.707Z",
-        "updatedAt": "2026-04-16T07:05:12.707Z",
+        "createdAt": "2026-04-16T08:18:03.157Z",
+        "updatedAt": "2026-04-16T08:18:03.157Z",
         "alt": "functional.webp",
         "url": "/cms-media/functional.webp",
         "filename": "functional.webp",
@@ -69,19 +69,19 @@
         "height": 1485,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e08a28d6105cb40db41531",
+        "id": "69e09b3b3bb0e697b0ea75ad",
         "thumbnailURL": null
       },
       "features": [],
-      "id": "69e08a28eb5c28000165e669"
+      "id": "69e09b3a2cd0d400013dc5c6"
     },
     {
       "title": "Exterior Trims",
       "description": "Combining function and appearance. Mouldings, spoilers, grilles and decorative elements with the highest quality finishes.",
       "category": "Exterior",
       "image": {
-        "createdAt": "2026-04-16T07:05:12.700Z",
-        "updatedAt": "2026-04-16T07:05:12.700Z",
+        "createdAt": "2026-04-16T08:18:03.149Z",
+        "updatedAt": "2026-04-16T08:18:03.149Z",
         "alt": "exterior.webp",
         "url": "/cms-media/exterior.webp",
         "filename": "exterior.webp",
@@ -91,12 +91,12 @@
         "height": 1001,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e08a28d6105cb40db41522",
+        "id": "69e09b3b3bb0e697b0ea759e",
         "thumbnailURL": null
       },
       "features": [],
-      "id": "69e08a28eb5c28000165e66a"
+      "id": "69e09b3a2cd0d400013dc5c7"
     }
   ],
-  "id": "69e08a28d6105cb40db41434"
+  "id": "69e09b3a3bb0e697b0ea74a2"
 }

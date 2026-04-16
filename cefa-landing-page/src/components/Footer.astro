@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations, getLocalePath } from '@/i18n/translations';
+import { getLocalePath } from '@/i18n/translations';
 import { getContact, getHeader, getMediaUrl } from '@/lib/cms';
 
 interface Props {
@@ -8,11 +8,10 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
-const tagline = t('footer.tagline');
-const copyright = t('footer.rights');
-const cmsContact = await getContact(locale);
 const cmsHeader = await getHeader(locale);
+const tagline = cmsHeader?.footer?.tagline ?? '';
+const copyright = cmsHeader?.footer?.rights ?? '';
+const cmsContact = await getContact(locale);
 
 const logoWhite = getMediaUrl(cmsHeader?.logos?.cefaWhite) || '/images/logos/cefa-mono-white.svg';
 const logoMotherson = getMediaUrl(cmsHeader?.logos?.motherson) || '/images/logos/motherson.svg';
@@ -21,25 +20,37 @@ const year = new Date().getFullYear();
 
 const columns = [
   {
-    title: t('footer.col.company'),
+    title: cmsHeader?.footerColumns?.company ?? '',
     links: [
-      { label: t('footer.link.mission'), href: getLocalePath(locale, '/#mission') },
-      { label: t('footer.link.vision'), href: getLocalePath(locale, '/#vision') },
-      { label: t('footer.link.history'), href: getLocalePath(locale, '/history') },
-      { label: t('footer.link.innovation'), href: getLocalePath(locale, '/#innovation') },
-      { label: t('nav.company.awards'), href: getLocalePath(locale, '/awards') },
-      { label: t('nav.company.certifications'), href: getLocalePath(locale, '/certifications') },
-      { label: t('nav.company.rd'), href: getLocalePath(locale, '/projects') },
-      { label: t('footer.link.clients'), href: getLocalePath(locale, '/#clients') },
+      { label: cmsHeader?.links?.mission ?? '', href: getLocalePath(locale, '/#mission') },
+      { label: cmsHeader?.links?.vision ?? '', href: getLocalePath(locale, '/#vision') },
+      { label: cmsHeader?.links?.history ?? '', href: getLocalePath(locale, '/history') },
+      { label: cmsHeader?.links?.innovation ?? '', href: getLocalePath(locale, '/#innovation') },
+      { label: cmsHeader?.links?.awards ?? '', href: getLocalePath(locale, '/awards') },
+      {
+        label: cmsHeader?.links?.certifications ?? '',
+        href: getLocalePath(locale, '/certifications'),
+      },
+      { label: cmsHeader?.links?.rd ?? '', href: getLocalePath(locale, '/projects') },
+      { label: cmsHeader?.links?.clients ?? '', href: getLocalePath(locale, '/#clients') },
     ],
   },
   {
-    title: t('footer.col.products'),
+    title: cmsHeader?.footerColumns?.products ?? '',
     links: [
-      { label: t('footer.link.dashboard'), href: getLocalePath(locale, '/#product-dashboard') },
-      { label: t('footer.link.door'), href: getLocalePath(locale, '/#product-door-panels') },
-      { label: t('footer.link.functional'), href: getLocalePath(locale, '/#product-functional') },
-      { label: t('footer.link.exterior'), href: getLocalePath(locale, '/#product-exterior') },
+      {
+        label: cmsHeader?.links?.dashboard ?? '',
+        href: getLocalePath(locale, '/#product-dashboard'),
+      },
+      { label: cmsHeader?.links?.door ?? '', href: getLocalePath(locale, '/#product-door-panels') },
+      {
+        label: cmsHeader?.links?.functional ?? '',
+        href: getLocalePath(locale, '/#product-functional'),
+      },
+      {
+        label: cmsHeader?.links?.exterior ?? '',
+        href: getLocalePath(locale, '/#product-exterior'),
+      },
     ],
   },
 ];
@@ -91,7 +102,7 @@ const columns = [
               >
               <span
                 class="text-sm text-white/50 group-hover:text-white transition-colors duration-300"
-                >{t('footer.linkedin')}</span
+                >{cmsHeader?.footer?.linkedin ?? ''}</span
               >
             </span>
           </a>
@@ -110,7 +121,7 @@ const columns = [
               class="h-7 w-auto brightness-0 invert"
             />
             <span class="text-[9px] uppercase tracking-[0.4em] text-white font-bold opacity-80">
-              {t('footer.motherson')}
+              {cmsHeader?.footer?.motherson ?? ''}
             </span>
           </a>
         </div>
@@ -145,17 +156,20 @@ const columns = [
           <!-- Contacto y Redes Sociales -->
           <div class="space-y-8">
             <p class="text-[11px] font-bold uppercase tracking-[0.25em] text-white/90">
-              {t('nav.contact')}
+              {cmsHeader?.footerColumns?.contact ?? ''}
             </p>
             <ul class="flex flex-col gap-5">
               {
                 [
-                  { label: t('nav.contact.cta'), href: getLocalePath(locale, '/#contact') },
                   {
-                    label: t('nav.careers'),
+                    label: cmsHeader?.header?.contactCta ?? '',
+                    href: getLocalePath(locale, '/#contact'),
+                  },
+                  {
+                    label: cmsHeader?.links?.careers ?? '',
                     href: getLocalePath(locale, '/#careers'),
                   },
-                  { label: t('nav.faq'), href: getLocalePath(locale, '/#faq') },
+                  { label: cmsHeader?.links?.faq ?? '', href: getLocalePath(locale, '/#faq') },
                 ].map((link) => (
                   <li>
                     <a
@@ -177,22 +191,22 @@ const columns = [
     <!-- Fila de plantas -->
     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-2 sm:gap-3 mb-10">
       <p class="text-[10px] text-white/55 uppercase tracking-widest font-bold shrink-0">
-        {t('stats.plants.label')}
+        {cmsHeader?.ui?.plantsLabel ?? ''}
       </p>
       <div class="hidden sm:block w-px h-3 bg-white/10 shrink-0"></div>
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
         {
           [
             {
-              label: cmsContact?.locations?.[0]?.name || t('contact.location1.name'),
+              label: cmsContact?.locations?.[0]?.name ?? '',
               id: 'malpica',
             },
             {
-              label: cmsContact?.locations?.[1]?.name || t('contact.location2.name'),
+              label: cmsContact?.locations?.[1]?.name ?? '',
               id: 'figueruelas',
             },
             {
-              label: cmsContact?.locations?.[2]?.name || t('contact.location3.name'),
+              label: cmsContact?.locations?.[2]?.name ?? '',
               id: 'poland',
             },
           ].map((plant, i, arr) => (
@@ -229,9 +243,9 @@ const columns = [
       <div class="flex gap-10 order-1 md:order-2">
         {
           [
-            { label: t('footer.legal'), href: getLocalePath(locale, '/legal') },
-            { label: t('footer.privacy'), href: getLocalePath(locale, '/privacy') },
-            { label: t('footer.cookies'), href: getLocalePath(locale, '/cookies') },
+            { label: cmsHeader?.footer?.legal ?? '', href: getLocalePath(locale, '/legal') },
+            { label: cmsHeader?.footer?.privacy ?? '', href: getLocalePath(locale, '/privacy') },
+            { label: cmsHeader?.footer?.cookies ?? '', href: getLocalePath(locale, '/cookies') },
           ].map((item) => (
             <a
               href={item.href}

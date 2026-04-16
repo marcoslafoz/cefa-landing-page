@@ -1,11 +1,11 @@
 {
-  "createdAt": "2026-04-16T07:05:12.496Z",
-  "updatedAt": "2026-04-16T07:06:16.683Z",
+  "createdAt": "2026-04-16T08:18:02.931Z",
+  "updatedAt": "2026-04-16T08:18:07.333Z",
   "globalType": "hero",
   "eyebrow": "Reference manufacturer in automotive",
   "titleLine1": "High-precision plastic",
   "titleLine2": "engineering",
-  "subtitle": "80 years developing high-performance plastic components for the world's most demanding OEM.",
+  "subtitle": "80 years developing high-performance plastic components for the world's most demanding OEMs.",
   "ctas": {
     "primary": "Our products",
     "secondary": "Discover CEFA"
@@ -15,27 +15,27 @@
     {
       "value": "80",
       "label": "Years of experience",
-      "id": "69e08a28eb5c28000165e65d"
+      "id": "69e09b3a2cd0d400013dc5ba"
     },
     {
       "value": "3",
       "label": "Industrial Plants",
-      "id": "69e08a28eb5c28000165e65e"
+      "id": "69e09b3a2cd0d400013dc5bb"
     },
     {
       "value": "+800",
       "label": "Professionals",
-      "id": "69e08a28eb5c28000165e65f"
+      "id": "69e09b3a2cd0d400013dc5bc"
     },
     {
       "value": "IATF",
       "label": "Certified Quality",
-      "id": "69e08a28eb5c28000165e660"
+      "id": "69e09b3a2cd0d400013dc5bd"
     }
   ],
   "backgroundImage": {
-    "createdAt": "2026-04-16T07:05:12.706Z",
-    "updatedAt": "2026-04-16T07:05:12.706Z",
+    "createdAt": "2026-04-16T08:18:03.155Z",
+    "updatedAt": "2026-04-16T08:18:03.155Z",
     "alt": "frame.webp",
     "url": "/cms-media/frame.webp",
     "filename": "frame.webp",
@@ -45,9 +45,9 @@
     "height": 1080,
     "focalX": 50,
     "focalY": 50,
-    "id": "69e08a28d6105cb40db4152e",
+    "id": "69e09b3b3bb0e697b0ea75aa",
     "thumbnailURL": null
   },
   "vimeoUrl": "https://vimeo.com/1181594121",
-  "id": "69e08a28d6105cb40db413fc"
+  "id": "69e09b3a3bb0e697b0ea746a"
 }

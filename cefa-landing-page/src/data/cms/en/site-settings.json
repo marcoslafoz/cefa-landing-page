@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-04-16T08:18:03.086Z",
+  "updatedAt": "2026-04-16T08:18:03.091Z",
+  "globalType": "site-settings",
+  "error404": {
+    "title": "Page not found",
+    "subtitle": "The page you are looking for doesn't exist or has been moved.",
+    "cta": "Back to home"
+  },
+  "cookieBanner": {
+    "title": "We value your privacy",
+    "description": "We use our own and third-party cookies to improve your experience, analyze our traffic and show social media features. By clicking \"Accept all\", you consent to the use of all cookies. You can manage your preferences or reject them in \"Settings\".",
+    "accept": "Accept all",
+    "reject": "Reject",
+    "settings": "Settings",
+    "policy": "Cookie policy"
+  },
+  "a11y": {
+    "skipToMain": "Skip to main content"
+  },
+  "id": "69e09b3b3bb0e697b0ea753c"
+}

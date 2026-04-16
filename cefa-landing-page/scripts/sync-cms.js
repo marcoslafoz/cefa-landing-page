@@ -37,6 +37,7 @@ const GLOBALS = [
   { endpoint: 'globals/careers?depth=2', name: 'careers' },
   { endpoint: 'globals/faq?depth=2', name: 'faq' },
   { endpoint: 'globals/seo?depth=2', name: 'seo' },
+  { endpoint: 'globals/site-settings?depth=2', name: 'site-settings' },
 ];
 
 const MEDIA_DIR = path.resolve(__dirname, '../public/cms-media');

@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
+
 import Button from '@/components/ui/Button.astro';
 import { getHero, getHeader, getMediaUrl } from '@/lib/cms';
 
@@ -9,7 +9,7 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
+
 const heroData = await getHero(locale);
 const cmsHeader = await getHeader(locale);
 
@@ -17,13 +17,13 @@ const backgroundImage = getMediaUrl(heroData?.backgroundImage) || '/images/hero/
 const logoWhite = getMediaUrl(cmsHeader?.logos?.cefaWhite) || '/images/logos/cefa-mono-white.svg';
 const logoMotherson = getMediaUrl(cmsHeader?.logos?.motherson) || '/images/logos/motherson.svg';
 
-const heroTitleLine1 = heroData?.titleLine1 || t('hero.title.line1');
-const heroTitleLine2 = heroData?.titleLine2 || t('hero.title.line2');
-const heroSubtitle = heroData?.subtitle || t('hero.subtitle');
-const primaryCta = heroData?.ctas?.primary || t('hero.cta.primary');
-const secondaryCta = heroData?.ctas?.secondary || t('hero.cta.secondary');
-const eyebrow = heroData?.eyebrow || t('hero.eyebrow');
-const scrollText = heroData?.scrollText || t('hero.scroll');
+const heroTitleLine1 = heroData?.titleLine1 ?? '';
+const heroTitleLine2 = heroData?.titleLine2 ?? '';
+const heroSubtitle = heroData?.subtitle ?? '';
+const primaryCta = heroData?.ctas?.primary ?? '';
+const secondaryCta = heroData?.ctas?.secondary ?? '';
+const eyebrow = heroData?.eyebrow ?? '';
+const scrollText = heroData?.scrollText ?? '';
 
 function buildVimeoPlayerUrl(rawUrl: string | null | undefined): string {
   if (!rawUrl) return '';
@@ -139,7 +139,7 @@ const vimeoPlayerUrl = buildVimeoPlayerUrl(heroData?.vimeoUrl);
           <span
             class="text-[0.6rem] sm:text-[0.65rem] uppercase tracking-[0.4em] text-white font-bold whitespace-nowrap leading-none"
           >
-            {t('footer.motherson')}
+            {cmsHeader?.footer?.motherson ?? ''}
           </span>
         </a>
       </div>
@@ -152,7 +152,7 @@ const vimeoPlayerUrl = buildVimeoPlayerUrl(heroData?.vimeoUrl);
     <a
       href="#mission"
       class="flex flex-col items-center gap-2 md:gap-4 opacity-0 animate-[fadeUp_1s_ease_1.2s_forwards] pointer-events-auto group cursor-pointer"
-      aria-label={t('hero.scroll')}
+      aria-label={scrollText}
     >
       <span
         class="text-[0.6rem] md:text-[0.65rem] text-white/40 font-bold uppercase tracking-[0.2em] [writing-mode:horizontal-tb] md:[writing-mode:vertical-rl] group-hover:text-white/70 transition-colors"

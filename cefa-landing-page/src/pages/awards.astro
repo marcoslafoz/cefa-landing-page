@@ -3,13 +3,17 @@ import Layout from '@/layouts/Layout.astro';
 import Header from '@/components/Header.astro';
 import AwardsPage from '@/components/pages/AwardsPage.astro';
 import Footer from '@/components/Footer.astro';
-import { useTranslations } from '@/i18n/translations';
+import { getAwards } from '@/lib/cms';
 
 const locale = 'en' as const;
-const t = useTranslations(locale);
+const awardsData = await getAwards(locale);
 ---
 
-<Layout title={t('awards.meta.title')} description={t('awards.meta.description')} locale={locale}>
+<Layout
+  title={awardsData?.meta?.title ?? ''}
+  description={awardsData?.meta?.description ?? ''}
+  locale={locale}
+>
   <Header locale={locale} showLogoAlways={true} />
   <AwardsPage locale={locale} />
   <Footer locale={locale} />

@@ -1,20 +1,20 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import PageHeader from '@/components/ui/PageHeader.astro';
 import History from '@/components/History.astro';
+import { getHistoryContent } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
+const historyData = await getHistoryContent(locale);
 ---
 
 <PageHeader
-  eyebrow={t('history.eyebrow')}
-  title={t('history.page.title')}
-  description={t('history.page.subtitle')}
+  eyebrow={historyData?.eyebrow ?? ''}
+  title={historyData?.pageTitle ?? ''}
+  description={historyData?.pageSubtitle ?? ''}
 />
 <History locale={locale} />

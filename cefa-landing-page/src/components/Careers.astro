@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
+
 import Card from './ui/Card.astro';
 import IconBox from './ui/IconBox.astro';
 import Section from './ui/Section.astro';
@@ -11,28 +11,27 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
-import { getCareers, getContact } from '@/lib/cms';
+import { getCareers, getContact, getHeader } from '@/lib/cms';
 const cmsData = await getCareers(locale);
 const cmsContact = await getContact(locale);
+const cmsHeader = await getHeader(locale);
 
-const malpicaPhone =
-  cmsData?.phone || cmsContact?.locations?.[0]?.phone || t('contact.location1.phone');
-const recruitmentEmail = cmsData?.email || t('careers.email');
-const title = cmsData?.title || t('careers.title');
-const subtitle = cmsData?.subtitle || t('careers.subtitle');
-const linkedinCta = cmsData?.linkedinCta || t('careers.linkedin.cta');
-const emailLabel = cmsData?.emailLabel || t('careers.email.label');
-const phoneLabel = cmsData?.phoneLabel || t('careers.phone.label');
-const phoneHours = cmsData?.phoneHours || t('careers.phone.hours');
-const cvHint = cmsData?.cvHint || t('careers.cv.hint');
+const malpicaPhone = cmsData?.phone || cmsContact?.locations?.[0]?.phone || '';
+const recruitmentEmail = cmsData?.email ?? '';
+const title = cmsData?.title ?? '';
+const subtitle = cmsData?.subtitle ?? '';
+const linkedinCta = cmsData?.linkedinCta ?? '';
+const emailLabel = cmsData?.emailLabel ?? '';
+const phoneLabel = cmsData?.phoneLabel ?? '';
+const phoneHours = cmsData?.phoneHours ?? '';
+const cvHint = cmsData?.cvHint ?? '';
 ---
 
 <Section id="careers" background="white" padding="md" class="pt-8! lg:pt-12!">
   <div class="max-w-5xl mx-auto">
     <div class="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
       <div class="max-w-xl reveal">
-        <p class="eyebrow mb-4">{t('nav.careers')}</p>
+        <p class="eyebrow mb-4">{cmsHeader?.links?.careers ?? ''}</p>
         <h2 class="heading-lg text-cefa-navy mb-5">
           {title}
         </h2>

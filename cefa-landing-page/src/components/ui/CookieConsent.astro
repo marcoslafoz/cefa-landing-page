@@ -1,13 +1,15 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations, getLocalePath } from '@/i18n/translations';
+import { getLocalePath } from '@/i18n/translations';
+import { getSiteSettings } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
+const siteSettings = await getSiteSettings(locale);
+const cookieBanner = siteSettings?.cookieBanner;
 ---
 
 <div
@@ -25,13 +27,13 @@ const t = useTranslations(locale);
             id="cookie-desc"
             class="text-[13px] md:text-sm text-white/70 leading-relaxed font-light"
           >
-            <span class="text-white font-bold mr-1">{t('cookie.banner.title')}:</span>
-            {t('cookie.banner.description')}
+            <span class="text-white font-bold mr-1">{cookieBanner?.title ?? ''}:</span>
+            {cookieBanner?.description ?? ''}
             <a
               href={getLocalePath(locale, '/cookies')}
               class="text-white underline underline-offset-4 hover:text-cefa-red transition-colors ml-1 font-medium"
             >
-              {t('cookie.banner.policy')}
+              {cookieBanner?.policy ?? ''}
             </a>
           </p>
         </div>
@@ -41,13 +43,13 @@ const t = useTranslations(locale);
             id="reject-cookies"
             class="px-4 py-2 bg-transparent text-white/50 text-[10px] font-bold uppercase tracking-widest hover:text-white transition-colors"
           >
-            {t('cookie.banner.reject')}
+            {cookieBanner?.reject ?? ''}
           </button>
           <button
             id="accept-all-cookies"
             class="px-6 py-2.5 bg-white text-cefa-navy-dark hover:bg-cefa-red hover:text-white text-[10px] font-bold uppercase tracking-widest transition-all duration-300"
           >
-            {t('cookie.banner.accept')}
+            {cookieBanner?.accept ?? ''}
           </button>
         </div>
       </div>

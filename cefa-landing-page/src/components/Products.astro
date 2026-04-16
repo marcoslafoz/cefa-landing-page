@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
+
 import SectionHeader from '@/components/ui/SectionHeader.astro';
 import Section from '@/components/ui/Section.astro';
 import ProductCard from '@/components/ui/ProductCard.astro';
@@ -11,45 +11,13 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
 
 const cmsSection = await getProductsSection(locale);
 
-const sectionEyebrow = cmsSection?.sectionHeader?.eyebrow || t('products.eyebrow');
-const sectionTitle = cmsSection?.sectionHeader?.title || t('products.title');
-const sectionSubtitle = cmsSection?.sectionHeader?.subtitle || t('products.subtitle');
-const sectionCta = cmsSection?.sectionHeader?.cta || t('products.cta');
-
-const fallbackProducts = [
-  {
-    id: 'product-dashboard',
-    category: 'Interior',
-    title: t('products.p1.title'),
-    desc: t('products.p1.desc'),
-    image: '/images/products/dashboard.webp',
-  },
-  {
-    id: 'product-door-panels',
-    category: 'Interior',
-    title: t('products.p2.title'),
-    desc: t('products.p2.desc'),
-    image: '/images/products/door-panels.webp',
-  },
-  {
-    id: 'product-functional',
-    category: 'Functional',
-    title: t('products.p3.title'),
-    desc: t('products.p3.desc'),
-    image: '/images/products/functional.webp',
-  },
-  {
-    id: 'product-exterior',
-    category: 'Exterior',
-    title: t('products.p4.title'),
-    desc: t('products.p4.desc'),
-    image: '/images/products/exterior.webp',
-  },
-];
+const sectionEyebrow = cmsSection?.sectionHeader?.eyebrow ?? '';
+const sectionTitle = cmsSection?.sectionHeader?.title ?? '';
+const sectionSubtitle = cmsSection?.sectionHeader?.subtitle ?? '';
+const sectionCta = cmsSection?.sectionHeader?.cta ?? '';
 
 type ProductItem = {
   id: string;
@@ -59,6 +27,8 @@ type ProductItem = {
   image: string;
   alt: string;
 };
+
+const fallbackProducts: ProductItem[] = [];
 
 const cmsProducts = cmsSection?.products || [];
 

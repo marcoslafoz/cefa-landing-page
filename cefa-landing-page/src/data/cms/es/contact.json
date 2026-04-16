@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T07:05:12.563Z",
-  "updatedAt": "2026-04-16T07:05:12.571Z",
+  "createdAt": "2026-04-16T08:18:02.993Z",
+  "updatedAt": "2026-04-16T08:18:03.014Z",
   "globalType": "contact",
   "map": {
     "eyebrow": "Presencia industrial",
@@ -15,21 +15,21 @@
       "address": "Polígono Malpica, Calle D, 44-45, 50016 Zaragoza, España",
       "phone": "+34 976 465 000",
       "email": "info@cefa.es",
-      "id": "69e08a28eb5c28000165e66b"
+      "id": "69e09b3a2cd0d400013dc5c8"
     },
     {
       "name": "CEFA Figueruelas",
       "address": "Crta. de Logroño, Km. 265, 50639 Figueruelas (Zaragoza), España",
       "phone": "+34 976 465 465",
       "email": "info@modulosra.es",
-      "id": "69e08a28eb5c28000165e66c"
+      "id": "69e09b3a2cd0d400013dc5c9"
     },
     {
       "name": "CEFA Poland",
       "address": "ul. Matki Bożej z Pilar 1, 68-100 Żagań, Polska",
       "phone": "+48 669 988 840",
       "email": "rekrutacja@zagan.es",
-      "id": "69e08a28eb5c28000165e66d"
+      "id": "69e09b3a2cd0d400013dc5ca"
     }
   ],
   "formLabels": {
@@ -38,7 +38,35 @@
     "subtitle": "Estamos aquí para responder tus preguntas y explorar cómo CEFA puede ser tu socio estratégico.",
     "addressLabel": "Dirección",
     "infoLabel": "Información de contacto",
-    "mapsLabel": "Ver en Google Maps"
+    "mapsLabel": "Ver en Google Maps",
+    "processing": "Enviando...",
+    "verifying": "Verificando seguridad...",
+    "successTitle": "Mensaje enviado",
+    "successMessage": "Gracias por contactar con CEFA. Nuestro equipo revisará tu consulta y te responderá en breve.",
+    "successSendAnother": "Enviar otro mensaje",
+    "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo más tarde.",
+    "errorCaptcha": "La verificación de seguridad ha fallado. Por favor, inténtalo de nuevo.",
+    "errorRatelimit": "Demasiadas solicitudes. Por favor, espera unos minutos antes de intentarlo de nuevo.",
+    "errRequired": "Este campo es obligatorio.",
+    "errEmail": "Por favor, introduce una dirección de correo electrónico válida.",
+    "errTooShort": "El mensaje es demasiado corto (mínimo 10 caracteres).",
+    "errTooLong": "Este campo supera la longitud máxima permitida.",
+    "errSubject": "Por favor, selecciona un asunto.",
+    "nameLabel": "Nombre completo",
+    "namePlaceholder": "Tu nombre",
+    "companyLabel": "Empresa",
+    "companyPlaceholder": "Tu empresa",
+    "emailLabel": "Correo electrónico",
+    "emailPlaceholder": "tu@empresa.com",
+    "subjectLabel": "Asunto",
+    "subjectPlaceholder": "Selecciona un asunto",
+    "subjectProducts": "Información sobre productos",
+    "subjectPartner": "Colaboración",
+    "subjectQuality": "Calidad y certificaciones",
+    "subjectOther": "Otro",
+    "messageLabel": "Mensaje",
+    "messagePlaceholder": "¿Cómo podemos ayudarte?",
+    "submitLabel": "Enviar mensaje"
   },
-  "id": "69e08a28d6105cb40db4145e"
+  "id": "69e09b3a3bb0e697b0ea74cc"
 }

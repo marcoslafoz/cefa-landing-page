@@ -1,6 +1,5 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import Section from '@/components/ui/Section.astro';
 import { getQuote } from '@/lib/cms';
 
@@ -9,11 +8,10 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
 const cmsQuote = await getQuote(locale);
 
-const quoteText = cmsQuote?.text || t('quote.text');
-const quotePhilosophy = cmsQuote?.philosophy || t('quote.philosophy');
+const quoteText = cmsQuote?.text ?? '';
+const quotePhilosophy = cmsQuote?.philosophy ?? '';
 ---
 
 <!-- Sección de cita compacta con fondo blanco -->

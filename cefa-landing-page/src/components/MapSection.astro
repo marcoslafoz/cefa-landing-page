@@ -1,33 +1,33 @@
 ---
 import InteractiveMap from '@/components/Map/InteractiveMap';
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import SectionHeader from '@/components/ui/SectionHeader.astro';
 import Section from '@/components/ui/Section.astro';
+import { getContact } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
+const cmsContact = await getContact(locale);
 ---
 
 <Section id="presence" background="white" padding="none" container={false} class="pt-12">
   <div class="site-container mb-10">
     <SectionHeader
       layout="centered"
-      eyebrow={t('map.eyebrow')}
-      title={t('map.title')}
-      description={t('map.subtitle')}
+      eyebrow={cmsContact?.map?.eyebrow ?? ''}
+      title={cmsContact?.map?.title ?? ''}
+      description={cmsContact?.map?.subtitle ?? ''}
     />
   </div>
 
   <div class="w-full [&_.maplibregl-canvas]:outline-none">
     <InteractiveMap
       client:load
-      tooltipLabel={t('map.tooltip.label')}
-      contactText={t('map.tooltip.contact')}
+      tooltipLabel={cmsContact?.map?.tooltipLabel ?? ''}
+      contactText={cmsContact?.map?.tooltipContact ?? ''}
     />
   </div>
 </Section>

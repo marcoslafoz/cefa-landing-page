@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-04-16T08:18:03.086Z",
+  "updatedAt": "2026-04-16T08:18:03.091Z",
+  "globalType": "site-settings",
+  "error404": {
+    "title": "Seite nicht gefunden",
+    "subtitle": "Die gesuchte Seite existiert nicht oder wurde verschoben.",
+    "cta": "Zurück zur Startseite"
+  },
+  "cookieBanner": {
+    "title": "Wir schätzen Ihre Privatsphäre",
+    "description": "Wir verwenden eigene und Drittanbieter-Cookies, um Ihre Erfahrung zu verbessern, unseren Datenverkehr zu analysieren und Social-Media-Funktionen bereitzustellen. Durch Klicken auf „Alle akzeptieren“ stimmen Sie der Verwendung aller Cookies zu. Sie können Ihre Präferenzen verwalten oder sie unter „Einstellungen“ ablehnen.",
+    "accept": "Alle akzeptieren",
+    "reject": "Ablehnen",
+    "settings": "Einstellungen",
+    "policy": "Cookie-Richtlinie"
+  },
+  "a11y": {
+    "skipToMain": "Zum Hauptinhalt springen"
+  },
+  "id": "69e09b3b3bb0e697b0ea753c"
+}

@@ -185,7 +185,35 @@
       "subtitle": "contact.subtitle",
       "addressLabel": "contact.details.address",
       "infoLabel": "contact.details.info",
-      "mapsLabel": "contact.details.maps"
+      "mapsLabel": "contact.details.maps",
+      "nameLabel": "contact.form.name",
+      "namePlaceholder": "contact.form.name.placeholder",
+      "companyLabel": "contact.form.company",
+      "companyPlaceholder": "contact.form.company.placeholder",
+      "emailLabel": "contact.form.email",
+      "emailPlaceholder": "contact.form.email.placeholder",
+      "subjectLabel": "contact.form.subject",
+      "subjectPlaceholder": "contact.form.subject.placeholder",
+      "subjectProducts": "contact.form.subject.products",
+      "subjectPartner": "contact.form.subject.partner",
+      "subjectQuality": "contact.form.subject.quality",
+      "subjectOther": "contact.form.subject.other",
+      "messageLabel": "contact.form.message",
+      "messagePlaceholder": "contact.form.message.placeholder",
+      "submitLabel": "contact.form.submit",
+      "processing": "contact.form.processing",
+      "verifying": "contact.form.verifying",
+      "successTitle": "contact.form.success.title",
+      "successMessage": "contact.form.success.message",
+      "successSendAnother": "contact.form.success.send_another",
+      "error": "contact.form.error",
+      "errorCaptcha": "contact.form.error.captcha",
+      "errorRatelimit": "contact.form.error.ratelimit",
+      "errRequired": "contact.form.validation.required",
+      "errEmail": "contact.form.validation.email",
+      "errTooShort": "contact.form.validation.too_short",
+      "errTooLong": "contact.form.validation.too_long",
+      "errSubject": "contact.form.validation.subject"
     }
   },
   "awards": {
@@ -408,6 +436,24 @@
       "title": "404.title",
       "subtitle": "404.subtitle",
       "cta": "404.cta"
+    }
+  },
+  "site-settings": {
+    "error404": {
+      "title": "404.title",
+      "subtitle": "404.subtitle",
+      "cta": "404.cta"
+    },
+    "cookieBanner": {
+      "title": "cookie.banner.title",
+      "description": "cookie.banner.description",
+      "accept": "cookie.banner.accept",
+      "reject": "cookie.banner.reject",
+      "settings": "cookie.banner.settings",
+      "policy": "cookie.banner.policy"
+    },
+    "a11y": {
+      "skipToMain": "a11y.skip"
     }
   }
 }

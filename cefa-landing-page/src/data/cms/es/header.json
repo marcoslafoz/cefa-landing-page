@@ -1,11 +1,11 @@
 {
-  "createdAt": "2026-04-16T07:05:12.453Z",
-  "updatedAt": "2026-04-16T07:05:16.171Z",
+  "createdAt": "2026-04-16T08:18:02.891Z",
+  "updatedAt": "2026-04-16T08:18:07.319Z",
   "globalType": "header",
   "logos": {
     "cefaColor": {
-      "createdAt": "2026-04-16T07:05:12.684Z",
-      "updatedAt": "2026-04-16T07:05:12.684Z",
+      "createdAt": "2026-04-16T08:18:03.125Z",
+      "updatedAt": "2026-04-16T08:18:03.125Z",
       "alt": "cefa-color.svg",
       "url": "/cms-media/cefa-color.svg",
       "filename": "cefa-color.svg",
@@ -15,12 +15,12 @@
       "height": 859,
       "focalX": 50,
       "focalY": 50,
-      "id": "69e08a28d6105cb40db414fe",
+      "id": "69e09b3b3bb0e697b0ea757a",
       "thumbnailURL": null
     },
     "cefaWhite": {
-      "createdAt": "2026-04-16T07:05:12.689Z",
-      "updatedAt": "2026-04-16T07:05:12.689Z",
+      "createdAt": "2026-04-16T08:18:03.129Z",
+      "updatedAt": "2026-04-16T08:18:03.129Z",
       "alt": "cefa-mono-white.svg",
       "url": "/cms-media/cefa-mono-white.svg",
       "filename": "cefa-mono-white.svg",
@@ -30,12 +30,12 @@
       "height": 854,
       "focalX": 50,
       "focalY": 50,
-      "id": "69e08a28d6105cb40db4150a",
+      "id": "69e09b3b3bb0e697b0ea7586",
       "thumbnailURL": null
     },
     "motherson": {
-      "createdAt": "2026-04-16T07:05:12.715Z",
-      "updatedAt": "2026-04-16T07:05:12.715Z",
+      "createdAt": "2026-04-16T08:18:03.165Z",
+      "updatedAt": "2026-04-16T08:18:03.165Z",
       "alt": "motherson.svg",
       "url": "/cms-media/motherson.svg",
       "filename": "motherson.svg",
@@ -45,7 +45,7 @@
       "height": 36,
       "focalX": 50,
       "focalY": 50,
-      "id": "69e08a28d6105cb40db41543",
+      "id": "69e09b3b3bb0e697b0ea75bf",
       "thumbnailURL": null
     }
   },
@@ -55,11 +55,6 @@
     "clients": "Clientes",
     "contact": "Contacto",
     "contactCta": "Contáctanos"
-  },
-  "footerColumns": {
-    "company": "Empresa",
-    "products": "Productos",
-    "contact": "Contacto"
   },
   "links": {
     "mission": "Misión",
@@ -78,5 +73,12 @@
     "functional": "Aplicaciones funcionales",
     "exterior": "Revestimientos exteriores"
   },
-  "id": "69e08a28d6105cb40db413e2"
+  "ui": {},
+  "footerColumns": {
+    "company": "Empresa",
+    "products": "Productos",
+    "contact": "Contacto"
+  },
+  "footer": {},
+  "id": "69e09b3a3bb0e697b0ea744e"
 }

@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T07:05:12.521Z",
-  "updatedAt": "2026-04-16T07:05:14.901Z",
+  "createdAt": "2026-04-16T08:18:02.953Z",
+  "updatedAt": "2026-04-16T08:18:05.211Z",
   "globalType": "vision",
   "eyebrow": "Vision",
   "title": "Unsere Vision",
@@ -10,29 +10,29 @@
     {
       "title": "Bevorzugter Partner des Kunden",
       "text": "Diversifiziertes Portfolio, hoher Marktanteil und robuste Umsätze.",
-      "id": "69e08a28eb5c28000165e661"
+      "id": "69e09b3a2cd0d400013dc5be"
     },
     {
       "title": "Technologischer Benchmark",
       "text": "Innovation und schnelle Einführung fortschrittlicher Technologien für verantwortungsvolle Wertschöpfung.",
-      "id": "69e08a28eb5c28000165e662"
+      "id": "69e09b3a2cd0d400013dc5bf"
     },
     {
       "title": "Wirtschaftlich nachhaltig",
       "text": "Maximaler Ertrag (EBITDA) bei optimierten Investitionen.",
-      "id": "69e08a28eb5c28000165e663"
+      "id": "69e09b3a2cd0d400013dc5c0"
     },
     {
       "title": "Ort der persönlichen Entwicklung",
       "text": "Hohe Zufriedenheit sowie menschliches und berufliches Wachstum talentierter Teams.",
-      "id": "69e08a28eb5c28000165e664"
+      "id": "69e09b3a2cd0d400013dc5c1"
     }
   ],
   "gallery": [
     {
       "image": {
-        "createdAt": "2026-04-16T07:05:12.751Z",
-        "updatedAt": "2026-04-16T07:05:12.751Z",
+        "createdAt": "2026-04-16T08:18:03.191Z",
+        "updatedAt": "2026-04-16T08:18:03.191Z",
         "alt": "zagan.webp",
         "url": "/cms-media/zagan.webp",
         "filename": "zagan.webp",
@@ -42,16 +42,16 @@
         "height": 1080,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e08a28d6105cb40db41579",
+        "id": "69e09b3b3bb0e697b0ea75f5",
         "thumbnailURL": null
       },
       "alt": "CEFA",
-      "id": "69e08a28eb5c28000165e692"
+      "id": "69e09b3b2cd0d400013dc5ef"
     },
     {
       "image": {
-        "createdAt": "2026-04-16T07:05:12.702Z",
-        "updatedAt": "2026-04-16T07:05:12.702Z",
+        "createdAt": "2026-04-16T08:18:03.150Z",
+        "updatedAt": "2026-04-16T08:18:03.150Z",
         "alt": "factory.webp",
         "url": "/cms-media/factory.webp",
         "filename": "factory.webp",
@@ -61,12 +61,12 @@
         "height": 1080,
         "focalX": 50,
         "focalY": 50,
-        "id": "69e08a28d6105cb40db41525",
+        "id": "69e09b3b3bb0e697b0ea75a1",
         "thumbnailURL": null
       },
       "alt": "CEFA Zaragoza",
-      "id": "69e08a28eb5c28000165e693"
+      "id": "69e09b3b2cd0d400013dc5f0"
     }
   ],
-  "id": "69e08a28d6105cb40db41418"
+  "id": "69e09b3a3bb0e697b0ea7486"
 }

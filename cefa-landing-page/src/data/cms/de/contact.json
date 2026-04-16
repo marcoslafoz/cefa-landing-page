@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T07:05:12.563Z",
-  "updatedAt": "2026-04-16T07:05:12.571Z",
+  "createdAt": "2026-04-16T08:18:02.993Z",
+  "updatedAt": "2026-04-16T08:18:03.014Z",
   "globalType": "contact",
   "map": {
     "eyebrow": "Industrielle Präsenz",
@@ -15,21 +15,21 @@
       "address": "Industriegebiet Malpica, Calle D, 44-45, 50016 Zaragoza, Spanien",
       "phone": "+34 976 465 000",
       "email": "info@cefa.es",
-      "id": "69e08a28eb5c28000165e66b"
+      "id": "69e09b3a2cd0d400013dc5c8"
     },
     {
       "name": "CEFA Figueruelas",
       "address": "Crta. de Logroño, Km. 265, 50639 Figueruelas (Zaragoza), Spanien",
       "phone": "+34 976 465 465",
       "email": "info@modulosra.es",
-      "id": "69e08a28eb5c28000165e66c"
+      "id": "69e09b3a2cd0d400013dc5c9"
     },
     {
       "name": "CEFA Poland",
       "address": "ul. Matki Bożej z Pilar 1, 68-100 Żagań, Polen",
       "phone": "+48 669 988 840",
       "email": "rekrutacja@zagan.es",
-      "id": "69e08a28eb5c28000165e66d"
+      "id": "69e09b3a2cd0d400013dc5ca"
     }
   ],
   "formLabels": {
@@ -38,7 +38,35 @@
     "subtitle": "Wir sind hier, um Ihre Fragen zu beantworten und zu erkunden, wie CEFA Ihr strategischer Partner sein kann.",
     "addressLabel": "Adresse",
     "infoLabel": "Kontaktinformationen",
-    "mapsLabel": "In Google Maps ansehen"
+    "mapsLabel": "In Google Maps ansehen",
+    "processing": "Wird gesendet...",
+    "verifying": "Sicherheit wird überprüft...",
+    "successTitle": "Nachricht gesendet",
+    "successMessage": "Vielen Dank für Ihre Kontaktaufnahme mit CEFA. Unser Team wird Ihre Anfrage prüfen und sich in Kürze bei Ihnen melden.",
+    "successSendAnother": "Weitere Nachricht senden",
+    "error": "Ein Fehler ist aufgetreten. Bitte versuchen Sie es später erneut.",
+    "errorCaptcha": "Sicherheitsüberprüfung fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "errorRatelimit": "Zu viele Anfragen. Bitte warten Sie einige Minuten, bevor Sie es erneut versuchen.",
+    "errRequired": "Dieses Feld ist erforderlich.",
+    "errEmail": "Bitte geben Sie eine gültige E-Mail-Adresse ein.",
+    "errTooShort": "Die Nachricht ist zu kurz (mindestens 10 Zeichen).",
+    "errTooLong": "Dieses Feld überschreitet die maximal zulässige Länge.",
+    "errSubject": "Bitte wählen Sie einen Betreff.",
+    "nameLabel": "Vollständiger Name",
+    "namePlaceholder": "Ihr Name",
+    "companyLabel": "Unternehmen",
+    "companyPlaceholder": "Ihr Unternehmen",
+    "emailLabel": "E-Mail-Adresse",
+    "emailPlaceholder": "sie@unternehmen.de",
+    "subjectLabel": "Betreff",
+    "subjectPlaceholder": "Betreff auswählen",
+    "subjectProducts": "Produktinformationen",
+    "subjectPartner": "Partnerschaft",
+    "subjectQuality": "Qualität & Zertifizierungen",
+    "subjectOther": "Sonstiges",
+    "messageLabel": "Nachricht",
+    "messagePlaceholder": "Wie können wir Ihnen helfen?",
+    "submitLabel": "Nachricht senden"
   },
-  "id": "69e08a28d6105cb40db4145e"
+  "id": "69e09b3a3bb0e697b0ea74cc"
 }

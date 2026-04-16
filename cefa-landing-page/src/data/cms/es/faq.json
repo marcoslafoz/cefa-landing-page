@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T07:05:12.626Z",
-  "updatedAt": "2026-04-16T07:05:12.631Z",
+  "createdAt": "2026-04-16T08:18:03.073Z",
+  "updatedAt": "2026-04-16T08:18:03.079Z",
   "globalType": "faq",
   "eyebrow": "Preguntas frecuentes",
   "title": "Todo lo que necesitas saber sobre CEFA",
@@ -8,23 +8,23 @@
     {
       "question": "¿Qué tipos de componentes plásticos para automóvil fabrica CEFA?",
       "answer": "CEFA fabrica cuatro líneas de producto mediante inyección de plásticos de alta precisión: paneles de instrumentos y consola central (salpicaderos), paneles de puerta y revestimientos interiores, aplicaciones funcionales en el compartimento motor y habitáculo, y revestimientos exteriores como molduras, spoilers y rejillas. Todos los componentes se producen con tolerancias micrométricas para los principales OEM del mundo.",
-      "id": "69e08a28eb5c28000165e68e"
+      "id": "69e09b3b2cd0d400013dc5eb"
     },
     {
       "question": "¿Está CEFA certificado con IATF 16949 e ISO 9001?",
       "answer": "Sí. CEFA mantiene la certificación IATF 16949 (el estándar más exigente de calidad en automoción), ISO 9001 e ISO 14001 (medio ambiente). Nuestros procesos se auditan anualmente y mantenemos una tasa de defectos inferior a 10 PPM con trazabilidad total de cada pieza fabricada.",
-      "id": "69e08a28eb5c28000165e68f"
+      "id": "69e09b3b2cd0d400013dc5ec"
     },
     {
       "question": "¿Dónde están ubicadas las plantas de fabricación de CEFA?",
       "answer": "CEFA dispone de tres plantas industriales: Planta Malpica en Zaragoza (España), Planta Figueruelas en Zaragoza (España) y CEFA Poland en Żagań (Polonia). Esta presencia estratégica en el corazón de Europa nos permite atender a los principales fabricantes automotrices (OEM) con rapidez y flexibilidad.",
-      "id": "69e08a28eb5c28000165e690"
+      "id": "69e09b3b2cd0d400013dc5ed"
     },
     {
       "question": "¿Para qué marcas de automóviles suministra componentes CEFA?",
       "answer": "CEFA suministra componentes plásticos a los principales OEM del mundo, entre ellos Volkswagen, Audi, SEAT, Skoda, Renault, Ford, Mercedes-Benz, Nissan, Opel, Citroën, Fiat, Lancia, Cupra y MAN. Somos proveedor Tier 1 integrado en el Grupo Motherson con más de 80 años de experiencia en el sector del automóvil.",
-      "id": "69e08a28eb5c28000165e691"
+      "id": "69e09b3b2cd0d400013dc5ee"
     }
   ],
-  "id": "69e08a28d6105cb40db414b2"
+  "id": "69e09b3b3bb0e697b0ea7520"
 }

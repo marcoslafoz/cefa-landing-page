@@ -1,21 +1,21 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
+
 import Button from '@/components/ui/Button.astro';
-import { getVision, getMediaUrl } from '@/lib/cms';
+import { getVision, getMediaUrl, getHeader } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
 const cmsData = await getVision(locale);
+const cmsHeader = await getHeader(locale);
 
-const visionEyebrow = cmsData?.eyebrow || t('vision.eyebrow');
-const visionTitle = cmsData?.title || t('vision.title');
-const visionBody = cmsData?.body || t('vision.body');
-const visionCta = cmsData?.cta || t('vision.cta');
+const visionEyebrow = cmsData?.eyebrow ?? '';
+const visionTitle = cmsData?.title ?? '';
+const visionBody = cmsData?.body ?? '';
+const visionCta = cmsData?.cta ?? '';
 
 interface Value {
   title: string;
@@ -28,18 +28,10 @@ interface SliderImage {
 }
 
 const cmsValues = cmsData?.values || [];
-const values: Value[] =
-  cmsValues.length > 0
-    ? cmsValues.map((v: { title?: string; text?: string }) => ({
-        title: v.title ?? '',
-        text: v.text ?? '',
-      }))
-    : [
-        { title: t('vision.value1.title'), text: t('vision.value1.text') },
-        { title: t('vision.value2.title'), text: t('vision.value2.text') },
-        { title: t('vision.value3.title'), text: t('vision.value3.text') },
-        { title: t('vision.value4.title'), text: t('vision.value4.text') },
-      ];
+const values: Value[] = cmsValues.map((v: { title?: string; text?: string }) => ({
+  title: v.title ?? '',
+  text: v.text ?? '',
+}));
 
 const fallbackImages = [
   { src: '/images/mission/zagan.webp', alt: 'CEFA Żagań' },
@@ -134,9 +126,9 @@ const sliderImages: SliderImage[] =
 
       <div class="flex flex-wrap gap-3">
         <Button href="#contact" variant="primary">{visionCta}</Button>
-        <Button href="#products" variant="secondary" showIcon={false}
-          >{t('products.eyebrow')}</Button
-        >
+        <Button href="#products" variant="secondary" showIcon={false}>
+          {cmsHeader?.header?.products ?? ''}
+        </Button>
       </div>
     </div>
   </div>

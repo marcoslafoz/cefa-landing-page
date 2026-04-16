@@ -1,0 +1,22 @@
+{
+  "createdAt": "2026-04-16T08:18:03.086Z",
+  "updatedAt": "2026-04-16T08:18:03.091Z",
+  "globalType": "site-settings",
+  "error404": {
+    "title": "Página no encontrada",
+    "subtitle": "La página que buscas no existe o ha sido movida.",
+    "cta": "Volver al inicio"
+  },
+  "cookieBanner": {
+    "title": "Valoramos tu privacidad",
+    "description": "Utilizamos cookies propias y de terceros para mejorar tu experiencia, analizar nuestro tráfico y ofrecer funciones de redes sociales. Al hacer clic en \"Aceptar todo\", das tu consentimiento para el uso de todas las cookies. Puedes gestionar tus preferencias o rechazarlas en \"Configurar\".",
+    "accept": "Aceptar todo",
+    "reject": "Rechazar",
+    "settings": "Configurar",
+    "policy": "Política de cookies"
+  },
+  "a11y": {
+    "skipToMain": "Ir al contenido principal"
+  },
+  "id": "69e09b3b3bb0e697b0ea753c"
+}

@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-16T07:05:12.563Z",
-  "updatedAt": "2026-04-16T07:05:12.571Z",
+  "createdAt": "2026-04-16T08:18:02.993Z",
+  "updatedAt": "2026-04-16T08:18:03.014Z",
   "globalType": "contact",
   "map": {
     "eyebrow": "Industrial presence",
@@ -15,21 +15,21 @@
       "address": "Malpica Industrial Estate, Calle D, 44-45, 50016 Zaragoza, Spain",
       "phone": "+34 976 465 000",
       "email": "info@cefa.es",
-      "id": "69e08a28eb5c28000165e66b"
+      "id": "69e09b3a2cd0d400013dc5c8"
     },
     {
       "name": "CEFA Figueruelas",
       "address": "Logroño Road, Km. 265, 50639 Figueruelas (Zaragoza), Spain",
       "phone": "+34 976 465 465",
       "email": "info@modulosra.es",
-      "id": "69e08a28eb5c28000165e66c"
+      "id": "69e09b3a2cd0d400013dc5c9"
     },
     {
       "name": "CEFA Poland",
       "address": "ul. Matki Bożej z Pilar 1, 68-100 Żagań, Poland",
       "phone": "+48 669 988 840",
       "email": "rekrutacja@zagan.es",
-      "id": "69e08a28eb5c28000165e66d"
+      "id": "69e09b3a2cd0d400013dc5ca"
     }
   ],
   "formLabels": {
@@ -38,7 +38,35 @@
     "subtitle": "We're here to answer your questions and explore how CEFA can be your strategic partner.",
     "addressLabel": "Address",
     "infoLabel": "Contact Information",
-    "mapsLabel": "View on Google Maps"
+    "mapsLabel": "View on Google Maps",
+    "processing": "Sending...",
+    "verifying": "Verifying security...",
+    "successTitle": "Message Sent",
+    "successMessage": "Thank you for contacting CEFA. Our team will review your inquiry and get back to you shortly.",
+    "successSendAnother": "Send another message",
+    "error": "An error occurred. Please try again later.",
+    "errorCaptcha": "Security verification failed. Please try again.",
+    "errorRatelimit": "Too many requests. Please wait a few minutes before trying again.",
+    "errRequired": "This field is required.",
+    "errEmail": "Please enter a valid email address.",
+    "errTooShort": "Message is too short (minimum 10 characters).",
+    "errTooLong": "This field exceeds the maximum allowed length.",
+    "errSubject": "Please select a subject.",
+    "nameLabel": "Full name",
+    "namePlaceholder": "Your name",
+    "companyLabel": "Company",
+    "companyPlaceholder": "Your company",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "you@company.com",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Select a subject",
+    "subjectProducts": "Product information",
+    "subjectPartner": "Partnership",
+    "subjectQuality": "Quality & certifications",
+    "subjectOther": "Other",
+    "messageLabel": "Message",
+    "messagePlaceholder": "How can we help you?",
+    "submitLabel": "Send message"
   },
-  "id": "69e08a28d6105cb40db4145e"
+  "id": "69e09b3a3bb0e697b0ea74cc"
 }

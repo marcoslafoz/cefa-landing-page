@@ -13,18 +13,22 @@ import Contact from '@/components/Contact.astro';
 import Careers from '@/components/Careers.astro';
 import FAQ from '@/components/FAQ.astro';
 import Footer from '@/components/Footer.astro';
-import { useTranslations } from '@/i18n/translations';
 import type { Locale } from '@/i18n/translations';
+import { getSEO } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
+const seoData = await getSEO(locale);
 ---
 
-<Layout title={t('meta.title')} description={t('meta.description')} locale={locale}>
+<Layout
+  title={seoData?.default?.title ?? ''}
+  description={seoData?.default?.description ?? ''}
+  locale={locale}
+>
   <Header locale={locale} />
   <main id="main-content">
     <Hero locale={locale} />

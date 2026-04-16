@@ -154,3 +154,8 @@ export async function getSEO(locale: string = 'es') {
   const data = await getCMSData('seo', locale);
   return data || null;
 }
+
+export async function getSiteSettings(locale: string = 'es') {
+  const data = await getCMSData('site-settings', locale);
+  return data || null;
+}

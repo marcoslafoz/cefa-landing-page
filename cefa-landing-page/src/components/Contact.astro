@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
+
 import ArrowIcon from '@/components/ui/ArrowIcon.astro';
 import ContactInfoItem from '@/components/ui/ContactInfoItem.astro';
 import Section from '@/components/ui/Section.astro';
@@ -13,15 +13,15 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
+
 const cmsContact = await getContact(locale);
 
-const contactEyebrow = cmsContact?.map?.eyebrow || t('contact.eyebrow');
-const contactTitle = cmsContact?.map?.title || t('contact.title');
-const contactSubtitle = cmsContact?.map?.subtitle || t('contact.subtitle');
-const contactAddressLabel = cmsContact?.formLabels?.addressLabel || t('contact.details.address');
-const contactInfoLabel = cmsContact?.formLabels?.infoLabel || t('contact.details.info');
-const contactMapsLabel = cmsContact?.formLabels?.mapsLabel || t('contact.details.maps');
+const contactEyebrow = cmsContact?.map?.eyebrow ?? '';
+const contactTitle = cmsContact?.map?.title ?? '';
+const contactSubtitle = cmsContact?.map?.subtitle ?? '';
+const contactAddressLabel = cmsContact?.formLabels?.addressLabel ?? '';
+const contactInfoLabel = cmsContact?.formLabels?.infoLabel ?? '';
+const contactMapsLabel = cmsContact?.formLabels?.mapsLabel ?? '';
 
 interface Location {
   id: string;
@@ -31,44 +31,19 @@ interface Location {
   email: string;
 }
 
-const locations: Location[] =
-  cmsContact?.locations?.length > 0
-    ? cmsContact.locations.map(
-        (loc: { name?: string; address?: string; phone?: string; email?: string }) => ({
-          id:
-            loc.name
-              ?.toLowerCase()
-              .replace(/\s+/g, '-')
-              .replace(/[^a-z0-9-]/g, '') || 'loc',
-          name: loc.name ?? '',
-          address: loc.address ?? '',
-          phone: loc.phone ?? '',
-          email: loc.email ?? '',
-        })
-      )
-    : [
-        {
-          id: 'malpica',
-          name: t('contact.location1.name'),
-          address: t('contact.location1.address'),
-          phone: t('contact.location1.phone'),
-          email: t('contact.location1.email'),
-        },
-        {
-          id: 'figueruelas',
-          name: t('contact.location2.name'),
-          address: t('contact.location2.address'),
-          phone: t('contact.location2.phone'),
-          email: t('contact.location2.email'),
-        },
-        {
-          id: 'poland',
-          name: t('contact.location3.name'),
-          address: t('contact.location3.address'),
-          phone: t('contact.location3.phone'),
-          email: t('contact.location3.email'),
-        },
-      ];
+const locations: Location[] = (cmsContact?.locations ?? []).map(
+  (loc: { name?: string; address?: string; phone?: string; email?: string }) => ({
+    id:
+      loc.name
+        ?.toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^a-z0-9-]/g, '') || 'loc',
+    name: loc.name ?? '',
+    address: loc.address ?? '',
+    phone: loc.phone ?? '',
+    email: loc.email ?? '',
+  })
+);
 
 const icons = {
   address: `<path d="M12 13.5a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M12 22c-1 0-8-6.686-8-12a8 8 0 1116 0c0 5.314-7 12-8 12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,
@@ -93,7 +68,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
         id="location-switcher-container"
         class="flex flex-wrap gap-2 mb-8 p-1.5 rounded-lg w-fit"
         role="tablist"
-        aria-label={t('contact.eyebrow')}
+        aria-label={contactEyebrow}
       >
         {
           locations.map((loc, idx) => (
@@ -179,19 +154,19 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
           novalidate
           id="contact-form"
           data-turnstile-site-key={turnstileSiteKey}
-          data-t-processing={t('contact.form.processing')}
-          data-t-verifying={t('contact.form.verifying')}
-          data-t-success-title={t('contact.form.success.title')}
-          data-t-success-message={t('contact.form.success.message')}
-          data-t-success-send-another={t('contact.form.success.send_another')}
-          data-t-error={t('contact.form.error')}
-          data-t-error-captcha={t('contact.form.error.captcha')}
-          data-t-error-ratelimit={t('contact.form.error.ratelimit')}
-          data-t-err-required={t('contact.form.validation.required')}
-          data-t-err-email={t('contact.form.validation.email')}
-          data-t-err-too-short={t('contact.form.validation.too_short')}
-          data-t-err-too-long={t('contact.form.validation.too_long')}
-          data-t-err-subject={t('contact.form.validation.subject')}
+          data-t-processing={cmsContact?.formLabels?.processing ?? ''}
+          data-t-verifying={cmsContact?.formLabels?.verifying ?? ''}
+          data-t-success-title={cmsContact?.formLabels?.successTitle ?? ''}
+          data-t-success-message={cmsContact?.formLabels?.successMessage ?? ''}
+          data-t-success-send-another={cmsContact?.formLabels?.successSendAnother ?? ''}
+          data-t-error={cmsContact?.formLabels?.error ?? ''}
+          data-t-error-captcha={cmsContact?.formLabels?.errorCaptcha ?? ''}
+          data-t-error-ratelimit={cmsContact?.formLabels?.errorRatelimit ?? ''}
+          data-t-err-required={cmsContact?.formLabels?.errRequired ?? ''}
+          data-t-err-email={cmsContact?.formLabels?.errEmail ?? ''}
+          data-t-err-too-short={cmsContact?.formLabels?.errTooShort ?? ''}
+          data-t-err-too-long={cmsContact?.formLabels?.errTooLong ?? ''}
+          data-t-err-subject={cmsContact?.formLabels?.errSubject ?? ''}
         >
           <!-- ── Campo trampa (Honeypot): oculto para usuarios reales, los bots lo rellenan → solicitud rechazada ── -->
           <div
@@ -212,14 +187,14 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
           <div class="grid sm:grid-cols-2 gap-4">
             <div class="flex flex-col gap-1.5">
               <label for="name" class="text-xs font-medium text-gray-500 ml-1">
-                {t('contact.form.name')}
+                {cmsContact?.formLabels?.nameLabel ?? ''}
                 <span class="text-cefa-red" aria-hidden="true">*</span>
               </label>
               <input
                 type="text"
                 id="name"
                 name="name"
-                placeholder={t('contact.form.name.placeholder')}
+                placeholder={cmsContact?.formLabels?.namePlaceholder ?? ''}
                 required
                 maxlength="120"
                 autocomplete="name"
@@ -232,13 +207,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
             </div>
             <div class="flex flex-col gap-1.5">
               <label for="company" class="text-xs font-medium text-gray-500 ml-1">
-                {t('contact.form.company')}
+                {cmsContact?.formLabels?.companyLabel ?? ''}
               </label>
               <input
                 type="text"
                 id="company"
                 name="company"
-                placeholder={t('contact.form.company.placeholder')}
+                placeholder={cmsContact?.formLabels?.companyPlaceholder ?? ''}
                 maxlength="120"
                 autocomplete="organization"
                 class="form-field"
@@ -252,14 +227,14 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
 
           <div class="flex flex-col gap-1.5">
             <label for="email" class="text-xs font-medium text-gray-500 ml-1">
-              {t('contact.form.email')}
+              {cmsContact?.formLabels?.emailLabel ?? ''}
               <span class="text-cefa-red" aria-hidden="true">*</span>
             </label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder={t('contact.form.email.placeholder')}
+              placeholder={cmsContact?.formLabels?.emailPlaceholder ?? ''}
               required
               maxlength="254"
               autocomplete="email"
@@ -273,7 +248,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
 
           <div class="flex flex-col gap-1.5">
             <label for="subject" class="text-xs font-medium text-gray-500 ml-1">
-              {t('contact.form.subject')}
+              {cmsContact?.formLabels?.subjectLabel ?? ''}
               <span class="text-cefa-red" aria-hidden="true">*</span>
             </label>
             <div class="relative">
@@ -283,11 +258,13 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
                 required
                 class="form-field appearance-none cursor-pointer"
               >
-                <option value="" disabled selected>{t('contact.form.subject.placeholder')}</option>
-                <option value="products">{t('contact.form.subject.products')}</option>
-                <option value="partner">{t('contact.form.subject.partner')}</option>
-                <option value="quality">{t('contact.form.subject.quality')}</option>
-                <option value="other">{t('contact.form.subject.other')}</option>
+                <option value="" disabled selected
+                  >{cmsContact?.formLabels?.subjectPlaceholder ?? ''}</option
+                >
+                <option value="products">{cmsContact?.formLabels?.subjectProducts ?? ''}</option>
+                <option value="partner">{cmsContact?.formLabels?.subjectPartner ?? ''}</option>
+                <option value="quality">{cmsContact?.formLabels?.subjectQuality ?? ''}</option>
+                <option value="other">{cmsContact?.formLabels?.subjectOther ?? ''}</option>
               </select>
               <svg
                 class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
@@ -309,14 +286,14 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
 
           <div class="flex flex-col gap-1.5">
             <label for="message" class="text-xs font-medium text-gray-500 ml-1">
-              {t('contact.form.message')}
+              {cmsContact?.formLabels?.messageLabel ?? ''}
               <span class="text-cefa-red" aria-hidden="true">*</span>
             </label>
             <textarea
               id="message"
               name="message"
               rows="3"
-              placeholder={t('contact.form.message.placeholder')}
+              placeholder={cmsContact?.formLabels?.messagePlaceholder ?? ''}
               required
               maxlength="5000"
               class="form-field resize-y"></textarea>
@@ -358,7 +335,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
             id="contact-submit-btn"
             class="w-full flex items-center justify-center gap-2 bg-cefa-navy hover:bg-cefa-navy/90 text-white font-medium rounded-none py-3 text-sm transition-all duration-300 hover:-translate-y-0.5 mt-1 disabled:opacity-60 disabled:cursor-not-allowed disabled:translate-y-0"
           >
-            {t('contact.form.submit')}
+            {cmsContact?.formLabels?.submitLabel ?? ''}
             <ArrowIcon />
           </button>
         </form>

@@ -1,12 +1,6 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import {
-  useTranslations,
-  getLocalePath,
-  locales,
-  localeNames,
-  defaultLocale,
-} from '@/i18n/translations';
+import { getLocalePath, locales, localeNames, defaultLocale } from '@/i18n/translations';
 import { getHeader, getMediaUrl } from '@/lib/cms';
 
 interface Props {
@@ -15,7 +9,7 @@ interface Props {
 }
 
 const { locale, showLogoAlways = false } = Astro.props;
-const t = useTranslations(locale);
+
 const cmsHeader = await getHeader(locale);
 
 const logoCefa = getMediaUrl(cmsHeader?.logos?.cefaColor) || '/images/logos/cefa-color.svg';
@@ -41,64 +35,45 @@ interface NavItem {
   isActive?: boolean;
 }
 
-const navData = cmsHeader?.items || [];
-
-const navItems: NavItem[] =
-  navData.length > 0
-    ? navData.map(
-        (item: {
-          label?: string;
-          href?: string;
-          isRelative?: boolean;
-          subItems?: { label?: string; href?: string; isRelative?: boolean }[];
-        }) => ({
-          label: item.label ?? '',
-          href: item.isRelative ? getLocalePath(locale, item.href ?? '/') : (item.href ?? '/'),
-          children: item.subItems?.map((sub) => ({
-            label: sub.label ?? '',
-            href: sub.isRelative ? getLocalePath(locale, sub.href ?? '/') : (sub.href ?? '/'),
-          })),
-        })
-      )
-    : [
-        {
-          label: t('nav.company'),
-          href: getLocalePath(locale, '/#mission'),
-          children: [
-            { label: t('nav.company.mission'), href: getLocalePath(locale, '/#mission') },
-            { label: t('nav.company.vision'), href: getLocalePath(locale, '/#vision') },
-            { label: t('nav.company.innovation'), href: getLocalePath(locale, '/#innovation') },
-            { label: t('nav.company.history'), href: getLocalePath(locale, '/history') },
-            { label: t('nav.company.awards'), href: getLocalePath(locale, '/awards') },
-            { label: t('nav.presence'), href: getLocalePath(locale, '/#presence') },
-            {
-              label: t('nav.company.certifications'),
-              href: getLocalePath(locale, '/certifications'),
-            },
-            { label: t('nav.company.rd'), href: getLocalePath(locale, '/projects') },
-          ],
-        },
-        {
-          label: t('nav.products'),
-          href: getLocalePath(locale, '/#products'),
-          children: [
-            { label: t('nav.products.dashboard'), href: getLocalePath(locale, '/#products') },
-            { label: t('nav.products.door'), href: getLocalePath(locale, '/#products') },
-            { label: t('nav.products.functional'), href: getLocalePath(locale, '/#products') },
-            { label: t('nav.products.exterior'), href: getLocalePath(locale, '/#products') },
-          ],
-        },
-        { label: t('nav.clients'), href: getLocalePath(locale, '/#clients') },
-        {
-          label: t('nav.contact'),
-          href: getLocalePath(locale, '/#contact'),
-          children: [
-            { label: t('nav.contact.cta'), href: getLocalePath(locale, '/#contact') },
-            { label: t('nav.careers'), href: getLocalePath(locale, '/#careers') },
-            { label: t('nav.faq'), href: getLocalePath(locale, '/#faq') },
-          ],
-        },
-      ];
+const navItems: NavItem[] = [
+  {
+    label: cmsHeader?.header?.company ?? '',
+    href: getLocalePath(locale, '/#mission'),
+    children: [
+      { label: cmsHeader?.links?.mission ?? '', href: getLocalePath(locale, '/#mission') },
+      { label: cmsHeader?.links?.vision ?? '', href: getLocalePath(locale, '/#vision') },
+      { label: cmsHeader?.links?.innovation ?? '', href: getLocalePath(locale, '/#innovation') },
+      { label: cmsHeader?.links?.history ?? '', href: getLocalePath(locale, '/history') },
+      { label: cmsHeader?.links?.awards ?? '', href: getLocalePath(locale, '/awards') },
+      { label: cmsHeader?.links?.presence ?? '', href: getLocalePath(locale, '/#presence') },
+      {
+        label: cmsHeader?.links?.certifications ?? '',
+        href: getLocalePath(locale, '/certifications'),
+      },
+      { label: cmsHeader?.links?.rd ?? '', href: getLocalePath(locale, '/projects') },
+    ],
+  },
+  {
+    label: cmsHeader?.header?.products ?? '',
+    href: getLocalePath(locale, '/#products'),
+    children: [
+      { label: cmsHeader?.links?.dashboard ?? '', href: getLocalePath(locale, '/#products') },
+      { label: cmsHeader?.links?.door ?? '', href: getLocalePath(locale, '/#products') },
+      { label: cmsHeader?.links?.functional ?? '', href: getLocalePath(locale, '/#products') },
+      { label: cmsHeader?.links?.exterior ?? '', href: getLocalePath(locale, '/#products') },
+    ],
+  },
+  { label: cmsHeader?.header?.clients ?? '', href: getLocalePath(locale, '/#clients') },
+  {
+    label: cmsHeader?.header?.contact ?? '',
+    href: getLocalePath(locale, '/#contact'),
+    children: [
+      { label: cmsHeader?.header?.contactCta ?? '', href: getLocalePath(locale, '/#contact') },
+      { label: cmsHeader?.links?.careers ?? '', href: getLocalePath(locale, '/#careers') },
+      { label: cmsHeader?.links?.faq ?? '', href: getLocalePath(locale, '/#faq') },
+    ],
+  },
+];
 
 const availableLocales = locales;
 ---
@@ -208,7 +183,7 @@ const availableLocales = locales;
         <div class="relative group hidden md:block">
           <button
             class="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-white/70 hover:text-white uppercase tracking-widest transition-colors duration-200"
-            aria-label={t('nav.language')}
+            aria-label={cmsHeader?.ui?.language ?? 'Language'}
           >
             {locale.toUpperCase()}
             <svg
@@ -256,7 +231,7 @@ const availableLocales = locales;
         <button
           id="burger"
           class="lg:hidden flex flex-col gap-1.5 w-8 p-1 group"
-          aria-label={t('nav.menu.open')}
+          aria-label={cmsHeader?.ui?.menuOpen ?? 'Open menu'}
           aria-expanded="false"
         >
           <span

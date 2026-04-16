@@ -12,12 +12,24 @@ export async function seed(payload: any) {
   console.log('--- Starting automated seed ---')
 
   const landingPath = process.env.LANDING_PAGE_PATH || path.resolve(__dirname, '../../cefa-landing-page')
-  const i18nPath = path.join(landingPath, 'src/i18n')
+  const i18nPath = path.resolve(__dirname, './seed-data')
+
+  const safeReadJSON = (filePath: string) => {
+    try {
+      if (fs.existsSync(filePath)) {
+        return JSON.parse(fs.readFileSync(filePath, 'utf8'))
+      }
+    } catch (e) {
+      console.error(`Error reading ${filePath}:`, e)
+    }
+    return {}
+  }
+
   const locales = {
-    es: JSON.parse(fs.readFileSync(path.join(i18nPath, 'es.json'), 'utf8')),
-    en: JSON.parse(fs.readFileSync(path.join(i18nPath, 'en.json'), 'utf8')),
-    de: JSON.parse(fs.readFileSync(path.join(i18nPath, 'de.json'), 'utf8')),
-    pl: JSON.parse(fs.readFileSync(path.join(i18nPath, 'pl.json'), 'utf8')),
+    es: safeReadJSON(path.join(i18nPath, 'es.json')),
+    en: safeReadJSON(path.join(i18nPath, 'en.json')),
+    de: safeReadJSON(path.join(i18nPath, 'de.json')),
+    pl: safeReadJSON(path.join(i18nPath, 'pl.json')),
   }
 
   /**

@@ -1,15 +1,13 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import Section from '@/components/ui/Section.astro';
+import { getHistoryContent } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
-import { getHistoryContent } from '@/lib/cms';
 const cmsHistory = await getHistoryContent(locale);
 
 interface Milestone {
@@ -19,39 +17,21 @@ interface Milestone {
   text: string;
 }
 
-const milestones: Milestone[] =
-  cmsHistory?.timeline?.length > 0
-    ? cmsHistory.timeline.map((m: { year?: string; text?: string }) => ({
-        id: `y${m.year}`,
-        label: m.year ?? '',
-        numericYear: parseInt(m.year ?? '') || null,
-        text: m.text ?? '',
-      }))
-    : [
-        { id: 'y1946', label: '1946', numericYear: 1946, text: t('history.y1946') },
-        { id: 'y1960', label: '1960', numericYear: 1960, text: t('history.y1960') },
-        { id: 'y1970', label: '1970', numericYear: 1970, text: t('history.y1970') },
-        { id: 'y1983', label: '1983', numericYear: 1983, text: t('history.y1983') },
-        { id: 'y1992', label: '1992', numericYear: 1992, text: t('history.y1992') },
-        { id: 'y1994', label: '1994', numericYear: 1994, text: t('history.y1994') },
-        { id: 'y1997', label: '1997', numericYear: 1997, text: t('history.y1997') },
-        { id: 'y2011', label: '2011', numericYear: 2011, text: t('history.y2011') },
-        { id: 'y2012', label: '2012', numericYear: 2012, text: t('history.y2012') },
-      ];
+const milestones: Milestone[] = (cmsHistory?.timeline ?? []).map(
+  (m: { year?: string; text?: string }) => ({
+    id: `y${m.year}`,
+    label: m.year ?? '',
+    numericYear: parseInt(m.year ?? '') || null,
+    text: m.text ?? '',
+  })
+);
 
 if (cmsHistory?.todayText) {
   milestones.push({
     id: 'today',
-    label: cmsHistory.todayLabel || t('history.today.label'),
+    label: cmsHistory.todayLabel ?? '',
     numericYear: null,
     text: cmsHistory.todayText,
-  });
-} else if (!cmsHistory?.timeline) {
-  milestones.push({
-    id: 'today',
-    label: t('history.today.label'),
-    numericYear: null,
-    text: t('history.today'),
   });
 }
 ---

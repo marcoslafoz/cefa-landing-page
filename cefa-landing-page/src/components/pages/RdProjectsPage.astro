@@ -1,6 +1,6 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations, getLocalePath } from '@/i18n/translations';
+import { getLocalePath } from '@/i18n/translations';
 import Button from '@/components/ui/Button.astro';
 import DocListCard from '@/components/ui/DocListCard.astro';
 import Section from '@/components/ui/Section.astro';
@@ -12,18 +12,17 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
 
 const rdContent = await getRDContent(locale);
 const projectCategories = await getProjectCategories(locale);
 
-const eyebrow = rdContent?.eyebrow || t('rd.eyebrow');
-const title = rdContent?.title || t('rd.title');
-const subtitle = rdContent?.subtitle || t('rd.subtitle');
+const eyebrow = rdContent?.eyebrow ?? '';
+const title = rdContent?.title ?? '';
+const subtitle = rdContent?.subtitle ?? '';
 
-const contactTitle = rdContent?.contact?.title || t('rd.contact.title');
-const contactBody = rdContent?.contact?.body || t('rd.contact.body');
-const contactCta = rdContent?.contact?.cta || t('rd.contact.cta');
+const contactTitle = rdContent?.contact?.title ?? '';
+const contactBody = rdContent?.contact?.body ?? '';
+const contactCta = rdContent?.contact?.cta ?? '';
 ---
 
 <main id="main-content">

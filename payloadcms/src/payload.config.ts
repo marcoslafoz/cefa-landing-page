@@ -27,6 +27,7 @@ import { SEO } from './globals/SEO'
 import { Quote } from './globals/Quote'
 import { ProductsSection } from './globals/ProductsSection'
 import { Clients } from './globals/Clients'
+import { SiteSettings } from './globals/SiteSettings'
 
 
 const filename = fileURLToPath(import.meta.url)
@@ -79,6 +80,7 @@ export default buildConfig({
     Careers,
     FAQ,
     SEO,
+    SiteSettings,
   ],
   editor: lexicalEditor(),
   localization: {

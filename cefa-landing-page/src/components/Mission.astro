@@ -1,6 +1,5 @@
 ---
 import type { Locale } from '@/i18n/translations';
-import { useTranslations } from '@/i18n/translations';
 import Section from '@/components/ui/Section.astro';
 import { getMission, getHero } from '@/lib/cms';
 import StatItem from '@/components/ui/StatItem.astro';
@@ -10,7 +9,6 @@ interface Props {
 }
 
 const { locale } = Astro.props;
-const t = useTranslations(locale);
 const cmsData = await getMission(locale);
 const heroData = await getHero(locale);
 
@@ -22,28 +20,16 @@ const missionData =
     ? cmsData.mission
     : cmsData;
 
-const missionTitle = missionData?.title || t('mission.title');
-const missionDescription = missionData?.body1 || t('mission.body1');
-const missionDescription2 = missionData?.body2 || t('mission.body2');
+const missionTitle = missionData?.title ?? '';
+const missionDescription = missionData?.body1 ?? '';
+const missionDescription2 = missionData?.body2 ?? '';
 
 const cmsStats = heroData?.stats || [];
 const stats = [
-  {
-    value: cmsStats[0]?.value || t('stats.years.value'),
-    label: cmsStats[0]?.label || t('stats.years.label'),
-  },
-  {
-    value: cmsStats[1]?.value || t('stats.plants.value'),
-    label: cmsStats[1]?.label || t('stats.plants.label'),
-  },
-  {
-    value: cmsStats[2]?.value || t('stats.employees.value'),
-    label: cmsStats[2]?.label || t('stats.employees.label'),
-  },
-  {
-    value: cmsStats[3]?.value || t('stats.cert.value'),
-    label: cmsStats[3]?.label || t('stats.cert.label'),
-  },
+  { value: cmsStats[0]?.value ?? '', label: cmsStats[0]?.label ?? '' },
+  { value: cmsStats[1]?.value ?? '', label: cmsStats[1]?.label ?? '' },
+  { value: cmsStats[2]?.value ?? '', label: cmsStats[2]?.label ?? '' },
+  { value: cmsStats[3]?.value ?? '', label: cmsStats[3]?.label ?? '' },
 ];
 ---
 
