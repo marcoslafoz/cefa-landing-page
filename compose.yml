@@ -2,8 +2,8 @@
 # CEFA – Docker Compose principal
 # Arquitectura (3 componentes base + dependencias):
 #   1. payload            → CMS y Base de Datos / Admin
-#   2. orchestrator       → Webhook Server / Nodo de Build de Astro SSG
-#   3. nginx              → Servidor Web que lee el volumen generado
+#   2. orchestrator       → Webhook, Build de Astro y servidor SSR (/api/*)
+#   3. nginx              → Servidor Web: estáticos + proxy /api/ → orchestrator
 #   ---------------------
 #   4. mongo              → Base de datos para Payload CMS
 #   5. libretranslate     → Servicio local de traducción
@@ -29,7 +29,7 @@ services:
     networks:
       - cefa-net
 
-  # ── 2. Orchestrator (Webhook y Constructor) ────────────────────────────────
+  # ── 2. Orchestrator (Webhook, Constructor y SSR) ──────────────────────────
   orchestrator:
     build:
       context: ./cefa-landing-page
@@ -38,15 +38,26 @@ services:
     restart: unless-stopped
     ports:
       - "4000:4000"
+      # Puerto 4321 solo interno (nginx hace proxy); no se expone al host
     depends_on:
       # Orchestrator necesita que el CMS esté listo para la descarga de JSONs
       payload:
         condition: service_started
     environment:
-      # Usado por sync-cms.js para descargar los datos de la API de Payload localmente en el back channel
-      PAYLOAD_CMS_URL: ${PAYLOAD_CMS_URL:-http://payload:3000}
-      WEBROOT_DIR: /webroot
+      # ── Build ────────────────────────────────────────────────────────────
+      PAYLOAD_CMS_URL:           ${PAYLOAD_CMS_URL:-http://payload:3000}
+      WEBROOT_DIR:               /webroot
       PUBLIC_TURNSTILE_SITE_KEY: ${PUBLIC_TURNSTILE_SITE_KEY:-1x00000000000000000000AA}
+      # ── SSR runtime (leídas por Astro en dist/server/entry.mjs) ──────────
+      # Formulario de contacto
+      CONTACT_TRANSPORT:         ${CONTACT_TRANSPORT:-console}
+      CONTACT_TO_EMAIL:          ${CONTACT_TO_EMAIL:-info@cefa.es}
+      TURNSTILE_SECRET_KEY:      ${TURNSTILE_SECRET_KEY:-1x0000000000000000000000000000000AA}
+      # SMTP (solo necesario si CONTACT_TRANSPORT=smtp)
+      SMTP_HOST:                 ${SMTP_HOST:-}
+      SMTP_PORT:                 ${SMTP_PORT:-587}
+      SMTP_USER:                 ${SMTP_USER:-}
+      SMTP_PASS:                 ${SMTP_PASS:-}
     volumes:
       # Orchestrator puede escribir al volumen final compartido
       - webroot:/webroot
