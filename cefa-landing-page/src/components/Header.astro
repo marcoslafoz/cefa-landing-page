@@ -7,7 +7,7 @@ import {
   localeNames,
   defaultLocale,
 } from '@/i18n/translations';
-import { getHeader } from '@/lib/cms';
+import { getHeader, getMediaUrl } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -18,18 +18,19 @@ const { locale, showLogoAlways = false } = Astro.props;
 const t = useTranslations(locale);
 const cmsHeader = await getHeader(locale);
 
+const logoCefa = getMediaUrl(cmsHeader?.logos?.cefaColor) || '/images/logos/cefa-color.svg';
+const logoMotherson = getMediaUrl(cmsHeader?.logos?.motherson) || '/images/logos/motherson.svg';
+
 const currentPath = Astro.url.pathname;
 const isHome =
   currentPath === '/' || locales.some((l) => currentPath === `/${l}` || currentPath === `/${l}/`);
 
-// Strip the current locale prefix to get the bare page path (e.g. /de/history → /history)
 const barePagePath = (() => {
   if (locale === defaultLocale) return currentPath || '/';
   const stripped = currentPath.replace(new RegExp(`^/${locale}`), '') || '/';
   return stripped;
 })();
 
-// Transform CMS data to navItems format, or use fallbacks
 const navData = cmsHeader?.items || [];
 
 const navItems = navData.length > 0 
@@ -96,7 +97,7 @@ const availableLocales = locales;
       >
         <a href={getLocalePath(locale)} aria-label="CEFA">
           <img
-            src="/images/logos/cefa-color.svg"
+            src={logoCefa}
             alt="CEFA"
             width="110"
             height="40"
@@ -112,7 +113,7 @@ const availableLocales = locales;
             class="opacity-70 hover:opacity-100 transition-opacity"
           >
             <img
-              src="/images/logos/motherson.svg"
+              src={logoMotherson}
               alt="Motherson"
               width="120"
               height="28"
@@ -323,7 +324,6 @@ const availableLocales = locales;
     const alwaysShowLogo = header.dataset.showLogoAlways === 'true';
     let isOpen = false;
 
-    // Asegurar que el menú comience cerrado en cada carga de página
     mobileNav.classList.add('translate-x-full');
     mobileNav.classList.remove('translate-x-0');
     mobileNav.setAttribute('aria-hidden', 'true');
@@ -402,7 +402,6 @@ const availableLocales = locales;
       );
     });
 
-    // Persistir la elección explícita de idioma para que la autodetección no la sobreescriba
     document.querySelectorAll<HTMLElement>('[data-lang]').forEach((el) => {
       el.addEventListener(
         'click',

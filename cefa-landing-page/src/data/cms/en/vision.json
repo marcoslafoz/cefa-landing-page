@@ -1,0 +1,72 @@
+{
+  "createdAt": "2026-04-16T06:32:59.777Z",
+  "updatedAt": "2026-04-16T06:33:02.272Z",
+  "globalType": "vision",
+  "eyebrow": "Vision",
+  "title": "Our vision",
+  "body": "To be the industrial benchmark",
+  "cta": "Learn more",
+  "values": [
+    {
+      "title": "Client's Preferred Partner",
+      "text": "Diversified portfolio, high market share, and robust sales.",
+      "id": "69e0829bf0ca630001abfc7c"
+    },
+    {
+      "title": "Technological Benchmark",
+      "text": "Innovation and rapid adoption of advanced technologies for responsible value creation.",
+      "id": "69e0829bf0ca630001abfc7d"
+    },
+    {
+      "title": "Economically Sustainable",
+      "text": "Generating maximum return (EBITDA) for optimized investment.",
+      "id": "69e0829bf0ca630001abfc7e"
+    },
+    {
+      "title": "A Place to Grow",
+      "text": "High satisfaction and human/professional growth of talented teams.",
+      "id": "69e0829bf0ca630001abfc7f"
+    }
+  ],
+  "gallery": [
+    {
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.984Z",
+        "updatedAt": "2026-04-16T06:32:59.984Z",
+        "alt": "zagan.webp",
+        "url": "/cms-media/zagan.webp",
+        "filename": "zagan.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 456388,
+        "width": 1626,
+        "height": 1080,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9ba1b",
+        "thumbnailURL": null
+      },
+      "alt": "CEFA",
+      "id": "69e0829bf0ca630001abfcad"
+    },
+    {
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.948Z",
+        "updatedAt": "2026-04-16T06:32:59.948Z",
+        "alt": "factory.webp",
+        "url": "/cms-media/factory.webp",
+        "filename": "factory.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 223618,
+        "width": 1920,
+        "height": 1080,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9c7",
+        "thumbnailURL": null
+      },
+      "alt": "CEFA Zaragoza",
+      "id": "69e0829bf0ca630001abfcae"
+    }
+  ],
+  "id": "69e0829bdecc0cd23fa9b8ba"
+}

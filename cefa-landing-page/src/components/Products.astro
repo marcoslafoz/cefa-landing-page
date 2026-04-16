@@ -4,7 +4,7 @@ import { useTranslations } from '@/i18n/translations';
 import SectionHeader from '@/components/ui/SectionHeader.astro';
 import Section from '@/components/ui/Section.astro';
 import ProductCard from '@/components/ui/ProductCard.astro';
-import { getProducts, getMediaUrl } from '@/lib/cms';
+import { getProductsSection, getMediaUrl } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -13,7 +13,12 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 
-const cmsProducts = await getProducts(locale);
+const cmsSection = await getProductsSection(locale);
+
+const sectionEyebrow = cmsSection?.sectionHeader?.eyebrow || t('products.eyebrow');
+const sectionTitle = cmsSection?.sectionHeader?.title || t('products.title');
+const sectionSubtitle = cmsSection?.sectionHeader?.subtitle || t('products.subtitle');
+const sectionCta = cmsSection?.sectionHeader?.cta || t('products.cta');
 
 const fallbackProducts = [
   {
@@ -55,13 +60,15 @@ type ProductItem = {
   alt: string;
 };
 
+const cmsProducts = cmsSection?.products || [];
+
 const products: ProductItem[] =
   cmsProducts.length > 0
     ? cmsProducts.map((p: any, i: number) => ({
         id: `product-${i}`,
-        category: fallbackProducts[i]?.category || 'Producto',
+        category: p.category || fallbackProducts[i]?.category || 'Producto',
         title: p.title,
-        desc: p.description,
+        desc: p.description || '',
         image:
           getMediaUrl(p.image) || fallbackProducts[i]?.image || '/images/products/dashboard.webp',
         alt: p.title,
@@ -73,8 +80,8 @@ const siteBase = 'https://cefa.es';
 const productListSchema = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: t('products.title'),
-  description: t('products.subtitle'),
+  name: sectionTitle,
+  description: sectionSubtitle,
   numberOfItems: products.length,
   itemListElement: products.map((p, i) => ({
     '@type': 'ListItem',
@@ -102,9 +109,9 @@ const productListSchema = {
   <!-- Cabecera -->
   <SectionHeader
     layout="split"
-    eyebrow={t('products.eyebrow')}
-    title={t('products.title')}
-    description={t('products.subtitle')}
+    eyebrow={sectionEyebrow}
+    title={sectionTitle}
+    description={sectionSubtitle}
     class="mb-10"
   />
 
@@ -112,7 +119,7 @@ const productListSchema = {
   <div class="flex flex-col lg:flex-row h-auto lg:h-125 gap-4 lg:gap-2">
     {
       products.map((product, i) => (
-        <ProductCard {...product} ctaText={t('products.cta')} delay={i * 100} />
+        <ProductCard {...product} ctaText={sectionCta} delay={i * 100} />
       ))
     }
   </div>

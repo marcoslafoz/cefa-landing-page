@@ -15,7 +15,6 @@ interface Location {
 
 const cefaLocations = locationsData.map((l) => ({ ...l, type: 'cefa' }) as Location);
 
-// Filtrar duplicados de los datos de Motherson (cualquier cosa que contenga CEFA o MRA)
 const mothersonLocations = (mothersonLocationsData as Location[])
   .filter(
     (l) =>
@@ -69,8 +68,6 @@ export default function InteractiveMap({
     map.current.on('load', () => {
       if (!map.current || !isMounted) return;
 
-      // Forzar el cálculo de redimensionamiento en el siguiente frame,
-      // cuando el contenedor ya tiene sus dimensiones definitivas
       map.current.resize();
       requestAnimationFrame(() => map.current?.resize());
 
@@ -128,7 +125,6 @@ export default function InteractiveMap({
         }
       };
 
-      // Capas de Motherson
       const mothersonGeojson: GeoJSON.FeatureCollection = {
         type: 'FeatureCollection',
         features: mothersonLocations.map((loc) => ({
@@ -197,7 +193,6 @@ export default function InteractiveMap({
         if (hoverTimer) clearTimeout(hoverTimer);
       });
 
-      // Marcadores Premium de CEFA
       cefaLocations.forEach((loc) => {
         if (!map.current) return;
         const el = document.createElement('div');

@@ -60,52 +60,36 @@
     ]
   },
   "mission": {
-    "mission": {
-      "eyebrow": "mission.eyebrow",
-      "title": "mission.title",
-      "body1": "mission.body1",
-      "body2": "mission.body2",
-      "cta": "mission.cta",
-      "badgeLabel": "mission.badge.label"
-    },
-    "pillars": [
+    "eyebrow": "mission.eyebrow",
+    "title": "mission.title",
+    "body1": "mission.body1",
+    "body2": "mission.body2",
+    "cta": "mission.cta",
+    "badgeLabel": "mission.badge.label"
+  },
+  "vision": {
+    "eyebrow": "vision.eyebrow",
+    "title": "vision.title",
+    "body": "vision.body",
+    "cta": "vision.cta",
+    "values": [
       {
-        "title": "pillar.quality.title",
-        "text": "pillar.quality.text"
+        "title": "vision.value1.title",
+        "text": "vision.value1.text"
       },
       {
-        "title": "pillar.innovation.title",
-        "text": "pillar.innovation.text"
+        "title": "vision.value2.title",
+        "text": "vision.value2.text"
       },
       {
-        "title": "pillar.global.title",
-        "text": "pillar.global.text"
+        "title": "vision.value3.title",
+        "text": "vision.value3.text"
+      },
+      {
+        "title": "vision.value4.title",
+        "text": "vision.value4.text"
       }
-    ],
-    "vision": {
-      "eyebrow": "vision.eyebrow",
-      "title": "vision.title",
-      "body": "vision.body",
-      "cta": "vision.cta",
-      "values": [
-        {
-          "title": "vision.value1.title",
-          "text": "vision.value1.text"
-        },
-        {
-          "title": "vision.value2.title",
-          "text": "vision.value2.text"
-        },
-        {
-          "title": "vision.value3.title",
-          "text": "vision.value3.text"
-        },
-        {
-          "title": "vision.value4.title",
-          "text": "vision.value4.text"
-        }
-      ]
-    }
+    ]
   },
   "innovation": {
     "eyebrow": "innovation.eyebrow",
@@ -121,16 +105,51 @@
         "text": "innovation.feat2.text"
       }
     ],
-    "stats": [
-      {
-        "label": "innovation.stat1.label"
-      },
-      {
-        "label": "innovation.stat2.label"
-      }
-    ],
+    "stat1Value": "100%",
+    "stat1Label": "innovation.stat1.label",
+    "stat2Value": "I+D+i",
+    "stat2Label": "innovation.stat2.label",
     "loadingText": "innovation.loading",
     "rotateText": "innovation.rotate"
+  },
+  "products-section": {
+    "sectionHeader": {
+      "eyebrow": "products.eyebrow",
+      "title": "products.title",
+      "subtitle": "products.subtitle",
+      "cta": "products.cta"
+    },
+    "products": [
+      {
+        "title": "products.p1.title",
+        "description": "products.p1.desc",
+        "category": "Interior"
+      },
+      {
+        "title": "products.p2.title",
+        "description": "products.p2.desc",
+        "category": "Interior"
+      },
+      {
+        "title": "products.p3.title",
+        "description": "products.p3.desc",
+        "category": "Functional"
+      },
+      {
+        "title": "products.p4.title",
+        "description": "products.p4.desc",
+        "category": "Exterior"
+      }
+    ]
+  },
+  "quote": {
+    "text": "quote.text",
+    "philosophy": "quote.philosophy"
+  },
+  "clients": {
+    "eyebrow": "clients.eyebrow",
+    "title": "clients.title",
+    "subtitle": "clients.subtitle"
   },
   "contact": {
     "map": {
@@ -351,6 +370,7 @@
     "subtitle": "careers.subtitle",
     "email": "careers.email",
     "emailLabel": "careers.email.label",
+    "phone": "contact.location1.phone",
     "phoneLabel": "careers.phone.label",
     "phoneHours": "careers.phone.hours",
     "cvHint": "careers.cv.hint",

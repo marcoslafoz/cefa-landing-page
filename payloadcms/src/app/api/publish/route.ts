@@ -14,13 +14,12 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
   }
 
   if (!authenticated) {
-    return NextResponse.json({ error: 'No autenticado' }, { status: 401 })
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
   const webhookUrl = process.env.PUBLISH_WEBHOOK_URL || 'http://orchestrator:4000/webhook/publish'
 
   try {
-    // Reenviamos el trigger al Orchestrator que se encarga del build y swap
     const response = await fetch(webhookUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -31,13 +30,13 @@ export async function POST(req: NextRequest): Promise<NextResponse> {
     }
 
     return NextResponse.json(
-      { queued: true, message: 'Petición enviada al orquestador. Se está publicando.' },
+      { queued: true, message: 'Request sent to orchestrator. Publishing in progress.' },
       { status: 202 },
     )
   } catch (error) {
-    console.error('Error enviando webhook al orchestrator:', error)
+    console.error('Error sending webhook to orchestrator:', error)
     return NextResponse.json(
-      { error: 'No se pudo conectar con el orquestador' },
+      { error: 'Could not connect to orchestrator' },
       { status: 500 },
     )
   }

@@ -12,8 +12,9 @@ export const Careers: GlobalConfig = {
   fields: [
     { name: 'title', type: 'text', localized: true },
     { name: 'subtitle', type: 'textarea', localized: true },
-    { name: 'email', type: 'text' },
+    { name: 'email', type: 'text', label: 'Recruitment Email' },
     { name: 'emailLabel', type: 'text', localized: true },
+    { name: 'phone', type: 'text', label: 'Contact Phone (Work With Us)' },
     { name: 'phoneLabel', type: 'text', localized: true },
     { name: 'phoneHours', type: 'text', localized: true },
     { name: 'cvHint', type: 'text', localized: true },

@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T12:41:19.828Z",
-  "updatedAt": "2026-04-15T12:41:19.839Z",
+  "createdAt": "2026-04-16T06:32:59.852Z",
+  "updatedAt": "2026-04-16T06:32:59.861Z",
   "globalType": "rd-content",
   "eyebrow": "Innovation & Entwicklung",
   "title": "F&E-Projekte",
@@ -9,17 +9,17 @@
     {
       "value": "+15%",
       "label": "Jährliche F&E-Investition",
-      "id": "69df876fc90bee00015ab739"
+      "id": "69e0829bf0ca630001abfc9b"
     },
     {
       "value": "16+",
       "label": "Geförderte Projekte",
-      "id": "69df876fc90bee00015ab73a"
+      "id": "69e0829bf0ca630001abfc9c"
     },
     {
       "value": "3",
       "label": "Entwicklungszentren",
-      "id": "69df876fc90bee00015ab73b"
+      "id": "69e0829bf0ca630001abfc9d"
     }
   ],
   "funders": {
@@ -29,12 +29,12 @@
       {
         "name": "Regierung von Aragón",
         "description": "Projekte, kofinanziert von der Regierung von Aragón im Rahmen von Programmen zur industriellen Transformation und Entwicklung mit EFRE-Mitteln.",
-        "id": "69df876fc90bee00015ab73c"
+        "id": "69e0829bf0ca630001abfc9e"
       },
       {
         "name": "Europäische Union",
         "description": "Projekte, kofinanziert von der Europäischen Union im Rahmen von Programmen zur Energieeffizienz und industriellen Innovation.",
-        "id": "69df876fc90bee00015ab73d"
+        "id": "69e0829bf0ca630001abfc9f"
       }
     ]
   },
@@ -47,5 +47,5 @@
     "title": "F&E-Projekte – CEFA",
     "description": "F&E bei CEFA in Materialien, Spritzgussprozessen und Digitalisierung für Automobil-OEM. +15 % Jahresinvestition in Innovation für Kunststoffkomponenten."
   },
-  "id": "69df876f5f9ea2513ece461d"
+  "id": "69e0829bdecc0cd23fa9b92a"
 }

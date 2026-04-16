@@ -1,59 +1,12 @@
 {
-  "createdAt": "2026-04-15T12:41:19.752Z",
-  "updatedAt": "2026-04-15T12:41:19.767Z",
+  "createdAt": "2026-04-16T06:32:59.770Z",
+  "updatedAt": "2026-04-16T06:32:59.775Z",
   "globalType": "mission",
-  "mission": {
-    "eyebrow": "Misión",
-    "title": "Orientados al cliente, impulsados por la excelencia",
-    "body1": "CEFA es una empresa española de carácter industrial que investiga, desarrolla y produce, mayoritariamente para el sector del automóvil con presencia global, componentes plásticos y módulos asociados, aplicando tecnologías de vanguardia y diferenciándose por su innovación y flexibilidad.",
-    "body2": "Orientados a la excelencia y satisfacción de nuestros accionistas, empleados y la sociedad, aportamos valor continuo mediante el trabajo en equipo y la competitividad.",
-    "cta": "Nuestra historia",
-    "badgeLabel": "Desde"
-  },
-  "pillars": [
-    {
-      "title": "Calidad certificada",
-      "text": "Procesos certificados ISO 9001 e IATF 16949 para los más altos estándares.",
-      "id": "69df876fc90bee00015ab719"
-    },
-    {
-      "title": "Innovación continua",
-      "text": "Inversión constante en I+D y procesos de fabricación avanzados.",
-      "id": "69df876fc90bee00015ab71a"
-    },
-    {
-      "title": "Presencia global",
-      "text": "Atendiendo a los principales OEM a escala internacional.",
-      "id": "69df876fc90bee00015ab71b"
-    }
-  ],
-  "vision": {
-    "eyebrow": "Visión",
-    "title": "Nuestra visión",
-    "body": "Ser el referente industrial",
-    "cta": "Saber más",
-    "values": [
-      {
-        "title": "Socio preferido del cliente",
-        "text": "Cartera diversificada, elevada cuota de mercado y ventas robustas.",
-        "id": "69df876fc90bee00015ab71c"
-      },
-      {
-        "title": "Benchmark tecnológico",
-        "text": "Innovación y adopción rápida de tecnologías avanzadas para crear valor responsable.",
-        "id": "69df876fc90bee00015ab71d"
-      },
-      {
-        "title": "Económicamente sostenibles",
-        "text": "Generación del máximo retorno (EBITDA) para una inversión optimizada.",
-        "id": "69df876fc90bee00015ab71e"
-      },
-      {
-        "title": "Lugar para desarrollarse",
-        "text": "Elevada satisfacción y crecimiento humano y profesional de equipos con gran talento.",
-        "id": "69df876fc90bee00015ab71f"
-      }
-    ]
-  },
-  "id": "69df876f5f9ea2513ece45d7"
+  "eyebrow": "Misión",
+  "title": "Orientados al cliente, impulsados por la excelencia",
+  "body1": "CEFA es una empresa española de carácter industrial que investiga, desarrolla y produce, mayoritariamente para el sector del automóvil con presencia global, componentes plásticos y módulos asociados, aplicando tecnologías de vanguardia y diferenciándose por su innovación y flexibilidad.",
+  "body2": "Orientados a la excelencia y satisfacción de nuestros accionistas, empleados y la sociedad, aportamos valor continuo mediante el trabajo en equipo y la competitividad.",
+  "cta": "Nuestra historia",
+  "badgeLabel": "Desde",
+  "id": "69e0829bdecc0cd23fa9b8ac"
 }

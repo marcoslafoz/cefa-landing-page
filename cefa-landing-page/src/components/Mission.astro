@@ -14,9 +14,14 @@ const t = useTranslations(locale);
 const cmsData = await getMission(locale);
 const heroData = await getHero(locale);
 
-const missionTitle = cmsData?.mission?.title || t('mission.title');
-const missionDescription = cmsData?.mission?.body1 || t('mission.body1');
-const missionDescription2 = cmsData?.mission?.body2 || t('mission.body2');
+const missionData =
+  cmsData?.mission && typeof cmsData.mission === 'object' && !Array.isArray(cmsData.mission) && cmsData.mission.title
+    ? cmsData.mission
+    : cmsData;
+
+const missionTitle = missionData?.title || t('mission.title');
+const missionDescription = missionData?.body1 || t('mission.body1');
+const missionDescription2 = missionData?.body2 || t('mission.body2');
 
 const cmsStats = heroData?.stats || [];
 const stats = [

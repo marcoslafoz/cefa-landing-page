@@ -1,0 +1,57 @@
+{
+  "docs": [
+    {
+      "createdAt": "2026-04-16T06:33:02.287Z",
+      "updatedAt": "2026-04-16T06:33:03.048Z",
+      "name": "Unión Europea",
+      "logo": {
+        "createdAt": "2026-04-16T06:32:59.981Z",
+        "updatedAt": "2026-04-16T06:32:59.981Z",
+        "alt": "union-europea.png",
+        "url": "/cms-media/union-europea.png",
+        "filename": "union-europea.png",
+        "mimeType": "image/png",
+        "filesize": 33669,
+        "width": 746,
+        "height": 197,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9ba15",
+        "thumbnailURL": null
+      },
+      "identifier": "eu",
+      "id": "69e0829edecc0cd23fa9ba41"
+    },
+    {
+      "createdAt": "2026-04-16T06:33:03.050Z",
+      "updatedAt": "2026-04-16T06:33:03.579Z",
+      "name": "Gobierno de Aragón (FEDER)",
+      "logo": {
+        "createdAt": "2026-04-16T06:32:59.954Z",
+        "updatedAt": "2026-04-16T06:32:59.954Z",
+        "alt": "gobierno-aragon.webp",
+        "url": "/cms-media/gobierno-aragon.webp",
+        "filename": "gobierno-aragon.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 18862,
+        "width": 1280,
+        "height": 286,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9d6",
+        "thumbnailURL": null
+      },
+      "identifier": "aragon",
+      "id": "69e0829fdecc0cd23fa9ba53"
+    }
+  ],
+  "totalDocs": 2,
+  "limit": 100,
+  "totalPages": 1,
+  "page": 1,
+  "pagingCounter": 1,
+  "hasPrevPage": false,
+  "hasNextPage": false,
+  "prevPage": null,
+  "nextPage": null
+}

@@ -1,7 +1,54 @@
 {
-  "createdAt": "2026-04-15T12:41:19.639Z",
-  "updatedAt": "2026-04-15T12:41:19.717Z",
+  "createdAt": "2026-04-16T06:32:59.715Z",
+  "updatedAt": "2026-04-16T06:33:04.174Z",
   "globalType": "header",
+  "logos": {
+    "cefaColor": {
+      "createdAt": "2026-04-16T06:32:59.928Z",
+      "updatedAt": "2026-04-16T06:32:59.928Z",
+      "alt": "cefa-color.svg",
+      "url": "/cms-media/cefa-color.svg",
+      "filename": "cefa-color.svg",
+      "mimeType": "image/jpeg",
+      "filesize": 9547,
+      "width": 562,
+      "height": 859,
+      "focalX": 50,
+      "focalY": 50,
+      "id": "69e0829bdecc0cd23fa9b9a0",
+      "thumbnailURL": null
+    },
+    "cefaWhite": {
+      "createdAt": "2026-04-16T06:32:59.934Z",
+      "updatedAt": "2026-04-16T06:32:59.934Z",
+      "alt": "cefa-mono-white.svg",
+      "url": "/cms-media/cefa-mono-white.svg",
+      "filename": "cefa-mono-white.svg",
+      "mimeType": "image/jpeg",
+      "filesize": 4756,
+      "width": 562,
+      "height": 854,
+      "focalX": 50,
+      "focalY": 50,
+      "id": "69e0829bdecc0cd23fa9b9ac",
+      "thumbnailURL": null
+    },
+    "motherson": {
+      "createdAt": "2026-04-16T06:32:59.958Z",
+      "updatedAt": "2026-04-16T06:32:59.958Z",
+      "alt": "motherson.svg",
+      "url": "/cms-media/motherson.svg",
+      "filename": "motherson.svg",
+      "mimeType": "image/jpeg",
+      "filesize": 2606,
+      "width": 92,
+      "height": 36,
+      "focalX": 50,
+      "focalY": 50,
+      "id": "69e0829bdecc0cd23fa9b9e5",
+      "thumbnailURL": null
+    }
+  },
   "header": {
     "company": "Unternehmen",
     "products": "Produkte",
@@ -31,5 +78,5 @@
     "functional": "Funktionale Anwendungen",
     "exterior": "Außenverkleidungen"
   },
-  "id": "69df876f5f9ea2513ece45ad"
+  "id": "69e0829bdecc0cd23fa9b883"
 }

@@ -2,8 +2,7 @@
 import type { Locale } from '@/i18n/translations';
 import { useTranslations } from '@/i18n/translations';
 import Button from '@/components/ui/Button.astro';
-import { getMission } from '@/lib/cms';
-import sliderImages from '@/data/mission-gallery.json';
+import { getVision, getMediaUrl } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -11,17 +10,34 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
-const cmsData = await getMission(locale);
+const cmsData = await getVision(locale);
 
-const visionTitle = cmsData?.vision?.title || t('vision.title');
-const visionBody = cmsData?.vision?.description || t('vision.body');
+const visionEyebrow = cmsData?.eyebrow || t('vision.eyebrow');
+const visionTitle = cmsData?.title || t('vision.title');
+const visionBody = cmsData?.body || t('vision.body');
+const visionCta = cmsData?.cta || t('vision.cta');
 
-const values = [
-  { title: t('vision.value1.title'), text: t('vision.value1.text') },
-  { title: t('vision.value2.title'), text: t('vision.value2.text') },
-  { title: t('vision.value3.title'), text: t('vision.value3.text') },
-  { title: t('vision.value4.title'), text: t('vision.value4.text') },
+const cmsValues = cmsData?.values || [];
+const values = cmsValues.length > 0
+  ? cmsValues.map((v: any) => ({ title: v.title, text: v.text }))
+  : [
+      { title: t('vision.value1.title'), text: t('vision.value1.text') },
+      { title: t('vision.value2.title'), text: t('vision.value2.text') },
+      { title: t('vision.value3.title'), text: t('vision.value3.text') },
+      { title: t('vision.value4.title'), text: t('vision.value4.text') },
+    ];
+
+const fallbackImages = [
+  { src: '/images/mission/zagan.webp', alt: 'CEFA Żagań' },
+  { src: '/images/mission/factory.webp', alt: 'CEFA Zaragoza' },
 ];
+
+const sliderImages = cmsData?.gallery && cmsData.gallery.length > 0 
+  ? cmsData.gallery.map((g: any) => ({
+      src: getMediaUrl(g.image) || fallbackImages[0]?.src,
+      alt: g.alt || 'CEFA Facility'
+    }))
+  : fallbackImages;
 ---
 
 <!-- Sección dividida estilo Motherson: imagen a la izquierda, texto oscuro a la derecha -->
@@ -74,7 +90,7 @@ const values = [
 
     <!-- Derecha: texto sobre fondo oscuro -->
     <div class="flex flex-col justify-center py-12 px-8 lg:px-16 xl:px-20 reveal">
-      <p class="eyebrow mb-5">{t('vision.eyebrow')}</p>
+      <p class="eyebrow mb-5">{visionEyebrow}</p>
 
       <h2 class="heading-lg text-white mb-6">
         {visionTitle}
@@ -102,7 +118,7 @@ const values = [
       </div>
 
       <div class="flex flex-wrap gap-3">
-        <Button href="#contact" variant="primary">{t('vision.cta')}</Button>
+        <Button href="#contact" variant="primary">{visionCta}</Button>
         <Button href="#products" variant="secondary" showIcon={false}
           >{t('products.eyebrow')}</Button
         >

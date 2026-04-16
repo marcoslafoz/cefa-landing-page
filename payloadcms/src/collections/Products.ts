@@ -16,28 +16,28 @@ export const Products: CollectionConfig = {
   fields: [
     {
       name: 'title',
-      label: 'Titúlo del Producto',
+      label: 'Product Title',
       type: 'text',
       required: true,
       localized: true,
     },
     {
       name: 'description',
-      label: 'Descripción Corta',
+      label: 'Short Description',
       type: 'textarea',
       required: true,
       localized: true,
     },
     {
       name: 'image',
-      label: 'Imagen Principal',
+      label: 'Main Image',
       type: 'upload',
       relationTo: 'media',
       required: false,
     },
     {
       name: 'features',
-      label: 'Características (Opcional)',
+      label: 'Features (Optional)',
       type: 'array',
       localized: true,
       fields: [

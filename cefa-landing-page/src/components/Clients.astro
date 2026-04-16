@@ -3,7 +3,9 @@ import type { Locale } from '@/i18n/translations';
 import { useTranslations } from '@/i18n/translations';
 import SectionHeader from '@/components/ui/SectionHeader.astro';
 import Section from '@/components/ui/Section.astro';
-import brands from '@/data/brands.json';
+import { getClients, getMediaUrl } from '@/lib/cms';
+
+import fallbackBrands from '@/data/brands.json';
 
 interface Props {
   locale: Locale;
@@ -11,22 +13,35 @@ interface Props {
 
 const { locale } = Astro.props;
 const t = useTranslations(locale);
+const cmsData = await getClients(locale);
+
+const clientsEyebrow = cmsData?.eyebrow || t('clients.eyebrow');
+const clientsTitle = cmsData?.title || t('clients.title');
+const clientsSubtitle = cmsData?.subtitle || t('clients.subtitle');
+
+const cmsLogos = cmsData?.logos || [];
+const brands = cmsLogos.length > 0 
+  ? cmsLogos.map((l: any) => ({
+      name: l.name || 'Brand',
+      fileUrl: getMediaUrl(l.image)
+    }))
+  : fallbackBrands.map(b => ({ name: b.name, fileUrl: `/images/brands/${b.file}` }));
 ---
 
 <Section id="clients" background="white" padding="xl">
   <!-- Cabecera -->
   <SectionHeader
     layout="split"
-    eyebrow={t('clients.eyebrow')}
-    title={t('clients.title')}
-    description={t('clients.subtitle')}
+    eyebrow={clientsEyebrow}
+    title={clientsTitle}
+    description={clientsSubtitle}
     class="mb-16"
   />
 
   <!-- Marquesina (Marquee) -->
   <div
     class="reveal relative overflow-hidden mask-[linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)] [-webkit-mask-image:linear-gradient(to_right,transparent_0%,black_8%,black_92%,transparent_100%)]"
-    aria-label={t('clients.eyebrow')}
+    aria-label={clientsEyebrow}
   >
     <div
       id="marquee-track"
@@ -38,7 +53,7 @@ const t = useTranslations(locale);
             class={`mx-5 flex items-center justify-center group cursor-default shrink-0 ${index >= 9 ? 'motion-reduce:hidden' : ''}`}
           >
             <img
-              src={`/images/brands/${brand.file}`}
+              src={brand.fileUrl}
               alt={brand.name}
               width="128"
               height="40"
@@ -61,7 +76,7 @@ const t = useTranslations(locale);
       brands.map((brand) => (
         <div class="flex items-center justify-center p-2 group transition-all">
           <img
-            src={`/images/brands/${brand.file}`}
+            src={brand.fileUrl}
             alt={brand.name}
             width="128"
             height="40"

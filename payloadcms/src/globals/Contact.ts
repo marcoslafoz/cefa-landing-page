@@ -13,6 +13,7 @@ export const Contact: GlobalConfig = {
     {
       name: 'map',
       type: 'group',
+      label: 'Headquarters Section Text',
       fields: [
         { name: 'eyebrow', type: 'text', localized: true },
         { name: 'title', type: 'text', localized: true },
@@ -24,17 +25,18 @@ export const Contact: GlobalConfig = {
     {
       name: 'locations',
       type: 'array',
-      maxRows: 3,
+      label: 'Offices / Locations',
       fields: [
-        { name: 'name', type: 'text', localized: true },
-        { name: 'address', type: 'text', localized: true },
-        { name: 'phone', type: 'text', localized: true },
-        { name: 'email', type: 'text', localized: true },
+        { name: 'name', type: 'text', localized: true, label: 'Office Name' },
+        { name: 'address', type: 'text', localized: true, label: 'Address' },
+        { name: 'phone', type: 'text', label: 'Phone' },
+        { name: 'email', type: 'text', label: 'Email' },
       ],
     },
     {
       name: 'formLabels',
       type: 'group',
+      label: 'Contact Form Labels',
       fields: [
         { name: 'eyebrow', type: 'text', localized: true },
         { name: 'title', type: 'text', localized: true },

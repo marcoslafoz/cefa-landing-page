@@ -2,7 +2,7 @@
 import type { Locale } from '@/i18n/translations';
 import { useTranslations } from '@/i18n/translations';
 import Button from '@/components/ui/Button.astro';
-import { getHero } from '@/lib/cms';
+import { getHero, getHeader, getMediaUrl } from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -11,6 +11,11 @@ interface Props {
 const { locale } = Astro.props;
 const t = useTranslations(locale);
 const heroData = await getHero(locale);
+const cmsHeader = await getHeader(locale);
+
+const backgroundImage = getMediaUrl(heroData?.backgroundImage) || '/images/hero/frame.webp';
+const logoWhite = getMediaUrl(cmsHeader?.logos?.cefaWhite) || '/images/logos/cefa-mono-white.svg';
+const logoMotherson = getMediaUrl(cmsHeader?.logos?.motherson) || '/images/logos/motherson.svg';
 
 const heroTitleLine1 = heroData?.titleLine1 || t('hero.title.line1');
 const heroTitleLine2 = heroData?.titleLine2 || t('hero.title.line2');
@@ -19,18 +24,25 @@ const primaryCta = heroData?.ctas?.primary || t('hero.cta.primary');
 const secondaryCta = heroData?.ctas?.secondary || t('hero.cta.secondary');
 const eyebrow = heroData?.eyebrow || t('hero.eyebrow');
 const scrollText = heroData?.scrollText || t('hero.scroll');
+
+function buildVimeoPlayerUrl(rawUrl: string | null | undefined): string {
+  if (!rawUrl) return '';
+  const match = rawUrl.match(/(?:vimeo\.com\/)(\d+)/);
+  if (!match) return '';
+  return `https://player.vimeo.com/video/${match[1]}?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&api=1`;
+}
+
+const vimeoPlayerUrl = buildVimeoPlayerUrl(heroData?.vimeoUrl);
 ---
 
 <section
   class="relative w-full min-h-svh bg-cefa-navy-dark overflow-hidden flex items-center"
   aria-label="Hero"
 >
-  <!-- Fondo de Video -->
   <div class="absolute inset-0 z-0 bg-cefa-navy-dark overflow-hidden pointer-events-none">
-    <!-- Vista previa de imagen (Poster) - Se muestra antes de que cargue el video -->
     <img
       id="hero-poster"
-      src="/images/mission/frame.webp"
+      src={backgroundImage}
       alt=""
       class="absolute inset-0 w-full h-full object-cover transition-opacity duration-1000"
       aria-hidden="true"
@@ -40,11 +52,13 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
       height="1080"
       decoding="async"
     />
-    <div id="hero-video-wrapper" class="relative w-full h-full">
-      <!-- El iframe de Vimeo se inyecta dinámicamente lo antes posible -->
+    <div
+      id="hero-video-wrapper"
+      class="relative w-full h-full"
+      data-vimeo-url={vimeoPlayerUrl}
+    >
     </div>
 
-    <!-- Superposiciones oscuras modernas para legibilidad del texto y profundidad premium -->
     <div
       class="absolute inset-0 bg-linear-to-r from-cefa-navy-dark via-cefa-navy-dark/80 to-transparent z-10 w-full md:w-[85%]"
     >
@@ -54,7 +68,6 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
     >
     </div>
 
-    <!-- Orbes decorativos de brillo — ocultos en dispositivos móviles (desenfoque intensivo para GPU) -->
     <div
       class="hidden lg:block absolute top-1/4 left-1/4 w-96 h-96 bg-cefa-red/20 rounded-full mix-blend-screen filter blur-[100px] animate-[pulse_6s_ease-in-out_infinite] z-10 pointer-events-none"
       aria-hidden="true"
@@ -67,12 +80,9 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
     </div>
   </div>
 
-  <!-- Contenido Principal -->
   <div class="relative z-20 w-full site-container py-24 md:py-32 lg:pb-32">
     <div class="w-full flex flex-col lg:flex-row lg:items-center justify-between gap-10 lg:gap-16">
-      <!-- Contenido Izquierda -->
       <div class="max-w-4xl flex-1 order-2 lg:order-1">
-        <!-- Ceja (Eyebrow) -->
         <p
           class="eyebrow text-white/70 tracking-[0.25em] font-medium uppercase text-[10px] sm:text-sm mb-4"
         >
@@ -89,14 +99,12 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
           >
         </h1>
 
-        <!-- Subtítulo -->
         <p
           class="text-[clamp(1rem,1.5vw,1.1rem)] text-white/75 font-light leading-relaxed mb-8 max-w-2xl"
         >
           {heroSubtitle}
         </p>
 
-        <!-- Llamadas a la acción (CTAs) -->
         <div class="flex flex-row flex-wrap gap-3 sm:gap-5">
           <Button href="#products" variant="primary">
             {primaryCta}
@@ -108,12 +116,11 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
         </div>
       </div>
 
-      <!-- Logotipo Grande Derecha -->
       <div
         class="order-1 lg:order-2 mb-4 lg:mb-0 flex flex-col items-center lg:items-end gap-6 shrink-0"
       >
         <img
-          src="/images/logos/cefa-mono-white.svg"
+          src={logoWhite}
           alt="CEFA"
           class="h-20 sm:h-36 md:h-44 lg:h-52 xl:h-60 w-auto object-contain opacity-80"
           fetchpriority="high"
@@ -129,7 +136,7 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
           class="flex flex-col items-center lg:items-end gap-3 opacity-80 hover:opacity-100 transition-opacity"
         >
           <img
-            src="/images/logos/motherson.svg"
+            src={logoMotherson}
             alt="Motherson Group"
             class="h-10 sm:h-11 lg:h-12 w-auto brightness-0 invert"
           />
@@ -143,11 +150,9 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
     </div>
   </div>
 
-  <!-- Área de indicador de desplazamiento (scroll) moderno -->
   <div
     class="absolute bottom-4 md:bottom-12 left-0 right-0 z-20 flex flex-col md:flex-row justify-end items-center md:items-end gap-3 md:gap-0 site-container pointer-events-none"
   >
-    <!-- Indicador de desplazamiento (scroll) -->
     <a
       href="#mission"
       class="flex flex-col items-center gap-2 md:gap-4 opacity-0 animate-[fadeUp_1s_ease_1.2s_forwards] pointer-events-auto group cursor-pointer"
@@ -177,13 +182,15 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
     const wrapper = document.getElementById('hero-video-wrapper');
     if (!wrapper || wrapper.dataset.loaded === 'true' || wrapper.querySelector('iframe')) return;
 
+    const vimeoUrl = wrapper.dataset.vimeoUrl;
+    if (!vimeoUrl) return;
+
     heroController?.abort();
     heroController = new AbortController();
     const { signal } = heroController;
 
     const iframe = document.createElement('iframe');
-    iframe.src =
-      'https://player.vimeo.com/video/1181594121?background=1&autoplay=1&loop=1&muted=1&badge=0&autopause=0&player_id=0&app_id=58479&api=1';
+    iframe.src = vimeoUrl;
     iframe.allow = 'autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media';
     iframe.setAttribute('frameborder', '0');
     iframe.title = 'cefa-hero-video';
@@ -204,7 +211,6 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
           heroController?.abort();
         }
       } catch {
-        // No es un mensaje JSON o no es para nosotros
       }
     };
 
@@ -213,9 +219,7 @@ const scrollText = heroData?.scrollText || t('hero.scroll');
     wrapper.dataset.loaded = 'true';
   }
 
-  // Cargar el video de inmediato, ya que es el elemento principal
   document.addEventListener('astro:page-load', loadHeroVideo);
-  // Llamar directamente por si el evento page-load ya se disparó
   loadHeroVideo();
   document.addEventListener('astro:before-swap', () => {
     heroController?.abort();

@@ -3,6 +3,7 @@ import { autoTranslateGlobalHook } from '../hooks/translate'
 
 export const FAQ: GlobalConfig = {
   slug: 'faq',
+  label: 'FAQ',
   access: {
     read: () => true,
   },

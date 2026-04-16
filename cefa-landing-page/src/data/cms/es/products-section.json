@@ -1,0 +1,102 @@
+{
+  "createdAt": "2026-04-16T06:32:59.795Z",
+  "updatedAt": "2026-04-16T06:32:59.986Z",
+  "globalType": "products-section",
+  "sectionHeader": {
+    "eyebrow": "Lo que fabricamos",
+    "title": "Nuestras líneas de producto",
+    "subtitle": "Flexibilidad, agilidad y tecnología combinados para el desarrollo de los mejores productos automotrices.",
+    "cta": "Ver más"
+  },
+  "products": [
+    {
+      "title": "Panel de Instrumentos y Consola Central",
+      "description": "Soluciones técnicas y materiales alineados con las expectativas de cada OEM, para garantizar al usuario las mejores prestaciones en seguridad, aspecto y funcionalidad.",
+      "category": "Interior",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.943Z",
+        "updatedAt": "2026-04-16T06:32:59.943Z",
+        "alt": "dashboard.webp",
+        "url": "/cms-media/dashboard.webp",
+        "filename": "dashboard.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 59578,
+        "width": 1306,
+        "height": 1204,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9be",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc82"
+    },
+    {
+      "title": "Paneles de Puerta y Revestimientos Interiores",
+      "description": "Confort y protección, folios, tejidos y molduras decorativas, con procesos flexibles que permitan su producción en todas las combinaciones imaginables.",
+      "category": "Interior",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.945Z",
+        "updatedAt": "2026-04-16T06:32:59.945Z",
+        "alt": "door-panels.webp",
+        "url": "/cms-media/door-panels.webp",
+        "filename": "door-panels.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 139478,
+        "width": 1402,
+        "height": 1880,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9c1",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc83"
+    },
+    {
+      "title": "Aplicaciones Funcionales",
+      "description": "Componentes en el compartimento motor, habitáculo de pasajeros o compartimento de carga, fundamentales para garantizar todo lo que se exige del vehículo.",
+      "category": "Functional",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.952Z",
+        "updatedAt": "2026-04-16T06:32:59.952Z",
+        "alt": "functional.webp",
+        "url": "/cms-media/functional.webp",
+        "filename": "functional.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 148580,
+        "width": 2114,
+        "height": 1485,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9d3",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc84"
+    },
+    {
+      "title": "Revestimientos Exteriores",
+      "description": "Combinando función y apariencia. Molduras, spoilers, rejillas y elementos decorativos con acabados de máxima calidad.",
+      "category": "Exterior",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.946Z",
+        "updatedAt": "2026-04-16T06:32:59.946Z",
+        "alt": "exterior.webp",
+        "url": "/cms-media/exterior.webp",
+        "filename": "exterior.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 44732,
+        "width": 1500,
+        "height": 1001,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9c4",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc85"
+    }
+  ],
+  "id": "69e0829bdecc0cd23fa9b8d6"
+}

@@ -56,12 +56,10 @@ const pageKeywords = keywords ?? defaultKeywords[locale] ?? defaultKeywords['en'
 
 const siteBase = (Astro.site?.href ?? 'https://cefa.es').replace(/\/$/, '');
 
-// og:image siempre absoluta (requerido por crawlers)
 const ogImageAbsolute = ogImage.startsWith('http')
   ? ogImage
   : new URL(ogImage, Astro.site ?? Astro.url).href;
 
-// Ruta sin prefijo de locale → permite hreflang correctos en subpáginas
 const rawPath = (() => {
   const path = Astro.url.pathname;
   const match = path.match(/^\/(es|de|pl)(\/.*)?$/);
@@ -76,7 +74,6 @@ const hrefLangs = locales.map((l) => ({
   href: new URL(getLocalePath(l, rawPath), Astro.site ?? Astro.url).href,
 }));
 
-// x-default apunta a la versión EN de la página actual (no al homepage)
 const xDefaultHref = new URL(getLocalePath('en', rawPath), Astro.site ?? Astro.url).href;
 
 const localeCode =
@@ -85,7 +82,6 @@ const localeCode =
 const ogLocale =
   locale === 'es' ? 'es_ES' : locale === 'en' ? 'en_GB' : locale === 'de' ? 'de_DE' : 'pl_PL';
 
-// Todas las entidades interconectadas via @id para el Knowledge Graph de Google.
 const schemaGraph: Record<string, unknown>[] = [
   {
     '@type': ['Organization', 'ManufacturingBusiness'],

@@ -3,6 +3,7 @@ import { autoTranslateGlobalHook } from '../hooks/translate'
 
 export const SEO: GlobalConfig = {
   slug: 'seo',
+  label: 'SEO',
   access: {
     read: () => true,
   },
@@ -20,7 +21,7 @@ export const SEO: GlobalConfig = {
     },
     {
       name: 'notFound',
-      label: 'Página 404',
+      label: '404 Page',
       type: 'group',
       fields: [
         { name: 'title', type: 'text', localized: true },

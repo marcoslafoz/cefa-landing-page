@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T12:41:19.725Z",
-  "updatedAt": "2026-04-15T12:41:19.748Z",
+  "createdAt": "2026-04-16T06:32:59.754Z",
+  "updatedAt": "2026-04-16T06:33:04.180Z",
   "globalType": "hero",
   "eyebrow": "Fabricante de referencia en automoción",
   "titleLine1": "Ingeniería plástica",
@@ -15,23 +15,39 @@
     {
       "value": "80",
       "label": "Años de trayectoria",
-      "id": "69df876fc90bee00015ab715"
+      "id": "69e0829bf0ca630001abfc78"
     },
     {
       "value": "3",
       "label": "Plantas industriales",
-      "id": "69df876fc90bee00015ab716"
+      "id": "69e0829bf0ca630001abfc79"
     },
     {
       "value": "+800",
       "label": "Profesionales",
-      "id": "69df876fc90bee00015ab717"
+      "id": "69e0829bf0ca630001abfc7a"
     },
     {
       "value": "IATF",
       "label": "Calidad certificada",
-      "id": "69df876fc90bee00015ab718"
+      "id": "69e0829bf0ca630001abfc7b"
     }
   ],
-  "id": "69df876f5f9ea2513ece45c8"
+  "backgroundImage": {
+    "createdAt": "2026-04-16T06:32:59.951Z",
+    "updatedAt": "2026-04-16T06:32:59.951Z",
+    "alt": "frame.webp",
+    "url": "/cms-media/frame.webp",
+    "filename": "frame.webp",
+    "mimeType": "image/jpeg",
+    "filesize": 31566,
+    "width": 1920,
+    "height": 1080,
+    "focalX": 50,
+    "focalY": 50,
+    "id": "69e0829bdecc0cd23fa9b9d0",
+    "thumbnailURL": null
+  },
+  "vimeoUrl": "https://vimeo.com/1181594121",
+  "id": "69e0829bdecc0cd23fa9b89e"
 }

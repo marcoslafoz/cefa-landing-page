@@ -9,9 +9,8 @@ const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
 
 export async function seed(payload: any) {
-  console.log('--- Iniciando seeding automatizado ---')
+  console.log('--- Starting automated seed ---')
 
-  // 1. Cargar traducciones desde la landing
   const landingPath = process.env.LANDING_PAGE_PATH || path.resolve(__dirname, '../../cefa-landing-page')
   const i18nPath = path.join(landingPath, 'src/i18n')
   const locales = {
@@ -21,10 +20,8 @@ export async function seed(payload: any) {
     pl: JSON.parse(fs.readFileSync(path.join(i18nPath, 'pl.json'), 'utf8')),
   }
 
-  // 2. El mapa de seed ya está importado arriba
-
   /**
-   * Procesa un objeto del mapa para un idioma, opcionalmente inyectando IDs de items existentes
+   * Processes a map object for a locale, optionally injecting IDs from existing items
    */
   function processMap(obj: any, locale: string, existingData?: any): any {
     if (typeof obj === 'string') {
@@ -53,14 +50,11 @@ export async function seed(payload: any) {
     return obj;
   }
 
-  // 3. Sembrar cada Global definido en el mapa
-  console.log('Sembrando Globals...')
-  const availableLocales = ['es', 'en', 'de', 'pl']
+  console.log('Seeding Globals...')
   for (const [globalSlug, mapping] of Object.entries(seedMap)) {
-    console.log(`Poblando Global: ${globalSlug}...`)
+    console.log(`Populating Global: ${globalSlug}...`)
 
-    // Primero ES para crear la estructura e IDs
-    console.log(`  -> Idioma: ES`)
+    console.log(`  -> Locale: ES`)
     await payload.updateGlobal({
       slug: globalSlug as any,
       locale: 'es',
@@ -68,15 +62,13 @@ export async function seed(payload: any) {
       context: { disableAutoTranslate: true },
     })
 
-    // Obtenemos la estructura con IDs
     const currentGlobal = await payload.findGlobal({
       slug: globalSlug as any,
       locale: 'es',
     })
 
-    // Ahora el resto de idiomas preservando IDs de arrays para que no se borren/sobreescriban
     for (const locale of ['en', 'de', 'pl']) {
-      console.log(`  -> Idioma: ${locale.toUpperCase()}`)
+      console.log(`  -> Locale: ${locale.toUpperCase()}`)
       const localeData = processMap(mapping, locale, currentGlobal)
 
       await payload.updateGlobal({
@@ -88,53 +80,18 @@ export async function seed(payload: any) {
     }
   }
 
-  // 4. Sembrar Colecciones
-  console.log('Limpiando colecciones...')
-  await payload.delete({ collection: 'products', where: {} })
-  await payload.delete({ collection: 'projects', where: {} })
-  await payload.delete({ collection: 'certificates', where: {} })
-  await payload.delete({ collection: 'media', where: {} })
-
-  console.log('Sembrando Productos...')
-  const productsCmsPath = path.join(landingPath, 'src/data/cms/es/products.json')
-  const productsData = JSON.parse(fs.readFileSync(productsCmsPath, 'utf8'))
-
-  for (const prodDoc of productsData.docs) {
-    const product = await payload.create({
-      collection: 'products',
-      locale: 'es',
-      data: {
-        title: prodDoc.title,
-        description: prodDoc.description,
-      },
-      context: { disableAutoTranslate: true },
-    })
-
-    for (const locale of ['en', 'de', 'pl']) {
-      try {
-        const localePath = path.join(landingPath, `src/data/cms/${locale}/products.json`)
-        const localeData = JSON.parse(fs.readFileSync(localePath, 'utf8'))
-        const localeDoc = localeData.docs.find((d: any) => d.id === prodDoc.id) || localeData.docs.find((d: any) => d.title === prodDoc.title)
-
-        if (localeDoc) {
-          await payload.update({
-            collection: 'products',
-            id: product.id,
-            locale: locale as any,
-            data: {
-              title: localeDoc.title,
-              description: localeDoc.description,
-            },
-            context: { disableAutoTranslate: true },
-          })
-        }
-      } catch (e) {
-        console.warn(`No se pudo encontrar traducción para producto ${prodDoc.title} en ${locale}`)
-      }
-    }
+  console.log('Clearing collections...')
+  try {
+    await payload.delete({ collection: 'project-categories', where: {} })
+    await payload.delete({ collection: 'projects', where: {} })
+    await payload.delete({ collection: 'certificate-categories', where: {} })
+    await payload.delete({ collection: 'certificates', where: {} })
+    await payload.delete({ collection: 'media', where: {} })
+  } catch (e) {
+    console.log('Error clearing collections (may not exist yet):', e);
   }
 
-  console.log('Cargando datos de Colecciones desde CMS...')
+  console.log('Loading collection data from CMS...')
   const projectsData = JSON.parse(fs.readFileSync(path.join(landingPath, 'src/data/cms/es/projects.json'), 'utf8'))
   const certsData = JSON.parse(fs.readFileSync(path.join(landingPath, 'src/data/cms/es/certificates.json'), 'utf8'))
 
@@ -162,99 +119,133 @@ export async function seed(payload: any) {
       });
       return media.id;
     } catch (err) {
-      console.error(`Error subiendo media ${imagePath}:`, err);
+      console.error(`Error uploading media ${imagePath}:`, err);
       return null;
     }
   }
 
   const mediaMap: Record<string, string> = {};
-  const allMediaPaths: string[] = [];
 
-  // Extraer rutas de media de proyectos (si las hay)
-  projectsData.docs.forEach((p: any) => {
-    if (p.image?.url) allMediaPaths.push(p.image.url);
-    if (p.gallery)
-      p.gallery.forEach((g: any) => {
-        if (g.image?.url) allMediaPaths.push(g.image.url);
-      });
-  });
+  let brandsData: any[] = [];
+  try {
+    const brandsPath = path.join(landingPath, 'src/data/brands.json');
+    brandsData = JSON.parse(fs.readFileSync(brandsPath, 'utf8'));
+  } catch (e) {
+    console.error("Error loading brands.json", e);
+  }
 
-  // Extraer rutas de media de certificados
-  certsData.docs.forEach((c: any) => {
-    if (c.image?.url) allMediaPaths.push(c.image.url);
-    if (c.file?.url) allMediaPaths.push(c.file.url);
-  });
-
-  // HEURÍSTICA: Listar archivos físicos para asegurar que todo se sube aunque no esté en el JSON
   const mediaDir = path.join(landingPath, 'public/cms-media');
-  let physicalMediaFiles: string[] = [];
-  if (fs.existsSync(mediaDir)) {
-    physicalMediaFiles = fs
-      .readdirSync(mediaDir)
-      .filter((f) => !f.startsWith('.'))
-      .map((f) => `/cms-media/${f}`);
+  const mediaFiles = fs.existsSync(mediaDir)
+    ? fs.readdirSync(mediaDir).filter((f) => !f.startsWith('.')).map((f) => `/cms-media/${f}`)
+    : [];
+
+  console.log(`Uploading ${mediaFiles.length} media files...`);
+  for (const imgPath of mediaFiles) {
+    const id = await uploadMedia(imgPath);
+    if (id) mediaMap[imgPath] = id;
   }
 
-  const totalMediaToUpload = Array.from(new Set([...allMediaPaths, ...physicalMediaFiles]));
+  console.log('Linking images to Products Section...');
+  const currentProductsSection = await payload.findGlobal({ slug: 'products-section' });
+  if (currentProductsSection && currentProductsSection.products && currentProductsSection.products.length > 0) {
+    const productsArray = [...currentProductsSection.products];
+    if (productsArray[0] && mediaMap['/cms-media/dashboard.webp']) productsArray[0].image = mediaMap['/cms-media/dashboard.webp'];
+    if (productsArray[1] && mediaMap['/cms-media/door-panels.webp']) productsArray[1].image = mediaMap['/cms-media/door-panels.webp'];
+    if (productsArray[2] && mediaMap['/cms-media/functional.webp']) productsArray[2].image = mediaMap['/cms-media/functional.webp'];
+    if (productsArray[3] && mediaMap['/cms-media/exterior.webp']) productsArray[3].image = mediaMap['/cms-media/exterior.webp'];
 
-  console.log(`Subiendo ${totalMediaToUpload.length} archivos de media...`);
-  for (const imgPath of totalMediaToUpload) {
-    const id = await uploadMedia(imgPath as string);
-    if (id) mediaMap[imgPath as string] = id;
+    await payload.updateGlobal({
+      slug: 'products-section',
+      data: { products: productsArray },
+      locale: 'es',
+    });
   }
 
-  // Función para encontrar media por patrón de nombre
-  const findMediaByPattern = (pattern: string) => {
-    const key = Object.keys(mediaMap).find((k) => k.toLowerCase().includes(pattern.toLowerCase()));
-    return key ? mediaMap[key] : null;
-  };
+  console.log('Linking images to Vision...');
+  const currentVision = await payload.findGlobal({ slug: 'vision' });
+  if (currentVision) {
+    const galleryArray = [];
+    if (mediaMap['/cms-media/zagan.webp']) galleryArray.push({ image: mediaMap['/cms-media/zagan.webp'], alt: 'CEFA Żagań' });
+    if (mediaMap['/cms-media/factory.webp']) galleryArray.push({ image: mediaMap['/cms-media/factory.webp'], alt: 'CEFA Zaragoza' });
 
-  console.log('Sembrando Proyectos...');
-  for (const projDoc of projectsData.docs) {
-    // Heurística para encontrar la imagen si no viene en el JSON
-    let mediaId = projDoc.image?.url ? mediaMap[projDoc.image.url] : null;
-    if (!mediaId) {
-      if (projDoc.title.includes('Materiales Sostenibles') && projDoc.title.includes('2024'))
-        mediaId = findMediaByPattern('aragon-materiales-sostenibles-logistica-vec-2024');
-      else if (projDoc.title.includes('Materiales Sostenibles') && projDoc.title.includes('2025'))
-        mediaId = findMediaByPattern('aragon-materiales-sostenibles-logistica-vec-2025');
-      else if (projDoc.title.includes('circularidad') && projDoc.title.includes('2024'))
-        mediaId = findMediaByPattern('aragon-circularidad-reduccion-consumos-2024');
-      else if (projDoc.title.includes('circularidad') && projDoc.title.includes('2022'))
-        mediaId = findMediaByPattern('aragon-circularidad-reduccion-consumos-2022');
-      else if (projDoc.title.includes('HORMIGOBOTS')) mediaId = findMediaByPattern('ue-hormigobots');
-      else if (
-        projDoc.title.includes('Monitorización Energética') &&
-        projDoc.title.includes('MRA') &&
-        projDoc.title.includes('Fase 1')
-      )
-        mediaId = findMediaByPattern('ue-monitorizacion-energetica-mra-fase1');
-      else if (
-        projDoc.title.includes('Monitorización Energética') &&
-        projDoc.title.includes('MRA') &&
-        projDoc.title.includes('Fase 2')
-      )
-        mediaId = findMediaByPattern('ue-monitorizacion-energetica-mra-fase2');
-      else if (projDoc.title.includes('REACT-UE'))
-        mediaId = findMediaByPattern('ue-feder-react-recuperacion-economica');
-      else if (projDoc.title.includes('IDAE CEFA'))
-        mediaId = findMediaByPattern('ue-monitorizacion-energetica-cefa');
+    if (galleryArray.length > 0) {
+      await payload.updateGlobal({
+        slug: 'vision',
+        data: { gallery: galleryArray },
+        locale: 'es',
+      });
     }
+  }
+
+  console.log('Linking logos to Clients...');
+  const currentClients = await payload.findGlobal({ slug: 'clients' });
+  if (currentClients && brandsData.length > 0) {
+    const logosArray: any[] = [];
+    for (const b of brandsData) {
+      const imgPath = `/cms-media/${b.file}`;
+      if (mediaMap[imgPath]) {
+        logosArray.push({ image: mediaMap[imgPath], name: b.name });
+      }
+    }
+    if (logosArray.length > 0) {
+      await payload.updateGlobal({
+        slug: 'clients',
+        data: { logos: logosArray },
+        locale: 'es',
+      });
+    }
+  }
+
+  console.log('Seeding Project Categories...');
+  const catMap: Record<string, string> = {};
+
+  const euLogo = mediaMap['/cms-media/union-europea.png'];
+  const aragonLogo = mediaMap['/cms-media/gobierno-aragon.webp'];
+
+  const euCat = await payload.create({
+    collection: 'project-categories',
+    data: { name: 'Unión Europea', identifier: 'eu', logo: euLogo }
+  });
+  catMap['eu'] = euCat.id;
+
+  const aragonCat = await payload.create({
+    collection: 'project-categories',
+    data: { name: 'Gobierno de Aragón (FEDER)', identifier: 'aragon', logo: aragonLogo }
+  });
+  catMap['aragon'] = aragonCat.id;
+
+  // Sort projects so EU projects come first, then Aragón
+  const sortedProjects = [...projectsData.docs].sort((a: any, b: any) => {
+    const aId = typeof a.category === 'object' ? a.category?.identifier : a.category;
+    const bId = typeof b.category === 'object' ? b.category?.identifier : b.category;
+    if (aId === 'eu' && bId !== 'eu') return -1;
+    if (aId !== 'eu' && bId === 'eu') return 1;
+    return 0;
+  });
+
+  console.log('Seeding Projects...');
+  for (const projDoc of sortedProjects) {
+    const mediaId = projDoc.file?.url ? mediaMap[projDoc.file.url] : null;
+
+    // Resolve category identifier from the nested category object
+    const projCategoryId = typeof projDoc.category === 'object'
+      ? projDoc.category?.identifier
+      : projDoc.category;
+    const projIsAragon = projCategoryId === 'aragon';
 
     const project = await payload.create({
       collection: 'projects',
       locale: 'es',
       data: {
-        type: projDoc.type,
+        category: catMap[projCategoryId] || catMap['eu'],
         title: projDoc.title,
-        client: projDoc.client || (projDoc.type === 'aragon' ? 'I+D Interno (FEDER)' : 'Unión Europea'),
+        client: projDoc.client || (projIsAragon ? 'I+D Interno (FEDER)' : 'Unión Europea'),
         description: projDoc.description,
         ...(mediaId && { file: mediaId }),
       },
       context: { disableAutoTranslate: true },
     });
 
-    // Localización de proyectos
     for (const locale of ['en', 'de', 'pl']) {
       try {
         const localePath = path.join(landingPath, `src/data/cms/${locale}/projects.json`);
@@ -276,25 +267,46 @@ export async function seed(payload: any) {
           });
         }
       } catch (e) {
-        // Silencioso
       }
     }
   }
 
-  console.log('Sembrando Certificados...');
-  for (const certDoc of certsData.docs) {
-    let fileId = certDoc.file?.url ? mediaMap[certDoc.file.url] : (certDoc.image?.url ? mediaMap[certDoc.image.url] : null);
+  console.log('Seeding Certificate Categories...');
+  const certCatMap: Record<string, string> = {};
 
-    // Heurística para certificados si faltan en el JSON
-    if (!fileId) {
-      if (certDoc.name === 'ISO 9001') fileId = findMediaByPattern('certificado-calidad-02');
-      else if (certDoc.name === 'IATF 16949') fileId = findMediaByPattern('certificado-calidad-01');
-      else if (certDoc.name === 'ISO 14001') fileId = findMediaByPattern('certificado-medioambiente');
-      else if (certDoc.name === 'TISAX') fileId = findMediaByPattern('TISAXCEFASP');
-    }
+  const calidadCat = await payload.create({
+    collection: 'certificate-categories',
+    data: { name: 'Calidad', identifier: 'calidad' }
+  });
+  certCatMap['Calidad'] = calidadCat.id;
+
+  const envCat = await payload.create({
+    collection: 'certificate-categories',
+    data: { name: 'Medio Ambiente', identifier: 'medio-ambiente' }
+  });
+  certCatMap['Medio Ambiente'] = envCat.id;
+
+  console.log('Seeding Certificates...');
+  for (const certDoc of certsData.docs) {
+    const fileId = certDoc.file?.url ? mediaMap[certDoc.file.url] : (certDoc.image?.url ? mediaMap[certDoc.image.url] : null);
+
+    // Resolve category from the nested category object (not certDoc.type which doesn't exist)
+    const certCategoryName = typeof certDoc.category === 'object'
+      ? certDoc.category?.name
+      : certDoc.category;
+    const certCategoryId = typeof certDoc.category === 'object'
+      ? certDoc.category?.identifier
+      : null;
+
+    // Match by name OR by identifier
+    const resolvedCatId =
+      certCatMap[certCategoryName] ||
+      (certCategoryId === 'medio-ambiente' ? certCatMap['Medio Ambiente'] : null) ||
+      (certCategoryId === 'calidad' ? certCatMap['Calidad'] : null) ||
+      certCatMap['Calidad'];
 
     const dataObj: any = {
-      type: certDoc.type,
+      category: resolvedCatId,
       name: certDoc.name,
       issuer: certDoc.issuer,
       issueDate: certDoc.issueDate,
@@ -308,10 +320,30 @@ export async function seed(payload: any) {
     });
   }
 
-  console.log('--- Seed completado con éxito ---');
+  console.log('Linking logos to Header...');
+  await payload.updateGlobal({
+    slug: 'header',
+    data: {
+      logos: {
+        cefaColor: mediaMap['/cms-media/cefa-color.svg'],
+        cefaWhite: mediaMap['/cms-media/cefa-mono-white.svg'],
+        motherson: mediaMap['/cms-media/motherson.svg'],
+      }
+    }
+  });
+
+  console.log('Linking background to Hero...');
+  await payload.updateGlobal({
+    slug: 'hero',
+    data: {
+      backgroundImage: mediaMap['/cms-media/frame.webp'],
+      vimeoUrl: 'https://vimeo.com/1181594121',
+    }
+  });
+
+  console.log('--- Seed completed successfully ---');
 }
 
-// Permitir ejecución directa
 if (import.meta.url.endsWith(process.argv[1]?.replace(/\\/g, '/')) || process.argv[1]?.endsWith('seed.ts')) {
   const run = async () => {
     const payload = await getPayload({ config: configPromise })

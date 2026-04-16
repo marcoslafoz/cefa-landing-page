@@ -32,12 +32,11 @@ interface RateLimitEntry {
   blockedUntil: number;
 }
 
-const WINDOW_MS = 60_000; // Ventana deslizante de 1 minuto
-const MAX_PER_WINDOW = 5; // Máximo de envíos por ventana por IP
-const BLOCK_MS = 600_000; // Bloqueo estricto de 10 minutos tras exceso
+const WINDOW_MS = 60_000;
+const MAX_PER_WINDOW = 5;
+const BLOCK_MS = 600_000;
 const RL_MAP = new Map<string, RateLimitEntry>();
 
-// Recolección de basura periódica — evita crecimiento de memoria ilimitado en servidores de larga ejecución
 setInterval(() => {
   const now = Date.now();
   for (const [key, entry] of RL_MAP) {
@@ -89,13 +88,12 @@ function isValidEmail(v: string): boolean {
 /** Elimina caracteres que podrían causar inyección en logs, HTML o cabeceras */
 function sanitize(raw: string): string {
   return raw
-    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '') // caracteres de control
-    .replace(/[<>]/g, '') // corchetes angulares
-    .replace(/\r\n|\r|\n/g, '\n') // normalizar terminaciones de línea
+    .replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, '')
+    .replace(/[<>]/g, '')
+    .replace(/\r\n|\r|\n/g, '\n')
     .trim();
 }
 
-// Secreto de prueba (siempre pasa) — sobreescribir vía TURNSTILE_SECRET_KEY en producción
 const TURNSTILE_SECRET =
   import.meta.env.TURNSTILE_SECRET_KEY ?? '1x0000000000000000000000000000000AA';
 const TURNSTILE_VERIFY = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -112,7 +110,7 @@ async function verifyTurnstile(token: string, ip: string): Promise<boolean> {
     const data = (await res.json()) as { success: boolean };
     return data.success === true;
   } catch {
-    return false; // fallo por error de red / tiempo de espera
+    return false;
   }
 }
 
@@ -167,8 +165,6 @@ function transportConsole(payload: ContactPayload): void {
   console.log('\n' + lines.join('\n') + '\n');
 }
 
-// Inicialización diferida (lazy): el transportador solo se crea cuando el transporte SMTP es realmente
-// utilizado — evita configuraciones innecesarias de nodemailer en modo consola.
 let _smtpTransporter: ReturnType<typeof nodemailer.createTransport> | null = null;
 
 function getSmtpTransporter(): ReturnType<typeof nodemailer.createTransport> {
@@ -183,11 +179,11 @@ function getSmtpTransporter(): ReturnType<typeof nodemailer.createTransport> {
     _smtpTransporter = nodemailer.createTransport({
       host: import.meta.env.SMTP_HOST ?? 'smtp.office365.com',
       port: Number(import.meta.env.SMTP_PORT ?? 587),
-      secure: false, // STARTTLS — Office 365 NO utiliza SSL directo en el puerto 587
-      requireTLS: true, // Obligatorio para Office 365: forzar actualización a TLS
+      secure: false,
+      requireTLS: true,
       auth: { user, pass },
       tls: {
-        minVersion: 'TLSv1.2', // Rechazar conexiones por debajo de TLS 1.2 (SSLv3 está obsoleto/es inseguro)
+        minVersion: 'TLSv1.2',
       },
     });
   }
@@ -238,7 +234,7 @@ export const POST: APIRoute = async ({ request }) => {
     request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ??
     request.headers.get('x-real-ip') ??
     'unknown'
-  ).substring(0, 45); // limitar a la longitud válida de IPv6
+  ).substring(0, 45);
 
   const rl = rateLimit(ip);
   if (!rl.ok) {
@@ -271,7 +267,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   if (body.website !== '' && body.website !== undefined) {
     console.warn(`[contact] honeypot triggered — ip=${ip}`);
-    return json({ success: true }, 200); // 200 silencioso — nunca revelar la detección
+    return json({ success: true }, 200);
   }
 
   const str = (v: unknown) => (typeof v === 'string' ? v : '');

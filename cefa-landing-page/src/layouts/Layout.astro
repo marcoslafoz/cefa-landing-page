@@ -52,7 +52,6 @@ const t = useTranslations(locale);
         var path = window.location.pathname;
         var locales = ['es', 'de', 'pl'];
 
-        // Detectar si la URL actual ya tiene un prefijo de idioma
         var currentPrefix = '';
         for (var i = 0; i < locales.length; i++) {
           if (path === '/' + locales[i] || path.startsWith('/' + locales[i] + '/')) {
@@ -61,22 +60,18 @@ const t = useTranslations(locale);
           }
         }
 
-        // Si la URL tiene un prefijo de idioma explícito, respetarlo y actualizar la preferencia guardada.
         if (currentPrefix) {
           localStorage.setItem(STORAGE_KEY, currentPrefix);
           return;
         }
 
-        // La URL actual no tiene prefijo (por defecto Inglés). Comprobar preferencia guardada.
         var stored = localStorage.getItem(STORAGE_KEY);
 
-        // Si tenemos una preferencia guardada que no es Inglés, redirigir.
         if (stored && stored !== 'en' && locales.indexOf(stored) !== -1) {
           window.location.replace('/' + stored + path);
           return;
         }
 
-        // Primera visita sin preferencia guardada: auto-detectar desde el idioma del navegador
         if (!stored) {
           var langs =
             navigator.languages && navigator.languages.length

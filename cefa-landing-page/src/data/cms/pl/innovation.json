@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T12:41:19.770Z",
-  "updatedAt": "2026-04-15T12:41:19.778Z",
+  "createdAt": "2026-04-16T06:32:59.786Z",
+  "updatedAt": "2026-04-16T06:32:59.793Z",
   "globalType": "innovation",
   "eyebrow": "Innowacje",
   "title": "Nowoczesna inżynieria",
@@ -9,25 +9,19 @@
     {
       "title": "Precyzja Techniczna",
       "text": "Minimalne tolerancje i wysokiej jakości wykończenia powierzchni.",
-      "id": "69df876fc90bee00015ab720"
+      "id": "69e0829bf0ca630001abfc80"
     },
     {
       "title": "Zaawansowana Symulacja",
       "text": "Analizy reologiczne i strukturalne na każdym etapie projektowania.",
-      "id": "69df876fc90bee00015ab721"
+      "id": "69e0829bf0ca630001abfc81"
     }
   ],
-  "stats": [
-    {
-      "label": "Pełna Identyfikowalność",
-      "id": "69df876fc90bee00015ab722"
-    },
-    {
-      "label": "Ekosystem Innowacji",
-      "id": "69df876fc90bee00015ab723"
-    }
-  ],
+  "stat1Value": "100%",
+  "stat1Label": "Pełna Identyfikowalność",
+  "stat2Value": "I+D+i",
+  "stat2Label": "Ekosystem Innowacji",
   "loadingText": "Inicjalizacja Silnika 3D",
   "rotateText": "Przeciągnij, aby obrócić",
-  "id": "69df876f5f9ea2513ece45e5"
+  "id": "69e0829bdecc0cd23fa9b8c8"
 }

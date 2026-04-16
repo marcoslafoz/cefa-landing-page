@@ -12,7 +12,6 @@ export const testUser = {
 export async function seedTestUser(): Promise<void> {
   const payload = await getPayload({ config })
 
-  // Delete existing test user if any
   await payload.delete({
     collection: 'users',
     where: {
@@ -22,7 +21,6 @@ export async function seedTestUser(): Promise<void> {
     },
   })
 
-  // Create fresh test user
   await payload.create({
     collection: 'users',
     data: testUser,

@@ -7,7 +7,6 @@ const PORT = 4000;
 const WEBROOT_DIR = process.env.WEBROOT_DIR || '/webroot';
 const LOCK_FILE = path.join(__dirname, 'build.lock');
 
-// Limpieza inicial del lock por si el contenedor se reinició a medias
 if (fs.existsSync(LOCK_FILE)) {
   fs.unlinkSync(LOCK_FILE);
 }
@@ -29,7 +28,7 @@ function rsyncToWebroot() {
 
     exec(command, (error, stdout, stderr) => {
       if (error) {
-        console.error('Swap error:', error, stderr);
+        console.error('Swap failed:', error, stderr);
         return reject(error);
       }
       resolve();
@@ -39,15 +38,13 @@ function rsyncToWebroot() {
 
 function runBuild() {
   if (fs.existsSync(LOCK_FILE)) {
-    console.log('🔄 Build ya en progreso. Se ignora esta petición (protegido por lock).');
+    console.log('Build already in progress. Request ignored (lock protected).');
     return;
   }
 
-  // Crear archivo lock
   fs.writeFileSync(LOCK_FILE, 'lock');
-  console.log('🔄 Iniciando proceso de build...');
+  console.log('Starting build process...');
 
-  // Ejecutamos el comando de build de Astro (que incluye sync-cms)
   const buildProc = exec('npm run build');
 
   buildProc.stdout.on('data', (data) => process.stdout.write(data));
@@ -55,31 +52,28 @@ function runBuild() {
 
   buildProc.on('close', async (code) => {
     if (code !== 0) {
-      console.error(`❌ Build falló con código ${code}`);
+      console.error(`Build failed with code ${code}`);
     } else {
-      console.log('✅ Build exitoso. Intercambiando versión en Nginx (Atomic Swap)...');
+      console.log('Build successful. Swapping version in Nginx (atomic swap)...');
       try {
         await rsyncToWebroot();
-        console.log('🚀 Publicación en vivo completada exitosamente.');
+        console.log('Deployment to live completed successfully.');
       } catch (e) {
-        console.error('❌ Fallo al desplegar a webroot:', e);
+        console.error('Failed to deploy to webroot:', e);
       }
     }
 
-    // Liberar lock
     if (fs.existsSync(LOCK_FILE)) {
       fs.unlinkSync(LOCK_FILE);
     }
   });
 }
 
-// Servidor Simple HTTP Webhook
 const server = http.createServer((req, res) => {
   if (req.method === 'POST' && req.url === '/webhook/publish') {
-    console.log('🔔 Webhook recibido desde Payload CMS');
+    console.log('Webhook received from Payload CMS');
     res.writeHead(202, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify({ message: 'Build recibido' }));
-    // Disparar build de manera asíncrona
+    res.end(JSON.stringify({ message: 'Build queued' }));
     runBuild();
   } else {
     res.writeHead(404, { 'Content-Type': 'text/plain' });
@@ -88,7 +82,6 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`🏗️  Orquestador Webhook corriendo en puerto ${PORT}`);
-  // Build inicial al arrancar el contenedor
+  console.log(`Webhook orchestrator running on port ${PORT}`);
   runBuild();
 });

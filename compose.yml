@@ -44,7 +44,7 @@ services:
         condition: service_started
     environment:
       # Usado por sync-cms.js para descargar los datos de la API de Payload localmente en el back channel
-      PAYLOAD_CMS_URL: http://payload:3000
+      PAYLOAD_CMS_URL: ${PAYLOAD_CMS_URL:-http://payload:3000}
       WEBROOT_DIR: /webroot
       PUBLIC_TURNSTILE_SITE_KEY: ${PUBLIC_TURNSTILE_SITE_KEY:-1x00000000000000000000AA}
     volumes:
@@ -63,19 +63,22 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - mongo
+      mongo:
+        condition: service_healthy
+      libretranslate:
+        condition: service_started
     environment:
       NODE_ENV: production
-      DATABASE_URL: mongodb://mongo:27017/payloadcms
+      DATABASE_URL: ${DATABASE_URL:-mongodb://mongo:27017/payloadcms}
       PAYLOAD_SECRET: ${PAYLOAD_SECRET}
       PAYLOAD_PUBLIC_URL: ${PAYLOAD_PUBLIC_URL:-http://localhost:3000}
-      INTERNAL_CMS_URL: http://payload:3000
-      LIBRETRANSLATE_URL: http://libretranslate:5000/translate
-      PAYLOAD_SEED: "true"
+      INTERNAL_CMS_URL: ${PAYLOAD_CMS_URL:-http://payload:3000}
+      LIBRETRANSLATE_URL: ${LIBRETRANSLATE_URL:-http://libretranslate:5000/translate}
+      PAYLOAD_SEED: ${PAYLOAD_SEED:-false}
       LANDING_PAGE_PATH: /workspace/landing-page
       ASTRO_BASE_DIR: /workspace/landing-page
       # URL del Orchestrar a la cual Payload manda la petición POST al publicar
-      PUBLISH_WEBHOOK_URL: http://orchestrator:4000/webhook/publish
+      PUBLISH_WEBHOOK_URL: ${PUBLISH_WEBHOOK_URL:-http://orchestrator:4000/webhook/publish}
     volumes:
       - payload_media:/app/media
       # Volumen necesario temporalmente para el script de seed automático (importa JSONs)
@@ -93,6 +96,12 @@ services:
       - mongo_data:/data/db
     networks:
       - cefa-net
+    healthcheck:
+      test: ["CMD", "mongosh", "--eval", "db.adminCommand('ping')"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
     logging:
       driver: "json-file"
       options:
@@ -106,11 +115,17 @@ services:
     restart: unless-stopped
     environment:
       LT_LOAD_ONLY: es,en,de,pl
-      LT_UPDATE_MODELS: "true"
+      LT_UPDATE_MODELS: "false"
     volumes:
       - ./libretranslate/lt-data:/home/libretranslate/.local/share/argos-translate
     networks:
       - cefa-net
+    healthcheck:
+      test: ["CMD-SHELL", "curl -f http://localhost:5000/languages || exit 1"]
+      interval: 15s
+      timeout: 10s
+      retries: 10
+      start_period: 60s
 
 # ── Volumes ─────────────────────────────────────────────────────────────────
 volumes:

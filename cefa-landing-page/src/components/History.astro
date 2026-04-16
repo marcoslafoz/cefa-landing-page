@@ -20,16 +20,17 @@ const milestones = cmsHistory?.timeline?.length > 0
       text: m.text,
     }))
   : [
-  {
-    id: 'y1946',
-    label: '1946',
-    numericYear: 1946,
-    text: t('history.y1946'),
-  },
-  // ... existing fallbacks (truncated for brevity in think block, but I'll include them in tool call)
+  { id: 'y1946', label: '1946', numericYear: 1946, text: t('history.y1946') },
+  { id: 'y1960', label: '1960', numericYear: 1960, text: t('history.y1960') },
+  { id: 'y1970', label: '1970', numericYear: 1970, text: t('history.y1970') },
+  { id: 'y1983', label: '1983', numericYear: 1983, text: t('history.y1983') },
+  { id: 'y1992', label: '1992', numericYear: 1992, text: t('history.y1992') },
+  { id: 'y1994', label: '1994', numericYear: 1994, text: t('history.y1994') },
+  { id: 'y1997', label: '1997', numericYear: 1997, text: t('history.y1997') },
+  { id: 'y2011', label: '2011', numericYear: 2011, text: t('history.y2011') },
+  { id: 'y2012', label: '2012', numericYear: 2012, text: t('history.y2012') },
 ];
 
-// Add the "Today" milestone if it's not and we have it in CMS
 if (cmsHistory?.todayText) {
   milestones.push({
     id: 'today',
@@ -38,7 +39,6 @@ if (cmsHistory?.todayText) {
     text: cmsHistory.todayText,
   });
 } else if (!cmsHistory?.timeline) {
-  // Push legacy today if no CMS timeline
   milestones.push({
     id: 'today',
     label: t('history.today.label'),
@@ -167,7 +167,6 @@ if (cmsHistory?.todayText) {
       if (counterTimer) clearInterval(counterTimer);
 
       if (toNum === null) {
-        // "HOY" — muestra directamente con un pequeño fade
         yearDisplay!.style.opacity = '0';
         setTimeout(() => {
           yearDisplay!.textContent = toLabel;
@@ -191,7 +190,7 @@ if (cmsHistory?.todayText) {
           clearInterval(counterTimer!);
           counterTimer = null;
         }
-      }, 22); // ~18 pasos × 22 ms ≈ 400 ms total
+      }, 22);
     }
 
     /* ── activate ── */
@@ -201,13 +200,11 @@ if (cmsHistory?.todayText) {
       const prev = current;
       current = index;
 
-      // Botones
       buttons[prev].classList.remove('is-active');
       buttons[prev].setAttribute('aria-selected', 'false');
       buttons[current].classList.add('is-active');
       buttons[current].setAttribute('aria-selected', 'true');
 
-      // Counter año
       countYear(
         data[prev].label,
         data[prev].numericYear,
@@ -215,20 +212,16 @@ if (cmsHistory?.todayText) {
         data[current].numericYear
       );
 
-      // Fade texto
       fadeText(data[current].text);
 
-      // Línea de progreso
       if (progressLine) progressLine.style.width = getProgressWidth(current);
 
-      // Scroll botón a la vista (móvil)
       buttons[current].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
     }
 
     /* ── init ── */
     buttons[0].classList.add('is-active');
     if (progressLine) progressLine.style.width = getProgressWidth(0);
-    // Mostrar primer texto
     textDisplay!.textContent = data[0].text;
     textDisplay!.style.opacity = '1';
 
@@ -237,7 +230,6 @@ if (cmsHistory?.todayText) {
       btn.addEventListener('click', () => activate(i));
     });
 
-    // Recalcular línea en resize
     let resizeTimer: ReturnType<typeof setTimeout>;
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);

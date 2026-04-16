@@ -1,59 +1,12 @@
 {
-  "createdAt": "2026-04-15T12:41:19.752Z",
-  "updatedAt": "2026-04-15T12:41:19.767Z",
+  "createdAt": "2026-04-16T06:32:59.770Z",
+  "updatedAt": "2026-04-16T06:32:59.775Z",
   "globalType": "mission",
-  "mission": {
-    "eyebrow": "Mission",
-    "title": "Customer-focused, driven by excellence",
-    "body1": "CEFA is a Spanish industrial company that researches, develops, and produces plastic components and modules—primarily for the automotive sector with a global presence, applying cutting-edge technologies and differentiating through innovation and flexibility.",
-    "body2": "Driven by excellence and the satisfaction of our shareholders, employees, and society, we provide continuous value through teamwork and competitiveness.",
-    "cta": "Our history",
-    "badgeLabel": "Since"
-  },
-  "pillars": [
-    {
-      "title": "Certified quality",
-      "text": "ISO 9001 and IATF 16949 certified processes for the highest standards.",
-      "id": "69df876fc90bee00015ab719"
-    },
-    {
-      "title": "Continuous innovation",
-      "text": "Constant investment in R&D and advanced manufacturing processes.",
-      "id": "69df876fc90bee00015ab71a"
-    },
-    {
-      "title": "Global presence",
-      "text": "Serving the leading OEMs at an international scale.",
-      "id": "69df876fc90bee00015ab71b"
-    }
-  ],
-  "vision": {
-    "eyebrow": "Vision",
-    "title": "Our vision",
-    "body": "To be the industrial benchmark",
-    "cta": "Learn more",
-    "values": [
-      {
-        "title": "Client's Preferred Partner",
-        "text": "Diversified portfolio, high market share, and robust sales.",
-        "id": "69df876fc90bee00015ab71c"
-      },
-      {
-        "title": "Technological Benchmark",
-        "text": "Innovation and rapid adoption of advanced technologies for responsible value creation.",
-        "id": "69df876fc90bee00015ab71d"
-      },
-      {
-        "title": "Economically Sustainable",
-        "text": "Generating maximum return (EBITDA) for optimized investment.",
-        "id": "69df876fc90bee00015ab71e"
-      },
-      {
-        "title": "A Place to Grow",
-        "text": "High satisfaction and human/professional growth of talented teams.",
-        "id": "69df876fc90bee00015ab71f"
-      }
-    ]
-  },
-  "id": "69df876f5f9ea2513ece45d7"
+  "eyebrow": "Mission",
+  "title": "Customer-focused, driven by excellence",
+  "body1": "CEFA is a Spanish industrial company that researches, develops, and produces plastic components and modules—primarily for the automotive sector with a global presence, applying cutting-edge technologies and differentiating through innovation and flexibility.",
+  "body2": "Driven by excellence and the satisfaction of our shareholders, employees, and society, we provide continuous value through teamwork and competitiveness.",
+  "cta": "Our history",
+  "badgeLabel": "Since",
+  "id": "69e0829bdecc0cd23fa9b8ac"
 }

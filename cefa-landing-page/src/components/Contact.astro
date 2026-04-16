@@ -376,8 +376,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
 
   const EMAIL_RE = /^[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}$/;
 
-  // Promesa única en caché — todos los llamadores concurrentes comparten el mismo intento de carga.
-  // Se establece a null en caso de error para que el próximo envío active un nuevo reintento.
   let turnstilePromise: Promise<void> | null = null;
 
   function loadTurnstileScript(): Promise<void> {
@@ -397,7 +395,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
       s.async = true;
       s.defer = true;
       s.onerror = () => {
-        turnstilePromise = null; // permitir reintento en el próximo envío
+        turnstilePromise = null;
         reject(new Error('Turnstile script failed to load'));
       };
       document.head.appendChild(s);
@@ -409,8 +407,6 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
   function initContactForm() {
     const formEl = document.querySelector<HTMLFormElement>('#contact-form');
     if (!formEl) return;
-    // Alias explícito no nulo — TypeScript no propaga el estrechamiento de tipos (narrowing) a las clausuras,
-    // por lo que creamos una constante tipada a la que las clausuras puedan referenciar con seguridad.
     const form: HTMLFormElement = formEl;
 
     const submitBtn = form.querySelector<HTMLButtonElement>('#contact-submit-btn')!;
@@ -667,7 +663,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
               setFieldError(field, msg);
             }
           });
-          return; // los errores de campo se muestran en línea — no se necesita banner global
+          return;
         }
       } catch {
         /* ignorar errores de procesamiento */

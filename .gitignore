@@ -20,6 +20,4 @@ dist/
 .DS_Store
 Thumbs.db
 
-# Media (Payload)
-#payloadcms/media/
-#landing-page/public/cms-media/
+temp

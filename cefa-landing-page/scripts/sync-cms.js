@@ -10,10 +10,11 @@ const CMS_URL = `${CMS_BASE_URL}/api`;
 const LOCALES = ['es', 'en', 'de', 'pl'];
 
 const COLLECTIONS = [
-  { endpoint: 'products?limit=100&depth=2', name: 'products' },
-  { endpoint: 'projects?limit=100&depth=2', name: 'projects' },
-  { endpoint: 'certificates?limit=100&depth=2', name: 'certificates' },
-  { endpoint: 'media?limit=1000', name: 'media' },
+  { endpoint: 'project-categories?limit=100&depth=2&sort=createdAt', name: 'project-categories' },
+  { endpoint: 'projects?limit=100&depth=2&sort=createdAt', name: 'projects' },
+  { endpoint: 'certificate-categories?limit=100&depth=2&sort=createdAt', name: 'certificate-categories' },
+  { endpoint: 'certificates?limit=100&depth=2&sort=createdAt', name: 'certificates' },
+  { endpoint: 'media?limit=1000&sort=createdAt', name: 'media' },
 ];
 
 const GLOBALS = [
@@ -21,7 +22,11 @@ const GLOBALS = [
   { endpoint: 'globals/header?depth=2', name: 'header' },
   { endpoint: 'globals/hero?depth=2', name: 'hero' },
   { endpoint: 'globals/mission?depth=2', name: 'mission' },
+  { endpoint: 'globals/vision?depth=2', name: 'vision' },
   { endpoint: 'globals/innovation?depth=2', name: 'innovation' },
+  { endpoint: 'globals/products-section?depth=2', name: 'products-section' },
+  { endpoint: 'globals/quote?depth=2', name: 'quote' },
+  { endpoint: 'globals/clients?depth=2', name: 'clients' },
   { endpoint: 'globals/contact?depth=2', name: 'contact' },
   { endpoint: 'globals/awards?depth=2', name: 'awards' },
   { endpoint: 'globals/certifications-content?depth=2', name: 'certifications-content' },
@@ -42,14 +47,12 @@ async function downloadMedia(cmsUrl) {
   const filename = path.basename(cmsUrl);
   const localPath = path.join(MEDIA_DIR, filename);
 
-  // Registrar que este archivo es válido en esta sesión de sincronización
   downloadedFiles.add(filename);
 
   if (!fs.existsSync(MEDIA_DIR)) {
     fs.mkdirSync(MEDIA_DIR, { recursive: true });
   }
 
-  // Si ya existe, nos lo saltamos pero ya lo tenemos marcado como válido en el Set
   if (fs.existsSync(localPath)) {
     return `/cms-media/${filename}`;
   }
@@ -61,7 +64,7 @@ async function downloadMedia(cmsUrl) {
     fs.writeFileSync(localPath, Buffer.from(arrayBuffer));
     return `/cms-media/${filename}`;
   } catch (err) {
-    console.error(`Error bajando media ${cmsUrl}:`, err);
+    console.error(`Error downloading media ${cmsUrl}:`, err);
     return cmsUrl;
   }
 }
@@ -90,18 +93,17 @@ async function fetchAndSave(url, filepath) {
     if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
     let data = await response.json();
 
-    // Procesar y bajar medios recursivamente
     data = await processMedia(data);
 
     fs.writeFileSync(filepath, JSON.stringify(data, null, 2), 'utf-8');
-    console.log(`✅ Synced: ${path.relative(__dirname, filepath)}`);
+    console.log(`[sync] ${path.relative(__dirname, filepath)}`);
   } catch (error) {
-    console.error(`❌ Failed to sync: ${url} -> ${error.message}`);
+    console.error(`[error] Failed to sync: ${url} -> ${error.message}`);
   }
 }
 
 async function syncCMS() {
-  console.log(`🔄 Sincronizando datos y media desde Payload CMS (${CMS_BASE_URL})...`);
+  console.log(`Syncing data and media from Payload CMS (${CMS_BASE_URL})...`);
 
   const dataDir = path.resolve(__dirname, '../src/data/cms');
 
@@ -113,7 +115,7 @@ async function syncCMS() {
     const localeDir = path.join(dataDir, locale);
     if (!fs.existsSync(localeDir)) fs.mkdirSync(localeDir, { recursive: true });
 
-    console.log(`\n📥 Descargando idioma: [${locale.toUpperCase()}]`);
+    console.log(`\nDownloading locale: [${locale.toUpperCase()}]`);
 
     for (const collection of COLLECTIONS) {
       const url = `${CMS_URL}/${collection.endpoint}&locale=${locale}`;
@@ -127,27 +129,7 @@ async function syncCMS() {
     }
   }
 
-  /* 
-  // LIMPIEZA: Eliminar archivos huerfanos (que ya no existen en el CMS)
-  if (fs.existsSync(MEDIA_DIR)) {
-    const existingFiles = fs.readdirSync(MEDIA_DIR);
-    let deletedCount = 0;
-    for (const file of existingFiles) {
-      if (!downloadedFiles.has(file)) {
-        fs.unlinkSync(path.join(MEDIA_DIR, file));
-        deletedCount++;
-      }
-    }
-    if (deletedCount > 0) {
-      console.log(`\n🧹 Limpieza: Se eliminaron ${deletedCount} archivos que ya no están en uso.`);
-    }
-  }
-  */
-
-
-  console.log(
-    '\n✨ Sincronización completada con éxito. Astro puede usar ahora src/data/cms/ y public/cms-media/'
-  );
+  console.log('\nSync complete. Astro can now use src/data/cms/ and public/cms-media/');
 }
 
 syncCMS();

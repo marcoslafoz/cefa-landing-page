@@ -1,15 +1,16 @@
 {
-  "createdAt": "2026-04-15T12:41:19.853Z",
-  "updatedAt": "2026-04-15T12:41:19.858Z",
+  "createdAt": "2026-04-16T06:32:59.874Z",
+  "updatedAt": "2026-04-16T06:32:59.879Z",
   "globalType": "careers",
   "title": "Trabaja con nosotros",
   "subtitle": "Únete a un equipo líder que define el futuro de la movilidad a través de la innovación y la excelencia. Buscamos talento apasionado por la ingeniería y la calidad.",
   "email": "rrhh@cefa.es",
   "emailLabel": "Candidaturas y RRHH",
+  "phone": "+34 976 465 000",
   "phoneLabel": "Contacto Selección",
   "phoneHours": "Atención de Lunes a Viernes (8:00–17:00)",
   "cvHint": "Adjunta tu CV en formato PDF",
   "linkedinCta": "Ver ofertas en LinkedIn",
   "linkedinShort": "Ofertas en LinkedIn",
-  "id": "69df876f5f9ea2513ece4639"
+  "id": "69e0829bdecc0cd23fa9b946"
 }

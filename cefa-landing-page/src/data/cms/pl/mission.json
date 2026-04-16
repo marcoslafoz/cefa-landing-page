@@ -1,59 +1,12 @@
 {
-  "createdAt": "2026-04-15T12:41:19.752Z",
-  "updatedAt": "2026-04-15T12:41:19.767Z",
+  "createdAt": "2026-04-16T06:32:59.770Z",
+  "updatedAt": "2026-04-16T06:32:59.775Z",
   "globalType": "mission",
-  "mission": {
-    "eyebrow": "Misja",
-    "title": "Skoncentrowani na kliencie, napędzani doskonałością",
-    "body1": "CEFA to hiszpańska firma przemysłowa o zasięgu globalnym, która specjalizuje się w badaniach, rozwoju i produkcji komponentów oraz modułów z tworzyw sztucznych dla sektora motoryzacyjnego, stosując najnowocześniejsze technologie.",
-    "body2": "Kierując się dążeniem do doskonałości i satysfakcją naszych akcjonariuszy, pracowników oraz społeczeństwa, zapewniamy stałą wartość poprzez pracę zespołową i konkurencyjność.",
-    "cta": "Nasza historia",
-    "badgeLabel": "Od"
-  },
-  "pillars": [
-    {
-      "title": "Certyfikowana jakość",
-      "text": "Procesy z certyfikatem ISO 9001 i IATF 16949 zapewniające najwyższe standardy.",
-      "id": "69df876fc90bee00015ab719"
-    },
-    {
-      "title": "Ciągła innowacja",
-      "text": "Stałe inwestycje w badania i rozwój oraz zaawansowane procesy produkcyjne.",
-      "id": "69df876fc90bee00015ab71a"
-    },
-    {
-      "title": "Globalna obecność",
-      "text": "Obsługa wiodących producentów OEM w skali międzynarodowej.",
-      "id": "69df876fc90bee00015ab71b"
-    }
-  ],
-  "vision": {
-    "eyebrow": "Wizja",
-    "title": "Nasza wizja",
-    "body": "Być przemysłowym punktem odniesienia",
-    "cta": "Więcej",
-    "values": [
-      {
-        "title": "Preferowany partner klienta",
-        "text": "Zdywersyfikowany portfel, wysoki udział w rynku i solidna sprzedaż.",
-        "id": "69df876fc90bee00015ab71c"
-      },
-      {
-        "title": "Benchmark technologiczny",
-        "text": "Innowacyjność i szybkie wdrażanie zaawansowanych technologii dla odpowiedzialnego tworzenia wartości.",
-        "id": "69df876fc90bee00015ab71d"
-      },
-      {
-        "title": "Zrównoważony ekonomicznie",
-        "text": "Maksymalny zwrot (EBITDA) przy zoptymalizowanych inwestycjach.",
-        "id": "69df876fc90bee00015ab71e"
-      },
-      {
-        "title": "Miejsce do rozwoju",
-        "text": "Wysoka satysfakcja oraz wzrost ludzki i zawodowy utalentowanych zespołów.",
-        "id": "69df876fc90bee00015ab71f"
-      }
-    ]
-  },
-  "id": "69df876f5f9ea2513ece45d7"
+  "eyebrow": "Misja",
+  "title": "Skoncentrowani na kliencie, napędzani doskonałością",
+  "body1": "CEFA to hiszpańska firma przemysłowa o zasięgu globalnym, która specjalizuje się w badaniach, rozwoju i produkcji komponentów oraz modułów z tworzyw sztucznych dla sektora motoryzacyjnego, stosując najnowocześniejsze technologie.",
+  "body2": "Kierując się dążeniem do doskonałości i satysfakcją naszych akcjonariuszy, pracowników oraz społeczeństwa, zapewniamy stałą wartość poprzez pracę zespołową i konkurencyjność.",
+  "cta": "Nasza historia",
+  "badgeLabel": "Od",
+  "id": "69e0829bdecc0cd23fa9b8ac"
 }

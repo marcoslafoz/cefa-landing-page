@@ -1,0 +1,27 @@
+{
+  "docs": [
+    {
+      "createdAt": "2026-04-16T06:33:03.676Z",
+      "updatedAt": "2026-04-16T06:33:03.834Z",
+      "name": "Calidad",
+      "identifier": "calidad",
+      "id": "69e0829fdecc0cd23fa9bb20"
+    },
+    {
+      "createdAt": "2026-04-16T06:33:03.835Z",
+      "updatedAt": "2026-04-16T06:33:04.164Z",
+      "name": "Medio Ambiente",
+      "identifier": "medio-ambiente",
+      "id": "69e0829fdecc0cd23fa9bb2e"
+    }
+  ],
+  "totalDocs": 2,
+  "limit": 100,
+  "totalPages": 1,
+  "page": 1,
+  "pagingCounter": 1,
+  "hasPrevPage": false,
+  "hasNextPage": false,
+  "prevPage": null,
+  "nextPage": null
+}

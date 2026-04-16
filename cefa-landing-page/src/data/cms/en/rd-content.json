@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T12:41:19.828Z",
-  "updatedAt": "2026-04-15T12:41:19.839Z",
+  "createdAt": "2026-04-16T06:32:59.852Z",
+  "updatedAt": "2026-04-16T06:32:59.861Z",
   "globalType": "rd-content",
   "eyebrow": "Innovation & development",
   "title": "R&D Projects",
@@ -9,17 +9,17 @@
     {
       "value": "+15%",
       "label": "Annual R&D investment",
-      "id": "69df876fc90bee00015ab739"
+      "id": "69e0829bf0ca630001abfc9b"
     },
     {
       "value": "16+",
       "label": "Funded projects",
-      "id": "69df876fc90bee00015ab73a"
+      "id": "69e0829bf0ca630001abfc9c"
     },
     {
       "value": "3",
       "label": "Development centres",
-      "id": "69df876fc90bee00015ab73b"
+      "id": "69e0829bf0ca630001abfc9d"
     }
   ],
   "funders": {
@@ -29,12 +29,12 @@
       {
         "name": "Government of Aragon",
         "description": "Projects co-financed by the Government of Aragon under industrial transformation and development aid programmes, with ERDF funds.",
-        "id": "69df876fc90bee00015ab73c"
+        "id": "69e0829bf0ca630001abfc9e"
       },
       {
         "name": "European Union",
         "description": "Projects co-financed by the European Union under energy efficiency and industrial innovation programmes.",
-        "id": "69df876fc90bee00015ab73d"
+        "id": "69e0829bf0ca630001abfc9f"
       }
     ]
   },
@@ -47,5 +47,5 @@
     "title": "R&D Projects in Plastic Injection & Automotive Manufacturing | CEFA",
     "description": "R&D in materials, injection processes and digitalisation for automotive OEMs. CEFA invests +15% annually in innovation for next-generation plastic components."
   },
-  "id": "69df876f5f9ea2513ece461d"
+  "id": "69e0829bdecc0cd23fa9b92a"
 }

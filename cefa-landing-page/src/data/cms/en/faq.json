@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T12:41:19.860Z",
-  "updatedAt": "2026-04-15T12:41:19.865Z",
+  "createdAt": "2026-04-16T06:32:59.880Z",
+  "updatedAt": "2026-04-16T06:32:59.886Z",
   "globalType": "faq",
   "eyebrow": "Frequently asked questions",
   "title": "Everything you need to know about CEFA",
@@ -8,23 +8,23 @@
     {
       "question": "What plastic automotive components does CEFA manufacture?",
       "answer": "CEFA manufactures four product lines by high-precision plastic injection moulding: instrument panels and central consoles (dashboards), door panels and interior trims, functional applications in the engine compartment and passenger cabin, and exterior trims such as mouldings, spoilers and grilles. All components are produced with micrometric tolerances for the world's leading OEMs.",
-      "id": "69df876fc90bee00015ab747"
+      "id": "69e0829bf0ca630001abfca9"
     },
     {
       "question": "Is CEFA certified to IATF 16949 and ISO 9001?",
       "answer": "Yes. CEFA holds IATF 16949 certification (the automotive industry's most demanding quality standard), ISO 9001 and ISO 14001 (environment). Our processes undergo annual audits and we maintain a defect rate below 10 PPM with full traceability of every manufactured component.",
-      "id": "69df876fc90bee00015ab748"
+      "id": "69e0829bf0ca630001abfcaa"
     },
     {
       "question": "Where are CEFA's manufacturing plants located?",
       "answer": "CEFA has three industrial plants: Malpica Plant in Zaragoza (Spain), Figueruelas Plant in Zaragoza (Spain), and CEFA Poland in Żagań (Poland). This strategic presence in the heart of Europe allows us to serve the world's leading automotive manufacturers (OEMs) quickly and flexibly.",
-      "id": "69df876fc90bee00015ab749"
+      "id": "69e0829bf0ca630001abfcab"
     },
     {
       "question": "Which automotive brands does CEFA supply components to?",
       "answer": "CEFA supplies plastic components to the world's leading OEMs, including Volkswagen, Audi, SEAT, Skoda, Renault, Ford, Mercedes-Benz, Nissan, Opel, Citroën, Fiat, Lancia, Cupra and MAN. We are a Tier 1 supplier within the Motherson Group with over 80 years of experience in the automotive sector.",
-      "id": "69df876fc90bee00015ab74a"
+      "id": "69e0829bf0ca630001abfcac"
     }
   ],
-  "id": "69df876f5f9ea2513ece4647"
+  "id": "69e0829bdecc0cd23fa9b954"
 }

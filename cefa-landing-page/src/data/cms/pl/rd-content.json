@@ -1,6 +1,6 @@
 {
-  "createdAt": "2026-04-15T12:41:19.828Z",
-  "updatedAt": "2026-04-15T12:41:19.839Z",
+  "createdAt": "2026-04-16T06:32:59.852Z",
+  "updatedAt": "2026-04-16T06:32:59.861Z",
   "globalType": "rd-content",
   "eyebrow": "Innowacje i rozwój",
   "title": "Projekty B+R",
@@ -9,17 +9,17 @@
     {
       "value": "+15%",
       "label": "Roczna inwestycja w B+R",
-      "id": "69df876fc90bee00015ab739"
+      "id": "69e0829bf0ca630001abfc9b"
     },
     {
       "value": "16+",
       "label": "Finansowane projekty",
-      "id": "69df876fc90bee00015ab73a"
+      "id": "69e0829bf0ca630001abfc9c"
     },
     {
       "value": "3",
       "label": "Centra rozwoju",
-      "id": "69df876fc90bee00015ab73b"
+      "id": "69e0829bf0ca630001abfc9d"
     }
   ],
   "funders": {
@@ -29,12 +29,12 @@
       {
         "name": "Rząd Aragonii",
         "description": "Projekty współfinansowane przez Rząd Aragonii w ramach programów wsparcia transformacji i rozwoju przemysłowego, z funduszami EFRR.",
-        "id": "69df876fc90bee00015ab73c"
+        "id": "69e0829bf0ca630001abfc9e"
       },
       {
         "name": "Unia Europejska",
         "description": "Projekty współfinansowane przez Unię Europejską w ramach programów efektywności energetycznej i innowacji przemysłowych.",
-        "id": "69df876fc90bee00015ab73d"
+        "id": "69e0829bf0ca630001abfc9f"
       }
     ]
   },
@@ -47,5 +47,5 @@
     "title": "Projekty B+R – CEFA",
     "description": "Innowacje i rozwój technologiczny w CEFA. Odkryj nasze projekty badawczo-rozwojowe w zakresie materiałów, procesów i komponentów dla przemysłu motoryzacyjnego."
   },
-  "id": "69df876f5f9ea2513ece461d"
+  "id": "69e0829bdecc0cd23fa9b92a"
 }

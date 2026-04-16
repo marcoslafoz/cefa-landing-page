@@ -7,20 +7,15 @@ const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(process.cwd(), 'src/data/cms');
 const CMS_URL = process.env.PAYLOAD_CMS_URL || 'http://localhost:3000';
 
-/**
- * Resuelve la URL completa de un medio (imagen/PDF) del CMS
- */
 export function getMediaUrl(media: any): string {
   if (!media) return '';
   const url = typeof media === 'string' ? media : media.url || '';
   if (!url) return '';
 
-  // Si ya es una ruta local (empieza por /) o una URL completa, la devolvemos tal cual
   if (url.startsWith('/') || url.startsWith('http')) {
     return url;
   }
 
-  // Como fallback, si no empieza por /, lo tratamos como relativo al CMS
   return `${CMS_URL.replace(/\/$/, '')}/${url}`;
 }
 async function getCMSData(filename: string, locale: string) {
@@ -32,33 +27,58 @@ async function getCMSData(filename: string, locale: string) {
       return JSON.parse(content);
     }
 
-    console.warn(`Archivo local no encontrado: ${filePath}. Ejecuta 'npm run sync:cms'.`);
+    console.warn(`Local file not found: ${filePath}. Run 'npm run sync:cms'.`);
     return null;
   } catch (error) {
-    console.error(`Error leyendo el archivo local de CMS [${filename}]:`, error);
+    console.error(`Error reading local CMS file [${filename}]:`, error);
     return null;
   }
 }
 
 export async function getProducts(locale: string = 'es') {
+  const sectionData = await getCMSData('products-section', locale);
+  if (sectionData?.products?.length > 0) return sectionData.products;
   const data = await getCMSData('products', locale);
   return data?.docs || [];
 }
 
-export async function getProjects(locale: string = 'es', type?: 'aragon' | 'eu') {
+export async function getProductsSection(locale: string = 'es') {
+  const data = await getCMSData('products-section', locale);
+  return data || null;
+}
+
+export async function getProjectCategories(locale: string = 'es') {
+  const data = await getCMSData('project-categories', locale);
+  return data?.docs || [];
+}
+
+export async function getProjects(locale: string = 'es', categoryIdentifier?: string) {
   const data = await getCMSData('projects', locale);
   const docs = data?.docs || [];
-  if (type) {
-    return docs.filter((doc: any) => doc.type === type);
+  if (categoryIdentifier) {
+    return docs.filter((doc: any) => {
+      if (!doc.category) return false;
+      const iden = typeof doc.category === 'object' ? doc.category.identifier : null;
+      return iden === categoryIdentifier;
+    });
   }
   return docs;
 }
 
-export async function getCertificates(locale: string = 'es', type?: 'quality' | 'environment') {
+export async function getCertificateCategories(locale: string = 'es') {
+  const data = await getCMSData('certificate-categories', locale);
+  return data?.docs || [];
+}
+
+export async function getCertificates(locale: string = 'es', categoryIdentifier?: string) {
   const data = await getCMSData('certificates', locale);
   const docs = data?.docs || [];
-  if (type) {
-    return docs.filter((doc: any) => doc.type === type);
+  if (categoryIdentifier) {
+    return docs.filter((doc: any) => {
+      if (!doc.category) return false;
+      const iden = typeof doc.category === 'object' ? doc.category.identifier : null;
+      return iden === categoryIdentifier;
+    });
   }
   return docs;
 }
@@ -79,13 +99,28 @@ export async function getMission(locale: string = 'es') {
   return data || null;
 }
 
+export async function getVision(locale: string = 'es') {
+  const data = await getCMSData('vision', locale);
+  return data || null;
+}
+
 export async function getInnovation(locale: string = 'es') {
   const data = await getCMSData('innovation', locale);
   return data || null;
 }
 
+export async function getQuote(locale: string = 'es') {
+  const data = await getCMSData('quote', locale);
+  return data || null;
+}
+
 export async function getContact(locale: string = 'es') {
   const data = await getCMSData('contact', locale);
+  return data || null;
+}
+
+export async function getClients(locale: string = 'es') {
+  const data = await getCMSData('clients', locale);
   return data || null;
 }
 

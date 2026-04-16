@@ -15,39 +15,37 @@ export const Certificates: CollectionConfig = {
   },
   fields: [
     {
-      name: 'type',
-      type: 'select',
+      name: 'category',
+      type: 'relationship',
+      relationTo: 'certificate-categories' as any,
       required: true,
-      options: [
-        { label: 'Calidad', value: 'Calidad' },
-        { label: 'Medio Ambiente', value: 'Medio Ambiente' },
-      ],
+      label: 'Certification Type',
       admin: {
         position: 'sidebar',
       },
     },
     {
       name: 'name',
-      label: 'Nombre del Certificado',
+      label: 'Certificate Name',
       type: 'text',
       required: true,
       localized: true,
     },
     {
       name: 'issuer',
-      label: 'Emisor (ej: ISO)',
+      label: 'Issuer (e.g. ISO)',
       type: 'text',
       required: true,
       localized: true,
     },
     {
       name: 'issueDate',
-      label: 'Fecha de Emisión',
+      label: 'Issue Date',
       type: 'text',
     },
     {
       name: 'file',
-      label: 'Documento (Imagen o PDF)',
+      label: 'Document (Image or PDF)',
       type: 'upload',
       relationTo: 'media',
       required: false,

@@ -8,8 +8,6 @@ import compress from 'astro-compress';
 
 export default defineConfig({
   site: 'https://cefa.es',
-  // Static by default; individual routes opt-in to SSR with `export const prerender = false`
-  // The node adapter handles those server-rendered endpoints (e.g. /api/contact)
   adapter: node({ mode: 'standalone' }),
 
   build: {
@@ -53,23 +51,18 @@ export default defineConfig({
           pl: 'pl-PL',
         },
       },
-      // Assign crawl priorities and freshness signals so Google focuses
-      // crawl budget on high-value pages and knows when content was last updated.
       serialize(item) {
         const url = item.url;
         const lastmod = new Date().toISOString();
 
-        // Homepages: highest priority, updated frequently
         if (/^https:\/\/cefa\.es\/(es\/|de\/|pl\/)?$/.test(url)) {
           return { ...item, priority: 1.0, changefreq: 'weekly', lastmod };
         }
 
-        // Legal/cookies/privacy: low value, rarely changes
         if (/\/(legal|privacy|cookies|privacidad|datenschutz|prywatnosc|polityka)/.test(url)) {
           return { ...item, priority: 0.2, changefreq: 'yearly', lastmod };
         }
 
-        // High-value product/trust pages
         if (
           /\/(certifications|projects|certificaciones|proyectos|zertifikate|projekte|certyfikaty)/.test(
             url
@@ -78,7 +71,6 @@ export default defineConfig({
           return { ...item, priority: 0.8, changefreq: 'monthly', lastmod };
         }
 
-        // Default for everything else
         return { ...item, priority: 0.6, changefreq: 'monthly', lastmod };
       },
     }),

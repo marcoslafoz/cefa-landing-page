@@ -42,7 +42,6 @@ const fallbackAwards = [
 const rawAwardsList = awardsData?.list?.map((v: any) => v.award);
 const awards = rawAwardsList && rawAwardsList.length > 0 ? rawAwardsList : fallbackAwards;
 
-// Split awards into two columns
 const midPoint = Math.ceil(awards.length / 2);
 const leftColumn = awards.slice(0, midPoint);
 const rightColumn = awards.slice(midPoint);

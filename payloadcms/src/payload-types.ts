@@ -69,8 +69,7 @@ export interface Config {
   collections: {
     users: User;
     media: Media;
-    pages: Page;
-    products: Product;
+    'project-categories': ProjectCategory;
     projects: Project;
     certificates: Certificate;
     'payload-kv': PayloadKv;
@@ -82,8 +81,7 @@ export interface Config {
   collectionsSelect: {
     users: UsersSelect<false> | UsersSelect<true>;
     media: MediaSelect<false> | MediaSelect<true>;
-    pages: PagesSelect<false> | PagesSelect<true>;
-    products: ProductsSelect<false> | ProductsSelect<true>;
+    'project-categories': ProjectCategoriesSelect<false> | ProjectCategoriesSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     certificates: CertificatesSelect<false> | CertificatesSelect<true>;
     'payload-kv': PayloadKvSelect<false> | PayloadKvSelect<true>;
@@ -101,13 +99,15 @@ export interface Config {
     | ('es' | 'en' | 'de' | 'pl')
     | ('es' | 'en' | 'de' | 'pl')[];
   globals: {
-    'site-settings': SiteSetting;
-    'landing-content': LandingContent;
-    navigation: Navigation;
+    header: Header;
     hero: Hero;
-    company: Company;
+    mission: Mission;
+    vision: Vision;
     innovation: Innovation;
-    'contact-info': ContactInfo;
+    'products-section': ProductsSection;
+    quote: Quote;
+    clients: Client;
+    contact: Contact;
     awards: Award;
     'certifications-content': CertificationsContent;
     'rd-content': RdContent;
@@ -117,13 +117,15 @@ export interface Config {
     seo: Seo;
   };
   globalsSelect: {
-    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
-    'landing-content': LandingContentSelect<false> | LandingContentSelect<true>;
-    navigation: NavigationSelect<false> | NavigationSelect<true>;
+    header: HeaderSelect<false> | HeaderSelect<true>;
     hero: HeroSelect<false> | HeroSelect<true>;
-    company: CompanySelect<false> | CompanySelect<true>;
+    mission: MissionSelect<false> | MissionSelect<true>;
+    vision: VisionSelect<false> | VisionSelect<true>;
     innovation: InnovationSelect<false> | InnovationSelect<true>;
-    'contact-info': ContactInfoSelect<false> | ContactInfoSelect<true>;
+    'products-section': ProductsSectionSelect<false> | ProductsSectionSelect<true>;
+    quote: QuoteSelect<false> | QuoteSelect<true>;
+    clients: ClientsSelect<false> | ClientsSelect<true>;
+    contact: ContactSelect<false> | ContactSelect<true>;
     awards: AwardsSelect<false> | AwardsSelect<true>;
     'certifications-content': CertificationsContentSelect<false> | CertificationsContentSelect<true>;
     'rd-content': RdContentSelect<false> | RdContentSelect<true>;
@@ -206,45 +208,14 @@ export interface Media {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages".
+ * via the `definition` "project-categories".
  */
-export interface Page {
+export interface ProjectCategory {
   id: string;
-  title: string;
-  slug: string;
-  content?: {
-    root: {
-      type: string;
-      children: {
-        type: any;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  } | null;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products".
- */
-export interface Product {
-  id: string;
-  title: string;
-  description: string;
-  image?: (string | null) | Media;
-  features?:
-    | {
-        feature?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  name: string;
+  description?: string | null;
+  logo: string | Media;
+  identifier: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -254,18 +225,11 @@ export interface Product {
  */
 export interface Project {
   id: string;
-  type: 'aragon' | 'eu';
+  category: string | ProjectCategory;
   title: string;
   client: string;
   description: string;
-  image?: (string | null) | Media;
   file?: (string | null) | Media;
-  gallery?:
-    | {
-        image?: (string | null) | Media;
-        id?: string | null;
-      }[]
-    | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -279,7 +243,6 @@ export interface Certificate {
   name: string;
   issuer: string;
   issueDate?: string | null;
-  image?: (string | null) | Media;
   file?: (string | null) | Media;
   updatedAt: string;
   createdAt: string;
@@ -317,12 +280,8 @@ export interface PayloadLockedDocument {
         value: string | Media;
       } | null)
     | ({
-        relationTo: 'pages';
-        value: string | Page;
-      } | null)
-    | ({
-        relationTo: 'products';
-        value: string | Product;
+        relationTo: 'project-categories';
+        value: string | ProjectCategory;
       } | null)
     | ({
         relationTo: 'projects';
@@ -416,29 +375,13 @@ export interface MediaSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "pages_select".
+ * via the `definition` "project-categories_select".
  */
-export interface PagesSelect<T extends boolean = true> {
-  title?: T;
-  slug?: T;
-  content?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "products_select".
- */
-export interface ProductsSelect<T extends boolean = true> {
-  title?: T;
+export interface ProjectCategoriesSelect<T extends boolean = true> {
+  name?: T;
   description?: T;
-  image?: T;
-  features?:
-    | T
-    | {
-        feature?: T;
-        id?: T;
-      };
+  logo?: T;
+  identifier?: T;
   updatedAt?: T;
   createdAt?: T;
 }
@@ -447,18 +390,11 @@ export interface ProductsSelect<T extends boolean = true> {
  * via the `definition` "projects_select".
  */
 export interface ProjectsSelect<T extends boolean = true> {
-  type?: T;
+  category?: T;
   title?: T;
   client?: T;
   description?: T;
-  image?: T;
   file?: T;
-  gallery?:
-    | T
-    | {
-        image?: T;
-        id?: T;
-      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -471,7 +407,6 @@ export interface CertificatesSelect<T extends boolean = true> {
   name?: T;
   issuer?: T;
   issueDate?: T;
-  image?: T;
   file?: T;
   updatedAt?: T;
   createdAt?: T;
@@ -518,55 +453,9 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings".
+ * via the `definition` "header".
  */
-export interface SiteSetting {
-  id: string;
-  siteName: string;
-  logo?: (string | null) | Media;
-  footerText?: string | null;
-  socialLinks?:
-    | {
-        platform?: string | null;
-        url?: string | null;
-        id?: string | null;
-      }[]
-    | null;
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "landing-content".
- */
-export interface LandingContent {
-  id: string;
-  hero?: {
-    titleLine1?: string | null;
-    titleLine2?: string | null;
-    subtitle?: string | null;
-    ctaText?: string | null;
-  };
-  mission?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  vision?: {
-    title?: string | null;
-    description?: string | null;
-  };
-  footer?: {
-    companyInfo?: string | null;
-    copyright?: string | null;
-  };
-  updatedAt?: string | null;
-  createdAt?: string | null;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "navigation".
- */
-export interface Navigation {
+export interface Header {
   id: string;
   header?: {
     company?: string | null;
@@ -627,38 +516,43 @@ export interface Hero {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "company".
+ * via the `definition` "mission".
  */
-export interface Company {
+export interface Mission {
   id: string;
-  mission?: {
-    eyebrow?: string | null;
-    title?: string | null;
-    body1?: string | null;
-    body2?: string | null;
-    cta?: string | null;
-    badgeLabel?: string | null;
-  };
-  pillars?:
+  eyebrow?: string | null;
+  title?: string | null;
+  body1?: string | null;
+  body2?: string | null;
+  cta?: string | null;
+  badgeLabel?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "vision".
+ */
+export interface Vision {
+  id: string;
+  eyebrow?: string | null;
+  title?: string | null;
+  body?: string | null;
+  cta?: string | null;
+  values?:
     | {
         title?: string | null;
         text?: string | null;
         id?: string | null;
       }[]
     | null;
-  vision?: {
-    eyebrow?: string | null;
-    title?: string | null;
-    body?: string | null;
-    cta?: string | null;
-    values?:
-      | {
-          title?: string | null;
-          text?: string | null;
-          id?: string | null;
-        }[]
-      | null;
-  };
+  gallery?:
+    | {
+        image: string | Media;
+        alt?: string | null;
+        id?: string | null;
+      }[]
+    | null;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -678,12 +572,10 @@ export interface Innovation {
         id?: string | null;
       }[]
     | null;
-  stats?:
-    | {
-        label?: string | null;
-        id?: string | null;
-      }[]
-    | null;
+  stat1Value?: string | null;
+  stat1Label?: string | null;
+  stat2Value?: string | null;
+  stat2Label?: string | null;
   loadingText?: string | null;
   rotateText?: string | null;
   updatedAt?: string | null;
@@ -691,9 +583,69 @@ export interface Innovation {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "contact-info".
+ * via the `definition` "products-section".
  */
-export interface ContactInfo {
+export interface ProductsSection {
+  id: string;
+  sectionHeader?: {
+    eyebrow?: string | null;
+    title?: string | null;
+    subtitle?: string | null;
+    cta?: string | null;
+  };
+  products?:
+    | {
+        title: string;
+        description?: string | null;
+        category?: string | null;
+        image?: (string | null) | Media;
+        features?:
+          | {
+              feature?: string | null;
+              id?: string | null;
+            }[]
+          | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "quote".
+ */
+export interface Quote {
+  id: string;
+  text: string;
+  philosophy?: string | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients".
+ */
+export interface Client {
+  id: string;
+  eyebrow?: string | null;
+  title?: string | null;
+  subtitle?: string | null;
+  logos?:
+    | {
+        image: string | Media;
+        name?: string | null;
+        id?: string | null;
+      }[]
+    | null;
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact".
+ */
+export interface Contact {
   id: string;
   map?: {
     eyebrow?: string | null;
@@ -846,6 +798,7 @@ export interface Career {
   subtitle?: string | null;
   email?: string | null;
   emailLabel?: string | null;
+  phone?: string | null;
   phoneLabel?: string | null;
   phoneHours?: string | null;
   cvHint?: string | null;
@@ -892,63 +845,9 @@ export interface Seo {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "site-settings_select".
+ * via the `definition` "header_select".
  */
-export interface SiteSettingsSelect<T extends boolean = true> {
-  siteName?: T;
-  logo?: T;
-  footerText?: T;
-  socialLinks?:
-    | T
-    | {
-        platform?: T;
-        url?: T;
-        id?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "landing-content_select".
- */
-export interface LandingContentSelect<T extends boolean = true> {
-  hero?:
-    | T
-    | {
-        titleLine1?: T;
-        titleLine2?: T;
-        subtitle?: T;
-        ctaText?: T;
-      };
-  mission?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-      };
-  vision?:
-    | T
-    | {
-        title?: T;
-        description?: T;
-      };
-  footer?:
-    | T
-    | {
-        companyInfo?: T;
-        copyright?: T;
-      };
-  updatedAt?: T;
-  createdAt?: T;
-  globalType?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "navigation_select".
- */
-export interface NavigationSelect<T extends boolean = true> {
+export interface HeaderSelect<T extends boolean = true> {
   header?:
     | T
     | {
@@ -1017,40 +916,41 @@ export interface HeroSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "company_select".
+ * via the `definition` "mission_select".
  */
-export interface CompanySelect<T extends boolean = true> {
-  mission?:
-    | T
-    | {
-        eyebrow?: T;
-        title?: T;
-        body1?: T;
-        body2?: T;
-        cta?: T;
-        badgeLabel?: T;
-      };
-  pillars?:
+export interface MissionSelect<T extends boolean = true> {
+  eyebrow?: T;
+  title?: T;
+  body1?: T;
+  body2?: T;
+  cta?: T;
+  badgeLabel?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "vision_select".
+ */
+export interface VisionSelect<T extends boolean = true> {
+  eyebrow?: T;
+  title?: T;
+  body?: T;
+  cta?: T;
+  values?:
     | T
     | {
         title?: T;
         text?: T;
         id?: T;
       };
-  vision?:
+  gallery?:
     | T
     | {
-        eyebrow?: T;
-        title?: T;
-        body?: T;
-        cta?: T;
-        values?:
-          | T
-          | {
-              title?: T;
-              text?: T;
-              id?: T;
-            };
+        image?: T;
+        alt?: T;
+        id?: T;
       };
   updatedAt?: T;
   createdAt?: T;
@@ -1071,12 +971,10 @@ export interface InnovationSelect<T extends boolean = true> {
         text?: T;
         id?: T;
       };
-  stats?:
-    | T
-    | {
-        label?: T;
-        id?: T;
-      };
+  stat1Value?: T;
+  stat1Label?: T;
+  stat2Value?: T;
+  stat2Label?: T;
   loadingText?: T;
   rotateText?: T;
   updatedAt?: T;
@@ -1085,9 +983,71 @@ export interface InnovationSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "contact-info_select".
+ * via the `definition` "products-section_select".
  */
-export interface ContactInfoSelect<T extends boolean = true> {
+export interface ProductsSectionSelect<T extends boolean = true> {
+  sectionHeader?:
+    | T
+    | {
+        eyebrow?: T;
+        title?: T;
+        subtitle?: T;
+        cta?: T;
+      };
+  products?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        category?: T;
+        image?: T;
+        features?:
+          | T
+          | {
+              feature?: T;
+              id?: T;
+            };
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "quote_select".
+ */
+export interface QuoteSelect<T extends boolean = true> {
+  text?: T;
+  philosophy?: T;
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "clients_select".
+ */
+export interface ClientsSelect<T extends boolean = true> {
+  eyebrow?: T;
+  title?: T;
+  subtitle?: T;
+  logos?:
+    | T
+    | {
+        image?: T;
+        name?: T;
+        id?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "contact_select".
+ */
+export interface ContactSelect<T extends boolean = true> {
   map?:
     | T
     | {
@@ -1259,6 +1219,7 @@ export interface CareersSelect<T extends boolean = true> {
   subtitle?: T;
   email?: T;
   emailLabel?: T;
+  phone?: T;
   phoneLabel?: T;
   phoneHours?: T;
   cvHint?: T;

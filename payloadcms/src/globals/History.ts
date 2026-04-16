@@ -3,6 +3,7 @@ import { autoTranslateGlobalHook } from '../hooks/translate'
 
 export const History: GlobalConfig = {
   slug: 'history-content',
+  label: 'History',
   access: {
     read: () => true,
   },

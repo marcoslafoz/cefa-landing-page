@@ -30,8 +30,10 @@ const features = [
   },
 ];
 
-const stat1Label = innovationData?.stats?.[0]?.label || t('innovation.stat1.label');
-const stat2Label = innovationData?.stats?.[1]?.label || t('innovation.stat2.label');
+const stat1Value = innovationData?.stat1Value || '100%';
+const stat1Label = innovationData?.stat1Label || innovationData?.stats?.[0]?.label || t('innovation.stat1.label');
+const stat2Value = innovationData?.stat2Value || 'I+D+i';
+const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.label || t('innovation.stat2.label');
 ---
 
 <Section id="innovation" background="white" class="pb-16 lg:pb-20">
@@ -62,12 +64,12 @@ const stat2Label = innovationData?.stats?.[1]?.label || t('innovation.stat2.labe
       </div>
 
       <div class="flex flex-wrap gap-12 pt-6 border-t border-cefa-navy/6">
-        <StatItem value="100%" label={stat1Label} class="items-start! p-0!" />
+        <StatItem value={stat1Value} label={stat1Label} class="items-start! p-0!" />
         <div class="flex flex-col items-start justify-center py-6 lg:py-8 px-4 reveal p-0!">
           <span
             class="text-3xl lg:text-4xl font-light text-cefa-navy tracking-tight leading-none mb-2"
           >
-            I+D<span class="text-cefa-red">i</span>
+            {stat2Value.replace(/\+i$/i, '')}<span class="text-cefa-red">{stat2Value.endsWith('i') || stat2Value.endsWith('I') ? 'i' : ''}</span>
           </span>
           <span
             class="text-[0.55rem] lg:text-[0.6rem] uppercase tracking-[0.3em] text-gray-400 font-bold leading-tight"
@@ -122,11 +124,7 @@ const stat2Label = innovationData?.stats?.[1]?.label || t('innovation.stat2.labe
 <script>
   import type * as THREE_TYPES from 'three';
 
-  // Three.js se carga dinámicamente solo cuando la sección de Innovación entra en el viewport.
-  // Esto mantiene ~600 KB fuera del bundle inicial y evita crear un contexto WebGL
-  // hasta que el usuario realmente se desplaza hasta allí.
-
-  const FRAME_INTERVAL = 1000 / 30; // objetivo 30 fps
+  const FRAME_INTERVAL = 1000 / 30;
 
   let threeCleanup: (() => void) | null = null;
   let isInitializing = false;
@@ -185,7 +183,6 @@ const stat2Label = innovationData?.stats?.[1]?.label || t('innovation.stat2.labe
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
       renderer.toneMappingExposure = 1.1;
 
-      // Comprobación de seguridad: asegura que no añadimos múltiples si cargó mientras esperábamos
       if (container.querySelector('canvas')) {
         renderer.dispose();
         return;

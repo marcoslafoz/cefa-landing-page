@@ -1,0 +1,102 @@
+{
+  "createdAt": "2026-04-16T06:32:59.795Z",
+  "updatedAt": "2026-04-16T06:32:59.986Z",
+  "globalType": "products-section",
+  "sectionHeader": {
+    "eyebrow": "Was wir fertigen",
+    "title": "Unsere Produktlinien",
+    "subtitle": "Flexibilität, Agilität und Technologie vereint für die Entwicklung der besten Automobilprodukte.",
+    "cta": "Mehr erfahren"
+  },
+  "products": [
+    {
+      "title": "Instrumententafel und Mittelkonsole",
+      "description": "Technische Lösungen und Materialien, die auf die Erwartungen jedes OEM abgestimmt sind, um die beste Leistung in Bezug auf Sicherheit, Optik und Funktionalität zu gewährleisten.",
+      "category": "Interior",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.943Z",
+        "updatedAt": "2026-04-16T06:32:59.943Z",
+        "alt": "dashboard.webp",
+        "url": "/cms-media/dashboard.webp",
+        "filename": "dashboard.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 59578,
+        "width": 1306,
+        "height": 1204,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9be",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc82"
+    },
+    {
+      "title": "Türverkleidungen und Innenausstattungen",
+      "description": "Komfort und Schutz, Folien, Stoffe und dekorative Leisten, mit flexiblen Prozessen, die die Produktion in allen erdenklichen Kombinationen ermöglichen.",
+      "category": "Interior",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.945Z",
+        "updatedAt": "2026-04-16T06:32:59.945Z",
+        "alt": "door-panels.webp",
+        "url": "/cms-media/door-panels.webp",
+        "filename": "door-panels.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 139478,
+        "width": 1402,
+        "height": 1880,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9c1",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc83"
+    },
+    {
+      "title": "Funktionale Anwendungen",
+      "description": "Komponenten im Motorraum, Fahrgastraum oder Laderaum, die grundlegend sind, um alles zu gewährleisten, was vom Fahrzeug verlangt wird.",
+      "category": "Functional",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.952Z",
+        "updatedAt": "2026-04-16T06:32:59.952Z",
+        "alt": "functional.webp",
+        "url": "/cms-media/functional.webp",
+        "filename": "functional.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 148580,
+        "width": 2114,
+        "height": 1485,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9d3",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc84"
+    },
+    {
+      "title": "Außenverkleidungen",
+      "description": "Funktion und Erscheinungsbild vereint. Leisten, Spoiler, Kühlergitter und dekorative Elemente mit höchster Qualität.",
+      "category": "Exterior",
+      "image": {
+        "createdAt": "2026-04-16T06:32:59.946Z",
+        "updatedAt": "2026-04-16T06:32:59.946Z",
+        "alt": "exterior.webp",
+        "url": "/cms-media/exterior.webp",
+        "filename": "exterior.webp",
+        "mimeType": "image/jpeg",
+        "filesize": 44732,
+        "width": 1500,
+        "height": 1001,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9c4",
+        "thumbnailURL": null
+      },
+      "features": [],
+      "id": "69e0829bf0ca630001abfc85"
+    }
+  ],
+  "id": "69e0829bdecc0cd23fa9b8d6"
+}

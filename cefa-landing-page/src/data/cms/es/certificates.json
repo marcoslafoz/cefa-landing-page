@@ -1,51 +1,120 @@
 {
   "docs": [
     {
-      "createdAt": "2026-04-15T12:41:19.978Z",
-      "updatedAt": "2026-04-15T12:41:19.978Z",
-      "type": "Calidad",
+      "createdAt": "2026-04-16T06:33:04.165Z",
+      "updatedAt": "2026-04-16T06:33:04.165Z",
+      "category": {
+        "createdAt": "2026-04-16T06:33:03.676Z",
+        "updatedAt": "2026-04-16T06:33:03.834Z",
+        "name": "Calidad",
+        "identifier": "calidad",
+        "id": "69e0829fdecc0cd23fa9bb20"
+      },
       "name": "ISO 9001",
       "issuer": "International",
       "issueDate": "1995",
-      "id": "69df876f5f9ea2513ece4727"
+      "file": {
+        "createdAt": "2026-04-16T06:32:59.938Z",
+        "updatedAt": "2026-04-16T06:32:59.938Z",
+        "alt": "certificado-calidad-02.jpg",
+        "url": "/cms-media/certificado-calidad-02.jpg",
+        "filename": "certificado-calidad-02.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 11755,
+        "width": 234,
+        "height": 331,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9b2",
+        "thumbnailURL": null
+      },
+      "id": "69e082a0decc0cd23fa9bb3c"
     },
     {
-      "createdAt": "2026-04-15T12:41:19.977Z",
-      "updatedAt": "2026-04-15T12:41:19.977Z",
-      "type": "Calidad",
+      "createdAt": "2026-04-16T06:33:04.168Z",
+      "updatedAt": "2026-04-16T06:33:04.168Z",
+      "category": {
+        "createdAt": "2026-04-16T06:33:03.676Z",
+        "updatedAt": "2026-04-16T06:33:03.834Z",
+        "name": "Calidad",
+        "identifier": "calidad",
+        "id": "69e0829fdecc0cd23fa9bb20"
+      },
       "name": "IATF 16949",
       "issuer": "International",
       "issueDate": "2016",
-      "id": "69df876f5f9ea2513ece4725"
+      "file": {
+        "createdAt": "2026-04-16T06:32:59.936Z",
+        "updatedAt": "2026-04-16T06:32:59.936Z",
+        "alt": "certificado-calidad-01.jpg",
+        "url": "/cms-media/certificado-calidad-01.jpg",
+        "filename": "certificado-calidad-01.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 18507,
+        "width": 234,
+        "height": 331,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9af",
+        "thumbnailURL": null
+      },
+      "id": "69e082a0decc0cd23fa9bb40"
     },
     {
-      "createdAt": "2026-04-15T12:41:19.974Z",
-      "updatedAt": "2026-04-15T12:41:19.974Z",
-      "type": "Calidad",
+      "createdAt": "2026-04-16T06:33:04.170Z",
+      "updatedAt": "2026-04-16T06:33:04.170Z",
+      "category": {
+        "createdAt": "2026-04-16T06:33:03.676Z",
+        "updatedAt": "2026-04-16T06:33:03.834Z",
+        "name": "Calidad",
+        "identifier": "calidad",
+        "id": "69e0829fdecc0cd23fa9bb20"
+      },
       "name": "TISAX",
       "issuer": "ENX Association",
       "issueDate": "2025",
       "file": {
-        "createdAt": "2026-04-15T12:41:19.914Z",
-        "updatedAt": "2026-04-15T12:41:19.914Z",
+        "createdAt": "2026-04-16T06:32:59.906Z",
+        "updatedAt": "2026-04-16T06:32:59.906Z",
         "alt": "TISAXCEFASP.pdf",
         "url": "/cms-media/TISAXCEFASP.pdf",
         "filename": "TISAXCEFASP.pdf",
         "mimeType": "application/pdf",
         "filesize": 132069,
-        "id": "69df876f5f9ea2513ece4696",
+        "id": "69e0829bdecc0cd23fa9b979",
         "thumbnailURL": null
       },
-      "id": "69df876f5f9ea2513ece4722"
+      "id": "69e082a0decc0cd23fa9bb44"
     },
     {
-      "createdAt": "2026-04-15T12:41:19.973Z",
-      "updatedAt": "2026-04-15T12:41:19.973Z",
-      "type": "Medio Ambiente",
+      "createdAt": "2026-04-16T06:33:04.171Z",
+      "updatedAt": "2026-04-16T06:33:04.171Z",
+      "category": {
+        "createdAt": "2026-04-16T06:33:03.835Z",
+        "updatedAt": "2026-04-16T06:33:04.164Z",
+        "name": "Medio Ambiente",
+        "identifier": "medio-ambiente",
+        "id": "69e0829fdecc0cd23fa9bb2e"
+      },
       "name": "ISO 14001",
       "issuer": "International",
       "issueDate": "2015",
-      "id": "69df876f5f9ea2513ece4720"
+      "file": {
+        "createdAt": "2026-04-16T06:32:59.940Z",
+        "updatedAt": "2026-04-16T06:32:59.940Z",
+        "alt": "certificado-medioambiente.jpg",
+        "url": "/cms-media/certificado-medioambiente.jpg",
+        "filename": "certificado-medioambiente.jpg",
+        "mimeType": "image/jpeg",
+        "filesize": 173428,
+        "width": 384,
+        "height": 544,
+        "focalX": 50,
+        "focalY": 50,
+        "id": "69e0829bdecc0cd23fa9b9b5",
+        "thumbnailURL": null
+      },
+      "id": "69e082a0decc0cd23fa9bb48"
     }
   ],
   "totalDocs": 4,

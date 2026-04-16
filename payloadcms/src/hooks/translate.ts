@@ -2,9 +2,6 @@ import type { CollectionAfterChangeHook, GlobalAfterChangeHook, Field } from 'pa
 
 const LIBRETRANSLATE_URL = process.env.LIBRETRANSLATE_URL || 'http://host.docker.internal:5000/translate'
 
-/**
- * Función núcleo de traducción
- */
 async function translate(text: string, source: string, target: string): Promise<string> {
   if (!text || typeof text !== 'string') return text
   const trimmed = text.trim()
@@ -14,7 +11,7 @@ async function translate(text: string, source: string, target: string): Promise<
   if (/^[0-9\s\-+()/:.]+$/.test(trimmed)) return text
 
   try {
-    console.log(`[AutoTranslate] Solicitando traducción a ${target}: "${trimmed.substring(0, 30)}..."`)
+
     const res = await fetch(LIBRETRANSLATE_URL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -22,25 +19,18 @@ async function translate(text: string, source: string, target: string): Promise<
     })
 
     if (!res.ok) {
-      console.warn(`[AutoTranslate] LibreTranslate devolvió error ${res.status}: ${res.statusText}`)
+      console.warn(`[AutoTranslate] LibreTranslate error ${res.status}: ${res.statusText}`)
       return text
     }
 
     const data = await res.json()
     return data.translatedText || text
   } catch (error) {
-    console.error(`[AutoTranslate] Error de red al conectar con ${LIBRETRANSLATE_URL}:`, error)
+    console.error(`[AutoTranslate] Network error connecting to ${LIBRETRANSLATE_URL}:`, error)
     return text
   }
 }
 
-/**
- * Determina si debemos traducir un campo.
- * Lógica:
- * 1. Si el destino está vacío -> TRADUCIR.
- * 2. Si el origen en español ha cambiado RESPECTO AL VALOR ANTERIOR y el destino era igual al origen viejo -> TRADUCIR.
- * 3. Si el destino es exactamente igual al origen actual -> TRADUCIR (posiblemente quedó a medias).
- */
 async function buildTranslationPatch(
   fields: Field[],
   esDoc: any,
@@ -72,29 +62,18 @@ async function buildTranslationPatch(
         if (!esValTrimmed) continue
 
         let shouldTranslate = false
-        let reason = ''
 
-        // 1. Destino vacío o nulo
         if (!targetVal) {
           shouldTranslate = true
-          reason = 'destino vacío'
-        }
-        // 2. El origen ha cambiado y el destino coincidía con el origen anterior (era una traducción automática o copia)
-        else if (prevEsVal !== undefined && esVal !== prevEsVal && targetVal === prevEsVal) {
+        } else if (prevEsVal !== undefined && esVal !== prevEsVal && targetVal === prevEsVal) {
           shouldTranslate = true
-          reason = 'origen cambió y el destino era igual al origen anterior'
-        }
-        // 3. EL ORIGEN HA CAMBIADO: Si el usuario edita el texto en español, queremos re-traducir.
-        else if (prevEsVal !== undefined && esVal !== prevEsVal) {
+        } else if (prevEsVal !== undefined && esVal !== prevEsVal) {
           shouldTranslate = true
-          reason = 'el texto original (ES) ha cambiado'
         }
 
         if (shouldTranslate) {
-          console.log(`[AutoTranslate] Decidido traducir campo "${key}" [${targetLang}] por: ${reason}`)
           const translated = await translate(esVal, 'es', targetLang)
           if (translated && translated !== targetVal) {
-            console.log(`[AutoTranslate] Éxito: "${esVal.substring(0, 20)}..." -> "${translated.substring(0, 20)}..."`)
             patch[key] = translated
           }
         }
@@ -151,14 +130,9 @@ export const autoTranslateCollectionHook: CollectionAfterChangeHook = async ({
   collection,
   operation,
 }) => {
-  if (req.locale !== 'es') {
-    // console.log(`[AutoTranslate] Ignorando porque locale es ${req.locale} (colección: ${collection.slug})`)
-    return doc
-  }
+  if (req.locale !== 'es') return doc
   if (req.context?.disableAutoTranslate) return doc
   if (operation !== 'create' && operation !== 'update') return doc
-
-  console.log(`[AutoTranslate] Hook iniciado para colección "${collection.slug}", operación: ${operation}`)
   const targetLocales = ['en', 'de', 'pl']
 
   for (const locale of targetLocales) {
@@ -203,13 +177,9 @@ export const autoTranslateGlobalHook: GlobalAfterChangeHook = async ({
   req,
   global,
 }) => {
-  if (req.locale !== 'es') {
-    // console.log(`[AutoTranslate] Ignorando porque locale es ${req.locale} (global: ${global.slug})`)
-    return doc
-  }
+  if (req.locale !== 'es') return doc
   if (req.context?.disableAutoTranslate) return doc
 
-  console.log(`[AutoTranslate] Hook iniciado para global "${global.slug}"`)
   const targetLocales = ['en', 'de', 'pl']
 
   for (const locale of targetLocales) {

@@ -11,6 +11,15 @@ export const Header: GlobalConfig = {
   },
   fields: [
     {
+      name: 'logos',
+      type: 'group',
+      fields: [
+        { name: 'cefaColor', type: 'upload', relationTo: 'media', label: 'Logo CEFA Color' },
+        { name: 'cefaWhite', type: 'upload', relationTo: 'media', label: 'CEFA White Logo' },
+        { name: 'motherson', type: 'upload', relationTo: 'media', label: 'Logo Motherson' },
+      ],
+    },
+    {
       name: 'header',
       type: 'group',
       fields: [
@@ -32,7 +41,7 @@ export const Header: GlobalConfig = {
     },
     {
       name: 'links',
-      label: 'Etiquetas de enlaces',
+      label: 'Navigation Link Labels',
       type: 'group',
       fields: [
         { name: 'mission', type: 'text', localized: true },

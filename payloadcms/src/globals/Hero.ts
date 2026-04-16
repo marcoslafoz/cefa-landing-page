@@ -15,6 +15,21 @@ export const Hero: GlobalConfig = {
     { name: 'titleLine2', type: 'text', localized: true },
     { name: 'subtitle', type: 'textarea', localized: true },
     {
+      name: 'backgroundImage',
+      type: 'upload',
+      relationTo: 'media',
+      required: false,
+      label: 'First Frame of Video',
+    },
+    {
+      name: 'vimeoUrl',
+      type: 'text',
+      label: 'Vimeo Video URL',
+      admin: {
+        description: 'Paste the Vimeo video URL (e.g. https://vimeo.com/1181594121)',
+      },
+    },
+    {
       name: 'ctas',
       type: 'group',
       fields: [
