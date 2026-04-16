@@ -110,7 +110,11 @@ const schemaGraph: Record<string, unknown>[] = [
         addressCountry: 'ES',
       },
     },
-    numberOfEmployees: { '@type': 'QuantitativeValue', minValue: employeeCountNumeric, unitText: 'employees' },
+    numberOfEmployees: {
+      '@type': 'QuantitativeValue',
+      minValue: employeeCountNumeric,
+      unitText: 'employees',
+    },
     knowsAbout: [
       'Plastic injection moulding for automotive',
       'Instrument panel manufacturing',
@@ -426,7 +430,7 @@ const fullSchema = { '@context': 'https://schema.org', '@graph': schemaGraph };
 
 <!-- ── Preloads ─────────────────────────────────────────────────────────── -->
 <!-- LCP hero: solo homepage, imagen descubierta antes de parsear el CSS -->
-{isHome && <link rel="preload" as="image" href="/images/mission/frame.webp" fetchpriority="high" />}
+{isHome && <link rel="preload" as="image" href="/cms-media/frame.webp" fetchpriority="high" />}
 <!-- Fuente crítica: evita layout shift -->
 <link
   rel="preload"

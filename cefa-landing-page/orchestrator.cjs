@@ -26,7 +26,7 @@ function rsyncToWebroot() {
       rm -rf ${liveDir}_old || true
     `;
 
-    exec(command, (error, stdout, stderr) => {
+    exec(command, (error, stderr) => {
       if (error) {
         console.error('Swap failed:', error, stderr);
         return reject(error);

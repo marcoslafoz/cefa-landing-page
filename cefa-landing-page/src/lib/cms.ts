@@ -1,13 +1,10 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 const DATA_DIR = path.resolve(process.cwd(), 'src/data/cms');
 const CMS_URL = process.env.PAYLOAD_CMS_URL || 'http://localhost:3000';
 
-export function getMediaUrl(media: any): string {
+export function getMediaUrl(media: string | { url?: string } | null | undefined): string {
   if (!media) return '';
   const url = typeof media === 'string' ? media : media.url || '';
   if (!url) return '';
@@ -56,9 +53,9 @@ export async function getProjects(locale: string = 'es', categoryIdentifier?: st
   const data = await getCMSData('projects', locale);
   const docs = data?.docs || [];
   if (categoryIdentifier) {
-    return docs.filter((doc: any) => {
+    return docs.filter((doc: { category?: string | { identifier?: string } | null }) => {
       if (!doc.category) return false;
-      const iden = typeof doc.category === 'object' ? doc.category.identifier : null;
+      const iden = typeof doc.category === 'object' ? doc.category?.identifier : null;
       return iden === categoryIdentifier;
     });
   }
@@ -74,15 +71,14 @@ export async function getCertificates(locale: string = 'es', categoryIdentifier?
   const data = await getCMSData('certificates', locale);
   const docs = data?.docs || [];
   if (categoryIdentifier) {
-    return docs.filter((doc: any) => {
+    return docs.filter((doc: { category?: string | { identifier?: string } | null }) => {
       if (!doc.category) return false;
-      const iden = typeof doc.category === 'object' ? doc.category.identifier : null;
+      const iden = typeof doc.category === 'object' ? doc.category?.identifier : null;
       return iden === categoryIdentifier;
     });
   }
   return docs;
 }
-
 
 export async function getHeader(locale: string = 'es') {
   const data = await getCMSData('header', locale);
@@ -153,7 +149,6 @@ export async function getFAQ(locale: string = 'es') {
   const data = await getCMSData('faq', locale);
   return data || null;
 }
-
 
 export async function getSEO(locale: string = 'es') {
   const data = await getCMSData('seo', locale);

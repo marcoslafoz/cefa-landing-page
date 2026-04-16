@@ -52,11 +52,7 @@ const vimeoPlayerUrl = buildVimeoPlayerUrl(heroData?.vimeoUrl);
       height="1080"
       decoding="async"
     />
-    <div
-      id="hero-video-wrapper"
-      class="relative w-full h-full"
-      data-vimeo-url={vimeoPlayerUrl}
-    >
+    <div id="hero-video-wrapper" class="relative w-full h-full" data-vimeo-url={vimeoPlayerUrl}>
     </div>
 
     <div
@@ -210,8 +206,7 @@ const vimeoPlayerUrl = buildVimeoPlayerUrl(heroData?.vimeoUrl);
           }
           heroController?.abort();
         }
-      } catch {
-      }
+      } catch {}
     };
 
     window.addEventListener('message', handleVideoEvent, { signal });

@@ -4,7 +4,12 @@ import { useTranslations } from '@/i18n/translations';
 import DocListCard from '@/components/ui/DocListCard.astro';
 import Section from '@/components/ui/Section.astro';
 import PageHeader from '@/components/ui/PageHeader.astro';
-import { getCertificationsContent, getCertificates, getCertificateCategories, getMediaUrl } from '@/lib/cms';
+import {
+  getCertificationsContent,
+  getCertificates,
+  getCertificateCategories,
+  getMediaUrl,
+} from '@/lib/cms';
 
 interface Props {
   locale: Locale;
@@ -64,27 +69,29 @@ const certsSchema = {
       const isFirst = idx === 0;
 
       return (
-        <Section background="white" padding="sm" class={!isFirst ? "border-t border-cefa-navy/4" : ""}>
+        <Section
+          background="white"
+          padding="sm"
+          class={!isFirst ? 'border-t border-cefa-navy/4' : ''}
+        >
           <div class="mb-10 reveal">
             <p class="eyebrow mb-2">{category.name}</p>
             <h2 class="heading-lg max-w-2xl">{category.name}</h2>
           </div>
 
           <div class="border-t border-cefa-navy/10">
-             {
-               certs.map((cert: any) => {
-                 const mediaFile = getMediaUrl(cert.file);
-                 const mediaImage = getMediaUrl(cert.image);
-                 const href = mediaFile || mediaImage;
-                 return (
-                   <DocListCard
-                     title={`${cert.name} – ${cert.issuer}`}
-                     href={href}
-                     type={href?.split('.').pop() || 'image'}
-                   />
-                 );
-               })
-             }
+            {certs.map((cert: any) => {
+              const mediaFile = getMediaUrl(cert.file);
+              const mediaImage = getMediaUrl(cert.image);
+              const href = mediaFile || mediaImage;
+              return (
+                <DocListCard
+                  title={`${cert.name} – ${cert.issuer}`}
+                  href={href}
+                  type={href?.split('.').pop() || 'image'}
+                />
+              );
+            })}
           </div>
         </Section>
       );

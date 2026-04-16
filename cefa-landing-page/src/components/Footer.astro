@@ -3,7 +3,6 @@ import type { Locale } from '@/i18n/translations';
 import { useTranslations, getLocalePath } from '@/i18n/translations';
 import { getContact, getHeader, getMediaUrl } from '@/lib/cms';
 
-
 interface Props {
   locale: Locale;
 }
@@ -184,9 +183,18 @@ const columns = [
       <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
         {
           [
-            { label: cmsContact?.locations?.[0]?.name || t('contact.location1.name'), id: 'malpica' },
-            { label: cmsContact?.locations?.[1]?.name || t('contact.location2.name'), id: 'figueruelas' },
-            { label: cmsContact?.locations?.[2]?.name || t('contact.location3.name'), id: 'poland' },
+            {
+              label: cmsContact?.locations?.[0]?.name || t('contact.location1.name'),
+              id: 'malpica',
+            },
+            {
+              label: cmsContact?.locations?.[1]?.name || t('contact.location2.name'),
+              id: 'figueruelas',
+            },
+            {
+              label: cmsContact?.locations?.[2]?.name || t('contact.location3.name'),
+              id: 'poland',
+            },
           ].map((plant, i, arr) => (
             <span class="flex items-center gap-5">
               <a

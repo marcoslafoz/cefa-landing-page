@@ -19,13 +19,19 @@ const clientsEyebrow = cmsData?.eyebrow || t('clients.eyebrow');
 const clientsTitle = cmsData?.title || t('clients.title');
 const clientsSubtitle = cmsData?.subtitle || t('clients.subtitle');
 
+interface Brand {
+  name: string;
+  fileUrl: string;
+}
+
 const cmsLogos = cmsData?.logos || [];
-const brands = cmsLogos.length > 0 
-  ? cmsLogos.map((l: any) => ({
-      name: l.name || 'Brand',
-      fileUrl: getMediaUrl(l.image)
-    }))
-  : fallbackBrands.map(b => ({ name: b.name, fileUrl: `/images/brands/${b.file}` }));
+const brands: Brand[] =
+  cmsLogos.length > 0
+    ? cmsLogos.map((l: { name?: string; image?: string | { url?: string } }) => ({
+        name: l.name || 'Brand',
+        fileUrl: getMediaUrl(l.image),
+      }))
+    : fallbackBrands.map((b) => ({ name: b.name, fileUrl: `/images/brands/${b.file}` }));
 ---
 
 <Section id="clients" background="white" padding="xl">
@@ -58,7 +64,7 @@ const brands = cmsLogos.length > 0
               width="128"
               height="40"
               loading="lazy"
-              class="h-10 w-32 object-contain opacity-60 group-hover:opacity-100 filter grayscale group-hover:grayscale-0 transition-all duration-500"
+              class="h-10 w-32 object-contain opacity-60 group-hover:opacity-100 filter grayscale transition-all duration-500"
             />
           </div>
         ))
@@ -81,7 +87,7 @@ const brands = cmsLogos.length > 0
             width="128"
             height="40"
             loading="lazy"
-            class="h-10 w-40 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300"
+            class="h-10 w-40 object-contain opacity-70 group-hover:opacity-100 transition-all duration-300 grayscale"
           />
         </div>
       ))

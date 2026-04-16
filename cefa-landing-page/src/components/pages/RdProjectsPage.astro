@@ -38,7 +38,11 @@ const contactCta = rdContent?.contact?.cta || t('rd.contact.cta');
       const isFirst = idx === 0;
 
       return (
-        <Section background="white" padding="sm" class={!isFirst ? "border-t border-cefa-navy/4" : ""}>
+        <Section
+          background="white"
+          padding="sm"
+          class={!isFirst ? 'border-t border-cefa-navy/4' : ''}
+        >
           <div class="flex flex-col sm:flex-row sm:items-center gap-6 mb-12 reveal">
             {logoUrl && (
               <img
@@ -49,30 +53,26 @@ const contactCta = rdContent?.contact?.cta || t('rd.contact.cta');
                 class="h-16 w-auto object-contain shrink-0"
               />
             )}
-            <div class="w-px h-12 bg-cefa-navy/10 hidden sm:block shrink-0"></div>
+            <div class="w-px h-12 bg-cefa-navy/10 hidden sm:block shrink-0" />
             <div>
               <p class="eyebrow mb-2">{category.name}</p>
-              {category.description && (
-                <p class="body-sm max-w-xl">{category.description}</p>
-              )}
+              {category.description && <p class="body-sm max-w-xl">{category.description}</p>}
             </div>
           </div>
 
           <div class="border-t border-cefa-navy/10">
-            {
-              projects.map((project: any) => {
-                const mediaFile = getMediaUrl(project.file);
-                const mediaImage = getMediaUrl(project.image);
-                const href = mediaFile || mediaImage;
-                return (
-                  <DocListCard
-                    title={project.title}
-                    href={href}
-                    type={href.split('.').pop() || 'image'}
-                  />
-                );
-              })
-            }
+            {projects.map((project: any) => {
+              const mediaFile = getMediaUrl(project.file);
+              const mediaImage = getMediaUrl(project.image);
+              const href = mediaFile || mediaImage;
+              return (
+                <DocListCard
+                  title={project.title}
+                  href={href}
+                  type={href.split('.').pop() || 'image'}
+                />
+              );
+            })}
           </div>
         </Section>
       );

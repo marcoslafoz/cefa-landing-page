@@ -23,37 +23,52 @@ const contactAddressLabel = cmsContact?.formLabels?.addressLabel || t('contact.d
 const contactInfoLabel = cmsContact?.formLabels?.infoLabel || t('contact.details.info');
 const contactMapsLabel = cmsContact?.formLabels?.mapsLabel || t('contact.details.maps');
 
-const locations = cmsContact?.locations?.length > 0
-  ? cmsContact.locations.map((loc: any) => ({
-      id: loc.name?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') || 'loc',
-      name: loc.name,
-      address: loc.address,
-      phone: loc.phone,
-      email: loc.email,
-    }))
-  : [
-  {
-    id: 'malpica',
-    name: t('contact.location1.name'),
-    address: t('contact.location1.address'),
-    phone: t('contact.location1.phone'),
-    email: t('contact.location1.email'),
-  },
-  {
-    id: 'figueruelas',
-    name: t('contact.location2.name'),
-    address: t('contact.location2.address'),
-    phone: t('contact.location2.phone'),
-    email: t('contact.location2.email'),
-  },
-  {
-    id: 'poland',
-    name: t('contact.location3.name'),
-    address: t('contact.location3.address'),
-    phone: t('contact.location3.phone'),
-    email: t('contact.location3.email'),
-  },
-];
+interface Location {
+  id: string;
+  name: string;
+  address: string;
+  phone: string;
+  email: string;
+}
+
+const locations: Location[] =
+  cmsContact?.locations?.length > 0
+    ? cmsContact.locations.map(
+        (loc: { name?: string; address?: string; phone?: string; email?: string }) => ({
+          id:
+            loc.name
+              ?.toLowerCase()
+              .replace(/\s+/g, '-')
+              .replace(/[^a-z0-9-]/g, '') || 'loc',
+          name: loc.name ?? '',
+          address: loc.address ?? '',
+          phone: loc.phone ?? '',
+          email: loc.email ?? '',
+        })
+      )
+    : [
+        {
+          id: 'malpica',
+          name: t('contact.location1.name'),
+          address: t('contact.location1.address'),
+          phone: t('contact.location1.phone'),
+          email: t('contact.location1.email'),
+        },
+        {
+          id: 'figueruelas',
+          name: t('contact.location2.name'),
+          address: t('contact.location2.address'),
+          phone: t('contact.location2.phone'),
+          email: t('contact.location2.email'),
+        },
+        {
+          id: 'poland',
+          name: t('contact.location3.name'),
+          address: t('contact.location3.address'),
+          phone: t('contact.location3.phone'),
+          email: t('contact.location3.email'),
+        },
+      ];
 
 const icons = {
   address: `<path d="M12 13.5a3 3 0 100-6 3 3 0 000 6z" stroke="currentColor" stroke-width="1.5"/><path d="M12 22c-1 0-8-6.686-8-12a8 8 0 1116 0c0 5.314-7 12-8 12z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>`,

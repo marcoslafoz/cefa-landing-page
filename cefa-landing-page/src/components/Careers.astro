@@ -16,7 +16,8 @@ import { getCareers, getContact } from '@/lib/cms';
 const cmsData = await getCareers(locale);
 const cmsContact = await getContact(locale);
 
-const malpicaPhone = cmsData?.phone || cmsContact?.locations?.[0]?.phone || t('contact.location1.phone');
+const malpicaPhone =
+  cmsData?.phone || cmsContact?.locations?.[0]?.phone || t('contact.location1.phone');
 const recruitmentEmail = cmsData?.email || t('careers.email');
 const title = cmsData?.title || t('careers.title');
 const subtitle = cmsData?.subtitle || t('careers.subtitle');

@@ -16,15 +16,24 @@ const cmsData = await getFAQ(locale);
 const faqEyebrow = cmsData?.eyebrow || t('faq.eyebrow');
 const faqTitle = cmsData?.title || t('faq.title');
 
+interface FaqItem {
+  q: string;
+  a: string;
+}
+
 const cmsQuestions = cmsData?.questions || [];
-const items = cmsQuestions.length > 0
-  ? cmsQuestions.map((q: any) => ({ q: q.question, a: q.answer }))
-  : [
-    { q: t('faq.q1'), a: t('faq.a1') },
-    { q: t('faq.q2'), a: t('faq.a2') },
-    { q: t('faq.q3'), a: t('faq.a3') },
-    { q: t('faq.q4'), a: t('faq.a4') },
-  ];
+const items: FaqItem[] =
+  cmsQuestions.length > 0
+    ? cmsQuestions.map((q: { question?: string; answer?: string }) => ({
+        q: q.question ?? '',
+        a: q.answer ?? '',
+      }))
+    : [
+        { q: t('faq.q1'), a: t('faq.a1') },
+        { q: t('faq.q2'), a: t('faq.a2') },
+        { q: t('faq.q3'), a: t('faq.a3') },
+        { q: t('faq.q4'), a: t('faq.a4') },
+      ];
 
 const faqSchema = {
   '@context': 'https://schema.org',
@@ -41,12 +50,7 @@ const faqSchema = {
 ---
 
 <Section id="faq" background="white" padding="lg">
-  <SectionHeader
-    layout="centered"
-    eyebrow={faqEyebrow}
-    title={faqTitle}
-    class="mb-14"
-  />
+  <SectionHeader layout="centered" eyebrow={faqEyebrow} title={faqTitle} class="mb-14" />
 
   <div
     class="max-w-3xl mx-auto divide-y divide-cefa-navy/8"

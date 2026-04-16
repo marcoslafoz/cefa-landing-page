@@ -12,13 +12,15 @@ const LOCALES = ['es', 'en', 'de', 'pl'];
 const COLLECTIONS = [
   { endpoint: 'project-categories?limit=100&depth=2&sort=createdAt', name: 'project-categories' },
   { endpoint: 'projects?limit=100&depth=2&sort=createdAt', name: 'projects' },
-  { endpoint: 'certificate-categories?limit=100&depth=2&sort=createdAt', name: 'certificate-categories' },
+  {
+    endpoint: 'certificate-categories?limit=100&depth=2&sort=createdAt',
+    name: 'certificate-categories',
+  },
   { endpoint: 'certificates?limit=100&depth=2&sort=createdAt', name: 'certificates' },
   { endpoint: 'media?limit=1000&sort=createdAt', name: 'media' },
 ];
 
 const GLOBALS = [
-
   { endpoint: 'globals/header?depth=2', name: 'header' },
   { endpoint: 'globals/hero?depth=2', name: 'hero' },
   { endpoint: 'globals/mission?depth=2', name: 'mission' },

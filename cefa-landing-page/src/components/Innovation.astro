@@ -20,20 +20,22 @@ const innovationLoading = innovationData?.loadingText || t('innovation.loading')
 const innovationRotate = innovationData?.rotateText || t('innovation.rotate');
 
 const features = [
-  { 
-    title: innovationData?.features?.[0]?.title || t('innovation.feat1.title'), 
-    text: innovationData?.features?.[0]?.description || t('innovation.feat1.text') 
+  {
+    title: innovationData?.features?.[0]?.title || t('innovation.feat1.title'),
+    text: innovationData?.features?.[0]?.description || t('innovation.feat1.text'),
   },
-  { 
-    title: innovationData?.features?.[1]?.title || t('innovation.feat2.title'), 
-    text: innovationData?.features?.[1]?.description || t('innovation.feat2.text') 
+  {
+    title: innovationData?.features?.[1]?.title || t('innovation.feat2.title'),
+    text: innovationData?.features?.[1]?.description || t('innovation.feat2.text'),
   },
 ];
 
 const stat1Value = innovationData?.stat1Value || '100%';
-const stat1Label = innovationData?.stat1Label || innovationData?.stats?.[0]?.label || t('innovation.stat1.label');
+const stat1Label =
+  innovationData?.stat1Label || innovationData?.stats?.[0]?.label || t('innovation.stat1.label');
 const stat2Value = innovationData?.stat2Value || 'I+D+i';
-const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.label || t('innovation.stat2.label');
+const stat2Label =
+  innovationData?.stat2Label || innovationData?.stats?.[1]?.label || t('innovation.stat2.label');
 ---
 
 <Section id="innovation" background="white" class="pb-16 lg:pb-20">
@@ -69,7 +71,9 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
           <span
             class="text-3xl lg:text-4xl font-light text-cefa-navy tracking-tight leading-none mb-2"
           >
-            {stat2Value.replace(/\+i$/i, '')}<span class="text-cefa-red">{stat2Value.endsWith('i') || stat2Value.endsWith('I') ? 'i' : ''}</span>
+            {stat2Value.replace(/\+i$/i, '')}<span class="text-cefa-red"
+              >{stat2Value.endsWith('i') || stat2Value.endsWith('I') ? 'i' : ''}</span
+            >
           </span>
           <span
             class="text-[0.55rem] lg:text-[0.6rem] uppercase tracking-[0.3em] text-gray-400 font-bold leading-tight"
@@ -110,8 +114,7 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
       class="absolute bottom-12 left-1/2 -translate-x-1/2 lg:left-auto lg:right-12 lg:translate-x-0 z-10 flex flex-col items-center lg:items-end gap-3 text-cefa-navy/30 pointer-events-none reveal"
     >
       <div class="flex items-center gap-3">
-        <span class="text-[9px] uppercase tracking-[0.3em] font-bold">{innovationRotate}</span
-        >
+        <span class="text-[9px] uppercase tracking-[0.3em] font-bold">{innovationRotate}</span>
         <div class="w-12 h-px bg-cefa-navy/10"></div>
       </div>
       <div class="w-5 h-8 border border-cefa-navy/20 rounded-full flex justify-center pt-2">
