@@ -195,7 +195,7 @@ async function transportSmtp(payload: ContactPayload): Promise<void> {
 
   await getSmtpTransporter().sendMail({
     from: `"CEFA Web" <${import.meta.env.SMTP_USER}>`,
-    to: 'info@cefa.es',
+    to: import.meta.env.CONTACT_TO_EMAIL,
     replyTo: payload.email,
     subject: `[Web] ${subjectLabel} — ${payload.name}`,
     text: [
