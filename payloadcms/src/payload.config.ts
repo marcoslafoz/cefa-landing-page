@@ -44,6 +44,7 @@ export default buildConfig({
     },
     components: {
       beforeDashboard: ['@/components/PublishButton#PublishButton'],
+      beforeNav: ['@/components/Graphics#SidebarLogo'],
       graphics: {
         Icon: '@/components/Graphics#Icon',
         Logo: '@/components/Graphics#Logo',
