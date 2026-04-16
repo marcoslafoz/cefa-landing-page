@@ -66,6 +66,7 @@
     "rd": "Proyectos I+D",
     "presence": "Sedes",
     "careers": "Trabaja con nosotros",
+    "faq": "FAQ",
     "clients": "Clientes",
     "contact": "Contacto",
     "dashboard": "Panel de instrumentos",
@@ -73,12 +74,24 @@
     "functional": "Aplicaciones funcionales",
     "exterior": "Revestimientos exteriores"
   },
-  "ui": {},
+  "ui": {
+    "menuOpen": "Abrir menú",
+    "language": "Idioma",
+    "plantsLabel": "Plantas industriales"
+  },
   "footerColumns": {
     "company": "Empresa",
     "products": "Productos",
     "contact": "Contacto"
   },
-  "footer": {},
+  "footer": {
+    "tagline": "Fabricando el futuro de la movilidad. Calidad, precisión e innovación.",
+    "linkedin": "Únete a nuestro equipo en LinkedIn",
+    "motherson": "Parte del grupo Motherson",
+    "legal": "Aviso legal",
+    "privacy": "Privacidad",
+    "cookies": "Cookies",
+    "rights": "Todos los derechos reservados."
+  },
   "id": "69e09b3a3bb0e697b0ea744e"
 }

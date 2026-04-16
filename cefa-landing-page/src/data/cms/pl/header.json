@@ -66,6 +66,7 @@
     "rd": "Projekty B+R",
     "presence": "Lokalizacje",
     "careers": "Kariera",
+    "faq": "FAQ",
     "clients": "Klienci",
     "contact": "Kontakt",
     "dashboard": "Panele wskaźników",
@@ -73,12 +74,24 @@
     "functional": "Zastosowania funkcjonalne",
     "exterior": "Elementy zewnętrzne"
   },
-  "ui": {},
+  "ui": {
+    "menuOpen": "Otwórz menu",
+    "language": "Język",
+    "plantsLabel": "Zakłady przemysłowe"
+  },
   "footerColumns": {
     "company": "Firma",
     "products": "Produkty",
     "contact": "Kontakt"
   },
-  "footer": {},
+  "footer": {
+    "tagline": "Tworzymy przyszłość mobilności. Jakość, precyzja i innowacja.",
+    "linkedin": "Dołącz do naszego zespołu na LinkedIn",
+    "motherson": "Część Grupy Motherson",
+    "legal": "Nota prawna",
+    "privacy": "Polityka prywatności",
+    "cookies": "Pliki cookie",
+    "rights": "Wszelkie prawa zastrzeżone."
+  },
   "id": "69e09b3a3bb0e697b0ea744e"
 }

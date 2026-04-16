@@ -22,12 +22,27 @@
       "rd": "nav.company.rd",
       "presence": "nav.presence",
       "careers": "nav.careers",
+      "faq": "nav.faq",
       "clients": "nav.clients",
       "contact": "nav.contact",
       "dashboard": "nav.products.dashboard",
       "door": "nav.products.door",
       "functional": "nav.products.functional",
       "exterior": "nav.products.exterior"
+    },
+    "ui": {
+      "menuOpen": "nav.menu.open",
+      "language": "nav.language",
+      "plantsLabel": "stats.plants.label"
+    },
+    "footer": {
+      "tagline": "footer.tagline",
+      "linkedin": "footer.linkedin",
+      "motherson": "footer.motherson",
+      "legal": "footer.legal",
+      "privacy": "footer.privacy",
+      "cookies": "footer.cookies",
+      "rights": "footer.rights"
     }
   },
   "hero": {

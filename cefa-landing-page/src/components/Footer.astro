@@ -68,17 +68,19 @@ const columns = [
       <!-- Sección de Marca y Eslogan -->
       <div class="lg:col-span-5 flex flex-col justify-between">
         <div class="space-y-8">
-          <a href={getLocalePath(locale)} aria-label="CEFA" class="inline-block group">
-            <img
-              src={logoWhite}
-              alt="CEFA"
-              class="h-11 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
-            />
-          </a>
+          <div class="flex items-center gap-6">
+            <a href={getLocalePath(locale)} aria-label="CEFA" class="inline-block group shrink-0">
+              <img
+                src={logoWhite}
+                alt="CEFA"
+                class="h-11 w-auto object-contain opacity-70 group-hover:opacity-100 transition-opacity duration-500"
+              />
+            </a>
 
-          <p class="text-white/50 text-base leading-relaxed max-w-sm">
-            {tagline}
-          </p>
+            <p class="text-white/50 text-base leading-relaxed">
+              {tagline}
+            </p>
+          </div>
 
           <a
             href="https://www.linkedin.com/company/cefa-celulosa-fabril-sa"

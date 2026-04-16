@@ -66,6 +66,7 @@
     "rd": "R&D Projects",
     "presence": "Locations",
     "careers": "Careers",
+    "faq": "FAQ",
     "clients": "Clients",
     "contact": "Contact",
     "dashboard": "Instrument panels",
@@ -73,12 +74,24 @@
     "functional": "Functional applications",
     "exterior": "Exterior trims"
   },
-  "ui": {},
+  "ui": {
+    "menuOpen": "Open menu",
+    "language": "Language",
+    "plantsLabel": "Industrial Plants"
+  },
   "footerColumns": {
     "company": "Company",
     "products": "Products",
     "contact": "Contact"
   },
-  "footer": {},
+  "footer": {
+    "tagline": "Building the future of mobility. Quality, precision and innovation.",
+    "linkedin": "Join our team on LinkedIn",
+    "motherson": "Part of the Motherson Group",
+    "legal": "Legal notice",
+    "privacy": "Privacy",
+    "cookies": "Cookies",
+    "rights": "All rights reserved."
+  },
   "id": "69e09b3a3bb0e697b0ea744e"
 }

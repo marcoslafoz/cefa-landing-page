@@ -66,6 +66,7 @@
     "rd": "F&E-Projekte",
     "presence": "Standorte",
     "careers": "Karriere",
+    "faq": "FAQ",
     "clients": "Kunden",
     "contact": "Kontakt",
     "dashboard": "Instrumententafeln",
@@ -73,12 +74,24 @@
     "functional": "Funktionale Anwendungen",
     "exterior": "Außenverkleidungen"
   },
-  "ui": {},
+  "ui": {
+    "menuOpen": "Menü öffnen",
+    "language": "Sprache",
+    "plantsLabel": "Industriewerke"
+  },
   "footerColumns": {
     "company": "Unternehmen",
     "products": "Produkte",
     "contact": "Kontakt"
   },
-  "footer": {},
+  "footer": {
+    "tagline": "Die Zukunft der Mobilität gestalten. Qualität, Präzision und Innovation.",
+    "linkedin": "Werde Teil unseres Teams auf LinkedIn",
+    "motherson": "Teil der Motherson-Gruppe",
+    "legal": "Impressum",
+    "privacy": "Datenschutz",
+    "cookies": "Cookies",
+    "rights": "Alle Rechte vorbehalten."
+  },
   "id": "69e09b3a3bb0e697b0ea744e"
 }
