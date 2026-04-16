@@ -217,7 +217,6 @@ async function dispatch(payload: ContactPayload): Promise<void> {
 
   if (transport === 'smtp') {
     await transportSmtp(payload);
-    console.info(`[contact] sent via SMTP to=info@cefa.es from=${payload.email}`);
   } else {
     transportConsole(payload);
   }
@@ -322,8 +321,9 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     await dispatch(clean);
+    console.info(`[contact] OK — transport=${import.meta.env.CONTACT_TRANSPORT ?? 'console'} to=${import.meta.env.CONTACT_TO_EMAIL} from=${clean.email} subject=${clean.subject} ip=${clean.ip}`);
   } catch (err) {
-    console.error('[contact] dispatch error:', err);
+    console.error(`[contact] ERROR — transport=${import.meta.env.CONTACT_TRANSPORT ?? 'console'} to=${import.meta.env.CONTACT_TO_EMAIL} from=${clean.email} subject=${clean.subject} ip=${clean.ip}`, err);
     return json({ success: false, code: 'SEND_ERROR' }, 500);
   }
 
