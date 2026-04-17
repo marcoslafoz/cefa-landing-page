@@ -96,13 +96,6 @@ const siteSettings = await getSiteSettings(locale);
     </script>
   </head>
   <body>
-    <!-- Saltar al contenido principal (accesibilidad + SEO) -->
-    <a
-      href="#main-content"
-      class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-9999 focus:px-4 focus:py-2 focus:bg-cefa-red focus:text-white focus:text-sm focus:font-bold focus:rounded focus:outline-none"
-    >
-      {siteSettings?.a11y?.skipToMain ?? ''}
-    </a>
     <slot />
     <div
       id="scroll-progress"
