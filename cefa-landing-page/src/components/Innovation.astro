@@ -135,9 +135,10 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
     isInitializing = true;
 
     try {
-      const [THREE, { GLTFLoader }] = await Promise.all([
+      const [THREE, { GLTFLoader }, { DRACOLoader }] = await Promise.all([
         import('three'),
         import('three/addons/loaders/GLTFLoader.js'),
+        import('three/addons/loaders/DRACOLoader.js'),
       ]);
 
       const isMobile = window.innerWidth < 1024;
@@ -180,7 +181,7 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
       renderer.setSize(container.clientWidth, container.clientHeight);
       renderer.setPixelRatio(Math.min(window.devicePixelRatio, isMobile ? 1 : 2));
       renderer.toneMapping = THREE.ACESFilmicToneMapping;
-      renderer.toneMappingExposure = 1.1;
+      renderer.toneMappingExposure = 1.6;
 
       if (container.querySelector('canvas')) {
         renderer.dispose();
@@ -188,20 +189,26 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
       }
       container.appendChild(renderer.domElement);
 
-      scene.add(new THREE.AmbientLight(0xffffff, 0.7));
-      const mainLight = new THREE.DirectionalLight(0xffffff, 2);
+      scene.add(new THREE.AmbientLight(0xffffff, 3.5));
+      const mainLight = new THREE.DirectionalLight(0xffffff, 5);
       mainLight.position.set(10, 10, 10);
       scene.add(mainLight);
-      const rimLight = new THREE.DirectionalLight(0xffffff, 1.2);
+      const rimLight = new THREE.DirectionalLight(0xffffff, 4);
       rimLight.position.set(-10, 5, -5);
       scene.add(rimLight);
-      const spotLight = new THREE.SpotLight(0xffffff, 1.5);
-      spotLight.position.set(0, 10, 0);
-      scene.add(spotLight);
+      const frontLight = new THREE.DirectionalLight(0xffffff, 4);
+      frontLight.position.set(0, 2, 10);
+      scene.add(frontLight);
+      const bottomLight = new THREE.DirectionalLight(0xffffff, 2);
+      bottomLight.position.set(0, -10, 5);
+      scene.add(bottomLight);
 
+      const dracoLoader = new DRACOLoader();
+      dracoLoader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.6/');
       const loader = new GLTFLoader();
+      loader.setDRACOLoader(dracoLoader);
       loader.load(
-        '/3dmodel/scene.gltf',
+        '/3dmodel/3d.glb',
         (gltf) => {
           const gltfModel = gltf.scene;
           const box = new THREE.Box3().setFromObject(gltfModel);
@@ -213,6 +220,8 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
           gltfModel.position.x = -center.x * scale;
           gltfModel.position.y = -center.y * scale;
           gltfModel.position.z = -center.z * scale;
+
+          gltfModel.rotation.x = Math.PI;
 
           const wrapper = new THREE.Group();
           wrapper.add(gltfModel);
@@ -241,7 +250,7 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
         lastFrameTime = timestamp - (elapsed % FRAME_INTERVAL);
 
         if (model && isModelLoaded) {
-          const scrollRotation = Math.PI + scrollProgress * Math.PI * 0.8;
+          const scrollRotation = scrollProgress * Math.PI * 2.5;
           const lerpFactor = isDragging ? 0.18 : 0.07;
 
           targetRotation.y = scrollRotation + userRotY;
@@ -287,6 +296,7 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
         scene.clear();
         renderer.dispose();
         renderer.forceContextLoss();
+        dracoLoader.dispose();
         if (container) container.innerHTML = '';
         threeCleanup = null;
       }
