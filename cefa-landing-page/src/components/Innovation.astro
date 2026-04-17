@@ -34,7 +34,7 @@ const stat2Value = innovationData?.stat2Value || 'I+D+i';
 const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.label || '';
 ---
 
-<Section id="innovation" background="white" class="pb-16 lg:pb-20">
+<Section id="innovation" background="white" class="pb-0 lg:pb-0">
   <div class="grid lg:grid-cols-12 gap-12 items-center relative z-10 pointer-events-none">
     <div class="lg:col-span-6 reveal pointer-events-auto">
       <p class="eyebrow mb-4">{innovationEyebrow}</p>
@@ -82,7 +82,7 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
   </div>
 
   <!-- Contenedor del Canvas 3D - Posicionado absolutamente respecto a la Sección -->
-  <div class="relative lg:absolute lg:inset-0 z-0 h-100 lg:h-auto w-full mt-4 lg:mt-0">
+  <div class="relative lg:absolute lg:inset-0 z-0 h-150 lg:h-auto w-full mt-4 lg:mt-0">
     <div
       id="product-canvas-container"
       class="w-full h-full select-none [&_canvas]:outline-none [&_canvas]:[-webkit-tap-highlight-color:transparent] [&_canvas]:cursor-grab [&_canvas]:touch-none"
@@ -214,7 +214,7 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
           const box = new THREE.Box3().setFromObject(gltfModel);
           const size = box.getSize(new THREE.Vector3());
           const maxDim = Math.max(size.x, size.y, size.z);
-          const scale = (currentIsMobile ? 5.5 : 3.5) / maxDim;
+          const scale = (currentIsMobile ? 5.5 : 4.5) / maxDim;
           gltfModel.scale.set(scale, scale, scale);
           const center = box.getCenter(new THREE.Vector3());
           gltfModel.position.x = -center.x * scale;
@@ -253,8 +253,8 @@ const stat2Label = innovationData?.stat2Label || innovationData?.stats?.[1]?.lab
           const scrollRotation = scrollProgress * Math.PI * 2.5;
           const lerpFactor = isDragging ? 0.18 : 0.07;
 
-          targetRotation.y = scrollRotation + userRotY;
-          targetRotation.x = userRotX;
+          targetRotation.y = 0.5 + scrollRotation + userRotY;
+          targetRotation.x = 0.55 + userRotX;
 
           currentRotation.y += (targetRotation.y - currentRotation.y) * lerpFactor;
           currentRotation.x += (targetRotation.x - currentRotation.x) * lerpFactor;
