@@ -1,20 +1,20 @@
 [
   {
-    "id": "malpica",
+    "id": "cefa-malpica",
     "name": "CEFA Malpica",
     "city": "Zaragoza",
     "country": "España",
     "coordinates": [-0.8024896035133189, 41.661459309524936]
   },
   {
-    "id": "figueruelas",
+    "id": "cefa-figueruelas",
     "name": "CEFA Figueruelas",
     "city": "Figueruelas (Zaragoza)",
     "country": "España",
     "coordinates": [-1.155559980692292, 41.76206503675077]
   },
   {
-    "id": "poland",
+    "id": "cefa-poland",
     "name": "CEFA Poland",
     "city": "Żagań",
     "country": "Polska",
