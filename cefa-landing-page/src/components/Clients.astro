@@ -29,7 +29,7 @@ const brands: Brand[] =
         name: l.name || 'Brand',
         fileUrl: getMediaUrl(l.image),
       }))
-    : fallbackBrands.map((b) => ({ name: b.name, fileUrl: `/images/brands/${b.file}` }));
+    : fallbackBrands.map((b) => ({ name: b.name, fileUrl: `/cms-media/${b.file}` }));
 ---
 
 <Section id="clients" background="white" padding="xl">
