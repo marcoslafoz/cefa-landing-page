@@ -270,6 +270,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
                 class="absolute right-4 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
                 viewBox="0 0 12 12"
                 fill="none"
+                aria-hidden="true"
               >
                 <path
                   d="M2 4L6 8L10 4"
@@ -310,7 +311,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
             role="alert"
             aria-live="assertive"
           >
-            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -426,7 +427,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
     let widgetId: string | null = null;
 
     function setButtonState(state: 'idle' | 'verifying' | 'sending') {
-      const spinnerSVG = `<svg class="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24">
+      const spinnerSVG = `<svg class="animate-spin h-4 w-4 text-white" viewBox="0 0 24 24" aria-hidden="true">
         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4" fill="none"></circle>
         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
       </svg>`;
@@ -613,7 +614,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '1x0000000
         form.innerHTML = `
           <div class="py-12 flex flex-col items-center text-center animate-[fadeUp_0.8s_ease_forwards]">
             <div class="w-16 h-16 bg-green-50 rounded-full flex items-center justify-center mb-6">
-              <svg class="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <svg class="w-8 h-8 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
               </svg>
             </div>

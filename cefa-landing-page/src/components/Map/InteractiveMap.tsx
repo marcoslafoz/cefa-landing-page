@@ -13,6 +13,9 @@ interface Location {
   type?: 'cefa' | 'motherson';
 }
 
+const escapeHtml = (str: string) =>
+  str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#039;');
+
 const cefaLocations = locationsData.map((l) => ({ ...l, type: 'cefa' }) as Location);
 
 const mothersonLocations = (mothersonLocationsData as Location[])
@@ -92,21 +95,26 @@ export default function InteractiveMap({
             el.classList.add(isCEFA ? 'cefa-popup' : 'motherson-popup');
           }
 
+          const safeName = escapeHtml(loc.name);
+          const safeCity = escapeHtml(loc.city);
+          const safeCountry = escapeHtml(loc.country);
+          const safeId = escapeHtml(loc.id);
+          const safeContactText = escapeHtml(contactText ?? '');
           popup.setHTML(`
             <div class="p-6 ${isCEFA ? 'bg-cefa-red' : 'bg-gray-800'} text-white min-w-64 shadow-none border-none outline-none">
               <p class="text-[0.65rem] font-medium uppercase tracking-[0.2em] mb-4 opacity-90">
                 ${isCEFA ? 'CEFA' : 'MOTHERSON GROUP'}
               </p>
-              <h3 class="${isCEFA ? 'text-2xl' : 'text-xl'} font-light mb-1.5 leading-tight">${loc.name}</h3>
+              <h3 class="${isCEFA ? 'text-2xl' : 'text-xl'} font-light mb-1.5 leading-tight">${safeName}</h3>
               <p class="text-[0.9rem] opacity-90 ${isCEFA ? 'mb-8' : 'mb-0'} font-light font-sans">
-                ${loc.city}, ${loc.country}
+                ${safeCity}, ${safeCountry}
               </p>
               ${
                 isCEFA
                   ? `
-              <a href="#contact" class="contact-link inline-flex items-center gap-2 text-white font-medium group/btn outline-none focus:outline-none" data-location="${loc.id}">
-                <span class="border-b border-white/30 pb-0.5 group-hover/btn:border-white transition-colors text-[0.9rem]">${contactText}</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform group-hover/btn:translate-x-1">
+              <a href="#contact" class="contact-link inline-flex items-center gap-2 text-white font-medium group/btn outline-none focus:outline-none" data-location="${safeId}">
+                <span class="border-b border-white/30 pb-0.5 group-hover/btn:border-white transition-colors text-[0.9rem]">${safeContactText}</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" class="transition-transform group-hover/btn:translate-x-1" aria-hidden="true">
                   <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </a>

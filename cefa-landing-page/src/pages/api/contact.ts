@@ -23,6 +23,9 @@
 
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
+import { createHash } from 'node:crypto';
+
+const hashEmail = (email: string) => createHash('sha256').update(email).digest('hex').slice(0, 8);
 
 export const prerender = false;
 
@@ -306,7 +309,7 @@ export const POST: APIRoute = async ({ request }) => {
 
   const captchaOk = await verifyTurnstile(cfToken, ip);
   if (!captchaOk) {
-    console.warn(`[contact] captcha failed — ip=${ip} email=${email}`);
+    console.warn(`[contact] captcha failed — ip=${ip} email_hash=${hashEmail(email)}`);
     return json({ success: false, code: 'CAPTCHA_FAILED' }, 403);
   }
 
@@ -321,9 +324,9 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     await dispatch(clean);
-    console.info(`[contact] OK — transport=${import.meta.env.CONTACT_TRANSPORT ?? 'console'} to=${import.meta.env.CONTACT_TO_EMAIL} from=${clean.email} subject=${clean.subject} ip=${clean.ip}`);
+    console.info(`[contact] OK — transport=${import.meta.env.CONTACT_TRANSPORT ?? 'console'} subject=${clean.subject} email_hash=${hashEmail(clean.email)} ip=${clean.ip}`);
   } catch (err) {
-    console.error(`[contact] ERROR — transport=${import.meta.env.CONTACT_TRANSPORT ?? 'console'} to=${import.meta.env.CONTACT_TO_EMAIL} from=${clean.email} subject=${clean.subject} ip=${clean.ip}`, err);
+    console.error(`[contact] ERROR — transport=${import.meta.env.CONTACT_TRANSPORT ?? 'console'} subject=${clean.subject} email_hash=${hashEmail(clean.email)} ip=${clean.ip}`, err);
     return json({ success: false, code: 'SEND_ERROR' }, 500);
   }
 
